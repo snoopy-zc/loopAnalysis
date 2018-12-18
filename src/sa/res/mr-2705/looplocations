@@ -1,0 +1,1618 @@
+//#functions containing loops In Scope     #loops totally
+1616 2260
+org.apache.hadoop.mapred.TaskInProgress$FailedRanges$Divide.<init>(Lorg/apache/hadoop/mapred/TaskInProgress$FailedRanges;Lorg/apache/hadoop/mapred/SortedRanges$Range;)V 1 1323 
+org.apache.hadoop.mapreduce.lib.input.KeyValueLineRecordReader.findSeparator([BIIB)I 1 68 
+org.apache.hadoop.io.compress.bzip2.CBZip2InputStream.bsR(J)J 1 598 
+org.apache.hadoop.metrics.spi.CompositeContext.flush()V 1 102 
+org.apache.hadoop.io.compress.bzip2.CBZip2InputStream.getAndMoveToFrontDecode()V 11 818 862 878 876 841 899 836 921 943 959 957 
+org.apache.hadoop.mapreduce.task.reduce.MergeThread.startMerge(Ljava/util/Set;)V 1 62 
+org.apache.hadoop.fs.FileSystem.getFileStatus([Lorg/apache/hadoop/fs/Path;)[Lorg/apache/hadoop/fs/FileStatus; 1 1656 
+org.apache.hadoop.mapred.TaskTracker.findTaskToKill(Ljava/util/List;)Lorg/apache/hadoop/mapred/TaskTracker$TaskInProgress; 1 2001 
+org.apache.hadoop.hdfs.server.datanode.DataBlockScanner.verifyBlock(Lorg/apache/hadoop/hdfs/protocol/Block;)V 1 429 
+org.apache.hadoop.hdfs.security.AccessTokenHandler.generateToken(Ljava/lang/String;JLjava/util/EnumSet;)Lorg/apache/hadoop/hdfs/security/BlockAccessToken; 1 248 
+org.apache.hadoop.mapred.UserLogCleaner.run()V 1 82 
+org.apache.hadoop.record.compiler.JRecord$CppRecord.<init>(Lorg/apache/hadoop/record/compiler/JRecord;Ljava/lang/String;Ljava/util/ArrayList;)V 1 489 
+org.apache.hadoop.mapreduce.lib.partition.KeyFieldBasedComparator.compare([BII[BII)I 1 93 
+org.apache.hadoop.mapred.TaskTrackerStatus.countOccupiedReduceSlots()I 1 483 
+org.apache.hadoop.hdfs.server.datanode.DataXceiverServer.kill()V 1 169 
+org.apache.hadoop.mapred.JobClient.getQueueAclsForCurrentUser()[Lorg/apache/hadoop/mapred/QueueAclsInfo; 1 1035 
+org.apache.hadoop.hdfs.server.namenode.FSNamesystem.getAdditionalBlock(Ljava/lang/String;Ljava/lang/String;Lorg/apache/hadoop/hdfs/protocol/Block;Ljava/util/HashMap;)Lorg/apache/hadoop/hdfs/protocol/LocatedBlock; 1 1468 
+org.apache.hadoop.mapred.JobTracker.getJobStatus(Ljava/util/Collection;Z)[Lorg/apache/hadoop/mapred/JobStatus; 1 4282 
+org.apache.hadoop.util.bloom.BloomFilter.readFields(Ljava/io/DataInput;)V 1 224 
+org.apache.hadoop.mapreduce.lib.input.FileInputFormat.listStatus(Lorg/apache/hadoop/mapreduce/JobContext;)Ljava/util/List; 3 233 231 222 
+org.apache.hadoop.fs.FileUtil$HardLink.getLinkCount(Ljava/io/File;)I 1 661 
+org.apache.hadoop.mapreduce.lib.input.MultipleInputs.getInputFormatMap(Lorg/apache/hadoop/mapreduce/JobContext;)Ljava/util/Map; 1 105 
+org.apache.hadoop.fs.ChecksumFileSystem.copyToLocalFile(Lorg/apache/hadoop/fs/Path;Lorg/apache/hadoop/fs/Path;Z)V 1 543 
+org.apache.hadoop.util.bloom.HashFunction.hash(Lorg/apache/hadoop/util/bloom/Key;)[I 1 117 
+org.apache.hadoop.hdfs.server.namenode.FSNamesystem.DFSNodesStatus(Ljava/util/ArrayList;Ljava/util/ArrayList;)V 1 3157 
+org.apache.hadoop.io.UTF8.readChars(Ljava/io/DataInput;Ljava/lang/StringBuilder;I)V 1 224 
+org.apache.hadoop.hdfs.server.namenode.LeaseManager.checkLeases()V 3 402 417 387 
+org.apache.hadoop.mapred.join.WrappedRecordReader.skip(Lorg/apache/hadoop/io/WritableComparable;)V 1 107 
+org.apache.hadoop.record.meta.StructTypeID.genericReadTypeID(Lorg/apache/hadoop/record/RecordInput;Ljava/lang/String;)Lorg/apache/hadoop/record/meta/TypeID; 1 142 
+org.apache.hadoop.hdfs.server.datanode.FSDataset$FSVolumeSet.getNextVolume(J)Lorg/apache/hadoop/hdfs/server/datanode/FSDataset$FSVolume; 1 565 
+org.apache.hadoop.hdfs.server.datanode.FSDataset$FSDir.<init>(Lorg/apache/hadoop/hdfs/server/datanode/FSDataset;Ljava/io/File;)V 2 99 109 
+org.apache.hadoop.hdfs.server.namenode.DecommissionManager$Monitor.run()V 1 59 
+org.apache.hadoop.http.HttpServer.addGlobalFilter(Ljava/lang/String;Ljava/lang/String;Ljava/util/Map;)V 1 341 
+org.apache.hadoop.http.HttpServer.getFilterInitializers(Lorg/apache/hadoop/conf/Configuration;)[Lorg/apache/hadoop/http/FilterInitializer; 1 203 
+org.apache.hadoop.mapred.QueueConfigurationParser.validate(Lorg/w3c/dom/Node;)V 1 372 
+org.apache.hadoop.mapred.QueueConfigurationParser.populateProperties(Lorg/w3c/dom/Element;)Ljava/util/Properties; 1 331 
+org.apache.hadoop.mapred.MapTask$MapOutputBuffer$SpillThread.run()V 2 1344 1343 
+org.apache.hadoop.util.GenericOptionsParser.validateFiles(Ljava/lang/String;Lorg/apache/hadoop/conf/Configuration;)Ljava/lang/String; 1 362 
+org.apache.hadoop.util.GenericOptionsParser.getLibJars(Lorg/apache/hadoop/conf/Configuration;)[Ljava/net/URL; 1 337 
+org.apache.hadoop.util.StringUtils.escapeString(Ljava/lang/String;C[C)Ljava/lang/String; 1 460 
+org.apache.hadoop.conf.Configuration.writeXml(Ljava/io/Writer;)V 1 1566 
+org.apache.hadoop.io.MapWritable.write(Ljava/io/DataOutput;)V 1 136 
+org.apache.hadoop.mapreduce.util.LinuxResourceCalculatorPlugin.readProcMemInfoFile(Z)V 1 163 
+org.apache.hadoop.mapreduce.lib.partition.KeyFieldBasedComparator.isZero([BII)Z 2 324 336 
+org.apache.hadoop.mapreduce.lib.partition.KeyFieldBasedComparator.decimalCompare1([BII)I 1 284 
+org.apache.hadoop.mapred.Counters.write(Ljava/io/DataOutput;)V 1 530 
+org.apache.hadoop.mapreduce.lib.partition.KeyFieldHelper.parseKey(Ljava/lang/String;Ljava/util/StringTokenizer;)Lorg/apache/hadoop/mapreduce/lib/partition/KeyFieldHelper$KeyDescription; 2 232 261 
+org.apache.hadoop.mapred.Child.main([Ljava/lang/String;)V 2 153 205 
+org.apache.hadoop.fs.FileContext$Util.globStatusInternal(Ljava/net/URI;Lorg/apache/hadoop/fs/Path;Lorg/apache/hadoop/fs/PathFilter;)[Lorg/apache/hadoop/fs/FileStatus; 2 1728 1743 
+org.apache.hadoop.hdfs.server.namenode.LeaseManager.findLeaseWithPrefixPath(Ljava/lang/String;Ljava/util/SortedMap;)Ljava/util/List; 1 341 
+org.apache.hadoop.mapred.pipes.Submitter.run([Ljava/lang/String;)I 1 480 
+org.apache.hadoop.mapred.DeprecatedQueueConfigurationParser.<init>(Lorg/apache/hadoop/conf/Configuration;)V 1 52 
+org.apache.hadoop.hdfs.security.token.delegation.DelegationTokenSecretManager.saveAllKeys(Ljava/io/DataOutputStream;)V 1 239 
+org.apache.hadoop.hdfs.security.token.delegation.DelegationTokenSecretManager.saveCurrentTokens(Ljava/io/DataOutputStream;)V 1 224 
+org.apache.hadoop.mapreduce.lib.input.FileInputFormat$MultiPathFilter.accept(Lorg/apache/hadoop/fs/Path;)Z 1 95 
+org.apache.hadoop.mapred.FileInputFormat.addInputPaths(Lorg/apache/hadoop/mapred/JobConf;Ljava/lang/String;)V 1 348 
+org.apache.hadoop.fs.FileSystem.clearStatistics()V 1 2003 
+org.apache.hadoop.fs.s3.INode.deserialize(Ljava/io/InputStream;)Lorg/apache/hadoop/fs/s3/INode; 1 110 
+org.apache.hadoop.mapreduce.split.JobSplitWriter.writeNewSplits(Lorg/apache/hadoop/conf/Configuration;[Lorg/apache/hadoop/mapreduce/InputSplit;Lorg/apache/hadoop/fs/FSDataOutputStream;)[Lorg/apache/hadoop/mapreduce/split/JobSplit$SplitMetaInfo; 1 118 
+org.apache.hadoop.mapreduce.split.JobSplitWriter.writeJobSplitMetaInfo(Lorg/apache/hadoop/fs/FileSystem;Lorg/apache/hadoop/fs/Path;Lorg/apache/hadoop/fs/permission/FsPermission;I[Lorg/apache/hadoop/mapreduce/split/JobSplit$SplitMetaInfo;)V 1 167 
+org.apache.hadoop.hdfs.server.namenode.BlockPlacementPolicyDefault.chooseLocalRack(Lorg/apache/hadoop/hdfs/server/namenode/DatanodeDescriptor;Ljava/util/HashMap;JILjava/util/List;)Lorg/apache/hadoop/hdfs/server/namenode/DatanodeDescriptor; 1 257 
+org.apache.hadoop.fs.DF.getOSType(Ljava/lang/String;)Lorg/apache/hadoop/fs/DF$OSType; 1 71 
+org.apache.hadoop.mapreduce.split.JobSplitWriter.writeOldSplits([Lorg/apache/hadoop/mapred/InputSplit;Lorg/apache/hadoop/fs/FSDataOutputStream;)[Lorg/apache/hadoop/mapreduce/split/JobSplit$SplitMetaInfo; 1 143 
+org.apache.hadoop.record.compiler.generated.Rcc.driver([Ljava/lang/String;)I 2 59 82 
+org.apache.hadoop.hdfs.server.namenode.FSDirectory.unprotectedRenameTo(Ljava/lang/String;Ljava/lang/String;J[Lorg/apache/hadoop/fs/Options$Rename;)Z 1 551 
+org.apache.hadoop.mapreduce.util.ProcfsBasedProcessTree.getProcessList()Ljava/util/List; 1 481 
+org.apache.hadoop.util.bloom.DynamicBloomFilter.toString()Ljava/lang/String; 1 238 
+org.apache.hadoop.mapreduce.lib.input.CombineFileInputFormat$OneBlockInfo.<init>(Lorg/apache/hadoop/fs/Path;JJ[Ljava/lang/String;[Ljava/lang/String;)V 2 555 564 
+org.apache.hadoop.fs.s3native.NativeS3FileSystem.listStatus(Lorg/apache/hadoop/fs/Path;)[Lorg/apache/hadoop/fs/FileStatus; 3 446 462 445 
+org.apache.hadoop.conf.Configuration.addDefaultResource(Ljava/lang/String;)V 1 416 
+org.apache.hadoop.mapreduce.util.ProcfsBasedProcessTree.toString()Ljava/lang/String; 1 565 
+org.apache.hadoop.mapreduce.lib.aggregate.ValueAggregatorJobBase.getAggregatorDescriptors(Lorg/apache/hadoop/conf/Configuration;)Ljava/util/ArrayList; 1 68 
+org.apache.hadoop.hdfs.server.datanode.FSDataset$FSDir.checkDirTree()V 1 231 
+org.apache.hadoop.mapred.StatisticsCollector.createStat(Ljava/lang/String;[Lorg/apache/hadoop/mapred/StatisticsCollector$TimeWindow;)Lorg/apache/hadoop/mapred/StatisticsCollector$Stat; 1 113 
+org.apache.hadoop.hdfs.server.common.UpgradeObjectCollection.getDistributedUpgrades(ILorg/apache/hadoop/hdfs/server/common/HdfsConstants$NodeType;)Ljava/util/SortedSet; 1 119 
+org.apache.hadoop.io.MD5Hash.quarterDigest()I 1 142 
+org.apache.hadoop.hdfs.server.datanode.DirectoryScanner.scan()V 3 196 225 228 
+org.apache.hadoop.mapred.MapTaskCompletionEventsUpdate.readFields(Ljava/io/DataInput;)V 1 66 
+org.apache.hadoop.mapred.join.CompositeInputFormat.compose(Ljava/lang/String;Ljava/lang/Class;[Ljava/lang/String;)Ljava/lang/String; 1 155 
+org.apache.hadoop.mapreduce.lib.input.CombineFileSplit.write(Ljava/io/DataOutput;)V 3 163 167 171 
+org.apache.hadoop.hdfs.server.common.Storage.unlockAll()V 1 805 
+org.apache.hadoop.security.token.delegation.AbstractDelegationTokenSecretManager.removeExpiredToken()V 1 324 
+org.apache.hadoop.hdfs.server.namenode.DecommissionManager$Monitor.check()V 1 75 
+org.apache.hadoop.mapred.SequenceFileInputFormat.listStatus(Lorg/apache/hadoop/mapred/JobConf;)[Lorg/apache/hadoop/fs/FileStatus; 1 45 
+org.apache.hadoop.mapred.join.WrappedRecordReader.accept(Lorg/apache/hadoop/mapred/join/CompositeRecordReader$JoinCollector;Lorg/apache/hadoop/io/WritableComparable;)V 1 133 
+org.apache.hadoop.mapred.JobEndNotifier.localRunnerNotification(Lorg/apache/hadoop/mapred/JobConf;Lorg/apache/hadoop/mapred/JobStatus;)V 1 146 
+org.apache.hadoop.mapreduce.filecache.TrackerDistributedCacheManager.purgeCache()V 1 618 
+org.apache.hadoop.fs.FsShell.runCmdHandler(Lorg/apache/hadoop/fs/FsShell$CmdHandler;Lorg/apache/hadoop/fs/FileStatus;Lorg/apache/hadoop/fs/FileSystem;Z)I 1 1290 
+org.apache.hadoop.mapreduce.jobhistory.JobHistory$1.run()V 1 438 
+org.apache.hadoop.mapreduce.jobhistory.EventReader.fromAvro(Lorg/apache/hadoop/mapreduce/jobhistory/JhCounters;)Lorg/apache/hadoop/mapreduce/Counters; 2 175 172 
+org.apache.hadoop.mapred.TaskTrackerStatus.countMapTasks()I 1 430 
+org.apache.hadoop.mapred.TaskTrackerStatus.countReduceTasks()I 1 468 
+org.apache.hadoop.mapred.TaskTrackerStatus.countOccupiedMapSlots()I 1 445 
+org.apache.hadoop.mapreduce.lib.join.OverrideRecordReader.createValue()Lorg/apache/hadoop/io/Writable; 1 64 
+org.apache.hadoop.mapred.JobTracker.isSuperUserOrSuperGroup(Lorg/apache/hadoop/security/UserGroupInformation;Lorg/apache/hadoop/security/UserGroupInformation;Ljava/lang/String;)Z 1 4062 
+org.apache.hadoop.mapred.TaskTracker.run()V 2 2327 2323 
+org.apache.hadoop.mapreduce.Reducer.reduce(Ljava/lang/Object;Ljava/lang/Iterable;Lorg/apache/hadoop/mapreduce/Reducer$Context;)V 1 147 
+org.apache.hadoop.hdfs.server.namenode.BackupStorage.waitSpoolEnd()V 1 229 
+org.apache.hadoop.hdfs.server.namenode.FSNamesystem.getNumDeadDataNodes()I 1 4145 
+org.apache.hadoop.hdfs.server.namenode.BlockInfoUnderConstruction.addReplicaIfNotPresent(Lorg/apache/hadoop/hdfs/server/namenode/DatanodeDescriptor;Lorg/apache/hadoop/hdfs/protocol/Block;Lorg/apache/hadoop/hdfs/server/common/HdfsConstants$ReplicaState;)V 1 249 
+org.apache.hadoop.mapreduce.task.reduce.ShuffleScheduler.getHost()Lorg/apache/hadoop/mapreduce/task/reduce/MapHost; 2 289 296 
+org.apache.hadoop.mapred.pipes.OutputHandler.waitForFinish()Z 1 136 
+org.apache.hadoop.mapreduce.lib.join.JoinRecordReader.nextKeyValue()Z 1 66 
+org.apache.hadoop.net.CachedDNSToSwitchMapping.resolve(Ljava/util/List;)Ljava/util/List; 3 57 68 74 
+org.apache.hadoop.security.SaslInputStream.read([BII)I 1 234 
+org.apache.hadoop.hdfs.protocol.LocatedBlock.write(Ljava/io/DataOutput;)V 1 134 
+org.apache.hadoop.hdfs.server.namenode.BackupStorage.reset()V 1 130 
+org.apache.hadoop.mapred.CompletedJobStatusStore.readEvents(Lorg/apache/hadoop/fs/FSDataInputStream;II)[Lorg/apache/hadoop/mapred/TaskCompletionEvent; 1 223 
+org.apache.hadoop.hdfs.server.namenode.Host2NodesMap.remove(Lorg/apache/hadoop/hdfs/server/namenode/DatanodeDescriptor;)Z 1 107 
+org.apache.hadoop.mapred.join.MultiFilterRecordReader.next(Lorg/apache/hadoop/io/WritableComparable;Lorg/apache/hadoop/io/Writable;)Z 1 81 
+org.apache.hadoop.hdfs.server.namenode.FSNamesystem.allocateBlock(Ljava/lang/String;[Lorg/apache/hadoop/hdfs/server/namenode/INode;[Lorg/apache/hadoop/hdfs/server/namenode/DatanodeDescriptor;)Lorg/apache/hadoop/hdfs/protocol/Block; 1 1617 
+org.apache.hadoop.hdfs.server.protocol.BlocksWithLocations.readFields(Ljava/io/DataInput;)V 1 118 
+org.apache.hadoop.record.compiler.JRecord$JavaRecord.genCode(Ljava/lang/String;Ljava/util/ArrayList;)V 15 198 207 220 229 251 261 274 289 315 354 377 391 403 427 443 
+org.apache.hadoop.hdfs.server.namenode.FSNamesystem.updatePipeline(Ljava/lang/String;Lorg/apache/hadoop/hdfs/protocol/Block;Lorg/apache/hadoop/hdfs/protocol/Block;[Lorg/apache/hadoop/hdfs/protocol/DatanodeID;)V 1 4282 
+org.apache.hadoop.hdfs.server.datanode.BlockReceiver.readNextPacket()V 2 349 389 
+org.apache.hadoop.mapred.Queue.isHierarchySameAs(Lorg/apache/hadoop/mapred/Queue;)Z 1 397 
+org.apache.hadoop.mapreduce.filecache.DistributedCache.getFileClassPaths(Lorg/apache/hadoop/conf/Configuration;)[Lorg/apache/hadoop/fs/Path; 1 566 
+org.apache.hadoop.mapreduce.filecache.DistributedCache.getArchiveClassPaths(Lorg/apache/hadoop/conf/Configuration;)[Lorg/apache/hadoop/fs/Path; 1 607 
+org.apache.hadoop.io.Text.find(Ljava/lang/String;I)I 2 152 158 
+org.apache.hadoop.mapreduce.security.SecureShuffleUtils.toHex([B)Ljava/lang/String; 1 138 
+org.apache.hadoop.ipc.Server$Responder.run()V 4 595 590 622 631 
+org.apache.hadoop.mapreduce.lib.input.FileInputFormat.addInputPaths(Lorg/apache/hadoop/mapreduce/Job;Ljava/lang/String;)V 1 355 
+org.apache.hadoop.fs.s3.Jets3tFileSystemStore.purge()V 1 360 
+org.apache.hadoop.fs.FileContext$FSLinkResolver.resolve(Lorg/apache/hadoop/fs/FileContext;Lorg/apache/hadoop/fs/Path;)Ljava/lang/Object; 1 2139 
+org.apache.hadoop.hdfs.server.balancer.Balancer$PendingBlockMove.chooseBlockAndProxy()Z 1 262 
+org.apache.hadoop.util.bloom.CountingBloomFilter.toString()Ljava/lang/String; 1 273 
+org.apache.hadoop.fs.permission.FsPermission.valueOf(Ljava/lang/String;)Lorg/apache/hadoop/fs/permission/FsPermission; 1 290 
+org.apache.hadoop.io.TwoDArrayWritable.toArray()Ljava/lang/Object; 2 49 46 
+org.apache.hadoop.net.SocketIOWithTimeout.doIO(Ljava/nio/ByteBuffer;I)I 1 136 
+org.apache.hadoop.util.bloom.RetouchedBloomFilter.addFalsePositive(Ljava/util/List;)V 1 175 
+org.apache.hadoop.io.SortedMapWritable.putAll(Ljava/util/Map;)V 1 142 
+org.apache.hadoop.hdfs.server.namenode.BlockManager.computeReplicationWorkForBlock(Lorg/apache/hadoop/hdfs/protocol/Block;I)Z 2 880 899 
+org.apache.hadoop.net.NetworkTopology$InnerNode.remove(Lorg/apache/hadoop/net/Node;)Z 2 192 206 
+org.apache.hadoop.io.ArrayWritable.toArray()Ljava/lang/Object; 1 81 
+org.apache.hadoop.net.NetworkTopology.toString()Ljava/lang/String; 1 597 
+org.apache.hadoop.mapreduce.split.SplitMetaInfoReader.readSplitMetaInfo(Lorg/apache/hadoop/mapreduce/JobID;Lorg/apache/hadoop/fs/FileSystem;Lorg/apache/hadoop/conf/Configuration;Lorg/apache/hadoop/fs/Path;)[Lorg/apache/hadoop/mapreduce/split/JobSplit$TaskSplitMetaInfo; 1 69 
+org.apache.hadoop.fs.FileSystem.printStatistics()V 1 2011 
+org.apache.hadoop.mapreduce.lib.db.OracleDBRecordReader.getSelectQuery()Ljava/lang/String; 1 63 
+org.apache.hadoop.hdfs.protocol.LocatedBlock.readFields(Ljava/io/DataInput;)V 1 147 
+org.apache.hadoop.mapred.MapTask$SkippingRecordReader.next(Ljava/lang/Object;Ljava/lang/Object;)Z 1 258 
+org.apache.hadoop.hdfs.server.namenode.BlockManager.metaSave(Ljava/io/PrintWriter;)V 2 221 196 
+org.apache.hadoop.record.compiler.generated.Rcc.getToken(I)Lorg/apache/hadoop/record/compiler/generated/Token; 1 483 
+org.apache.hadoop.mapred.lib.db.DBInputFormat.getSplits(Lorg/apache/hadoop/mapred/JobConf;I)[Lorg/apache/hadoop/mapred/InputSplit; 1 175 
+org.apache.hadoop.mapred.LocalJobRunner$Job.getCurrentCounters()Lorg/apache/hadoop/mapred/Counters; 1 505 
+org.apache.hadoop.mapred.Counters$Group.readFields(Ljava/io/DataInput;)V 1 341 
+org.apache.hadoop.record.Utils.fromXMLBuffer(Ljava/lang/String;)Lorg/apache/hadoop/record/Buffer; 1 208 
+org.apache.hadoop.mapreduce.security.token.DelegationTokenRenewal.registerDelegationTokensForRenewal(Lorg/apache/hadoop/mapreduce/JobID;Lorg/apache/hadoop/security/TokenStorage;Lorg/apache/hadoop/conf/Configuration;)V 1 121 
+org.apache.hadoop.hdfs.server.namenode.FSImage.newNamespaceID()I 1 1417 
+org.apache.hadoop.net.NetworkTopology.getDistance(Lorg/apache/hadoop/net/Node;Lorg/apache/hadoop/net/Node;)I 3 446 451 456 
+org.apache.hadoop.hdfs.server.namenode.NameNode.finalize(Lorg/apache/hadoop/conf/Configuration;Z)Z 1 1264 
+org.apache.hadoop.hdfs.server.namenode.FSImage.doUpgrade()V 2 503 521 
+org.apache.hadoop.hdfs.server.namenode.FSImage.doRollback()V 2 556 576 
+org.apache.hadoop.hdfs.server.namenode.FSImage.loadFSImage()Z 1 924 
+org.apache.hadoop.hdfs.server.namenode.FSEditLog.open()V 1 192 
+org.apache.hadoop.hdfs.server.namenode.FSEditLog.close()V 1 238 
+org.apache.hadoop.hdfs.server.common.Storage$DirIterator.hasNext()Z 1 133 
+org.apache.hadoop.hdfs.server.namenode.FSImage.processIOError(Ljava/util/ArrayList;Z)V 2 794 786 
+org.apache.hadoop.util.HostsFileReader.readFileToSet(Ljava/lang/String;Ljava/util/Set;)V 2 64 61 
+org.apache.hadoop.hdfs.DFSInputStream.readBlockLength(Lorg/apache/hadoop/hdfs/protocol/LocatedBlock;)J 1 145 
+org.apache.hadoop.io.compress.bzip2.CBZip2OutputStream.mainSort()V 17 1737 1746 1749 1757 1763 1767 1779 1791 1786 1784 1819 1840 1844 1853 1871 1875 1806 
+org.apache.hadoop.util.UTF8ByteArrayUtils.findBytes([BII[B)I 2 56 54 
+org.apache.hadoop.io.compress.bzip2.CBZip2OutputStream.randomiseBlock()V 2 1893 1898 
+org.apache.hadoop.io.compress.bzip2.CBZip2OutputStream.generateMTFValues()V 7 1929 1939 1943 1955 1969 1950 1996 
+org.apache.hadoop.io.compress.bzip2.CBZip2OutputStream.sendMTFValues()V 2 942 940 
+org.apache.hadoop.hdfs.security.AccessTokenHandler.removeExpiredKeys()V 1 154 
+org.apache.hadoop.hdfs.server.namenode.BlockPlacementPolicyDefault.isGoodTarget(Lorg/apache/hadoop/hdfs/server/namenode/DatanodeDescriptor;JIZLjava/util/List;)Z 1 419 
+org.apache.hadoop.hdfs.server.balancer.Balancer.isGoodBlockCandidate(Lorg/apache/hadoop/hdfs/server/balancer/Balancer$Source;Lorg/apache/hadoop/hdfs/server/balancer/Balancer$BalancerDatanode;Lorg/apache/hadoop/hdfs/server/balancer/Balancer$BalancerBlock;)Z 2 1386 1398 
+org.apache.hadoop.mapred.JobClient$NetworkedJob.getTaskCompletionEvents(I)[Lorg/apache/hadoop/mapred/TaskCompletionEvent; 1 359 
+org.apache.hadoop.mapred.TaskTracker.purgeJob(Lorg/apache/hadoop/mapred/KillJobAction;)V 1 1900 
+org.apache.hadoop.mapred.join.CompositeRecordReader.close()V 1 445 
+org.apache.hadoop.mapred.TaskTracker.localizeJobFiles(Lorg/apache/hadoop/mapred/Task;Lorg/apache/hadoop/mapred/TaskTracker$RunningJob;)Lorg/apache/hadoop/mapred/JobConf; 1 1044 
+org.apache.hadoop.mapred.join.CompositeRecordReader.getProgress()F 1 459 
+org.apache.hadoop.conf.Configuration.toString(Ljava/util/List;Ljava/lang/StringBuilder;)V 1 1677 
+org.apache.hadoop.io.SequenceFile$Sorter$MergeQueue.<init>(Lorg/apache/hadoop/io/SequenceFile$Sorter;Ljava/util/List;Lorg/apache/hadoop/fs/Path;Lorg/apache/hadoop/util/Progressable;)V 1 2871 
+org.apache.hadoop.io.SequenceFile$Sorter$MergeQueue.merge()Lorg/apache/hadoop/io/SequenceFile$Sorter$RawKeyValueIterator; 6 2976 2974 2999 3008 3020 2966 
+org.apache.hadoop.mapred.TaskLog.addCommand(Ljava/util/List;Z)Ljava/lang/String; 1 559 
+org.apache.hadoop.net.ScriptBasedMapping$RawScriptBasedMapping.resolve(Ljava/util/List;)Ljava/util/List; 2 96 105 
+org.apache.hadoop.record.meta.Utils.skip(Lorg/apache/hadoop/record/RecordInput;Ljava/lang/String;Lorg/apache/hadoop/record/meta/TypeID;)V 3 71 85 94 
+org.apache.hadoop.fs.FsShellPermissions.changePermissions(Lorg/apache/hadoop/fs/FileSystem;Ljava/lang/String;[Ljava/lang/String;ILorg/apache/hadoop/fs/FsShell;)I 1 166 
+org.apache.hadoop.mapreduce.lib.join.OverrideRecordReader.fillJoinCollector(Lorg/apache/hadoop/io/WritableComparable;)V 3 94 105 109 
+org.apache.hadoop.fs.s3.Jets3tFileSystemStore.dump()V 2 384 376 
+org.apache.hadoop.ipc.AvroRpcEngine$BufferListWritable.readFields(Ljava/io/DataInput;)V 1 76 
+org.apache.hadoop.hdfs.server.namenode.NameNode.format(Lorg/apache/hadoop/conf/Configuration;Z)Z 2 1226 1236 
+org.apache.hadoop.hdfs.server.datanode.DataNode.logRecoverBlock(Ljava/lang/String;Lorg/apache/hadoop/hdfs/protocol/Block;[Lorg/apache/hadoop/hdfs/protocol/DatanodeID;)V 1 1792 
+org.apache.hadoop.classification.tools.StabilityOptions.filterOptions([[Ljava/lang/String;)[[Ljava/lang/String; 2 54 63 
+org.apache.hadoop.hdfs.server.datanode.DataNode.recoverBlock(Lorg/apache/hadoop/hdfs/server/protocol/BlockRecoveryCommand$RecoveringBlock;)V 1 1653 
+org.apache.hadoop.mapred.JobTracker.offerService()V 1 1706 
+org.apache.hadoop.util.StringUtils$TraditionalBinaryPrefix.valueOf(C)Lorg/apache/hadoop/util/StringUtils$TraditionalBinaryPrefix; 1 606 
+org.apache.hadoop.fs.FsShell.run([Ljava/lang/String;)I 2 1860 1865 
+org.apache.hadoop.mapreduce.lib.input.FileInputFormat.setInputPaths(Lorg/apache/hadoop/mapreduce/Job;[Lorg/apache/hadoop/fs/Path;)V 1 373 
+org.apache.hadoop.mapreduce.Counters.<init>(Lorg/apache/hadoop/mapred/Counters;)V 2 59 55 
+org.apache.hadoop.util.bloom.CountingBloomFilter.write(Ljava/io/DataOutput;)V 1 296 
+org.apache.hadoop.mapreduce.JobSubmitter.copyAndConfigureFiles(Lorg/apache/hadoop/mapreduce/Job;Lorg/apache/hadoop/fs/Path;S)V 3 168 191 202 
+org.apache.hadoop.hdfs.server.namenode.INodeDirectory.getExistingPathINodes([[B[Lorg/apache/hadoop/hdfs/server/namenode/INode;Z)I 1 188 
+org.apache.hadoop.util.StringUtils.findNext(Ljava/lang/String;CCILjava/lang/StringBuilder;)I 1 404 
+org.apache.hadoop.mapred.Task$GcTimeUpdater.getElapsedGc()J 1 714 
+org.apache.hadoop.mapred.LinuxTaskController.buildTaskControllerExecutor(Lorg/apache/hadoop/mapred/LinuxTaskController$TaskControllerCommands;Ljava/lang/String;Ljava/util/List;Ljava/io/File;Ljava/util/Map;)Lorg/apache/hadoop/util/Shell$ShellCommandExecutor; 2 466 470 
+org.apache.hadoop.mapred.LinuxTaskController.logOutput(Ljava/lang/String;)V 1 380 
+org.apache.hadoop.io.compress.bzip2.CBZip2InputStream.recvDecodingTables()V 12 694 700 707 704 724 722 731 738 735 754 753 750 
+org.apache.hadoop.hdfs.server.namenode.BlocksMap.<init>(IF)V 1 64 
+org.apache.hadoop.io.compress.bzip2.CBZip2InputStream.getAndMoveToFrontDecode0(I)I 2 993 991 
+org.apache.hadoop.mapred.ReduceTaskStatus.write(Ljava/io/DataOutput;)V 1 158 
+org.apache.hadoop.util.HeapSort.sort(Lorg/apache/hadoop/util/IndexedSortable;IILorg/apache/hadoop/util/Progressable;)V 3 64 63 71 
+org.apache.hadoop.mapreduce.CounterGroup.readFields(Ljava/io/DataInput;)V 1 138 
+org.apache.hadoop.mapred.TaskTracker.getFreeSpace()J 1 2056 
+org.apache.hadoop.hdfs.server.datanode.FSDataset.getBlockReport()Lorg/apache/hadoop/hdfs/protocol/BlockListAsLongs; 1 1479 
+org.apache.hadoop.fs.FileUtil.copy(Lorg/apache/hadoop/fs/FileSystem;Lorg/apache/hadoop/fs/FileStatus;Lorg/apache/hadoop/fs/FileSystem;Lorg/apache/hadoop/fs/Path;ZZLorg/apache/hadoop/conf/Configuration;)Z 1 233 
+org.apache.hadoop.mapred.join.Parser.reduce(Ljava/util/Stack;Lorg/apache/hadoop/mapred/JobConf;)Lorg/apache/hadoop/mapred/join/Parser$Token; 1 458 
+org.apache.hadoop.metrics.spi.AbstractMetricsContext.remove(Lorg/apache/hadoop/metrics/spi/MetricsRecordImpl;)V 1 440 
+org.apache.hadoop.io.compress.BlockDecompressorStream.decompress([BII)I 1 81 
+org.apache.hadoop.metrics.spi.AbstractMetricsContext.update(Lorg/apache/hadoop/metrics/spi/MetricsRecordImpl;)V 1 380 
+org.apache.hadoop.util.hash.JenkinsHash.hash([BII)I 1 90 
+org.apache.hadoop.hdfs.server.datanode.FSDataset$FSDir.getVolumeMap(Lorg/apache/hadoop/hdfs/server/datanode/ReplicasMap;Lorg/apache/hadoop/hdfs/server/datanode/FSDataset$FSVolume;)V 1 184 
+org.apache.hadoop.hdfs.server.datanode.FSDataset$FSVolume.addToReplicasMap(Lorg/apache/hadoop/hdfs/server/datanode/ReplicasMap;Ljava/io/File;Z)V 1 436 
+org.apache.hadoop.mapreduce.lib.input.CombineFileSplit.initSplit([Lorg/apache/hadoop/fs/Path;[J[J[Ljava/lang/String;)V 1 84 
+org.apache.hadoop.record.compiler.generated.ParseException.add_escapes(Ljava/lang/String;)Ljava/lang/String; 1 176 
+org.apache.hadoop.hdfs.DistributedFileSystem.concat(Lorg/apache/hadoop/fs/Path;[Lorg/apache/hadoop/fs/Path;)V 1 271 
+org.apache.hadoop.mapred.JobConf.deleteLocalFiles(Ljava/lang/String;)V 1 467 
+org.apache.hadoop.io.compress.bzip2.CBZip2OutputStream.write([BII)V 1 861 
+org.apache.hadoop.record.compiler.JavaGenerator.genCode(Ljava/lang/String;Ljava/util/ArrayList;Ljava/util/ArrayList;Ljava/lang/String;Ljava/util/ArrayList;)V 1 45 
+org.apache.hadoop.hdfs.DFSOutputStream.waitAndQueuePacket(Lorg/apache/hadoop/hdfs/DFSOutputStream$Packet;)V 1 1112 
+org.apache.hadoop.ipc.Client$Connection.run()V 1 601 
+org.apache.hadoop.record.Utils.toBinaryString(Ljava/io/DataOutput;Ljava/lang/String;)V 1 318 
+org.apache.hadoop.mapred.DeprecatedQueueConfigurationParser.deprecatedConf(Lorg/apache/hadoop/conf/Configuration;)Z 2 121 120 
+org.apache.hadoop.mapred.DeprecatedQueueConfigurationParser.createQueues(Lorg/apache/hadoop/conf/Configuration;)Ljava/util/List; 1 61 
+org.apache.hadoop.mapred.JobConf.findContainingJar(Ljava/lang/Class;)Ljava/lang/String; 1 1777 
+org.apache.hadoop.mapred.FileInputFormat.getPathStrings(Ljava/lang/String;)[Ljava/lang/String; 1 398 
+org.apache.hadoop.util.ReflectionUtils.printThreadInfo(Ljava/io/PrintWriter;Ljava/lang/String;)V 2 182 156 
+org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.run()V 4 401 373 448 502 
+org.apache.hadoop.hdfs.protocol.LocatedBlocks.readFields(Ljava/io/DataInput;)V 1 221 
+org.apache.hadoop.mapred.pipes.PipesMapRunner.run(Lorg/apache/hadoop/mapred/RecordReader;Lorg/apache/hadoop/mapred/OutputCollector;Lorg/apache/hadoop/mapred/Reporter;)V 1 89 
+org.apache.hadoop.hdfs.server.namenode.Host2NodesMap.contains(Lorg/apache/hadoop/hdfs/server/namenode/DatanodeDescriptor;)Z 1 41 
+org.apache.hadoop.hdfs.server.namenode.FSNamesystem.getDecommissioningNodes()Ljava/util/ArrayList; 1 4461 
+org.apache.hadoop.hdfs.server.balancer.Balancer.chooseTargets(Ljava/util/Iterator;Z)V 2 1112 1110 
+org.apache.hadoop.security.TokenStorage.write(Ljava/io/DataOutput;)V 2 138 145 
+org.apache.hadoop.hdfs.server.balancer.Balancer.chooseSources(Ljava/util/Iterator;Z)V 2 1130 1128 
+org.apache.hadoop.mapred.JobQueueTaskScheduler.assignTasks(Lorg/apache/hadoop/mapreduce/server/jobtracker/TaskTracker;)Ljava/util/List; 4 110 163 161 222 
+org.apache.hadoop.hdfs.server.datanode.DataNode.getDataDirsFromURIs(Ljava/util/Collection;Lorg/apache/hadoop/fs/LocalFileSystem;Lorg/apache/hadoop/fs/permission/FsPermission;)Ljava/util/ArrayList; 1 1451 
+org.apache.hadoop.hdfs.tools.offlineImageViewer.ImageLoaderCurrent.processBlocks(Ljava/io/DataInputStream;Lorg/apache/hadoop/hdfs/tools/offlineImageViewer/ImageVisitor;IZ)V 1 275 
+org.apache.hadoop.mapred.MapTask$MapOutputBuffer.spillSingleRecord(Ljava/lang/Object;Ljava/lang/Object;I)V 1 1512 
+org.apache.hadoop.ipc.WritableRpcEngine$Invocation.write(Ljava/io/DataOutput;)V 1 86 
+org.apache.hadoop.io.MD5Hash.setDigest(Ljava/lang/String;)V 1 205 
+org.apache.hadoop.fs.FileUtil.unZip(Ljava/io/File;Ljava/io/File;)V 2 507 491 
+org.apache.hadoop.mapreduce.filecache.TaskDistributedCacheManager$CacheFile.makeCacheFiles([Ljava/net/URI;[Ljava/lang/String;[Ljava/lang/String;[Lorg/apache/hadoop/fs/Path;Lorg/apache/hadoop/mapreduce/filecache/TaskDistributedCacheManager$CacheFile$FileType;)Ljava/util/List; 2 100 104 
+org.apache.hadoop.mapreduce.lib.input.FileInputFormat.getPathStrings(Ljava/lang/String;)[Ljava/lang/String; 1 405 
+org.apache.hadoop.fs.FileUtil.getDU(Ljava/io/File;)J 1 471 
+org.apache.hadoop.fs.s3native.Jets3tNativeFileSystemStore.list(Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;)Lorg/apache/hadoop/fs/s3native/PartialListing; 1 165 
+org.apache.hadoop.conf.Configuration.handleDeprecation(Ljava/lang/String;)Ljava/lang/String; 1 315 
+org.apache.hadoop.conf.Configuration.getProps()Ljava/util/Properties; 1 1327 
+org.apache.hadoop.conf.Configuration.substituteVars(Ljava/lang/String;)Ljava/lang/String; 1 505 
+org.apache.hadoop.mapreduce.split.JobSplit$SplitMetaInfo.readFields(Ljava/io/DataInput;)V 1 115 
+org.apache.hadoop.ipc.WritableRpcEngine.call(Ljava/lang/reflect/Method;[[Ljava/lang/Object;[Ljava/net/InetSocketAddress;Lorg/apache/hadoop/security/UserGroupInformation;Lorg/apache/hadoop/conf/Configuration;)[Ljava/lang/Object; 2 254 267 
+org.apache.hadoop.mapred.lib.aggregate.ValueAggregatorJobBase.getAggregatorDescriptors(Lorg/apache/hadoop/mapred/JobConf;)Ljava/util/ArrayList; 1 67 
+org.apache.hadoop.mapreduce.security.token.DelegationTokenRenewal.removeDelegationTokenRenewalForJob(Lorg/apache/hadoop/mapreduce/JobID;)V 1 303 
+org.apache.hadoop.mapred.JobInProgress.clearUncleanTasks()V 2 2916 2921 
+org.apache.hadoop.io.file.tfile.Utils.upperBound(Ljava/util/List;Ljava/lang/Object;Ljava/util/Comparator;)I 1 453 
+org.apache.hadoop.mapred.LimitTasksPerJobTaskScheduler.assignTasks(Lorg/apache/hadoop/mapreduce/server/jobtracker/TaskTracker;)Ljava/util/List; 2 131 123 
+org.apache.hadoop.hdfs.tools.offlineImageViewer.DelimitedImageVisitor.reset()V 1 96 
+org.apache.hadoop.mapred.JobTracker.startTracker(Lorg/apache/hadoop/mapred/JobConf;Lorg/apache/hadoop/mapred/Clock;Ljava/lang/String;)Lorg/apache/hadoop/mapred/JobTracker; 1 258 
+org.apache.hadoop.mapred.JobTracker.getMapTaskReports(Lorg/apache/hadoop/mapred/JobID;)[Lorg/apache/hadoop/mapred/TaskReport; 2 3499 3505 
+org.apache.hadoop.mapred.JobTracker.getReduceTaskReports(Lorg/apache/hadoop/mapred/JobID;)[Lorg/apache/hadoop/mapred/TaskReport; 2 3528 3533 
+org.apache.hadoop.mapred.JobTracker.getCleanupTaskReports(Lorg/apache/hadoop/mapred/JobID;)[Lorg/apache/hadoop/mapred/TaskReport; 2 3557 3563 
+org.apache.hadoop.mapreduce.util.ProcfsBasedProcessTree.getCumulativeRssmem(I)J 1 432 
+org.apache.hadoop.mapreduce.jobhistory.JobHistoryParser.parse()Lorg/apache/hadoop/mapreduce/jobhistory/JobHistoryParser$JobInfo; 1 104 
+org.apache.hadoop.hdfs.server.namenode.FSImage.finalizeUpgrade()V 1 652 
+org.apache.hadoop.mapred.join.CompositeRecordReader$JoinCollector.<init>(Lorg/apache/hadoop/mapred/join/CompositeRecordReader;I)V 1 167 
+org.apache.hadoop.io.compress.bzip2.CBZip2InputStream.read([BII)I 1 407 
+org.apache.hadoop.metrics.util.MetricsDynamicMBeanBase.createMBeanInfo()V 1 87 
+org.apache.hadoop.mapreduce.lib.partition.KeyFieldHelper.getWordLengths([BII)[I 1 102 
+org.apache.hadoop.mapreduce.lib.partition.KeyFieldHelper.getStartOffset([BII[ILorg/apache/hadoop/mapreduce/lib/partition/KeyFieldHelper$KeyDescription;)I 1 124 
+org.apache.hadoop.mapreduce.lib.partition.KeyFieldHelper.getEndOffset([BII[ILorg/apache/hadoop/mapreduce/lib/partition/KeyFieldHelper$KeyDescription;)I 1 145 
+org.apache.hadoop.net.NetUtils.normalizeHostNames(Ljava/util/Collection;)Ljava/util/List; 1 423 
+org.apache.hadoop.hdfs.server.namenode.EditLogFileOutputStream.write(B[Lorg/apache/hadoop/io/Writable;)V 1 86 
+org.apache.hadoop.mapred.HeartbeatResponse.write(Ljava/io/DataOutput;)V 1 88 
+org.apache.hadoop.hdfs.server.namenode.BlockInfo.findDatanode(Lorg/apache/hadoop/hdfs/server/namenode/DatanodeDescriptor;)I 1 192 
+org.apache.hadoop.mapred.IndexCache.getIndexInformation(Ljava/lang/String;ILorg/apache/hadoop/fs/Path;)Lorg/apache/hadoop/mapred/IndexRecord; 1 69 
+org.apache.hadoop.io.compress.bzip2.CBZip2OutputStream.hbMakeCodeLengths([C[III)V 11 224 244 237 263 293 329 253 343 339 355 228 
+org.apache.hadoop.mapreduce.lib.input.MultipleInputs.getMapperTypeMap(Lorg/apache/hadoop/mapreduce/JobContext;)Ljava/util/Map; 1 137 
+org.apache.hadoop.util.bloom.DynamicBloomFilter.or(Lorg/apache/hadoop/util/bloom/Filter;)V 1 210 
+org.apache.hadoop.mapred.TaskMemoryManagerThread.killTasksWithMaxRssMemory(J)V 2 480 496 
+org.apache.hadoop.fs.FileContext$Util.getFileStatus([Lorg/apache/hadoop/fs/Path;)[Lorg/apache/hadoop/fs/FileStatus; 1 1390 
+org.apache.hadoop.mapred.Counters.incrAllCounters(Lorg/apache/hadoop/mapred/Counters;)V 2 484 481 
+org.apache.hadoop.fs.FileContext$Util.globPathsLevel([Lorg/apache/hadoop/fs/Path;[Ljava/lang/String;I[Z)[Lorg/apache/hadoop/fs/Path; 1 1791 
+org.apache.hadoop.fs.FileContext$Util.listStatus([Lorg/apache/hadoop/fs/Path;Lorg/apache/hadoop/fs/PathFilter;)[Lorg/apache/hadoop/fs/FileStatus; 1 1501 
+org.apache.hadoop.ipc.Server$Connection.readAndProcess()I 1 1059 
+org.apache.hadoop.mapreduce.lib.join.TupleWritable.readFields(Ljava/io/DataInput;)V 2 193 196 
+org.apache.hadoop.mapreduce.filecache.TrackerDistributedCacheManager.determineCacheVisibilities(Lorg/apache/hadoop/conf/Configuration;)V 2 724 734 
+org.apache.hadoop.hdfs.server.namenode.BlockPlacementPolicyDefault.chooseRandom(Ljava/lang/String;Ljava/util/HashMap;JILjava/util/List;)Lorg/apache/hadoop/hdfs/server/namenode/DatanodeDescriptor; 1 319 
+org.apache.hadoop.mapreduce.filecache.TaskDistributedCacheManager.release()V 1 236 
+org.apache.hadoop.mapred.SortedRanges$SkipRangeIterator.doNext()V 1 349 
+org.apache.hadoop.ipc.Server.start()V 1 1539 
+org.apache.hadoop.fs.FsShell.tail([Ljava/lang/String;I)V 1 1210 
+org.apache.hadoop.hdfs.server.datanode.FSDataset$FSDir.clearPath(Ljava/io/File;[Ljava/lang/String;I)Z 1 282 
+org.apache.hadoop.hdfs.server.namenode.FSNamesystem.getCorruptFiles()[Lorg/apache/hadoop/fs/FileStatus; 1 4439 
+org.apache.hadoop.hdfs.server.datanode.DirectoryScanner.getDiskReport()[Lorg/apache/hadoop/hdfs/server/datanode/DirectoryScanner$ScanInfo; 3 266 279 291 
+org.apache.hadoop.hdfs.server.datanode.FSDataset.getBlockList(Z)[Lorg/apache/hadoop/hdfs/protocol/Block; 1 1511 
+org.apache.hadoop.net.NetUtils.getAllStaticResolutions()Ljava/util/List; 1 218 
+org.apache.hadoop.mapred.UserLogCleaner.clearOldUserLogs(Lorg/apache/hadoop/conf/Configuration;)V 1 127 
+org.apache.hadoop.mapreduce.task.reduce.MergeManager.combineAndSpill(Lorg/apache/hadoop/mapred/RawKeyValueIterator;Lorg/apache/hadoop/mapred/Counters$Counter;)V 1 552 
+org.apache.hadoop.fs.FileSystem.listStatus([Lorg/apache/hadoop/fs/Path;Lorg/apache/hadoop/fs/PathFilter;)[Lorg/apache/hadoop/fs/FileStatus; 1 1093 
+org.apache.hadoop.mapreduce.lib.join.CompositeRecordReader$JoinCollector.flush(Lorg/apache/hadoop/mapreduce/lib/join/TupleWritable;)Z 1 334 
+org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode$CheckpointStorage.startCheckpoint()V 1 558 
+org.apache.hadoop.mapred.ReduceTask.runOldReducer(Lorg/apache/hadoop/mapred/JobConf;Lorg/apache/hadoop/mapred/TaskUmbilicalProtocol;Lorg/apache/hadoop/mapred/Task$TaskReporter;Lorg/apache/hadoop/mapred/RawKeyValueIterator;Lorg/apache/hadoop/io/RawComparator;Ljava/lang/Class;Ljava/lang/Class;)V 1 438 
+org.apache.hadoop.mapreduce.util.LinuxResourceCalculatorPlugin.readProcCpuInfoFile()V 1 221 
+org.apache.hadoop.io.file.tfile.BCFile$MetaIndex.<init>(Ljava/io/DataInput;)V 1 772 
+org.apache.hadoop.mapreduce.lib.chain.Chain.joinAllThreads()V 1 516 
+org.apache.hadoop.hdfs.server.namenode.FSNamesystem.commitBlockSynchronization(Lorg/apache/hadoop/hdfs/protocol/Block;JJZZ[Lorg/apache/hadoop/hdfs/protocol/DatanodeID;)V 2 2185 2193 
+org.apache.hadoop.util.StringUtils.toStartupShutdownString(Ljava/lang/String;[Ljava/lang/String;)Ljava/lang/String; 1 542 
+org.apache.hadoop.hdfs.protocol.BlockListAsLongs.<init>(Ljava/util/List;Ljava/util/List;)V 2 101 109 
+org.apache.hadoop.mapred.ClusterStatus.readFields(Ljava/io/DataInput;)V 2 455 463 
+org.apache.hadoop.mapreduce.lib.chain.Chain$ChainBlockingQueue.dequeue()Ljava/lang/Object; 1 890 
+org.apache.hadoop.ipc.WritableRpcEngine$Invocation.toString()Ljava/lang/String; 1 96 
+org.apache.hadoop.mapred.join.CompositeInputSplit.write(Ljava/io/DataOutput;)V 2 119 122 
+org.apache.hadoop.hdfs.server.namenode.TransferFsImage.getFileClient(Ljava/lang/String;Ljava/lang/String;[Ljava/io/File;)V 5 179 184 188 196 196 
+org.apache.hadoop.mapreduce.lib.join.CompositeRecordReader.fillJoinCollector(Lorg/apache/hadoop/io/WritableComparable;)V 1 423 
+org.apache.hadoop.hdfs.DistributedFileSystem.listStatus(Lorg/apache/hadoop/fs/Path;)[Lorg/apache/hadoop/fs/FileStatus; 4 345 358 371 364 
+org.apache.hadoop.util.Progress.addPhases(I)V 1 109 
+org.apache.hadoop.mapred.join.CompositeRecordReader$JoinCollector.flush(Lorg/apache/hadoop/mapred/join/TupleWritable;)Z 1 301 
+org.apache.hadoop.hdfs.security.ExportedAccessKeys.readFields(Ljava/io/DataInput;)V 1 134 
+org.apache.hadoop.mapreduce.lib.join.CompositeRecordReader$JoinCollector.close()V 1 324 
+org.apache.hadoop.hdfs.server.namenode.BlockManager.chooseSourceDatanode(Lorg/apache/hadoop/hdfs/protocol/Block;Ljava/util/List;Lorg/apache/hadoop/hdfs/server/namenode/FSNamesystem$NumberReplicas;)Lorg/apache/hadoop/hdfs/server/namenode/DatanodeDescriptor; 1 942 
+org.apache.hadoop.io.SequenceFile$Sorter$SortPass.grow([Lorg/apache/hadoop/io/SequenceFile$ValueBytes;I)[Lorg/apache/hadoop/io/SequenceFile$ValueBytes; 1 2562 
+org.apache.hadoop.mapreduce.task.reduce.ShuffleScheduler$Referee.run()V 1 407 
+org.apache.hadoop.hdfs.server.datanode.BlockReceiver$PacketResponder.run()V 3 830 811 914 
+org.apache.hadoop.util.bloom.Key.hashCode()I 1 148 
+org.apache.hadoop.io.WritableComparator.compareBytes([BII[BII)I 1 156 
+org.apache.hadoop.ipc.Client.call([Lorg/apache/hadoop/io/Writable;[Ljava/net/InetSocketAddress;Ljava/lang/Class;Lorg/apache/hadoop/security/UserGroupInformation;)[Lorg/apache/hadoop/io/Writable; 2 971 984 
+org.apache.hadoop.io.IOUtils.copyBytes(Ljava/io/InputStream;Ljava/io/OutputStream;I)V 1 71 
+org.apache.hadoop.ipc.Server$Connection.saslReadAndProcess([B)V 1 986 
+org.apache.hadoop.mapreduce.lib.join.CompositeRecordReader.initialize(Lorg/apache/hadoop/mapreduce/InputSplit;Lorg/apache/hadoop/mapreduce/TaskAttemptContext;)V 1 99 
+org.apache.hadoop.mapreduce.lib.db.TextSplitter.bigDecimalToString(Ljava/math/BigDecimal;)Ljava/lang/String; 1 208 
+org.apache.hadoop.hdfs.DFSInputStream.read([BII)I 1 511 
+org.apache.hadoop.ipc.Server$Responder.waitPending()V 1 807 
+org.apache.hadoop.hdfs.server.datanode.BlockReceiver.verifyChunks([BII[BI)V 1 244 
+org.apache.hadoop.io.serializer.avro.AvroReflectSerialization.getPackages()V 1 69 
+org.apache.hadoop.hdfs.server.namenode.PendingReplicationBlocks.metaSave(Ljava/io/PrintWriter;)V 1 238 
+org.apache.hadoop.hdfs.server.namenode.BlockManager.dumpRecentInvalidateSets(Ljava/io/PrintWriter;)V 1 548 
+org.apache.hadoop.mapred.CleanupQueue$PathCleanupThread.addToQueue([Lorg/apache/hadoop/mapred/CleanupQueue$PathDeletionContext;)V 1 116 
+org.apache.hadoop.mapred.JvmManager$JvmManagerForType.reapJvm(Lorg/apache/hadoop/mapred/TaskRunner;Lorg/apache/hadoop/mapred/JvmManager$JvmEnv;)V 1 335 
+org.apache.hadoop.mapred.JobTracker.getStatusesOnHost(Ljava/lang/String;)Ljava/util/List; 1 993 
+org.apache.hadoop.hdfs.DFSOutputStream.flushInternal()V 1 1320 
+org.apache.hadoop.hdfs.server.namenode.FSNamesystem.refreshNodes(Lorg/apache/hadoop/conf/Configuration;)V 1 3321 
+org.apache.hadoop.hdfs.server.namenode.FSNamesystem$SafeModeMonitor.run()V 1 3738 
+org.apache.hadoop.mapred.NodeHealthCheckerService$NodeHealthMonitorExecutor.hasErrors(Ljava/lang/String;)Z 1 199 
+org.apache.hadoop.net.SocketIOWithTimeout$SelectorPool.select(Ljava/nio/channels/SelectableChannel;IJ)I 1 329 
+org.apache.hadoop.hdfs.server.namenode.BlockManager.countNodes(Lorg/apache/hadoop/hdfs/protocol/Block;)Lorg/apache/hadoop/hdfs/server/namenode/FSNamesystem$NumberReplicas; 1 1370 
+org.apache.hadoop.hdfs.server.namenode.BlockManager.computeReplicationWork(I)I 2 696 695 
+org.apache.hadoop.hdfs.server.namenode.BlockManager.computeInvalidateWork(I)I 3 661 666 673 
+org.apache.hadoop.io.EnumSetWritable.write(Ljava/io/DataOutput;)V 1 145 
+org.apache.hadoop.fs.FileUtil.copy(Lorg/apache/hadoop/fs/FileSystem;[Lorg/apache/hadoop/fs/Path;Lorg/apache/hadoop/fs/FileSystem;Lorg/apache/hadoop/fs/Path;ZZLorg/apache/hadoop/conf/Configuration;)Z 1 193 
+org.apache.hadoop.metrics.spi.AbstractMetricsContext$TagMap.containsAll(Lorg/apache/hadoop/metrics/spi/AbstractMetricsContext$TagMap;)Z 1 81 
+org.apache.hadoop.mapred.join.CompositeRecordReader$JoinCollector.close()V 1 291 
+org.apache.hadoop.mapreduce.TaskReport.write(Ljava/io/DataOutput;)V 1 200 
+org.apache.hadoop.fs.FileSystem.globStatus(Lorg/apache/hadoop/fs/Path;Lorg/apache/hadoop/fs/PathFilter;)[Lorg/apache/hadoop/fs/FileStatus; 2 1184 1182 
+org.apache.hadoop.fs.FileContext$Util.getContentSummary(Lorg/apache/hadoop/fs/Path;)Lorg/apache/hadoop/fs/ContentSummary; 1 1428 
+org.apache.hadoop.fs.FileContext.processDeleteOnExit()V 2 246 243 
+org.apache.hadoop.io.SequenceFile$Sorter$SortPass.run(Z)I 3 2469 2478 2473 
+org.apache.hadoop.net.ScriptBasedMapping$RawScriptBasedMapping.runResolveCommand(Ljava/util/List;)Ljava/lang/String; 2 144 140 
+org.apache.hadoop.mapred.JobACLsManager.constructJobACLs(Lorg/apache/hadoop/mapred/JobConf;)Ljava/util/Map; 1 60 
+org.apache.hadoop.hdfs.server.namenode.FSNamesystem.renameTo(Ljava/lang/String;Ljava/lang/String;[Lorg/apache/hadoop/fs/Options$Rename;)V 1 1737 
+org.apache.hadoop.mapred.JobTracker$RecoveryManager.recover()V 1 1142 
+org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.locateFollowingBlock(J[Lorg/apache/hadoop/hdfs/protocol/DatanodeInfo;)Lorg/apache/hadoop/hdfs/protocol/LocatedBlock; 1 928 
+org.apache.hadoop.mapred.FileInputFormat.getSplitHosts([Lorg/apache/hadoop/fs/BlockLocation;JJLorg/apache/hadoop/net/NetworkTopology;)[Ljava/lang/String; 3 495 537 511 
+org.apache.hadoop.mapred.join.Parser$WNode.parse(Ljava/util/List;Lorg/apache/hadoop/mapred/JobConf;)V 1 283 
+org.apache.hadoop.mapreduce.lib.output.MapFileOutputFormat.getReaders(Lorg/apache/hadoop/fs/Path;Lorg/apache/hadoop/conf/Configuration;)[Lorg/apache/hadoop/io/MapFile$Reader; 1 97 
+org.apache.hadoop.mapreduce.lib.partition.TotalOrderPartitioner.buildTrieRec([Lorg/apache/hadoop/io/BinaryComparable;II[BILorg/apache/hadoop/mapreduce/lib/partition/TotalOrderPartitioner$CarriedTrieNodeRef;)Lorg/apache/hadoop/mapreduce/lib/partition/TotalOrderPartitioner$TrieNode; 2 385 382 
+org.apache.hadoop.hdfs.server.namenode.FSImage.loadFSImage(Ljava/io/File;)Z 2 1105 1083 
+org.apache.hadoop.record.compiler.generated.SimpleCharStream.adjustBeginLineColumn(II)V 2 418 433 
+org.apache.hadoop.hdfs.server.namenode.FSEditLog.waitForSyncToFinish()V 1 1358 
+org.apache.hadoop.hdfs.server.namenode.FSEditLog.printStatistics(Z)V 1 1043 
+org.apache.hadoop.hdfs.server.namenode.FSEditLog.processIOError(Ljava/util/ArrayList;Z)V 2 298 284 
+org.apache.hadoop.util.bloom.RetouchedBloomFilter.addFalsePositive(Ljava/util/Collection;)V 1 161 
+org.apache.hadoop.hdfs.server.common.Storage$DirIterator.next()Lorg/apache/hadoop/hdfs/server/common/Storage$StorageDirectory; 1 149 
+org.apache.hadoop.mapred.TaskRunner.getVMArgs(Lorg/apache/hadoop/mapred/TaskAttemptID;Ljava/io/File;Ljava/util/List;J)Ljava/util/Vector; 2 440 450 
+org.apache.hadoop.hdfs.server.namenode.FSEditLog.getEditsStream(Lorg/apache/hadoop/hdfs/server/common/Storage$StorageDirectory;)Lorg/apache/hadoop/hdfs/server/namenode/EditLogOutputStream; 1 354 
+org.apache.hadoop.hdfs.server.namenode.FSEditLog.releaseBackupStream(Lorg/apache/hadoop/hdfs/server/protocol/NamenodeRegistration;)V 1 1667 
+org.apache.hadoop.hdfs.server.namenode.FSNamesystem$ReplicationMonitor.run()V 1 2610 
+org.apache.hadoop.conf.Configuration.loadResources(Ljava/util/Properties;Ljava/util/ArrayList;Z)V 2 1377 1387 
+org.apache.hadoop.fs.FSInputStream.readFully(J[BII)V 1 70 
+org.apache.hadoop.io.UTF8.utf8Length(Ljava/lang/String;)I 1 263 
+org.apache.hadoop.io.UTF8.writeChars(Ljava/io/DataOutput;Ljava/lang/String;II)V 1 280 
+org.apache.hadoop.mapreduce.CounterGroup.equals(Ljava/lang/Object;)Z 1 173 
+org.apache.hadoop.io.compress.bzip2.CBZip2OutputStream.mainQSort3(Lorg/apache/hadoop/io/compress/bzip2/CBZip2OutputStream$Data;III)V 3 1651 1665 1631 
+org.apache.hadoop.io.compress.bzip2.CBZip2OutputStream.sendMTFValues0(II)V 3 991 1001 986 
+org.apache.hadoop.fs.FsShell.printUsageSummary(Ljava/util/List;Z)V 2 768 776 
+org.apache.hadoop.io.compress.bzip2.CBZip2OutputStream.sendMTFValues1(II)I 11 1036 1033 1063 1081 1087 1085 1098 1114 1043 1124 1032 
+org.apache.hadoop.io.compress.bzip2.CBZip2OutputStream.sendMTFValues2(II)V 3 1138 1147 1142 
+org.apache.hadoop.io.compress.bzip2.CBZip2OutputStream.sendMTFValues3(II)V 2 1167 1163 
+org.apache.hadoop.io.compress.bzip2.CBZip2OutputStream.sendMTFValues4()V 6 1191 1188 1198 1211 1209 1206 
+org.apache.hadoop.io.compress.bzip2.CBZip2OutputStream.sendMTFValues5(II)V 4 1242 1240 1252 1239 
+org.apache.hadoop.io.compress.bzip2.CBZip2OutputStream.sendMTFValues6(II)V 8 1278 1290 1288 1303 1301 1315 1286 1273 
+org.apache.hadoop.io.compress.bzip2.CBZip2OutputStream.sendMTFValues7(I)V 3 1356 1349 1343 
+org.apache.hadoop.net.DNS.getIPs(Ljava/lang/String;)[Ljava/lang/String; 1 115 
+org.apache.hadoop.metrics.file.FileContext.emitRecord(Ljava/lang/String;Ljava/lang/String;Lorg/apache/hadoop/metrics/spi/OutputRecord;)V 2 128 135 
+org.apache.hadoop.mapreduce.lib.jobcontrol.ControlledJob.toString()Ljava/lang/String; 1 101 
+org.apache.hadoop.mapred.Merger$MergeQueue.merge(Ljava/lang/Class;Ljava/lang/Class;IILorg/apache/hadoop/fs/Path;Lorg/apache/hadoop/mapred/Counters$Counter;Lorg/apache/hadoop/mapred/Counters$Counter;Lorg/apache/hadoop/util/Progress;)Lorg/apache/hadoop/mapred/RawKeyValueIterator; 6 589 587 620 635 663 575 
+org.apache.hadoop.fs.s3.Jets3tFileSystemStore.retrieveBlock(Lorg/apache/hadoop/fs/s3/Block;J)Ljava/io/File; 1 221 
+org.apache.hadoop.mapreduce.filecache.TaskDistributedCacheManager.makeClassLoader(Ljava/lang/ClassLoader;)Ljava/lang/ClassLoader; 1 250 
+org.apache.hadoop.mapred.lib.TokenCountMapper.map(Ljava/lang/Object;Lorg/apache/hadoop/io/Text;Lorg/apache/hadoop/mapred/OutputCollector;Lorg/apache/hadoop/mapred/Reporter;)V 1 51 
+org.apache.hadoop.mapred.StatisticsCollector$Stat.inc(I)V 1 192 
+org.apache.hadoop.util.ProgramDriver.driver([Ljava/lang/String;)I 1 141 
+org.apache.hadoop.hdfs.DFSClient.getFileChecksum(Ljava/lang/String;Lorg/apache/hadoop/hdfs/protocol/ClientProtocol;Ljavax/net/SocketFactory;I)Lorg/apache/hadoop/fs/MD5MD5CRC32FileChecksum; 2 918 905 
+org.apache.hadoop.metrics.jvm.JvmMetrics.doGarbageCollectionUpdates()V 1 126 
+org.apache.hadoop.hdfs.tools.offlineImageViewer.FileDistributionVisitor.finish()V 1 105 
+org.apache.hadoop.io.ObjectWritable.writeObject(Ljava/io/DataOutput;Ljava/lang/Object;Ljava/lang/Class;Lorg/apache/hadoop/conf/Configuration;)V 1 129 
+org.apache.hadoop.io.MapFile$Reader.seekInternal(Lorg/apache/hadoop/io/WritableComparable;Z)I 1 487 
+org.apache.hadoop.util.UTF8ByteArrayUtils.findByte([BIIB)I 1 36 
+org.apache.hadoop.hdfs.server.namenode.INode.getPathComponents([Ljava/lang/String;)[[B 1 345 
+org.apache.hadoop.record.Utils.toXMLString(Ljava/lang/String;)Ljava/lang/String; 1 54 
+org.apache.hadoop.hdfs.server.namenode.INode.compareBytes([B[B)I 1 423 
+org.apache.hadoop.hdfs.server.namenode.INode.constructPath([[BI)Ljava/lang/String; 1 370 
+org.apache.hadoop.mapreduce.lib.join.MultiFilterRecordReader.nextKeyValue()Z 1 89 
+org.apache.hadoop.mapreduce.QueueInfo.write(Ljava/io/DataOutput;)V 2 222 226 
+org.apache.hadoop.hdfs.server.namenode.FSNamesystem.removeBlocks(Ljava/util/List;)V 2 1839 1835 
+org.apache.hadoop.hdfs.server.namenode.FSEditLog$EditStreamIterator.next()Lorg/apache/hadoop/hdfs/server/namenode/EditLogOutputStream; 1 1621 
+org.apache.hadoop.hdfs.server.namenode.FSImage.setStorageDirectories(Ljava/util/Collection;Ljava/util/Collection;)V 3 224 221 244 
+org.apache.hadoop.hdfs.server.namenode.INodeFile.appendBlocks([Lorg/apache/hadoop/hdfs/server/namenode/INodeFile;I)V 2 99 104 
+org.apache.hadoop.security.SaslRpcServer$SaslGssCallbackHandler.handle([Ljavax/security/auth/callback/Callback;)V 1 232 
+org.apache.hadoop.hdfs.server.namenode.BlockInfo.listCount(Lorg/apache/hadoop/hdfs/server/namenode/DatanodeDescriptor;)I 1 250 
+org.apache.hadoop.fs.FileUtil.copy(Ljava/io/File;Lorg/apache/hadoop/fs/FileSystem;Lorg/apache/hadoop/fs/Path;ZLorg/apache/hadoop/conf/Configuration;)Z 1 310 
+org.apache.hadoop.ipc.Client$Connection.setupIOstreams()V 1 414 
+org.apache.hadoop.io.compress.bzip2.CBZip2InputStream.makeMaps()V 1 258 
+org.apache.hadoop.metrics.spi.CompositeContext.registerUpdater(Lorg/apache/hadoop/metrics/Updater;)V 1 155 
+org.apache.hadoop.io.compress.bzip2.CBZip2InputStream.createHuffmanDecodingTables(II)V 2 781 777 
+org.apache.hadoop.mapred.QueueManager.getJobQueueInfoMapping()Ljava/util/Map; 1 483 
+org.apache.hadoop.mapreduce.lib.aggregate.ValueAggregatorCombiner.reduce(Lorg/apache/hadoop/io/Text;Ljava/lang/Iterable;Lorg/apache/hadoop/mapreduce/Reducer$Context;)V 2 55 60 
+org.apache.hadoop.mapred.JobTracker.addJobForCleanup(Lorg/apache/hadoop/mapred/JobID;)V 1 2768 
+org.apache.hadoop.mapred.JobTracker.runningJobs()Ljava/util/Vector; 1 2028 
+org.apache.hadoop.mapred.TaskInProgress.getCurrentProgressRate(J)D 1 1220 
+org.apache.hadoop.fs.RawLocalFileSystem.listStatus(Lorg/apache/hadoop/fs/Path;)[Lorg/apache/hadoop/fs/FileStatus; 1 313 
+org.apache.hadoop.metrics.util.MetricsDynamicMBeanBase.invoke(Ljava/lang/String;[Ljava/lang/Object;[Ljava/lang/String;)Ljava/lang/Object; 1 209 
+org.apache.hadoop.hdfs.DFSInputStream.fetchBlockByteRange(Lorg/apache/hadoop/hdfs/protocol/LocatedBlock;JJ[BI)V 1 606 
+org.apache.hadoop.hdfs.server.namenode.LeaseManager.countPath()I 1 99 
+org.apache.hadoop.hdfs.DFSInputStream.read(J[BII)I 1 691 
+org.apache.hadoop.mapred.TaskReport.getRunningTaskAttempts()Ljava/util/Collection; 1 129 
+org.apache.hadoop.mapred.InvalidInputException.getMessage()Ljava/lang/String; 1 62 
+org.apache.hadoop.hdfs.server.namenode.FSDirectory.unprotectedConcat(Ljava/lang/String;[Ljava/lang/String;)V 2 877 886 
+org.apache.hadoop.mapred.Queue.getJobQueueInfo()Lorg/apache/hadoop/mapred/JobQueueInfo; 2 338 346 
+org.apache.hadoop.mapred.TaskRunner.getVMEnvironment(Ljava/lang/String;Ljava/io/File;Lorg/apache/hadoop/mapred/JobConf;Ljava/util/Map;Lorg/apache/hadoop/mapred/TaskAttemptID;J)Ljava/lang/String; 1 586 
+org.apache.hadoop.mapred.TaskMemoryManagerThread.run()V 4 166 182 192 164 
+org.apache.hadoop.mapreduce.tools.CLI.listEvents(Lorg/apache/hadoop/mapreduce/Job;II)V 1 429 
+org.apache.hadoop.io.BytesWritable.toString()Ljava/lang/String; 1 185 
+org.apache.hadoop.mapreduce.lib.output.MultipleOutputs.close()V 1 462 
+org.apache.hadoop.mapreduce.lib.join.CompositeRecordReader.skip(Lorg/apache/hadoop/io/WritableComparable;)V 2 382 385 
+org.apache.hadoop.hdfs.DFSUtil.isValidName(Ljava/lang/String;)Z 1 45 
+org.apache.hadoop.io.file.tfile.Utils.lowerBound(Ljava/util/List;Ljava/lang/Object;Ljava/util/Comparator;)I 1 422 
+org.apache.hadoop.mapreduce.lib.join.Parser$WNode.parse(Ljava/util/List;Lorg/apache/hadoop/conf/Configuration;)V 1 297 
+org.apache.hadoop.conf.Configuration$IntegerRanges.isIncluded(I)Z 1 908 
+org.apache.hadoop.mapreduce.tools.CLI.displayTasks(Lorg/apache/hadoop/mapreduce/Job;Ljava/lang/String;Ljava/lang/String;)V 1 514 
+org.apache.hadoop.util.bloom.DynamicBloomFilter.not()V 1 191 
+org.apache.hadoop.io.DefaultStringifier.storeArray(Lorg/apache/hadoop/conf/Configuration;[Ljava/lang/Object;Ljava/lang/String;)V 1 161 
+org.apache.hadoop.util.UTF8ByteArrayUtils.findNthByte([BIIBI)I 1 81 
+org.apache.hadoop.fs.GlobExpander.expand(Ljava/lang/String;)Ljava/util/List; 1 53 
+org.apache.hadoop.hdfs.server.namenode.INodeFile.diskspaceConsumed([Lorg/apache/hadoop/hdfs/protocol/Block;)J 1 188 
+org.apache.hadoop.hdfs.server.datanode.FSDataset.checkDataDir()V 3 1697 1692 1714 
+org.apache.hadoop.util.bloom.DynamicBloomFilter.xor(Lorg/apache/hadoop/util/bloom/Filter;)V 1 229 
+org.apache.hadoop.metrics.spi.CompositeContext.close()V 1 147 
+org.apache.hadoop.mapred.TaskRunner.getVMSetupCmd()Ljava/util/List; 1 367 
+org.apache.hadoop.mapred.BackupStore.mark()V 1 154 
+org.apache.hadoop.mapred.JobClient.arrayToStringList([Lorg/apache/hadoop/mapreduce/TaskTrackerInfo;)Ljava/util/Collection; 1 693 
+org.apache.hadoop.metrics.ContextFactory.setAttributes()V 1 201 
+org.apache.hadoop.mapred.MapTask$MapOutputBuffer$Buffer.write([BII)V 2 1252 1193 
+org.apache.hadoop.mapred.JobTracker.getTasksToKill(Ljava/lang/String;)Ljava/util/List; 2 2733 2756 
+org.apache.hadoop.hdfs.server.namenode.metrics.FSNamesystemMetrics.doUpdates(Lorg/apache/hadoop/metrics/MetricsContext;)V 1 126 
+org.apache.hadoop.mapreduce.Job.waitForCompletion(Z)Z 1 984 
+org.apache.hadoop.fs.FileUtil.copyMerge(Lorg/apache/hadoop/fs/FileSystem;Lorg/apache/hadoop/fs/Path;Lorg/apache/hadoop/fs/FileSystem;Lorg/apache/hadoop/fs/Path;ZLorg/apache/hadoop/conf/Configuration;Ljava/lang/String;)Z 1 273 
+org.apache.hadoop.mapred.SequenceFileInputFilter$FilterRecordReader.next(Ljava/lang/Object;Ljava/lang/Object;)Z 1 211 
+org.apache.hadoop.util.bloom.CountingBloomFilter.and(Lorg/apache/hadoop/util/bloom/Filter;)V 1 173 
+org.apache.hadoop.http.HttpServer.addFilter(Ljava/lang/String;Ljava/lang/String;Ljava/util/Map;)V 1 325 
+org.apache.hadoop.mapred.JobTracker$FaultInfo.getTrackerFaultReport()Ljava/lang/String; 1 617 
+org.apache.hadoop.io.file.tfile.Compression.getSupportedAlgorithms()[Ljava/lang/String; 1 354 
+org.apache.hadoop.mapred.TaskTracker.getLocalFiles(Lorg/apache/hadoop/mapred/JobConf;Ljava/lang/String;)[Lorg/apache/hadoop/fs/Path; 1 3728 
+org.apache.hadoop.mapred.Task$TaskReporter.run()V 1 604 
+org.apache.hadoop.hdfs.DFSClient$LeaseChecker.close()V 1 1324 
+org.apache.hadoop.mapreduce.jobhistory.JobHistory$HistoryCleaner.run()V 1 523 
+org.apache.hadoop.mapreduce.lib.db.DBRecordReader.getSelectQuery()Ljava/lang/String; 1 120 
+org.apache.hadoop.util.RunJar.main([Ljava/lang/String;)V 1 176 
+org.apache.hadoop.fs.AbstractFileSystem.clearStatistics()V 1 166 
+org.apache.hadoop.conf.Configuration$IntegerRanges.<init>(Ljava/lang/String;)V 1 866 
+org.apache.hadoop.fs.FsShell.stat([CLjava/lang/String;)V 2 868 866 
+org.apache.hadoop.mapred.join.MultiFilterRecordReader.createValue()Lorg/apache/hadoop/io/Writable; 1 99 
+org.apache.hadoop.mapred.JSPUtil.generateJobTable(Ljava/lang/String;Ljava/util/Collection;IILorg/apache/hadoop/mapred/JobConf;)Ljava/lang/String; 2 284 312 
+org.apache.hadoop.mapreduce.util.ProcfsBasedProcessTree.isAnyProcessInTreeAlive()Z 1 259 
+org.apache.hadoop.ipc.metrics.RpcDetailedMetrics.doUpdates(Lorg/apache/hadoop/metrics/MetricsContext;)V 1 73 
+org.apache.hadoop.hdfs.server.datanode.DataBlockScanner.deleteBlocks([Lorg/apache/hadoop/hdfs/protocol/Block;)V 1 309 
+org.apache.hadoop.io.compress.bzip2.CRC.updateCRC(II)V 1 116 
+org.apache.hadoop.hdfs.server.namenode.FSImage.getDirectories(Lorg/apache/hadoop/hdfs/server/namenode/FSImage$NameNodeDirType;)Ljava/util/Collection; 1 312 
+org.apache.hadoop.mapred.JobInProgress.reportCleanupTIPs(Z)Ljava/util/Vector; 1 1001 
+org.apache.hadoop.hdfs.server.namenode.FSDirectory.updateCount([Lorg/apache/hadoop/hdfs/server/namenode/INode;IJJZ)V 1 1244 
+org.apache.hadoop.hdfs.server.namenode.FSDirectory.getFullPathName(Lorg/apache/hadoop/hdfs/server/namenode/INode;)Ljava/lang/String; 2 1296 1302 
+org.apache.hadoop.fs.s3.S3FileSystem.delete(Lorg/apache/hadoop/fs/Path;Z)Z 2 298 313 
+org.apache.hadoop.conf.Configuration.loadResource(Ljava/util/Properties;Ljava/lang/Object;Z)V 3 1482 1500 1467 
+org.apache.hadoop.mapreduce.lib.input.CombineFileRecordReader.nextKeyValue()Z 1 69 
+org.apache.hadoop.io.file.tfile.TFile$Reader$Scanner.inBlockAdvance(Lorg/apache/hadoop/io/file/tfile/RawComparable;Z)Z 1 2008 
+org.apache.hadoop.mapreduce.lib.partition.TotalOrderPartitioner.readPartitions(Lorg/apache/hadoop/fs/FileSystem;Lorg/apache/hadoop/fs/Path;Ljava/lang/Class;Lorg/apache/hadoop/conf/Configuration;)[Lorg/apache/hadoop/io/WritableComparable; 1 301 
+org.apache.hadoop.hdfs.server.namenode.BlocksMap.getCapacity()I 1 183 
+org.apache.hadoop.record.compiler.generated.RccTokenManager.jjMoveNfa_1(II)I 4 93 121 133 86 
+org.apache.hadoop.util.RunJar.unJar(Ljava/io/File;Ljava/io/File;Ljava/util/regex/Pattern;)V 1 75 
+org.apache.hadoop.mapreduce.tools.CLI.getJobPriorityNames()Ljava/lang/String; 1 331 
+org.apache.hadoop.mapreduce.task.reduce.EventFetcher.getMapCompletionEvents()I 1 129 
+org.apache.hadoop.mapreduce.filecache.TrackerDistributedCacheManager.isPublic(Lorg/apache/hadoop/conf/Configuration;Ljava/net/URI;)Z 1 337 
+org.apache.hadoop.mapred.CleanupQueue$PathCleanupThread.run()V 1 130 
+org.apache.hadoop.fs.permission.PermissionParser.applyNormalPattern(Ljava/lang/String;Ljava/util/regex/Matcher;)V 3 83 107 68 
+org.apache.hadoop.mapred.JobQueueInfo.setChildren(Ljava/util/List;)V 1 97 
+org.apache.hadoop.hdfs.server.namenode.BlockInfo.listIsConsistent(Lorg/apache/hadoop/hdfs/server/namenode/DatanodeDescriptor;)Z 1 261 
+org.apache.hadoop.fs.FileSystem.listStatus(Ljava/util/ArrayList;Lorg/apache/hadoop/fs/Path;Lorg/apache/hadoop/fs/PathFilter;)V 1 1034 
+org.apache.hadoop.hdfs.server.namenode.INodeDirectory.computeContentSummary([J)[J 1 375 
+org.apache.hadoop.mapreduce.security.token.JobTokenSelector.selectToken(Lorg/apache/hadoop/io/Text;Ljava/util/Collection;)Lorg/apache/hadoop/security/token/Token; 1 45 
+org.apache.hadoop.util.Shell$ShellCommandExecutor.toString()Ljava/lang/String; 1 407 
+org.apache.hadoop.security.UserGroupInformation.print()V 1 765 
+org.apache.hadoop.io.MapFile$Reader.readIndex()V 1 340 
+org.apache.hadoop.io.MapFile$Reader.binarySearch(Lorg/apache/hadoop/io/WritableComparable;)I 1 520 
+org.apache.hadoop.io.SortedMapWritable.readFields(Ljava/io/DataInput;)V 1 175 
+org.apache.hadoop.hdfs.tools.offlineImageViewer.ImageLoader$LoaderFactory.getLoader(I)Lorg/apache/hadoop/hdfs/tools/offlineImageViewer/ImageLoader; 1 75 
+org.apache.hadoop.conf.Configuration$DeprecatedKeyInfo.getWarningMessage(Ljava/lang/String;)Ljava/lang/String; 1 229 
+org.apache.hadoop.hdfs.server.namenode.FSImage.setCheckpointTime(J)V 1 768 
+org.apache.hadoop.metrics.spi.CompositeContext.isMonitoring()Z 1 138 
+org.apache.hadoop.mapred.join.Parser$CNode.getRecordReader(Lorg/apache/hadoop/mapred/InputSplit;Lorg/apache/hadoop/mapred/JobConf;Lorg/apache/hadoop/mapred/Reporter;)Lorg/apache/hadoop/mapred/join/ComposableRecordReader; 1 424 
+org.apache.hadoop.hdfs.server.datanode.FSDatasetAsyncDiskService.shutdown()V 1 127 
+org.apache.hadoop.hdfs.server.common.Util.stringCollectionAsURIs(Ljava/util/Collection;)Ljava/util/Collection; 1 89 
+org.apache.hadoop.conf.Configuration$IntegerRanges.toString()Ljava/lang/String; 1 920 
+org.apache.hadoop.record.compiler.CppGenerator.genCode(Ljava/lang/String;Ljava/util/ArrayList;Ljava/util/ArrayList;Ljava/lang/String;Ljava/util/ArrayList;)V 2 55 62 
+org.apache.hadoop.hdfs.protocol.DataTransferProtocol$PipelineAck.readFields(Ljava/io/DataInput;)V 1 534 
+org.apache.hadoop.hdfs.server.datanode.FSDataset$FSDir.addBlock(Lorg/apache/hadoop/hdfs/protocol/Block;Ljava/io/File;ZZ)Ljava/io/File; 2 154 171 
+org.apache.hadoop.record.Buffer.hashCode()I 1 193 
+org.apache.hadoop.ipc.Server$Connection.processUnwrappedData([B)V 1 1207 
+org.apache.hadoop.mapred.ClusterStatus.getBlacklistedTrackerNames()Ljava/util/Collection; 1 314 
+org.apache.hadoop.mapreduce.filecache.TrackerDistributedCacheManager$BaseDirManager.checkAndCleanup()V 3 930 939 954 
+org.apache.hadoop.hdfs.protocol.DataTransferProtocol$PipelineAck.write(Ljava/io/DataOutput;)V 1 544 
+org.apache.hadoop.mapred.Counters$Group.makeEscapedCompactString()Ljava/lang/String; 1 229 
+org.apache.hadoop.hdfs.protocol.DataTransferProtocol$PipelineAck.isSuccess()Z 1 520 
+org.apache.hadoop.mapreduce.lib.input.LineRecordReader.nextKeyValue()Z 1 148 
+org.apache.hadoop.mapred.join.InnerJoinRecordReader.combine([Ljava/lang/Object;Lorg/apache/hadoop/mapred/join/TupleWritable;)Z 1 47 
+org.apache.hadoop.util.bloom.CountingBloomFilter.add(Lorg/apache/hadoop/util/bloom/Key;)V 1 113 
+org.apache.hadoop.mapred.CompletedJobStatusStore.run()V 1 111 
+org.apache.hadoop.mapreduce.tools.CLI.getTaskTypess()Ljava/lang/String; 1 339 
+org.apache.hadoop.util.PureJavaCrc32.update([BII)V 2 60 73 
+org.apache.hadoop.hdfs.server.namenode.INodeFile.collectSubtreeBlocksAndClear(Ljava/util/List;)I 1 136 
+org.apache.hadoop.fs.FSInputChecker.checksum2long([B)J 1 337 
+org.apache.hadoop.hdfs.server.balancer.Balancer.chooseTarget(Lorg/apache/hadoop/hdfs/server/balancer/Balancer$Source;Ljava/util/Iterator;Z)Z 1 1150 
+org.apache.hadoop.hdfs.HsftpFileSystem.openConnection(Ljava/lang/String;Ljava/lang/String;)Ljava/net/HttpURLConnection; 1 144 
+org.apache.hadoop.fs.s3.S3FileSystem.mkdirs(Lorg/apache/hadoop/fs/Path;Lorg/apache/hadoop/fs/permission/FsPermission;)Z 2 134 139 
+org.apache.hadoop.hdfs.server.namenode.FSEditLog.logEdit(I[B)V 1 1573 
+org.apache.hadoop.hdfs.server.balancer.Balancer$PendingBlockMove.chooseProxySource()Z 2 305 314 
+org.apache.hadoop.net.SocketIOWithTimeout$SelectorPool.get(Ljava/nio/channels/SelectableChannel;)Lorg/apache/hadoop/net/SocketIOWithTimeout$SelectorPool$SelectorInfo; 1 392 
+org.apache.hadoop.hdfs.server.namenode.FSDirectory.addToParent(Ljava/lang/String;Lorg/apache/hadoop/hdfs/server/namenode/INodeDirectory;Lorg/apache/hadoop/fs/permission/PermissionStatus;[Lorg/apache/hadoop/hdfs/protocol/Block;Ljava/lang/String;SJJJJJ)Lorg/apache/hadoop/hdfs/server/namenode/INodeDirectory; 1 278 
+org.apache.hadoop.hdfs.server.namenode.BlockManager.blockHasEnoughRacks(Lorg/apache/hadoop/hdfs/protocol/Block;)Z 1 1632 
+org.apache.hadoop.record.compiler.generated.Rcc.ReInit(Ljava/io/InputStream;Ljava/lang/String;)V 1 422 
+org.apache.hadoop.hdfs.server.namenode.UnderReplicatedBlocks.remove(Lorg/apache/hadoop/hdfs/protocol/Block;I)Z 1 144 
+org.apache.hadoop.util.bloom.CountingBloomFilter.or(Lorg/apache/hadoop/util/bloom/Filter;)V 1 258 
+org.apache.hadoop.net.NetworkTopology$InnerNode.getLoc(Ljava/lang/String;)Lorg/apache/hadoop/net/Node; 1 234 
+org.apache.hadoop.net.NetworkTopology$InnerNode.getLeaf(ILorg/apache/hadoop/net/Node;)Lorg/apache/hadoop/net/Node; 1 272 
+org.apache.hadoop.mapred.TaskTracker.getNonRunningTasks()Ljava/util/List; 1 3380 
+org.apache.hadoop.hdfs.server.common.JspHelper.bestNode(Lorg/apache/hadoop/hdfs/protocol/LocatedBlock;)Lorg/apache/hadoop/hdfs/protocol/DatanodeInfo; 2 82 79 
+org.apache.hadoop.hdfs.server.common.Storage.writeAll()V 1 795 
+org.apache.hadoop.metrics.spi.AbstractMetricsContext.getAttributeTable(Ljava/lang/String;)Ljava/util/Map; 1 142 
+org.apache.hadoop.mapreduce.lib.join.Parser$CNode.parse(Ljava/util/List;Lorg/apache/hadoop/conf/Configuration;)V 1 462 
+org.apache.hadoop.ipc.metrics.RpcMetrics.doUpdates(Lorg/apache/hadoop/metrics/MetricsContext;)V 1 109 
+org.apache.hadoop.io.compress.DecompressorStream.skip(J)J 1 129 
+org.apache.hadoop.mapreduce.lib.aggregate.ValueAggregatorJob.setAggregatorDescriptors([Ljava/lang/Class;)Lorg/apache/hadoop/conf/Configuration; 1 202 
+org.apache.hadoop.ipc.Server$Listener.run()V 3 428 423 465 
+org.apache.hadoop.hdfs.server.namenode.FSImage.loadDatanodes(ILjava/io/DataInputStream;)V 1 1533 
+org.apache.hadoop.hdfs.server.namenode.FSImage.loadFilesUnderConstruction(ILjava/io/DataInputStream;Lorg/apache/hadoop/hdfs/server/namenode/FSNamesystem;)V 1 1549 
+org.apache.hadoop.mapred.FileInputFormat$MultiPathFilter.accept(Lorg/apache/hadoop/fs/Path;)Z 1 95 
+org.apache.hadoop.hdfs.DFSUtil$ErrorSimulator.initializeErrorSimulationEvent(I)V 1 65 
+org.apache.hadoop.mapred.JobInProgress.reportTasksInProgress(ZZ)Ljava/util/Vector; 1 986 
+org.apache.hadoop.hdfs.server.common.Storage.listStorageDirectories()Ljava/lang/String; 1 187 
+org.apache.hadoop.hdfs.server.namenode.FSEditLog.getStorage(Lorg/apache/hadoop/hdfs/server/namenode/EditLogOutputStream;)Lorg/apache/hadoop/hdfs/server/common/Storage$StorageDirectory; 1 339 
+org.apache.hadoop.hdfs.server.namenode.FSNamesystem.checkFileProgress(Lorg/apache/hadoop/hdfs/server/namenode/INodeFile;Z)Z 1 1637 
+org.apache.hadoop.mapreduce.util.ProcfsBasedProcessTree.getCumulativeVmem(I)J 1 409 
+org.apache.hadoop.hdfs.server.namenode.FSImage.saveINode2Image(Ljava/nio/ByteBuffer;Lorg/apache/hadoop/hdfs/server/namenode/INode;Ljava/io/DataOutputStream;)V 1 1488 
+org.apache.hadoop.hdfs.server.namenode.FSImage.saveImage(Ljava/nio/ByteBuffer;ILorg/apache/hadoop/hdfs/server/namenode/INodeDirectory;Ljava/io/DataOutputStream;)V 2 1509 1515 
+org.apache.hadoop.mapred.QueueManager.getQueueAcls(Lorg/apache/hadoop/security/UserGroupInformation;)[Lorg/apache/hadoop/mapred/QueueAclsInfo; 2 507 504 
+org.apache.hadoop.hdfs.server.namenode.FSNamesystem.concat(Ljava/lang/String;[Ljava/lang/String;)V 3 832 846 887 
+org.apache.hadoop.mapreduce.lib.chain.Chain.startAllThreads()V 1 509 
+org.apache.hadoop.io.compress.bzip2.CBZip2OutputStream.mainSimpleSort(Lorg/apache/hadoop/io/compress/bzip2/CBZip2OutputStream$Data;III)Z 6 1400 1463 1441 1422 1420 1416 
+org.apache.hadoop.hdfs.server.namenode.BackupStorage.convergeJournalSpool()V 1 360 
+org.apache.hadoop.io.compress.bzip2.CBZip2OutputStream.vswap([IIII)V 1 1578 
+org.apache.hadoop.io.compress.bzip2.CBZip2OutputStream.hbMakeCodeLengths([B[ILorg/apache/hadoop/io/compress/bzip2/CBZip2OutputStream$Data;II)V 11 374 394 387 411 441 478 401 490 486 502 378 
+org.apache.hadoop.hdfs.server.namenode.EditLogBackupOutputStream.flushAndSync()V 2 148 146 
+org.apache.hadoop.io.compress.bzip2.CBZip2OutputStream.hbAssignCodes([I[BIII)V 2 891 890 
+org.apache.hadoop.mapreduce.lib.input.CombineFileSplit.<init>([Lorg/apache/hadoop/fs/Path;[J)V 2 67 71 
+org.apache.hadoop.mapred.Merger$MergeQueue.computeBytesInMerges(II)J 3 768 785 779 
+org.apache.hadoop.mapred.Merger$MergeQueue.getSegmentDescriptors(I)Ljava/util/List; 1 745 
+org.apache.hadoop.mapred.Task$TaskReporter.incrCounter(Ljava/lang/String;Ljava/lang/String;J)V 1 578 
+org.apache.hadoop.util.PriorityQueue.clear()V 1 119 
+org.apache.hadoop.mapred.JobTracker$ExpireTrackers.run()V 1 408 
+org.apache.hadoop.mapred.MultiFileSplit.addToSet(Ljava/util/Set;[Ljava/lang/String;)V 1 71 
+org.apache.hadoop.mapred.Merger$MergeQueue.close()V 1 458 
+org.apache.hadoop.mapred.JobTracker.getTasksToSave(Lorg/apache/hadoop/mapred/TaskTrackerStatus;)Ljava/util/List; 1 2810 
+org.apache.hadoop.io.WritableComparator.hashBytes([BII)I 1 169 
+org.apache.hadoop.mapred.TaskTracker.offerService()Lorg/apache/hadoop/mapred/TaskTracker$State; 2 1453 1389 
+org.apache.hadoop.mapred.lib.LongSumReducer.reduce(Ljava/lang/Object;Ljava/util/Iterator;Lorg/apache/hadoop/mapred/OutputCollector;Lorg/apache/hadoop/mapred/Reporter;)V 1 47 
+org.apache.hadoop.hdfs.server.datanode.BlockTransferThrottler.throttle(J)V 1 89 
+org.apache.hadoop.security.authorize.ProxyUsers.authorize(Lorg/apache/hadoop/security/UserGroupInformation;Ljava/lang/String;Lorg/apache/hadoop/conf/Configuration;)V 2 73 90 
+org.apache.hadoop.conf.Configuration.write(Ljava/io/DataOutput;)V 1 1720 
+org.apache.hadoop.hdfs.server.namenode.DatanodeDescriptor.reportDiff(Lorg/apache/hadoop/hdfs/server/namenode/BlockManager;Lorg/apache/hadoop/hdfs/protocol/BlockListAsLongs;Ljava/util/Collection;Ljava/util/Collection;Ljava/util/Collection;Ljava/util/Collection;)V 2 427 439 
+org.apache.hadoop.util.bloom.RetouchedBloomFilter.write(Ljava/io/DataOutput;)V 5 413 410 420 417 424 
+org.apache.hadoop.mapred.lib.FieldSelectionMapReduce.specToString()Ljava/lang/String; 4 116 121 127 132 
+org.apache.hadoop.mapred.JobTracker.finalizeJob(Lorg/apache/hadoop/mapred/JobInProgress;)V 1 1991 
+org.apache.hadoop.util.StringUtils.join(Ljava/lang/CharSequence;Ljava/lang/Iterable;)Ljava/lang/String; 1 717 
+org.apache.hadoop.mapred.JobTracker.activeTaskTrackers()Ljava/util/Collection; 1 2113 
+org.apache.hadoop.mapreduce.Mapper.run(Lorg/apache/hadoop/mapreduce/Mapper$Context;)V 1 143 
+org.apache.hadoop.fs.FileSystem.rename(Lorg/apache/hadoop/fs/Path;Lorg/apache/hadoop/fs/Path;[Lorg/apache/hadoop/fs/Options$Rename;)V 1 837 
+org.apache.hadoop.io.compress.bzip2.CBZip2InputStream.hbCreateDecodeTables([I[I[I[CIII)V 7 650 649 657 662 666 671 679 
+org.apache.hadoop.hdfs.server.namenode.FSEditLog.toBytesWritable([Lorg/apache/hadoop/fs/Options$Rename;)Lorg/apache/hadoop/io/BytesWritable; 1 1725 
+org.apache.hadoop.mapred.Counters$Group.write(Ljava/io/DataOutput;)V 1 332 
+org.apache.hadoop.metrics.spi.CompositeContext.startMonitoring()V 1 114 
+org.apache.hadoop.mapreduce.lib.db.TextSplitter.split(ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/util/List; 1 154 
+org.apache.hadoop.hdfs.server.balancer.Balancer.initNodes([Lorg/apache/hadoop/hdfs/protocol/DatanodeInfo;)J 2 972 988 
+org.apache.hadoop.mapreduce.server.tasktracker.Localizer.initializeJobDirs(Ljava/lang/String;Lorg/apache/hadoop/mapreduce/JobID;)V 1 297 
+org.apache.hadoop.mapred.LimitTasksPerJobTaskScheduler.getMaxMapAndReduceLoad(II)[I 1 181 
+org.apache.hadoop.mapred.jobcontrol.JobControl.addJobs(Ljava/util/Collection;)V 1 90 
+org.apache.hadoop.record.Buffer.compareTo(Ljava/lang/Object;)I 1 209 
+org.apache.hadoop.util.bloom.Filter.add([Lorg/apache/hadoop/util/bloom/Key;)V 1 189 
+org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.nextBlockOutputStream(Ljava/lang/String;)[Lorg/apache/hadoop/hdfs/protocol/DatanodeInfo; 1 803 
+org.apache.hadoop.hdfs.server.balancer.Balancer.run([Ljava/lang/String;)I 1 1496 
+org.apache.hadoop.hdfs.server.namenode.FSNamesystem.updateAccessKey()V 1 2566 
+org.apache.hadoop.io.compress.CompressionCodecFactory.setCodecClasses(Lorg/apache/hadoop/conf/Configuration;Ljava/util/List;)V 1 124 
+org.apache.hadoop.hdfs.server.namenode.BlockManager.chooseUnderReplicatedBlocks(I)Ljava/util/List; 3 717 732 739 
+org.apache.hadoop.hdfs.protocol.DataTransferProtocol$PipelineAck.toString()Ljava/lang/String; 1 553 
+org.apache.hadoop.fs.s3.S3FileSystem.listStatus(Lorg/apache/hadoop/fs/Path;)[Lorg/apache/hadoop/fs/FileStatus; 1 191 
+org.apache.hadoop.fs.BlockLocation.toString()Ljava/lang/String; 1 248 
+org.apache.hadoop.mapred.JobTracker.<init>(Lorg/apache/hadoop/mapred/JobConf;Lorg/apache/hadoop/mapred/Clock;Ljava/lang/String;)V 3 1457 1548 1510 
+org.apache.hadoop.mapred.lib.MultipleInputs.getMapperTypeMap(Lorg/apache/hadoop/mapred/JobConf;)Ljava/util/Map; 1 123 
+org.apache.hadoop.mapreduce.lib.join.TupleWritable.toString()Ljava/lang/String; 1 151 
+org.apache.hadoop.hdfs.server.namenode.FSNamesystem.datanodeDump(Ljava/io/PrintWriter;)V 1 3172 
+org.apache.hadoop.hdfs.server.namenode.FSEditLog.rollEditLog()V 1 1284 
+org.apache.hadoop.util.StringUtils.getStringCollection(Ljava/lang/String;)Ljava/util/Collection; 1 320 
+org.apache.hadoop.fs.DU$DURefreshThread.run()V 1 81 
+org.apache.hadoop.fs.FsShell.ls(Ljava/lang/String;Z)I 1 599 
+org.apache.hadoop.hdfs.tools.JMXGet.main([Ljava/lang/String;)V 1 331 
+org.apache.hadoop.hdfs.server.datanode.DataBlockScanner$LogEntry.parseEntry(Ljava/lang/String;)Lorg/apache/hadoop/hdfs/server/datanode/DataBlockScanner$LogEntry; 1 393 
+org.apache.hadoop.record.compiler.generated.Rcc.<init>(Ljava/io/Reader;)V 1 431 
+org.apache.hadoop.mapreduce.lib.join.Parser.reduce(Ljava/util/Stack;Lorg/apache/hadoop/conf/Configuration;)Lorg/apache/hadoop/mapreduce/lib/join/Parser$Token; 1 486 
+org.apache.hadoop.mapreduce.lib.db.DataDrivenDBRecordReader.getSelectQuery()Ljava/lang/String; 1 98 
+org.apache.hadoop.record.Utils.fromCSVBuffer(Ljava/lang/String;)Lorg/apache/hadoop/record/Buffer; 1 242 
+org.apache.hadoop.hdfs.server.namenode.FSEditLog.revertFileStreams(Ljava/lang/String;)V 1 1383 
+org.apache.hadoop.hdfs.server.namenode.UnderReplicatedBlocks.<init>()V 1 35 
+org.apache.hadoop.mapred.JobClient.displayJobList([Lorg/apache/hadoop/mapred/JobStatus;)V 1 875 
+org.apache.hadoop.mapreduce.JobStatus.write(Ljava/io/DataOutput;)V 1 341 
+org.apache.hadoop.hdfs.server.datanode.DirectoryScanner$ReportCompiler.compileReport(Lorg/apache/hadoop/hdfs/server/datanode/FSDataset$FSVolume;Ljava/io/File;Ljava/util/LinkedList;)Ljava/util/LinkedList; 2 355 336 
+org.apache.hadoop.mapreduce.filecache.TaskDistributedCacheManager.stringifyPathList(Ljava/util/List;)Ljava/lang/String; 1 211 
+org.apache.hadoop.mapred.JobInProgress.cancelReservedSlots()V 2 2902 2908 
+org.apache.hadoop.hdfs.server.datanode.DataBlockScanner.assignInitialVerificationTimes()Z 2 533 561 
+org.apache.hadoop.mapred.lib.FieldSelectionMapReduce.reduce(Lorg/apache/hadoop/io/Text;Ljava/util/Iterator;Lorg/apache/hadoop/mapred/OutputCollector;Lorg/apache/hadoop/mapred/Reporter;)V 1 183 
+org.apache.hadoop.hdfs.tools.offlineImageViewer.DelimitedImageVisitor.writeLine()V 1 122 
+org.apache.hadoop.mapred.lib.Chain.close()V 1 282 
+org.apache.hadoop.io.SortedMapWritable.write(Ljava/io/DataOutput;)V 1 201 
+org.apache.hadoop.mapred.StatisticsCollector$StatUpdater.update()V 1 249 
+org.apache.hadoop.classification.tools.RootDocProcessor.process(Ljava/lang/Object;Ljava/lang/Class;)Ljava/lang/Object; 1 71 
+org.apache.hadoop.mapred.QueueManager.getJobQueueInfos()[Lorg/apache/hadoop/mapred/JobQueueInfo; 1 446 
+org.apache.hadoop.io.TwoDArrayWritable.readFields(Ljava/io/DataInput;)V 3 63 69 68 
+org.apache.hadoop.mapreduce.split.JobSplit$SplitMetaInfo.toString()Ljava/lang/String; 1 137 
+org.apache.hadoop.metrics.spi.Util.parse(Ljava/lang/String;I)Ljava/util/List; 1 58 
+org.apache.hadoop.mapreduce.server.tasktracker.Localizer.initializeAttemptDirs(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V 1 345 
+org.apache.hadoop.fs.FsShell.setReplication(SLorg/apache/hadoop/fs/FileSystem;Lorg/apache/hadoop/fs/Path;ZLjava/util/List;)V 1 549 
+org.apache.hadoop.mapreduce.lib.partition.InputSampler$RandomSampler.getSample(Lorg/apache/hadoop/mapreduce/InputFormat;Lorg/apache/hadoop/mapreduce/Job;)[Ljava/lang/Object; 3 206 220 215 
+org.apache.hadoop.mapred.JobTracker.getSetupTaskReports(Lorg/apache/hadoop/mapred/JobID;)[Lorg/apache/hadoop/mapred/TaskReport; 2 3588 3594 
+org.apache.hadoop.metrics.ganglia.GangliaContext.emitRecord(Ljava/lang/String;Ljava/lang/String;Lorg/apache/hadoop/metrics/spi/OutputRecord;)V 1 129 
+org.apache.hadoop.mapred.lib.NLineInputFormat.getSplits(Lorg/apache/hadoop/mapred/JobConf;I)[Lorg/apache/hadoop/mapred/InputSplit; 2 82 80 
+org.apache.hadoop.hdfs.DFSInputStream.readBuffer([BII)I 1 466 
+org.apache.hadoop.mapred.JobTracker.getJobsForCleanup(Ljava/lang/String;)Ljava/util/List; 1 2792 
+org.apache.hadoop.hdfs.tools.offlineImageViewer.ImageLoaderCurrent.processINodesUC(Ljava/io/DataInputStream;Lorg/apache/hadoop/hdfs/tools/offlineImageViewer/ImageVisitor;Z)V 2 234 215 
+org.apache.hadoop.mapred.TaskTracker$MapEventsFetcherThread.run()V 3 834 847 830 
+org.apache.hadoop.mapred.MapTaskCompletionEventsUpdate.write(Ljava/io/DataOutput;)V 1 58 
+org.apache.hadoop.fs.FsShell.copyToLocal([Ljava/lang/String;I)V 1 197 
+org.apache.hadoop.io.compress.BlockCompressorStream.write([BII)V 3 113 109 130 
+org.apache.hadoop.hdfs.server.namenode.FSNamesystem.newStorageID()Ljava/lang/String; 1 2450 
+org.apache.hadoop.io.SequenceFile$Sorter$SortPass.flush(IIZZLorg/apache/hadoop/io/compress/CompressionCodec;Z)V 1 2588 
+org.apache.hadoop.fs.shell.Command.runAll()I 2 67 58 
+org.apache.hadoop.fs.FsShell.rename([Ljava/lang/String;Lorg/apache/hadoop/conf/Configuration;)I 1 984 
+org.apache.hadoop.mapreduce.tools.CLI.listActiveTrackers(Lorg/apache/hadoop/mapreduce/Cluster;)V 1 471 
+org.apache.hadoop.mapred.join.CompositeRecordReader$JoinCollector.clear()V 1 207 
+org.apache.hadoop.mapreduce.filecache.TrackerDistributedCacheManager.checkURIs([Ljava/net/URI;[Ljava/net/URI;)Z 4 780 795 788 776 
+org.apache.hadoop.fs.s3native.Jets3tNativeFileSystemStore.dump()V 1 211 
+org.apache.hadoop.mapreduce.lib.join.CompositeRecordReader.close()V 1 477 
+org.apache.hadoop.mapred.JobQueueClient.expandQueueList([Lorg/apache/hadoop/mapred/JobQueueInfo;)Ljava/util/List; 1 157 
+org.apache.hadoop.fs.LocalDirAllocator$AllocatorPerContext.ifExists(Ljava/lang/String;Lorg/apache/hadoop/conf/Configuration;)Z 1 414 
+org.apache.hadoop.mapreduce.Counters.write(Ljava/io/DataOutput;)V 1 145 
+org.apache.hadoop.mapreduce.lib.reduce.IntSumReducer.reduce(Ljava/lang/Object;Ljava/lang/Iterable;Lorg/apache/hadoop/mapreduce/Reducer$Context;)V 1 37 
+org.apache.hadoop.mapred.JobTracker.heartbeat(Lorg/apache/hadoop/mapred/TaskTrackerStatus;ZZZS)Lorg/apache/hadoop/mapred/HeartbeatResponse; 1 2450 
+org.apache.hadoop.mapred.ReduceTask.getMapFiles(Lorg/apache/hadoop/fs/FileSystem;Z)[Lorg/apache/hadoop/fs/Path; 2 185 190 
+org.apache.hadoop.security.SaslInputStream.read()I 1 184 
+org.apache.hadoop.mapred.Counters$Group.getCounter(Ljava/lang/String;)J 1 271 
+org.apache.hadoop.hdfs.server.namenode.NamenodeFsck.listCorruptFiles()V 1 217 
+org.apache.hadoop.mapred.LocalJobRunner$Job.initCounters(I)V 1 282 
+org.apache.hadoop.mapreduce.tools.CLI.displayJobList([Lorg/apache/hadoop/mapreduce/Job;)V 1 531 
+org.apache.hadoop.fs.Path.depth()I 1 292 
+org.apache.hadoop.fs.s3native.NativeS3FileSystem.rename(Lorg/apache/hadoop/fs/Path;Lorg/apache/hadoop/fs/Path;)Z 3 602 601 610 
+org.apache.hadoop.hdfs.server.namenode.BlockManager.processPendingReplications()V 1 994 
+org.apache.hadoop.hdfs.server.namenode.FSDirectory.verifyQuota([Lorg/apache/hadoop/hdfs/server/namenode/INode;IJJLorg/apache/hadoop/hdfs/server/namenode/INode;)V 1 1441 
+org.apache.hadoop.mapred.JobQueueClient.printJobQueueInfo(Lorg/apache/hadoop/mapred/JobQueueInfo;Ljava/io/Writer;)V 1 128 
+org.apache.hadoop.hdfs.server.namenode.BlockInfoUnderConstruction.setExpectedLocations([Lorg/apache/hadoop/hdfs/server/namenode/DatanodeDescriptor;)V 1 166 
+org.apache.hadoop.mapred.TaskTrackerStatus.readFields(Ljava/io/DataInput;)V 1 683 
+org.apache.hadoop.http.HtmlQuoting.main([Ljava/lang/String;)V 1 198 
+org.apache.hadoop.mapreduce.lib.chain.Chain$ChainBlockingQueue.enqueue(Ljava/lang/Object;)V 1 879 
+org.apache.hadoop.io.file.tfile.TFile$Reader$Scanner.inBlockAdvance(J)V 1 1979 
+org.apache.hadoop.hdfs.server.namenode.NamenodeJspHelper$XMLBlockInfo.getLocalParentDir(Lorg/apache/hadoop/hdfs/server/namenode/INode;)Ljava/lang/String; 1 608 
+org.apache.hadoop.hdfs.server.namenode.DatanodeDescriptor.getLeaseRecoveryCommand(I)Lorg/apache/hadoop/hdfs/server/protocol/BlockRecoveryCommand; 1 358 
+org.apache.hadoop.mapred.TaskInProgress.getSplitNodes()Ljava/lang/String; 1 1176 
+org.apache.hadoop.mapred.Counters.equals(Ljava/lang/Object;)Z 1 735 
+org.apache.hadoop.mapreduce.lib.join.WrappedRecordReader.accept(Lorg/apache/hadoop/mapreduce/lib/join/CompositeRecordReader$JoinCollector;Lorg/apache/hadoop/io/WritableComparable;)V 1 167 
+org.apache.hadoop.mapred.JobInProgress.printCache(Ljava/util/Map;)V 2 469 466 
+org.apache.hadoop.mapreduce.jobhistory.HistoryViewer$AnalyzedJob.<init>(Lorg/apache/hadoop/mapreduce/jobhistory/JobHistoryParser$JobInfo;)V 2 720 717 
+org.apache.hadoop.io.file.tfile.TFile$Reader$Scanner$Entry.writeValue(Ljava/io/OutputStream;)J 1 1747 
+org.apache.hadoop.security.UserGroupInformation.getTokens()Ljava/util/Collection; 1 628 
+org.apache.hadoop.util.bloom.BloomFilter.write(Ljava/io/DataOutput;)V 1 203 
+org.apache.hadoop.record.compiler.JRecord$JavaRecord.<init>(Lorg/apache/hadoop/record/compiler/JRecord;Ljava/lang/String;Ljava/util/ArrayList;)V 1 51 
+org.apache.hadoop.hdfs.server.protocol.BlocksWithLocations.write(Ljava/io/DataOutput;)V 1 109 
+org.apache.hadoop.mapred.join.Parser$CNode.setKeyComparator(Ljava/lang/Class;)V 1 367 
+org.apache.hadoop.mapreduce.lib.db.DBInputFormat.getSplits(Lorg/apache/hadoop/mapreduce/JobContext;)Ljava/util/List; 1 258 
+org.apache.hadoop.mapred.join.CompositeRecordReader$JoinCollector.replay(Lorg/apache/hadoop/mapred/join/TupleWritable;)Z 1 278 
+org.apache.hadoop.hdfs.server.namenode.FSNamesystem.appendFile(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/apache/hadoop/hdfs/protocol/LocatedBlock; 2 1351 1370 
+org.apache.hadoop.io.MD5Hash.halfDigest()J 1 131 
+org.apache.hadoop.mapred.BackupStore.reset()V 1 191 
+org.apache.hadoop.mapred.TaskTracker.getTasksFromRunningJobs()Ljava/util/List; 2 3398 3395 
+org.apache.hadoop.mapred.Task$ValuesIterator.nextKey()V 1 1166 
+org.apache.hadoop.mapred.join.CompositeRecordReader.createInternalValue()Lorg/apache/hadoop/mapred/join/TupleWritable; 1 427 
+org.apache.hadoop.hdfs.server.namenode.FSEditLog.divertFileStreams(Ljava/lang/String;)V 1 1317 
+org.apache.hadoop.mapred.JvmManager$JvmManagerForType.stop()V 1 303 
+org.apache.hadoop.hdfs.tools.offlineImageViewer.ImageLoaderCurrent.canLoadVersion(I)Z 1 127 
+org.apache.hadoop.mapred.QueueManager.setQueues([Lorg/apache/hadoop/mapred/Queue;)V 1 541 
+org.apache.hadoop.io.WritableUtils.writeVLong(Ljava/io/DataOutput;J)V 2 278 287 
+org.apache.hadoop.hdfs.server.namenode.LeaseManager$Monitor.run()V 1 367 
+org.apache.hadoop.mapred.TaskTracker.getRunningTaskStatuses()Ljava/util/List; 1 3368 
+org.apache.hadoop.conf.Configuration.set(Ljava/lang/String;Ljava/lang/String;)V 1 583 
+org.apache.hadoop.io.serializer.SerializationFactory.<init>(Lorg/apache/hadoop/conf/Configuration;)V 1 58 
+org.apache.hadoop.mapreduce.lib.join.WrappedRecordReader.skip(Lorg/apache/hadoop/io/WritableComparable;)V 1 151 
+org.apache.hadoop.mapreduce.task.reduce.Fetcher.run()V 1 142 
+org.apache.hadoop.fs.Trash.moveToTrash(Lorg/apache/hadoop/fs/Path;)Z 2 145 127 
+org.apache.hadoop.net.SocketIOWithTimeout$SelectorPool.trimIdleSelectors(J)V 2 444 440 
+org.apache.hadoop.mapred.FileInputFormat.identifyHosts(ILjava/util/Map;)[Ljava/lang/String; 2 605 595 
+org.apache.hadoop.fs.s3.S3OutputStream.write([BII)V 1 123 
+org.apache.hadoop.metrics.spi.CompositeContext.stopMonitoring()V 1 126 
+org.apache.hadoop.mapred.Child$3.run()V 1 125 
+org.apache.hadoop.mapreduce.split.JobSplit$SplitMetaInfo.write(Ljava/io/DataOutput;)V 1 124 
+org.apache.hadoop.fs.FsShell.copy([Ljava/lang/String;Lorg/apache/hadoop/conf/Configuration;)I 1 1068 
+org.apache.hadoop.metrics.ContextFactory.getAttributeNames()[Ljava/lang/String; 1 88 
+org.apache.hadoop.mapred.SortedRanges.remove(Lorg/apache/hadoop/mapred/SortedRanges$Range;)V 1 160 
+org.apache.hadoop.fs.FileSystem$GlobFilter.setRegex(Ljava/lang/String;)V 1 1325 
+org.apache.hadoop.io.DefaultStringifier.loadArray(Lorg/apache/hadoop/conf/Configuration;Ljava/lang/String;Ljava/lang/Class;)[Ljava/lang/Object; 1 191 
+org.apache.hadoop.mapreduce.lib.chain.ChainMapper.run(Lorg/apache/hadoop/mapreduce/Mapper$Context;)V 1 156 
+org.apache.hadoop.mapred.TaskTracker$TaskLauncher.run()V 3 2156 2168 2151 
+org.apache.hadoop.record.compiler.CGenerator.genCode(Ljava/lang/String;Ljava/util/ArrayList;Ljava/util/ArrayList;Ljava/lang/String;Ljava/util/ArrayList;)V 1 51 
+org.apache.hadoop.io.SequenceFile$Metadata.toString()Ljava/lang/String; 1 782 
+org.apache.hadoop.fs.FileUtil.fullyDeleteContents(Ljava/io/File;)Z 1 98 
+org.apache.hadoop.hdfs.server.namenode.FSNamesystem.getCompleteBlocksTotal()J 3 3832 3846 3831 
+org.apache.hadoop.hdfs.server.namenode.FSImage.readINodeUnderConstruction(Ljava/io/DataInputStream;)Lorg/apache/hadoop/hdfs/server/namenode/INodeFileUnderConstruction; 2 1590 1607 
+org.apache.hadoop.hdfs.protocol.LocatedBlocks.insertRange(ILjava/util/List;)V 1 144 
+org.apache.hadoop.mapreduce.lib.join.TupleWritable.readBitSet(Ljava/io/DataInput;ILjava/util/BitSet;)V 3 283 291 289 
+org.apache.hadoop.ipc.Server.stop()V 1 1550 
+org.apache.hadoop.hdfs.server.namenode.FSEditLog.logEdit(B[Lorg/apache/hadoop/io/Writable;)V 1 861 
+org.apache.hadoop.ipc.WritableRpcEngine$Invocation.readFields(Ljava/io/DataInput;)V 1 77 
+org.apache.hadoop.util.ProgramDriver.printUsage(Ljava/util/Map;)V 1 88 
+org.apache.hadoop.mapred.join.Parser$CNode.toString()Ljava/lang/String; 1 448 
+org.apache.hadoop.io.file.tfile.TFileDumper.dumpInfo(Ljava/lang/String;Ljava/io/PrintStream;Lorg/apache/hadoop/conf/Configuration;)V 9 121 142 170 177 223 231 210 252 277 
+org.apache.hadoop.mapred.join.Parser$CNode.parse(Ljava/util/List;Lorg/apache/hadoop/mapred/JobConf;)V 1 435 
+org.apache.hadoop.util.PriorityQueue.upHeap()V 1 128 
+org.apache.hadoop.util.AsyncDiskService.shutdown()V 1 114 
+org.apache.hadoop.mapreduce.lib.join.CompositeInputSplit.getLocations()[Ljava/lang/String; 2 102 99 
+org.apache.hadoop.mapreduce.Job.shouldDownloadProfile()Z 2 1067 1059 
+org.apache.hadoop.mapreduce.server.tasktracker.Localizer.initializeUserDirs(Ljava/lang/String;)V 1 209 
+org.apache.hadoop.mapreduce.lib.aggregate.ValueAggregatorReducer.reduce(Lorg/apache/hadoop/io/Text;Ljava/lang/Iterable;Lorg/apache/hadoop/mapreduce/Reducer$Context;)V 1 65 
+org.apache.hadoop.ipc.Client$Connection.cleanupCalls()V 1 744 
+org.apache.hadoop.mapreduce.tools.CLI.listJobs(Lorg/apache/hadoop/mapreduce/Cluster;)V 1 448 
+org.apache.hadoop.io.TwoDArrayWritable.write(Ljava/io/DataOutput;)V 3 86 90 89 
+org.apache.hadoop.mapreduce.Cluster.getJobs([Lorg/apache/hadoop/mapreduce/JobStatus;)[Lorg/apache/hadoop/mapreduce/Job; 1 118 
+org.apache.hadoop.record.compiler.generated.RccTokenManager.jjCheckNAddStates(II)V 1 68 
+org.apache.hadoop.hdfs.DFSOutputStream.getPipeline()[Lorg/apache/hadoop/hdfs/protocol/DatanodeInfo; 1 1008 
+org.apache.hadoop.security.SaslRpcClient$SaslClientCallbackHandler.handle([Ljavax/security/auth/callback/Callback;)V 1 248 
+org.apache.hadoop.hdfs.server.namenode.FSEditLog.checkBackupRegistration(Lorg/apache/hadoop/hdfs/server/protocol/NamenodeRegistration;)Z 1 1689 
+org.apache.hadoop.mapred.SortedRanges.readFields(Ljava/io/DataInput;)V 1 192 
+org.apache.hadoop.mapred.LocalJobRunner$Job.getMapTaskRunnables([Lorg/apache/hadoop/mapreduce/split/JobSplit$TaskSplitMetaInfo;Lorg/apache/hadoop/mapred/JobID;Ljava/util/Map;)Ljava/util/List; 1 265 
+org.apache.hadoop.hdfs.server.namenode.BlockManager.getNodes(Lorg/apache/hadoop/hdfs/server/namenode/BlockInfo;)[Lorg/apache/hadoop/hdfs/server/namenode/DatanodeDescriptor; 1 1474 
+org.apache.hadoop.io.file.tfile.BCFile$DataIndex.write(Ljava/io/DataOutput;)V 1 898 
+org.apache.hadoop.mapreduce.CounterGroup.write(Ljava/io/DataOutput;)V 1 129 
+org.apache.hadoop.mapred.JobTracker.getBlacklistedTrackers()[Lorg/apache/hadoop/mapreduce/TaskTrackerInfo; 1 3200 
+org.apache.hadoop.mapreduce.lib.map.TokenCounterMapper.map(Ljava/lang/Object;Lorg/apache/hadoop/io/Text;Lorg/apache/hadoop/mapreduce/Mapper$Context;)V 1 44 
+org.apache.hadoop.hdfs.server.datanode.FSDataset$FSDir.recoverTempUnlinkedBlock()V 1 200 
+org.apache.hadoop.util.bloom.CountingBloomFilter.delete(Lorg/apache/hadoop/util/bloom/Key;)V 1 146 
+org.apache.hadoop.record.compiler.generated.ParseException.getMessage()Ljava/lang/String; 3 133 129 143 
+org.apache.hadoop.hdfs.server.datanode.DataBlockScanner.init()V 2 223 235 
+org.apache.hadoop.mapreduce.jobhistory.JobHistory$HistoryCleaner.doCleanup()V 2 541 552 
+org.apache.hadoop.mapreduce.lib.input.CombineFileInputFormat$MultiPathFilter.toString()Ljava/lang/String; 1 619 
+org.apache.hadoop.mapreduce.task.reduce.EventFetcher.run()V 1 66 
+org.apache.hadoop.io.MapFile.main([Ljava/lang/String;)V 1 711 
+org.apache.hadoop.hdfs.server.namenode.BackupNode.registerWith(Lorg/apache/hadoop/hdfs/server/protocol/NamespaceInfo;)V 1 298 
+org.apache.hadoop.mapred.Counters.makeCompactString()Ljava/lang/String; 2 588 587 
+org.apache.hadoop.mapreduce.task.reduce.ShuffleScheduler.getMapsForHost(Lorg/apache/hadoop/mapreduce/task/reduce/MapHost;)Ljava/util/List; 2 317 327 
+org.apache.hadoop.mapreduce.JobStatus.readFields(Ljava/io/DataInput;)V 1 368 
+org.apache.hadoop.mapred.TaskTrackerStatus.write(Ljava/io/DataOutput;)V 1 666 
+org.apache.hadoop.util.bloom.DynamicBloomFilter.write(Ljava/io/DataOutput;)V 1 253 
+org.apache.hadoop.mapreduce.lib.input.DelegatingInputFormat.getSplits(Lorg/apache/hadoop/mapreduce/JobContext;)Ljava/util/List; 5 66 86 116 98 75 
+org.apache.hadoop.mapred.JobTracker.updateTaskStatuses(Lorg/apache/hadoop/mapred/TaskTrackerStatus;)V 2 3898 3959 
+org.apache.hadoop.metrics.ganglia.GangliaContext.emitMetric(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V 1 159 
+org.apache.hadoop.mapred.LinuxTaskController.launchTaskJVM(Lorg/apache/hadoop/mapred/TaskController$TaskControllerContext;)V 1 145 
+org.apache.hadoop.io.compress.BlockCompressorStream.finish()V 1 139 
+org.apache.hadoop.mapred.JobInProgress.findNewMapTask(Lorg/apache/hadoop/mapred/TaskTrackerStatus;III)I 2 2165 2204 
+org.apache.hadoop.hdfs.tools.DFSAdmin.setSafeMode([Ljava/lang/String;I)V 1 383 
+org.apache.hadoop.fs.AbstractFileSystem.rename(Lorg/apache/hadoop/fs/Path;Lorg/apache/hadoop/fs/Path;[Lorg/apache/hadoop/fs/Options$Rename;)V 1 561 
+org.apache.hadoop.mapreduce.task.reduce.MergeThread.waitForMerge()V 1 73 
+org.apache.hadoop.mapred.UserLogCleaner.processCompletedJobs()V 1 98 
+org.apache.hadoop.fs.s3.Jets3tFileSystemStore.listDeepSubPaths(Lorg/apache/hadoop/fs/Path;)Ljava/util/Set; 1 281 
+org.apache.hadoop.mapred.JobTracker.lostTaskTracker(Lorg/apache/hadoop/mapreduce/server/jobtracker/TaskTracker;)V 2 4001 4039 
+org.apache.hadoop.mapreduce.lib.join.CompositeRecordReader.getProgress()F 1 491 
+org.apache.hadoop.fs.FileSystem.globStatusInternal(Lorg/apache/hadoop/fs/Path;Lorg/apache/hadoop/fs/PathFilter;)[Lorg/apache/hadoop/fs/FileStatus; 1 1229 
+org.apache.hadoop.hdfs.DFSInputStream.getFinalizedBlockRange(JJ)Ljava/util/List; 1 314 
+org.apache.hadoop.hdfs.server.namenode.LeaseManager.removeLeaseWithPrefixPath(Ljava/lang/String;)V 1 323 
+org.apache.hadoop.mapreduce.lib.join.CompositeRecordReader.createTupleWritable()Lorg/apache/hadoop/mapreduce/lib/join/TupleWritable; 1 460 
+org.apache.hadoop.security.token.delegation.AbstractDelegationTokenSecretManager$ExpiredTokenRemover.run()V 1 350 
+org.apache.hadoop.fs.kfs.KFSImpl.readdirplus(Lorg/apache/hadoop/fs/Path;)[Lorg/apache/hadoop/fs/FileStatus; 2 75 82 
+org.apache.hadoop.record.compiler.generated.RccTokenManager.getNextToken()Lorg/apache/hadoop/record/compiler/generated/Token; 3 739 721 735 
+org.apache.hadoop.io.WritableUtils.writeStringArray(Ljava/io/DataOutput;[Ljava/lang/String;)V 1 131 
+org.apache.hadoop.mapred.JobTracker.getActiveTrackers()[Lorg/apache/hadoop/mapreduce/TaskTrackerInfo; 1 3185 
+org.apache.hadoop.hdfs.server.namenode.Checkpointer.run()V 1 129 
+org.apache.hadoop.security.TokenStorage.readTokensAndLoadInUGI(Ljava/lang/String;Lorg/apache/hadoop/conf/Configuration;Lorg/apache/hadoop/security/UserGroupInformation;)V 1 124 
+org.apache.hadoop.fs.FSInputChecker.readChecksumChunk([BII)I 1 270 
+org.apache.hadoop.mapreduce.Counters.toString()Ljava/lang/String; 2 173 171 
+org.apache.hadoop.record.compiler.generated.Rcc.ReInit(Lorg/apache/hadoop/record/compiler/generated/RccTokenManager;)V 1 456 
+org.apache.hadoop.hdfs.server.datanode.FSDataset$FSVolumeSet.isValid(Lorg/apache/hadoop/hdfs/server/datanode/FSDataset$FSVolume;)Z 1 657 
+org.apache.hadoop.mapred.Counters.toString()Ljava/lang/String; 2 572 570 
+org.apache.hadoop.io.file.tfile.TFile$Reader$Scanner$Entry.getValue([BI)I 1 1864 
+org.apache.hadoop.http.HtmlQuoting.needsQuoting([BII)Z 1 42 
+org.apache.hadoop.mapred.SortedRanges.write(Ljava/io/DataOutput;)V 1 203 
+org.apache.hadoop.util.bloom.RetouchedBloomFilter.addFalsePositive([Lorg/apache/hadoop/util/bloom/Key;)V 1 189 
+org.apache.hadoop.mapreduce.lib.partition.InputSampler$IntervalSampler.getSample(Lorg/apache/hadoop/mapreduce/InputFormat;Lorg/apache/hadoop/mapreduce/Job;)[Ljava/lang/Object; 2 289 284 
+org.apache.hadoop.fs.LocalDirAllocator$AllocatorPerContext.getLocalPathToRead(Ljava/lang/String;Lorg/apache/hadoop/conf/Configuration;)Lorg/apache/hadoop/fs/Path; 1 389 
+org.apache.hadoop.hdfs.server.datanode.DataXceiverServer.run()V 1 131 
+org.apache.hadoop.mapred.TaskTracker$TaskInProgress.taskFinished()V 1 2701 
+org.apache.hadoop.mapred.JobTracker.taskTrackerNames()Ljava/util/List; 1 2138 
+org.apache.hadoop.fs.FileSystem.getUsed()J 1 1582 
+org.apache.hadoop.fs.shell.CommandFormat.<init>(Ljava/lang/String;II[Ljava/lang/String;)V 1 38 
+org.apache.hadoop.mapreduce.lib.db.IntegerSplitter.split(JJJ)Ljava/util/List; 1 120 
+org.apache.hadoop.fs.shell.CommandFormat.parse([Ljava/lang/String;I)Ljava/util/List; 1 50 
+org.apache.hadoop.fs.Trash$Emptier.run()V 2 246 265 
+org.apache.hadoop.fs.FileSystem.getStatistics()Ljava/util/Map; 1 1974 
+org.apache.hadoop.io.MapFile$Reader.finalKey(Lorg/apache/hadoop/io/WritableComparable;)V 1 415 
+org.apache.hadoop.fs.FsShell.copyToLocal(Lorg/apache/hadoop/fs/FileSystem;Lorg/apache/hadoop/fs/FileStatus;Ljava/io/File;Z)V 1 279 
+org.apache.hadoop.hdfs.server.namenode.NamenodeFsck.check(Ljava/lang/String;Lorg/apache/hadoop/hdfs/protocol/HdfsFileStatus;Lorg/apache/hadoop/hdfs/server/namenode/NamenodeFsck$Result;)V 4 256 250 353 296 
+org.apache.hadoop.mapred.lib.aggregate.ValueAggregatorCombiner.reduce(Lorg/apache/hadoop/io/Text;Ljava/util/Iterator;Lorg/apache/hadoop/mapred/OutputCollector;Lorg/apache/hadoop/mapred/Reporter;)V 2 62 67 
+org.apache.hadoop.fs.FileSystem.globPathsLevel([Lorg/apache/hadoop/fs/Path;[Ljava/lang/String;I[Z)[Lorg/apache/hadoop/fs/Path; 1 1275 
+org.apache.hadoop.hdfs.server.namenode.NameNode.addBlock(Ljava/lang/String;Ljava/lang/String;Lorg/apache/hadoop/hdfs/protocol/Block;[Lorg/apache/hadoop/hdfs/protocol/DatanodeInfo;)Lorg/apache/hadoop/hdfs/protocol/LocatedBlock; 1 686 
+org.apache.hadoop.util.bloom.CountingBloomFilter.readFields(Ljava/io/DataInput;)V 1 306 
+org.apache.hadoop.hdfs.server.datanode.DataNode.startDataNode(Lorg/apache/hadoop/conf/Configuration;Ljava/util/AbstractList;Lorg/apache/hadoop/hdfs/server/protocol/DatanodeProtocol;)V 1 433 
+org.apache.hadoop.mapred.join.CompositeRecordReader$JoinCollector.reset(Lorg/apache/hadoop/io/WritableComparable;)V 1 196 
+org.apache.hadoop.mapreduce.util.LinuxResourceCalculatorPlugin.readProcStatFile()V 1 268 
+org.apache.hadoop.mapred.join.CompositeInputSplit.getLocations()[Ljava/lang/String; 2 96 93 
+org.apache.hadoop.hdfs.server.namenode.DatanodeDescriptor.addBlocksToBeInvalidated(Ljava/util/List;)V 1 324 
+org.apache.hadoop.mapreduce.lib.input.SequenceFileInputFilter$FilterRecordReader.nextKeyValue()Z 1 305 
+org.apache.hadoop.mapred.jobcontrol.JobControl.castToJobList(Ljava/util/List;)Ljava/util/ArrayList; 1 46 
+org.apache.hadoop.record.compiler.generated.Rcc.<init>(Lorg/apache/hadoop/record/compiler/generated/RccTokenManager;)V 1 448 
+org.apache.hadoop.hdfs.protocol.LocatedBlocks.write(Ljava/io/DataOutput;)V 1 202 
+org.apache.hadoop.hdfs.server.namenode.FSDirectory.replaceNode(Ljava/lang/String;Lorg/apache/hadoop/hdfs/server/namenode/INodeFile;Lorg/apache/hadoop/hdfs/server/namenode/INodeFile;Z)V 1 1060 
+org.apache.hadoop.io.file.tfile.BCFile$DataIndex.<init>(Ljava/io/DataInput;)V 1 867 
+org.apache.hadoop.record.compiler.CodeBuffer.append(Ljava/lang/String;)V 1 70 
+org.apache.hadoop.io.SequenceFile$CompressedBytes.writeUncompressedBytes(Ljava/io/DataOutputStream;)V 1 666 
+org.apache.hadoop.fs.FileSystem.processDeleteOnExit()V 1 934 
+org.apache.hadoop.hdfs.server.namenode.NamenodeFsck.lostFoundMove(Ljava/lang/String;Lorg/apache/hadoop/hdfs/protocol/HdfsFileStatus;Lorg/apache/hadoop/hdfs/protocol/LocatedBlocks;)V 1 418 
+org.apache.hadoop.mapred.TaskRunner.launchJvmAndWait(Ljava/util/List;Ljava/util/Vector;Ljava/io/File;Ljava/io/File;JLjava/io/File;Ljava/util/Map;)V 1 279 
+org.apache.hadoop.mapreduce.lib.input.CombineFileInputFormat$MultiPathFilter.accept(Lorg/apache/hadoop/fs/Path;)Z 1 608 
+org.apache.hadoop.mapred.JobQueueInfo.getChildren()Ljava/util/List; 1 105 
+org.apache.hadoop.mapred.JvmManager$JvmManagerForType.getDetails()Ljava/lang/String; 1 386 
+org.apache.hadoop.fs.GlobExpander.expandLeftmost(Lorg/apache/hadoop/fs/GlobExpander$StringWithOffset;)Ljava/util/List; 2 87 128 
+org.apache.hadoop.mapred.lib.CombineFileRecordReader.next(Ljava/lang/Object;Ljava/lang/Object;)Z 1 62 
+org.apache.hadoop.mapred.JobTracker.addJob(Lorg/apache/hadoop/mapred/JobID;Lorg/apache/hadoop/mapred/JobInProgress;)Lorg/apache/hadoop/mapred/JobStatus; 1 3054 
+org.apache.hadoop.hdfs.server.datanode.DataBlockScanner$LogFileHandler.updateCurNumLines()V 1 808 
+org.apache.hadoop.mapreduce.lib.db.DBOutputFormat.constructQuery(Ljava/lang/String;[Ljava/lang/String;)Ljava/lang/String; 2 145 155 
+org.apache.hadoop.mapred.JobQueueTaskScheduler.exceededPadding(ZLorg/apache/hadoop/mapred/ClusterStatus;I)Z 1 279 
+org.apache.hadoop.hdfs.DFSOutputStream.completeFile(Lorg/apache/hadoop/hdfs/protocol/Block;)V 1 1405 
+org.apache.hadoop.record.compiler.generated.Rcc.RecordList()Ljava/util/ArrayList; 1 229 
+org.apache.hadoop.hdfs.server.namenode.FSEditLog.logJSpoolStart(Lorg/apache/hadoop/hdfs/server/protocol/NamenodeRegistration;Lorg/apache/hadoop/hdfs/server/protocol/NamenodeRegistration;)V 1 1551 
+org.apache.hadoop.hdfs.protocol.DirectoryListing.write(Ljava/io/DataOutput;)V 1 122 
+org.apache.hadoop.mapred.Counters$Group.equals(Ljava/lang/Object;)Z 1 252 
+org.apache.hadoop.fs.FSOutputSummer.write([BII)V 1 90 
+org.apache.hadoop.util.bloom.Filter.add(Ljava/util/List;)V 1 163 
+org.apache.hadoop.io.WritableUtils.toByteArray([Lorg/apache/hadoop/io/Writable;)[B 1 413 
+org.apache.hadoop.mapreduce.lib.fieldsel.FieldSelectionReducer.reduce(Lorg/apache/hadoop/io/Text;Ljava/lang/Iterable;Lorg/apache/hadoop/mapreduce/Reducer$Context;)V 1 98 
+org.apache.hadoop.hdfs.server.namenode.BackupStorage.recoverCreateRead(Ljava/util/Collection;Ljava/util/Collection;)V 1 80 
+org.apache.hadoop.io.SequenceFile$Metadata.equals(Lorg/apache/hadoop/io/SequenceFile$Metadata;)Z 1 756 
+org.apache.hadoop.hdfs.server.namenode.BlockManager.getNumberOfRacks(Lorg/apache/hadoop/hdfs/protocol/Block;)I 1 1608 
+org.apache.hadoop.mapred.lib.MultipleOutputFormat.getInputFileBasedOutputFileName(Lorg/apache/hadoop/mapred/JobConf;Ljava/lang/String;)Ljava/lang/String; 1 207 
+org.apache.hadoop.mapred.JobClient.getAllJobs()[Lorg/apache/hadoop/mapred/JobStatus; 1 761 
+org.apache.hadoop.hdfs.protocol.DataTransferProtocol$Sender.opWriteBlock(Ljava/io/DataOutputStream;JJILorg/apache/hadoop/hdfs/protocol/DataTransferProtocol$BlockConstructionStage;JJJLjava/lang/String;Lorg/apache/hadoop/hdfs/protocol/DatanodeInfo;[Lorg/apache/hadoop/hdfs/protocol/DatanodeInfo;Lorg/apache/hadoop/hdfs/security/BlockAccessToken;)V 1 266 
+org.apache.hadoop.hdfs.server.datanode.BlockSender.sendBlock(Ljava/io/DataOutputStream;Ljava/io/OutputStream;Lorg/apache/hadoop/hdfs/server/datanode/BlockTransferThrottler;)J 1 475 
+org.apache.hadoop.mapred.Task$OldCombinerRunner.combine(Lorg/apache/hadoop/mapred/RawKeyValueIterator;Lorg/apache/hadoop/mapred/OutputCollector;)V 1 1358 
+org.apache.hadoop.hdfs.server.datanode.FSDataset$FSVolumeSet.getRemaining()J 1 592 
+org.apache.hadoop.hdfs.server.namenode.BlockManager.getCorruptInodes()[Lorg/apache/hadoop/hdfs/server/namenode/INode; 1 1725 
+org.apache.hadoop.mapred.JobTracker$ExpireLaunchingTasks.run()V 2 331 324 
+org.apache.hadoop.hdfs.server.datanode.DataBlockScanner.printBlockReport(Ljava/lang/StringBuilder;Z)V 1 651 
+org.apache.hadoop.mapred.IFile$Reader.readData([BII)I 1 369 
+org.apache.hadoop.mapreduce.task.reduce.Shuffle.run()Lorg/apache/hadoop/mapred/RawKeyValueIterator; 4 111 119 139 142 
+org.apache.hadoop.mapreduce.lib.db.IntegerSplitter.split(Lorg/apache/hadoop/conf/Configuration;Ljava/sql/ResultSet;Ljava/lang/String;)Ljava/util/List; 1 66 
+org.apache.hadoop.mapreduce.lib.join.CompositeInputFormat.compose(Ljava/lang/String;Ljava/lang/Class;[Lorg/apache/hadoop/fs/Path;)Ljava/lang/String; 1 182 
+org.apache.hadoop.mapred.JobQueueClient.displayQueueList()V 1 144 
+org.apache.hadoop.mapreduce.filecache.TrackerDistributedCacheManager$CleanupThread.run()V 1 890 
+org.apache.hadoop.hdfs.tools.HDFSConcat.main([Ljava/lang/String;)V 1 50 
+org.apache.hadoop.mapred.lib.Chain.configure(Lorg/apache/hadoop/mapred/JobConf;)V 1 178 
+org.apache.hadoop.hdfs.server.datanode.DataNode.offerService()V 1 796 
+org.apache.hadoop.hdfs.server.protocol.BlockRecoveryCommand.write(Ljava/io/DataOutput;)V 1 152 
+org.apache.hadoop.hdfs.server.balancer.Balancer.chooseSource(Lorg/apache/hadoop/hdfs/server/balancer/Balancer$BalancerDatanode;Ljava/util/Iterator;Z)Z 1 1198 
+org.apache.hadoop.hdfs.DFSClient$LeaseChecker.run()V 1 1379 
+org.apache.hadoop.mapred.Counters.makeEscapedCompactString()Ljava/lang/String; 1 612 
+org.apache.hadoop.mapreduce.lib.jobcontrol.JobControl.addJobCollection(Ljava/util/Collection;)V 1 176 
+org.apache.hadoop.mapreduce.CounterGroup.incrAllCounters(Lorg/apache/hadoop/mapreduce/CounterGroup;)V 1 188 
+org.apache.hadoop.fs.kfs.KosmosFileSystem.getFileBlockLocations(Lorg/apache/hadoop/fs/FileStatus;JJ)[Lorg/apache/hadoop/fs/BlockLocation; 1 311 
+org.apache.hadoop.io.file.tfile.Chunk$ChunkDecoder.close()V 1 190 
+org.apache.hadoop.io.retry.RetryPolicies$RemoteExceptionDependentRetry.<init>(Lorg/apache/hadoop/io/retry/RetryPolicy;Ljava/util/Map;)V 1 228 
+org.apache.hadoop.io.file.tfile.BCFile$MetaIndex.write(Ljava/io/DataOutput;)V 1 789 
+org.apache.hadoop.mapred.TaskInProgress.generateSingleReport()Lorg/apache/hadoop/mapred/TaskReport; 1 520 
+org.apache.hadoop.mapred.HeartbeatResponse.readFields(Ljava/io/DataInput;)V 1 101 
+org.apache.hadoop.hdfs.server.namenode.FSEditLog.logConcat(Ljava/lang/String;[Ljava/lang/String;J)V 1 1163 
+org.apache.hadoop.mapreduce.lib.output.MultipleOutputs.getNamedOutputsList(Lorg/apache/hadoop/mapreduce/JobContext;)Ljava/util/List; 1 202 
+org.apache.hadoop.hdfs.server.namenode.FSNamesystem.getBlocks(Lorg/apache/hadoop/hdfs/protocol/DatanodeID;J)Lorg/apache/hadoop/hdfs/server/protocol/BlocksWithLocations; 3 605 611 618 
+org.apache.hadoop.mapreduce.lib.jobcontrol.JobControl.run()V 1 267 
+org.apache.hadoop.hdfs.server.namenode.BlockManager.processOverReplicatedBlock(Lorg/apache/hadoop/hdfs/protocol/Block;SLorg/apache/hadoop/hdfs/server/namenode/DatanodeDescriptor;Lorg/apache/hadoop/hdfs/server/namenode/DatanodeDescriptor;)V 1 1232 
+org.apache.hadoop.io.MapWritable.readFields(Ljava/io/DataInput;)V 1 160 
+org.apache.hadoop.conf.Configuration.getLocalPath(Ljava/lang/String;Ljava/lang/String;)Lorg/apache/hadoop/fs/Path; 2 1221 1231 
+org.apache.hadoop.mapred.ClusterStatus.write(Ljava/io/DataOutput;)V 2 426 436 
+org.apache.hadoop.mapreduce.lib.join.CompositeInputSplit.write(Ljava/io/DataOutput;)V 2 126 129 
+org.apache.hadoop.io.file.tfile.Utils.lowerBound(Ljava/util/List;Ljava/lang/Object;)I 1 482 
+org.apache.hadoop.hdfs.tools.offlineImageViewer.IndentedImageVisitor.printIndents()V 1 95 
+org.apache.hadoop.hdfs.server.namenode.FSDirectory.getListing(Ljava/lang/String;[B)Lorg/apache/hadoop/hdfs/protocol/DirectoryListing; 1 1094 
+org.apache.hadoop.hdfs.tools.offlineImageViewer.ImageLoaderCurrent.processDelegationTokens(Ljava/io/DataInputStream;Lorg/apache/hadoop/hdfs/tools/offlineImageViewer/ImageVisitor;)V 2 183 193 
+org.apache.hadoop.mapred.SortedRanges.toString()Ljava/lang/String; 1 212 
+org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode$CheckpointStorage.endCheckpoint()V 1 564 
+org.apache.hadoop.mapreduce.util.MRAsyncDiskService.cleanupAllVolumes()V 2 295 292 
+org.apache.hadoop.mapreduce.task.ReduceContextImpl.nextKey()Z 1 114 
+org.apache.hadoop.mapred.lib.RegexMapper.map(Ljava/lang/Object;Lorg/apache/hadoop/io/Text;Lorg/apache/hadoop/mapred/OutputCollector;Lorg/apache/hadoop/mapred/Reporter;)V 1 59 
+org.apache.hadoop.hdfs.server.datanode.FSDataset.shutdown()V 1 1764 
+org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter.moveTaskOutputs(Lorg/apache/hadoop/mapreduce/TaskAttemptContext;Lorg/apache/hadoop/fs/FileSystem;Lorg/apache/hadoop/fs/Path;Lorg/apache/hadoop/fs/Path;)V 1 213 
+org.apache.hadoop.fs.s3.S3InputStream.<init>(Lorg/apache/hadoop/conf/Configuration;Lorg/apache/hadoop/fs/s3/FileSystemStore;Lorg/apache/hadoop/fs/s3/INode;Lorg/apache/hadoop/fs/FileSystem$Statistics;)V 1 72 
+org.apache.hadoop.io.SequenceFile$Sorter$MergeQueue.getSegmentDescriptors(I)[Lorg/apache/hadoop/io/SequenceFile$Sorter$SegmentDescriptor; 1 3077 
+org.apache.hadoop.security.SaslRpcClient.saslConnect(Ljava/io/InputStream;Ljava/io/OutputStream;)Z 1 163 
+org.apache.hadoop.io.SequenceFile$Sorter$MergeQueue.close()V 1 2890 
+org.apache.hadoop.hdfs.server.namenode.FSNamesystem.internalReleaseLease(Lorg/apache/hadoop/hdfs/server/namenode/LeaseManager$Lease;Ljava/lang/String;Ljava/lang/String;)Z 1 2015 
+org.apache.hadoop.record.Utils.fromCSVString(Ljava/lang/String;)Ljava/lang/String; 1 160 
+org.apache.hadoop.net.NetworkTopology.pseudoSortByDistance(Lorg/apache/hadoop/net/Node;[Lorg/apache/hadoop/net/Node;)V 1 627 
+org.apache.hadoop.fs.Hdfs.listStatus(Lorg/apache/hadoop/fs/Path;)[Lorg/apache/hadoop/fs/FileStatus; 4 226 239 253 245 
+org.apache.hadoop.mapreduce.lib.join.CompositeInputFormat.addUserIdentifiers(Lorg/apache/hadoop/conf/Configuration;)V 1 107 
+org.apache.hadoop.mapreduce.task.reduce.Fetcher.copyFromHost(Lorg/apache/hadoop/mapreduce/task/reduce/MapHost;)V 6 181 226 238 250 262 262 
+org.apache.hadoop.mapreduce.lib.join.Parser$CNode.toString()Ljava/lang/String; 1 475 
+org.apache.hadoop.util.StringUtils.hexStringToByte(Ljava/lang/String;)[B 1 177 
+org.apache.hadoop.hdfs.server.datanode.DataNode.syncBlock(Lorg/apache/hadoop/hdfs/server/protocol/BlockRecoveryCommand$RecoveringBlock;Ljava/util/List;)V 5 1707 1727 1739 1755 1775 
+org.apache.hadoop.hdfs.server.namenode.DatanodeDescriptor$BlockQueue.poll(I)Ljava/util/List; 1 90 
+org.apache.hadoop.http.HtmlQuoting.quoteHtmlChars(Ljava/io/OutputStream;[BII)V 1 80 
+org.apache.hadoop.io.compress.BlockDecompressorStream.getCompressedData()V 1 110 
+org.apache.hadoop.mapred.TaskTracker.buildPathDeletionContexts(Lorg/apache/hadoop/fs/FileSystem;[Lorg/apache/hadoop/fs/Path;)[Lorg/apache/hadoop/mapred/CleanupQueue$PathDeletionContext; 1 1810 
+org.apache.hadoop.mapred.MultiFileSplit.getLocations()[Ljava/lang/String; 1 58 
+org.apache.hadoop.record.compiler.generated.Rcc.ReInit(Ljava/io/Reader;)V 1 440 
+org.apache.hadoop.mapreduce.task.reduce.MergeThread.run()V 2 83 82 
+org.apache.hadoop.mapreduce.Reducer.run(Lorg/apache/hadoop/mapreduce/Reducer$Context;)V 1 168 
+org.apache.hadoop.hdfs.server.namenode.NameNode.parseArguments([Ljava/lang/String;)Lorg/apache/hadoop/hdfs/server/common/HdfsConstants$StartupOption; 1 1302 
+org.apache.hadoop.util.hash.MurmurHash.hash([BII)I 1 48 
+org.apache.hadoop.mapreduce.filecache.TrackerDistributedCacheManager.determineTimestamps(Lorg/apache/hadoop/conf/Configuration;)V 2 652 670 
+org.apache.hadoop.mapreduce.filecache.TrackerDistributedCacheManager.getDelegationTokens(Lorg/apache/hadoop/conf/Configuration;)V 2 696 702 
+org.apache.hadoop.mapred.FileInputFormat.setInputPaths(Lorg/apache/hadoop/mapred/JobConf;[Lorg/apache/hadoop/fs/Path;)V 1 364 
+org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer$ResponseProcessor.run()V 2 623 612 
+org.apache.hadoop.mapred.join.CompositeInputSplit.readFields(Ljava/io/DataInput;)V 2 140 144 
+org.apache.hadoop.util.HeapSort.downHeap(Lorg/apache/hadoop/util/IndexedSortable;III)V 1 34 
+org.apache.hadoop.record.meta.StructTypeID.read(Lorg/apache/hadoop/record/RecordInput;Ljava/lang/String;)V 1 100 
+org.apache.hadoop.mapred.JobTracker.getBlackListedTrackers()Ljava/util/Collection; 2 4462 4455 
+org.apache.hadoop.mapreduce.util.MRAsyncDiskService.<init>(Lorg/apache/hadoop/fs/FileSystem;[Ljava/lang/String;)V 4 76 84 97 93 
+org.apache.hadoop.hdfs.server.datanode.DataStorage.linkBlocks(Ljava/io/File;Ljava/io/File;I)V 1 460 
+org.apache.hadoop.io.MD5Hash.toString()Ljava/lang/String; 1 192 
+org.apache.hadoop.io.Text.utf8Length(Ljava/lang/String;)I 1 578 
+org.apache.hadoop.mapreduce.lib.db.BigDecimalSplitter.split(Lorg/apache/hadoop/conf/Configuration;Ljava/sql/ResultSet;Ljava/lang/String;)Ljava/util/List; 1 75 
+org.apache.hadoop.io.MapWritable.putAll(Ljava/util/Map;)V 1 103 
+org.apache.hadoop.mapreduce.security.TokenCache.obtainTokensForNamenodesInternal([Lorg/apache/hadoop/fs/Path;Lorg/apache/hadoop/conf/Configuration;)V 1 116 
+org.apache.hadoop.mapred.FileInputFormat.getBlockIndex([Lorg/apache/hadoop/fs/BlockLocation;J)I 1 312 
+org.apache.hadoop.util.bloom.CountingBloomFilter.approximateCount(Lorg/apache/hadoop/util/bloom/Key;)I 1 224 
+org.apache.hadoop.metrics.spi.CompositeContext.emitRecord(Ljava/lang/String;Ljava/lang/String;Lorg/apache/hadoop/metrics/spi/OutputRecord;)V 1 86 
+org.apache.hadoop.mapred.JobTracker.checkExpiredTrackers()V 1 437 
+org.apache.hadoop.mapred.JobConf.deleteLocalFiles()V 1 460 
+org.apache.hadoop.mapred.QueueConfigurationParser.parseResource(Lorg/w3c/dom/Element;)Lorg/apache/hadoop/mapred/Queue; 1 198 
+org.apache.hadoop.record.compiler.generated.TokenMgrError.addEscapes(Ljava/lang/String;)Ljava/lang/String; 1 70 
+org.apache.hadoop.mapred.DeprecatedQueueConfigurationParser.getQueueAcls(Ljava/lang/String;Lorg/apache/hadoop/conf/Configuration;)Ljava/util/Map; 1 152 
+org.apache.hadoop.util.Shell.runCommand()V 1 241 
+org.apache.hadoop.mapred.IsolationRunner.makeClassLoader(Lorg/apache/hadoop/mapred/JobConf;Ljava/io/File;)Ljava/lang/ClassLoader; 1 140 
+org.apache.hadoop.hdfs.server.namenode.FSDirectory.getFullPathName([Lorg/apache/hadoop/hdfs/server/namenode/INode;I)Ljava/lang/String; 1 1286 
+org.apache.hadoop.metrics.ganglia.GangliaContext.pad()V 1 224 
+org.apache.hadoop.ipc.Server.channelIO(Ljava/nio/channels/ReadableByteChannel;Ljava/nio/channels/WritableByteChannel;Ljava/nio/ByteBuffer;)I 1 1703 
+org.apache.hadoop.mapred.MapTask$MapOutputBuffer.<init>(Lorg/apache/hadoop/mapred/MapTask;Lorg/apache/hadoop/mapred/TaskUmbilicalProtocol;Lorg/apache/hadoop/mapred/JobConf;Lorg/apache/hadoop/mapred/Task$TaskReporter;)V 1 867 
+org.apache.hadoop.mapreduce.lib.chain.Chain.getChainElementConf(Lorg/apache/hadoop/conf/Configuration;Ljava/lang/String;)Lorg/apache/hadoop/conf/Configuration; 1 594 
+org.apache.hadoop.security.SaslInputStream.unsignedBytesToInt([B)I 1 71 
+org.apache.hadoop.io.SequenceFile$Metadata.write(Ljava/io/DataOutput;)V 1 716 
+org.apache.hadoop.record.compiler.JRecord.<init>(Ljava/lang/String;Ljava/util/ArrayList;)V 1 792 
+org.apache.hadoop.hdfs.server.namenode.BlockManager.processMisReplicatedBlocks()V 1 1185 
+org.apache.hadoop.hdfs.server.namenode.UnderReplicatedBlocks.size()I 1 52 
+org.apache.hadoop.mapreduce.lib.join.CompositeRecordReader$JoinCollector.reset(Lorg/apache/hadoop/io/WritableComparable;)V 1 229 
+org.apache.hadoop.util.StringUtils.byteToHexString([BII)Ljava/lang/String; 1 157 
+org.apache.hadoop.hdfs.server.namenode.BlockManager.getBlockLocations([Lorg/apache/hadoop/hdfs/server/namenode/BlockInfo;JJI)Ljava/util/List; 2 390 405 
+org.apache.hadoop.fs.FileSystem$Cache.closeAll(Z)V 1 1818 
+org.apache.hadoop.hdfs.server.namenode.FSEditLog.loadEditRecords(ILjava/io/DataInputStream;Z)I 2 572 446 
+org.apache.hadoop.hdfs.server.namenode.INodeDirectory.collectSubtreeBlocksAndClear(Ljava/util/List;)I 1 397 
+org.apache.hadoop.util.PriorityQueue.downHeap()V 1 144 
+org.apache.hadoop.io.serializer.SerializationFactory.getSerialization(Ljava/lang/Class;)Lorg/apache/hadoop/io/serializer/Serialization; 1 89 
+org.apache.hadoop.hdfs.server.namenode.FSNamesystem.removePathAndBlocks(Ljava/lang/String;Ljava/util/List;)V 1 1852 
+org.apache.hadoop.mapreduce.lib.input.CombineFileSplit.readFields(Ljava/io/DataInput;)V 3 145 150 155 
+org.apache.hadoop.hdfs.server.namenode.BlockInfo.numNodes()I 1 142 
+org.apache.hadoop.mapred.JobTracker.retireJob(Lorg/apache/hadoop/mapred/JobID;Ljava/lang/String;)V 1 509 
+org.apache.hadoop.mapred.lib.DelegatingInputFormat.getSplits(Lorg/apache/hadoop/mapred/JobConf;I)[Lorg/apache/hadoop/mapred/InputSplit; 5 62 82 108 93 71 
+org.apache.hadoop.hdfs.protocol.DirectoryListing.readFields(Ljava/io/DataInput;)V 1 112 
+org.apache.hadoop.hdfs.server.namenode.FSDirectory.unprotectedUpdateCount([Lorg/apache/hadoop/hdfs/server/namenode/INode;IJJ)V 1 1275 
+org.apache.hadoop.mapred.Counters.fromEscapedCompactString(Ljava/lang/String;)Lorg/apache/hadoop/mapred/Counters; 2 678 658 
+org.apache.hadoop.record.Utils.fromBinaryString(Ljava/io/DataInput;)Ljava/lang/String; 1 367 
+org.apache.hadoop.fs.ftp.FTPFileSystem.listStatus(Lorg/apache/commons/net/ftp/FTPClient;Lorg/apache/hadoop/fs/Path;)[Lorg/apache/hadoop/fs/FileStatus; 1 370 
+org.apache.hadoop.mapred.IFileInputStream.close()V 1 72 
+org.apache.hadoop.mapreduce.jobhistory.JobHistoryParser$TaskInfo.printAll()V 1 447 
+org.apache.hadoop.io.AbstractMapWritable.write(Ljava/io/DataOutput;)V 1 184 
+org.apache.hadoop.fs.FSInputChecker.read([BII)I 1 193 
+org.apache.hadoop.mapred.TaskLog.buildDebugScriptCommandLine(Ljava/util/List;Ljava/lang/String;)Ljava/lang/String; 1 530 
+org.apache.hadoop.mapreduce.lib.join.CompositeRecordReader$JoinCollector.<init>(Lorg/apache/hadoop/mapreduce/lib/join/CompositeRecordReader;I)V 1 200 
+org.apache.hadoop.mapreduce.lib.input.SequenceFileInputFilter$MD5Filter.MD5Hashcode([BII)J 1 282 
+org.apache.hadoop.mapred.StatisticsCollector.update()V 1 89 
+org.apache.hadoop.net.NetworkTopology.countNumOfAvailableNodes(Ljava/lang/String;Ljava/util/Collection;)I 1 562 
+org.apache.hadoop.mapred.TaskLog$Reader.<init>(Lorg/apache/hadoop/mapred/TaskAttemptID;Lorg/apache/hadoop/mapred/TaskLog$LogName;JJZ)V 1 301 
+org.apache.hadoop.util.StringUtils.escapeHTML(Ljava/lang/String;)Ljava/lang/String; 1 655 
+org.apache.hadoop.hdfs.DFSInputStream.blockSeekTo(J)Lorg/apache/hadoop/hdfs/protocol/DatanodeInfo; 1 363 
+org.apache.hadoop.mapred.JobInProgress.findTaskFromList(Ljava/util/Collection;Lorg/apache/hadoop/mapred/TaskTrackerStatus;IZ)Lorg/apache/hadoop/mapred/TaskInProgress; 1 1989 
+org.apache.hadoop.mapred.JobInProgress.scheduleMap(Lorg/apache/hadoop/mapred/TaskInProgress;)V 2 1899 1896 
+org.apache.hadoop.mapred.JobTracker.getParentNode(Lorg/apache/hadoop/net/Node;I)Lorg/apache/hadoop/net/Node; 1 2297 
+org.apache.hadoop.mapred.JobInProgress.getSpeculativeMap(Ljava/lang/String;Ljava/lang/String;)Lorg/apache/hadoop/mapred/TaskInProgress; 1 2260 
+org.apache.hadoop.fs.FsShell.copy(Ljava/lang/String;Ljava/lang/String;Lorg/apache/hadoop/conf/Configuration;)V 1 1036 
+org.apache.hadoop.mapred.JobInProgress.getLocalityLevel(Lorg/apache/hadoop/mapred/TaskInProgress;Lorg/apache/hadoop/mapred/TaskTrackerStatus;)I 1 3430 
+org.apache.hadoop.mapred.JobInProgress.createMapTasks(Ljava/lang/String;[Lorg/apache/hadoop/mapreduce/split/JobSplit$TaskSplitMetaInfo;)V 1 725 
+org.apache.hadoop.util.Shell$1.run()V 1 224 
+org.apache.hadoop.mapreduce.lib.input.NLineInputFormat.getSplitsForFile(Lorg/apache/hadoop/fs/FileStatus;Lorg/apache/hadoop/conf/Configuration;I)Ljava/util/List; 1 106 
+org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.setupPipelineForAppendOrRecovery()Z 2 746 738 
+org.apache.hadoop.fs.s3.MigrationTool.migrate(Lorg/apache/hadoop/fs/s3/MigrationTool$Store;Lorg/apache/hadoop/fs/s3/FileSystemStore;)V 1 170 
+org.apache.hadoop.mapreduce.lib.db.TextSplitter.split(Lorg/apache/hadoop/conf/Configuration;Ljava/sql/ResultSet;Ljava/lang/String;)Ljava/util/List; 2 103 121 
+org.apache.hadoop.hdfs.server.namenode.BlockManager.invalidateWorkForOneNode(Ljava/lang/String;)I 2 1574 1588 
+org.apache.hadoop.classification.tools.RootDocProcessor$ExcludeHandler.exclude(Lcom/sun/javadoc/Doc;)Z 1 181 
+org.apache.hadoop.classification.tools.RootDocProcessor$ExcludeHandler.filter([Lcom/sun/javadoc/Doc;Ljava/lang/Class;)[Ljava/lang/Object; 1 213 
+org.apache.hadoop.hdfs.server.namenode.PendingReplicationBlocks$PendingReplicationMonitor.run()V 1 177 
+org.apache.hadoop.mapred.JobEndNotifier$1.run()V 1 53 
+org.apache.hadoop.io.EnumSetWritable.readFields(Ljava/io/DataInput;)V 1 125 
+org.apache.hadoop.mapreduce.lib.fieldsel.FieldSelectionHelper.selectFields([Ljava/lang/String;Ljava/util/List;ILjava/lang/String;)Ljava/lang/String; 2 124 135 
+org.apache.hadoop.log.LogLevel.process(Ljava/lang/String;)V 1 72 
+org.apache.hadoop.io.compress.bzip2.CBZip2InputStream.skipToNextMarker(JI)Z 1 230 
+org.apache.hadoop.mapreduce.lib.db.FloatSplitter.split(Lorg/apache/hadoop/conf/Configuration;Ljava/sql/ResultSet;Ljava/lang/String;)Ljava/util/List; 1 81 
+org.apache.hadoop.mapred.pipes.PipesReducer.reduce(Lorg/apache/hadoop/io/WritableComparable;Ljava/util/Iterator;Lorg/apache/hadoop/mapred/OutputCollector;Lorg/apache/hadoop/mapred/Reporter;)V 1 66 
+org.apache.hadoop.mapred.TaskRunner.setupWorkDir(Lorg/apache/hadoop/mapred/JobConf;Ljava/io/File;)V 2 734 741 
+org.apache.hadoop.mapreduce.task.reduce.MergeManager.finalMerge(Lorg/apache/hadoop/mapred/JobConf;Lorg/apache/hadoop/fs/FileSystem;Ljava/util/List;Ljava/util/List;)Lorg/apache/hadoop/mapred/RawKeyValueIterator; 1 717 
+org.apache.hadoop.mapred.lib.MultipleOutputs.getNamedOutputsList(Lorg/apache/hadoop/mapred/JobConf;)Ljava/util/List; 1 211 
+org.apache.hadoop.hdfs.server.namenode.FSImage.getFsTimeName()Ljava/io/File; 1 1936 
+org.apache.hadoop.mapred.join.CompositeRecordReader.fillJoinCollector(Lorg/apache/hadoop/io/WritableComparable;)V 1 384 
+org.apache.hadoop.mapred.IndexCache.readIndexFileToCache(Lorg/apache/hadoop/fs/Path;Ljava/lang/String;)Lorg/apache/hadoop/mapred/IndexCache$IndexInformation; 1 95 
+org.apache.hadoop.mapreduce.lib.input.FileInputFormat.getBlockIndex([Lorg/apache/hadoop/fs/BlockLocation;J)I 1 315 
+org.apache.hadoop.fs.ftp.FTPFileSystem.getFileStatus(Lorg/apache/commons/net/ftp/FTPClient;Lorg/apache/hadoop/fs/Path;)Lorg/apache/hadoop/fs/FileStatus; 1 411 
+org.apache.hadoop.fs.Trash.expunge()V 1 187 
+org.apache.hadoop.fs.LocalFileSystem.reportChecksumFailure(Lorg/apache/hadoop/fs/Path;Lorg/apache/hadoop/fs/FSDataInputStream;JLorg/apache/hadoop/fs/FSDataInputStream;J)Z 1 84 
+org.apache.hadoop.io.WritableUtils.displayByteArray([B)V 1 192 
+org.apache.hadoop.mapreduce.lib.join.InnerJoinRecordReader.combine([Ljava/lang/Object;Lorg/apache/hadoop/mapreduce/lib/join/TupleWritable;)Z 1 47 
+org.apache.hadoop.io.compress.CompressorStream.finish()V 1 89 
+org.apache.hadoop.mapreduce.filecache.DistributedCache.releaseCache(Ljava/net/URI;Lorg/apache/hadoop/conf/Configuration;)V 2 267 275 
+org.apache.hadoop.io.WritableUtils.writeCompressedStringArray(Ljava/io/DataOutput;[Ljava/lang/String;)V 1 148 
+org.apache.hadoop.util.MergeSort.mergeSort([I[III)V 3 48 47 73 
+org.apache.hadoop.mapred.JobTracker.getSetupAndCleanupTasks(Lorg/apache/hadoop/mapred/TaskTrackerStatus;)Ljava/util/List; 6 2843 2852 2860 2871 2880 2888 
+org.apache.hadoop.ipc.Server$Listener$Reader.run()V 3 322 327 318 
+org.apache.hadoop.mapreduce.lib.partition.TotalOrderPartitioner.setConf(Lorg/apache/hadoop/conf/Configuration;)V 1 90 
+org.apache.hadoop.mapreduce.lib.fieldsel.FieldSelectionHelper.specToString(Ljava/lang/String;Ljava/lang/String;ILjava/util/List;Ljava/util/List;)Ljava/lang/String; 2 174 179 
+org.apache.hadoop.mapreduce.jobhistory.JobHistoryParser$JobInfo.printAll()V 1 371 
+org.apache.hadoop.io.ArrayWritable.readFields(Ljava/io/DataInput;)V 1 93 
+org.apache.hadoop.fs.ftp.FTPFileSystem.delete(Lorg/apache/commons/net/ftp/FTPClient;Lorg/apache/hadoop/fs/Path;Z)Z 1 310 
+org.apache.hadoop.mapred.JobQueueClient.displayQueueAclsInfoForCurrentUser()V 2 204 200 
+org.apache.hadoop.mapreduce.filecache.TrackerDistributedCacheManager.createAllSymlink(Lorg/apache/hadoop/conf/Configuration;Ljava/io/File;Ljava/io/File;)V 1 540 
+org.apache.hadoop.mapred.pipes.BinaryProtocol$UplinkReaderThread.run()V 1 111 
+org.apache.hadoop.mapreduce.lib.chain.Chain.interruptAllThreads()V 2 533 536 
+org.apache.hadoop.mapred.Task.done(Lorg/apache/hadoop/mapred/TaskUmbilicalProtocol;Lorg/apache/hadoop/mapred/Task$TaskReporter;)V 1 811 
+org.apache.hadoop.hdfs.server.namenode.DatanodeDescriptor.getBlockArray(Ljava/util/Collection;I)[Lorg/apache/hadoop/hdfs/protocol/Block; 1 390 
+org.apache.hadoop.mapred.TaskTracker$1.run()V 1 396 
+org.apache.hadoop.mapred.CompletedJobStatusStore.store(Lorg/apache/hadoop/mapred/JobInProgress;)V 1 170 
+org.apache.hadoop.util.bloom.DynamicBloomFilter.and(Lorg/apache/hadoop/util/bloom/Filter;)V 1 169 
+org.apache.hadoop.io.Text.validateUTF8([BII)V 1 454 
+org.apache.hadoop.hdfs.tools.DFSck.run([Ljava/lang/String;)I 3 117 121 140 
+org.apache.hadoop.util.bloom.RetouchedBloomFilter.addFalsePositive(Lorg/apache/hadoop/util/bloom/Key;)V 1 147 
+org.apache.hadoop.hdfs.server.namenode.INodeDirectory.spaceConsumedInTree(Lorg/apache/hadoop/hdfs/server/namenode/INode$DirCounts;)Lorg/apache/hadoop/hdfs/server/namenode/INode$DirCounts; 1 365 
+org.apache.hadoop.record.compiler.generated.Rcc.<init>(Ljava/io/InputStream;Ljava/lang/String;)V 1 410 
+org.apache.hadoop.security.TokenStorage.readFields(Ljava/io/DataInput;)V 2 162 171 
+org.apache.hadoop.ipc.Client$Connection$PingInputStream.read()I 1 334 
+org.apache.hadoop.hdfs.security.ExportedAccessKeys.write(Ljava/io/DataOutput;)V 1 121 
+org.apache.hadoop.record.Utils.toCSVString(Ljava/lang/String;)Ljava/lang/String; 1 120 
+org.apache.hadoop.hdfs.server.datanode.FSDataset$FSVolumeSet.getCapacity()J 1 584 
+org.apache.hadoop.fs.FsShell$DelayedExceptionThrowing.globAndProcess(Lorg/apache/hadoop/fs/Path;Lorg/apache/hadoop/fs/FileSystem;)V 1 2009 
+org.apache.hadoop.hdfs.server.namenode.FSNamesystem$HeartbeatMonitor.run()V 1 2581 
+org.apache.hadoop.mapred.TaskInProgress.nodeToString([Lorg/apache/hadoop/net/Node;)Ljava/lang/String; 1 1195 
+org.apache.hadoop.fs.FileSystem.getContentSummary(Lorg/apache/hadoop/fs/Path;)Lorg/apache/hadoop/fs/ContentSummary; 1 998 
+org.apache.hadoop.util.bloom.Key.compareTo(Lorg/apache/hadoop/util/bloom/Key;)I 1 173 
+org.apache.hadoop.mapred.TaskController.setup()V 1 80 
+org.apache.hadoop.mapreduce.lib.output.MultipleOutputs.checkTokenName(Ljava/lang/String;)V 1 149 
+org.apache.hadoop.mapreduce.lib.aggregate.UniqValueCount.getCombinerOutput()Ljava/util/ArrayList; 1 126 
+org.apache.hadoop.mapreduce.lib.aggregate.ValueHistogram.getCombinerOutput()Ljava/util/ArrayList; 1 156 
+org.apache.hadoop.io.compress.CompressorStream.write([BII)V 1 74 
+org.apache.hadoop.mapred.TaskTracker$TaskInProgress.addDiagnostics(Ljava/lang/String;ILjava/lang/String;)V 3 2847 2854 2867 
+org.apache.hadoop.mapred.MultiFileSplit.toString()Ljava/lang/String; 1 78 
+org.apache.hadoop.hdfs.server.namenode.FSNamesystem.saveFilesUnderConstruction(Ljava/io/DataOutputStream;)V 2 4331 4330 
+org.apache.hadoop.mapreduce.Counters.countCounters()I 1 122 
+org.apache.hadoop.io.WritableUtils.skipFully(Ljava/io/DataInput;I)V 1 399 
+org.apache.hadoop.hdfs.server.namenode.BlockInfoUnderConstruction.initializeBlockRecovery(J)V 1 233 
+org.apache.hadoop.io.MD5Hash.digest(Ljava/io/InputStream;)Lorg/apache/hadoop/io/MD5Hash; 1 102 
+org.apache.hadoop.mapred.JobTracker.getQueueInfoArray([Lorg/apache/hadoop/mapred/JobQueueInfo;)[Lorg/apache/hadoop/mapreduce/QueueInfo; 1 4241 
+org.apache.hadoop.mapred.Counters.size()I 1 508 
+org.apache.hadoop.hdfs.security.AccessTokenHandler.checkAccess(Lorg/apache/hadoop/hdfs/security/BlockAccessToken;Ljava/lang/String;JLorg/apache/hadoop/hdfs/security/AccessTokenHandler$AccessMode;)Z 1 274 
+org.apache.hadoop.mapred.lib.MultipleInputs.getInputFormatMap(Lorg/apache/hadoop/mapred/JobConf;)Ljava/util/Map; 1 94 
+org.apache.hadoop.ipc.RPC.waitForProxy(Ljava/lang/Class;JLjava/net/InetSocketAddress;Lorg/apache/hadoop/conf/Configuration;J)Ljava/lang/Object; 1 183 
+org.apache.hadoop.mapreduce.lib.input.FileInputFormat.getSplits(Lorg/apache/hadoop/mapreduce/JobContext;)Ljava/util/List; 2 283 272 
+org.apache.hadoop.hdfs.server.namenode.BlockPlacementPolicyDefault.chooseTarget(ILorg/apache/hadoop/hdfs/server/namenode/DatanodeDescriptor;Ljava/util/List;Ljava/util/HashMap;J)[Lorg/apache/hadoop/hdfs/server/namenode/DatanodeDescriptor; 1 121 
+org.apache.hadoop.fs.LocalDirAllocator$AllocatorPerContext.confChanged(Lorg/apache/hadoop/conf/Configuration;)V 1 225 
+org.apache.hadoop.mapreduce.lib.aggregate.ValueAggregatorMapper.map(Lorg/apache/hadoop/io/WritableComparable;Lorg/apache/hadoop/io/Writable;Lorg/apache/hadoop/mapreduce/Mapper$Context;)V 2 59 55 
+org.apache.hadoop.hdfs.server.balancer.Balancer$Source.dispatchBlocks()V 1 736 
+org.apache.hadoop.metrics.spi.CompositeContext.init(Ljava/lang/String;Lorg/apache/hadoop/metrics/ContextFactory;)V 1 64 
+org.apache.hadoop.hdfs.server.datanode.FSDataset$FSVolumeSet.checkDirs()Ljava/util/List; 2 614 632 
+org.apache.hadoop.fs.Options$CreateOpts.getOpt(Ljava/lang/Class;[Lorg/apache/hadoop/fs/Options$CreateOpts;)Lorg/apache/hadoop/fs/Options$CreateOpts; 1 149 
+org.apache.hadoop.mapred.TaskTracker.close()V 2 1196 1233 
+org.apache.hadoop.hdfs.server.namenode.FSNamesystem.heartbeatCheck()V 2 2767 2760 
+org.apache.hadoop.fs.Options$CreateOpts.setOpt(Lorg/apache/hadoop/fs/Options$CreateOpts;[Lorg/apache/hadoop/fs/Options$CreateOpts;)[Lorg/apache/hadoop/fs/Options$CreateOpts; 1 168 
+org.apache.hadoop.security.SaslRpcServer$SaslDigestCallbackHandler.handle([Ljavax/security/auth/callback/Callback;)V 1 176 
+org.apache.hadoop.mapreduce.lib.jobcontrol.JobControl.toList(Ljava/util/Map;)Ljava/util/List; 1 86 
+org.apache.hadoop.hdfs.server.namenode.BlockManager.getBlockLocation(Lorg/apache/hadoop/hdfs/server/namenode/BlockInfo;J)Lorg/apache/hadoop/hdfs/protocol/LocatedBlock; 1 439 
+org.apache.hadoop.io.file.tfile.Chunk$ChunkDecoder.checkEOF()Z 1 122 
+org.apache.hadoop.fs.FsShell.waitForReplication(Ljava/util/List;I)V 3 492 489 481 
+org.apache.hadoop.hdfs.server.datanode.DataNode.handshake()Lorg/apache/hadoop/hdfs/server/protocol/NamespaceInfo; 1 453 
+org.apache.hadoop.mapreduce.filecache.TaskDistributedCacheManager.setup(Lorg/apache/hadoop/fs/LocalDirAllocator;Ljava/io/File;Ljava/lang/String;Ljava/lang/String;)V 1 163 
+org.apache.hadoop.hdfs.server.datanode.DataStorage.recoverTransitionRead(Lorg/apache/hadoop/hdfs/server/protocol/NamespaceInfo;Ljava/util/Collection;Lorg/apache/hadoop/hdfs/server/common/HdfsConstants$StartupOption;)V 2 111 151 
+org.apache.hadoop.fs.s3.INode.serialize()Ljava/io/InputStream; 1 88 
+org.apache.hadoop.mapred.StatisticsCollector.removeStat(Ljava/lang/String;)Lorg/apache/hadoop/mapred/StatisticsCollector$Stat; 1 136 
+org.apache.hadoop.hdfs.server.datanode.FSDataset.<init>(Lorg/apache/hadoop/hdfs/server/datanode/DataStorage;Lorg/apache/hadoop/conf/Configuration;)V 2 867 873 
+org.apache.hadoop.mapreduce.Job.monitorAndPrintJob()Z 1 1014 
+org.apache.hadoop.record.compiler.CodeBuffer.append(C)V 2 82 81 
+org.apache.hadoop.ipc.AvroRpcEngine$BufferListWritable.write(Ljava/io/DataOutput;)V 1 86 
+org.apache.hadoop.ipc.Client$Connection$PingInputStream.read([BII)I 1 350 
+org.apache.hadoop.mapreduce.QueueState.<clinit>()V 1 39 
+org.apache.hadoop.io.WritableUtils.readVLong(Ljava/io/DataInput;)J 1 308 
+org.apache.hadoop.http.HttpServer.start()V 3 505 499 486 
+org.apache.hadoop.mapred.ReduceTaskStatus.readFields(Ljava/io/DataInput;)V 1 145 
+org.apache.hadoop.security.authorize.ServiceAuthorizationManager.refresh(Lorg/apache/hadoop/conf/Configuration;Lorg/apache/hadoop/security/authorize/PolicyProvider;)V 1 101 
+org.apache.hadoop.conf.Configuration.getInstances(Ljava/lang/String;Ljava/lang/Class;)Ljava/util/List; 1 1180 
+org.apache.hadoop.security.token.delegation.AbstractDelegationTokenSecretManager.removeExpiredKeys()V 1 171 
+org.apache.hadoop.io.file.tfile.Compression.getCompressionAlgorithmByName(Ljava/lang/String;)Lorg/apache/hadoop/io/file/tfile/Compression$Algorithm; 1 340 
+org.apache.hadoop.mapreduce.lib.join.CompositeRecordReader$JoinCollector.replay(Lorg/apache/hadoop/mapreduce/lib/join/TupleWritable;)Z 1 311 
+org.apache.hadoop.net.SocketIOWithTimeout.connect(Ljava/nio/channels/SocketChannel;Ljava/net/SocketAddress;I)V 1 203 
+org.apache.hadoop.mapred.JobTracker.removeMarkedTasks(Ljava/lang/String;)V 1 1924 
+org.apache.hadoop.hdfs.server.namenode.NamenodeFsck.copyBlock(Lorg/apache/hadoop/hdfs/DFSClient;Lorg/apache/hadoop/hdfs/protocol/LocatedBlock;Ljava/io/OutputStream;)V 2 478 532 
+org.apache.hadoop.mapreduce.lib.reduce.LongSumReducer.reduce(Ljava/lang/Object;Ljava/lang/Iterable;Lorg/apache/hadoop/mapreduce/Reducer$Context;)V 1 38 
+org.apache.hadoop.hdfs.server.datanode.BlockSender.<init>(Lorg/apache/hadoop/hdfs/protocol/Block;JJZZZLorg/apache/hadoop/hdfs/server/datanode/DataNode;Ljava/lang/String;)V 1 106 
+org.apache.hadoop.fs.GlobExpander.leftmostOuterCurlyContainingSlash(Ljava/lang/String;I)I 1 147 
+org.apache.hadoop.mapreduce.QueueInfo.readFields(Ljava/io/DataInput;)V 2 198 204 
+org.apache.hadoop.mapred.EagerTaskInitializationListener$JobInitManager.run()V 2 54 53 
+org.apache.hadoop.hdfs.server.namenode.BlocksMap.replaceBlock(Lorg/apache/hadoop/hdfs/server/namenode/BlockInfo;)Lorg/apache/hadoop/hdfs/server/namenode/BlockInfo; 1 204 
+org.apache.hadoop.hdfs.server.datanode.BlockSender.sendChunks(Ljava/nio/ByteBuffer;ILjava/io/OutputStream;)I 1 362 
+org.apache.hadoop.mapred.JobTracker.refreshHosts()V 1 4106 
+org.apache.hadoop.hdfs.server.namenode.LeaseManager$Lease.findPath(Lorg/apache/hadoop/hdfs/server/namenode/INodeFileUnderConstruction;)Ljava/lang/String; 1 227 
+org.apache.hadoop.io.IOUtils.cleanup(Lorg/apache/commons/logging/Log;[Ljava/io/Closeable;)V 1 148 
+org.apache.hadoop.io.AbstractMapWritable.readFields(Ljava/io/DataInput;)V 1 199 
+org.apache.hadoop.mapred.lib.aggregate.ValueAggregatorMapper.map(Lorg/apache/hadoop/io/WritableComparable;Lorg/apache/hadoop/io/Writable;Lorg/apache/hadoop/mapred/OutputCollector;Lorg/apache/hadoop/mapred/Reporter;)V 2 54 50 
+org.apache.hadoop.record.compiler.generated.RccTokenManager.jjMoveNfa_0(II)I 4 507 537 566 500 
+org.apache.hadoop.mapreduce.lib.partition.KeyFieldBasedComparator.numericalCompare([BII[BII)I 5 166 172 181 206 213 
+org.apache.hadoop.fs.FileContext$GlobFilter.setRegex(Ljava/lang/String;)V 1 1922 
+org.apache.hadoop.mapred.join.CompositeRecordReader.createKey()Lorg/apache/hadoop/io/WritableComparable; 1 412 
+org.apache.hadoop.mapred.join.OverrideRecordReader.fillJoinCollector(Lorg/apache/hadoop/io/WritableComparable;)V 3 74 85 89 
+org.apache.hadoop.mapreduce.lib.join.CompositeInputFormat.compose(Ljava/lang/String;Ljava/lang/Class;[Ljava/lang/String;)Ljava/lang/String; 1 166 
+org.apache.hadoop.hdfs.server.datanode.DataNode.processCommand([Lorg/apache/hadoop/hdfs/server/protocol/DatanodeCommand;)Z 1 876 
+org.apache.hadoop.hdfs.server.datanode.DataNode.reportReceivedBlocks()V 1 995 
+org.apache.hadoop.metrics.spi.AbstractMetricsContext.timerEvent()V 1 297 
+org.apache.hadoop.hdfs.server.datanode.DataNode.shutdown()V 2 639 668 
+org.apache.hadoop.hdfs.server.datanode.DataStorage.finalizeUpgrade()V 1 392 
+org.apache.hadoop.mapreduce.lib.join.Parser$CNode.createRecordReader(Lorg/apache/hadoop/mapreduce/InputSplit;Lorg/apache/hadoop/mapreduce/TaskAttemptContext;)Lorg/apache/hadoop/mapreduce/lib/join/ComposableRecordReader; 1 450 
+org.apache.hadoop.ipc.Server.join()V 1 1573 
+org.apache.hadoop.security.authorize.AccessControlList.toString()Ljava/lang/String; 2 125 137 
+org.apache.hadoop.hdfs.server.namenode.NameNode.stop()V 1 461 
+org.apache.hadoop.mapred.TaskReport.setRunningTaskAttempts(Ljava/util/Collection;)V 1 118 
+org.apache.hadoop.util.StringUtils.unEscapeString(Ljava/lang/String;C[C)Ljava/lang/String; 1 504 
+org.apache.hadoop.io.file.tfile.Utils.upperBound(Ljava/util/List;Ljava/lang/Object;)I 1 511 
+org.apache.hadoop.hdfs.server.datanode.DataBlockScanner.run()V 1 593 
+org.apache.hadoop.mapred.Task.statusUpdate(Lorg/apache/hadoop/mapred/TaskUmbilicalProtocol;)V 1 862 
+org.apache.hadoop.mapred.MapTask$MapOutputBuffer.flush()V 1 1284 
+org.apache.hadoop.mapreduce.jobhistory.EventWriter.toAvro(Lorg/apache/hadoop/mapreduce/Counters;Ljava/lang/String;)Lorg/apache/hadoop/mapreduce/jobhistory/JhCounters; 2 97 92 
+org.apache.hadoop.ipc.Server$Listener.doAccept(Ljava/nio/channels/SelectionKey;)V 1 491 
+org.apache.hadoop.ipc.Server$Listener.cleanupConnections(Z)V 1 397 
+org.apache.hadoop.io.file.tfile.TFile$Reader$Scanner$Entry.getValue(Lorg/apache/hadoop/io/BytesWritable;)J 1 1706 
+org.apache.hadoop.mapreduce.jobhistory.HistoryViewer.printTasks(Lorg/apache/hadoop/mapreduce/TaskType;Ljava/lang/String;)V 1 397 
+org.apache.hadoop.mapreduce.jobhistory.HistoryViewer.printAllTaskAttempts(Lorg/apache/hadoop/mapreduce/TaskType;)V 2 214 212 
+org.apache.hadoop.mapreduce.jobhistory.HistoryViewer$FilteredJob.<init>(Lorg/apache/hadoop/mapreduce/jobhistory/JobHistoryParser$JobInfo;Ljava/lang/String;)V 2 778 775 
+org.apache.hadoop.mapreduce.jobhistory.HistoryViewer.printFailedAttempts(Lorg/apache/hadoop/mapreduce/jobhistory/HistoryViewer$FilteredJob;)V 2 435 430 
+org.apache.hadoop.hdfs.server.namenode.FSNamesystem.chooseExcessReplicates(Ljava/util/Collection;Lorg/apache/hadoop/hdfs/protocol/Block;SLorg/apache/hadoop/hdfs/server/namenode/DatanodeDescriptor;Lorg/apache/hadoop/hdfs/server/namenode/DatanodeDescriptor;Lorg/apache/hadoop/hdfs/server/namenode/BlockPlacementPolicy;)V 3 2855 2872 2886 
+org.apache.hadoop.mapred.TaskTracker$TaskInProgress.localizeTask(Lorg/apache/hadoop/mapred/Task;)V 1 2452 
+org.apache.hadoop.mapred.JobClient.getJobQueueInfoArray([Lorg/apache/hadoop/mapreduce/QueueInfo;)[Lorg/apache/hadoop/mapred/JobQueueInfo; 1 928 
+org.apache.hadoop.fs.AbstractFileSystem.create(Lorg/apache/hadoop/fs/Path;Ljava/util/EnumSet;[Lorg/apache/hadoop/fs/Options$CreateOpts;)Lorg/apache/hadoop/fs/FSDataOutputStream; 1 405 
+org.apache.hadoop.record.compiler.generated.Rcc.ModuleName()Ljava/lang/String; 1 208 
+org.apache.hadoop.hdfs.server.namenode.FSEditLog.logSync()V 3 956 979 988 
+org.apache.hadoop.conf.Configuration.iterator()Ljava/util/Iterator; 1 1364 
+org.apache.hadoop.mapred.TaskTracker.transmitHeartBeat(J)Lorg/apache/hadoop/mapred/HeartbeatResponse; 2 1613 1634 
+org.apache.hadoop.hdfs.server.namenode.BlockPlacementPolicyDefault.verifyBlockPlacement(Ljava/lang/String;Lorg/apache/hadoop/hdfs/protocol/LocatedBlock;I)I 1 486 
+org.apache.hadoop.mapred.TaskTracker.reinitTaskTracker([Lorg/apache/hadoop/mapred/TaskTrackerAction;)Z 1 1757 
+org.apache.hadoop.mapreduce.task.reduce.Fetcher.getMapOutputURL(Lorg/apache/hadoop/mapreduce/task/reduce/MapHost;Ljava/util/List;)Ljava/net/URL; 1 405 
+org.apache.hadoop.mapred.TaskTracker.markUnresponsiveTasks()V 1 1773 
+org.apache.hadoop.mapreduce.task.reduce.Fetcher.connect(Ljava/net/URLConnection;I)V 1 435 
+org.apache.hadoop.mapred.TaskReport.downgradeArray([Lorg/apache/hadoop/mapreduce/TaskReport;)[Lorg/apache/hadoop/mapred/TaskReport; 1 86 
+org.apache.hadoop.ipc.Client.stop()V 2 837 843 
+org.apache.hadoop.mapreduce.Counters.equals(Ljava/lang/Object;)Z 1 203 
+org.apache.hadoop.mapred.TaskRunner.setupChildMapredLocalDirs(Lorg/apache/hadoop/mapred/Task;Lorg/apache/hadoop/mapred/JobConf;)V 1 656 
+org.apache.hadoop.io.retry.RetryInvocationHandler.invoke(Ljava/lang/Object;Ljava/lang/reflect/Method;[Ljava/lang/Object;)Ljava/lang/Object; 1 59 
+org.apache.hadoop.mapred.ReduceTask$SkippingReduceValuesIterator.mayBeSkip()V 2 277 276 
+org.apache.hadoop.mapreduce.lib.partition.InputSampler.run([Ljava/lang/String;)I 2 349 401 
+org.apache.hadoop.mapred.Task.setConf(Lorg/apache/hadoop/conf/Configuration;)V 1 1069 
+org.apache.hadoop.mapred.JobTracker.markCompletedJob(Lorg/apache/hadoop/mapred/JobInProgress;)V 6 1877 1876 1887 1886 1899 1898 
+org.apache.hadoop.mapred.JobInProgress.getBlackListedTrackers()Ljava/util/List; 1 1793 
+org.apache.hadoop.hdfs.server.namenode.FSImage.rollFSImage(Z)V 1 1662 
+org.apache.hadoop.mapred.TaskLog.getLogFileDetail(Lorg/apache/hadoop/mapred/TaskAttemptID;Lorg/apache/hadoop/mapred/TaskLog$LogName;Z)Lorg/apache/hadoop/mapred/TaskLog$LogFileDetail; 1 126 
+org.apache.hadoop.util.AsyncDiskService.<init>([Ljava/lang/String;)V 1 80 
+org.apache.hadoop.fs.BlockLocation.write(Ljava/io/DataOutput;)V 3 196 201 206 
+org.apache.hadoop.mapreduce.lib.db.TextSplitter.stringToBigDecimal(Ljava/lang/String;)Ljava/math/BigDecimal; 1 188 
+org.apache.hadoop.mapred.JobTracker.failedJobs()Ljava/util/Vector; 1 2048 
+org.apache.hadoop.mapreduce.lib.db.BigDecimalSplitter.split(Ljava/math/BigDecimal;Ljava/math/BigDecimal;Ljava/math/BigDecimal;)Ljava/util/List; 1 137 
+org.apache.hadoop.hdfs.server.namenode.EditLogBackupOutputStream$JournalRecord.write(Ljava/io/DataOutputStream;)V 1 65 
+org.apache.hadoop.hdfs.server.balancer.Balancer.shuffleArray([Lorg/apache/hadoop/hdfs/protocol/DatanodeInfo;)V 1 941 
+org.apache.hadoop.hdfs.server.balancer.Balancer.logImbalancedNodes()V 2 1037 1045 
+org.apache.hadoop.hdfs.server.namenode.BackupNode.handshake(Lorg/apache/hadoop/conf/Configuration;)Lorg/apache/hadoop/hdfs/server/protocol/NamespaceInfo; 1 242 
+org.apache.hadoop.io.file.tfile.TFile.main([Ljava/lang/String;)V 1 2350 
+org.apache.hadoop.hdfs.server.balancer.Balancer$AccessKeyUpdater.run()V 1 895 
+org.apache.hadoop.hdfs.server.namenode.INodeFile.computeFileSize(Z)J 1 165 
+org.apache.hadoop.util.Shell$ShellCommandExecutor.parseExecResult(Ljava/io/BufferedReader;)V 1 387 
+org.apache.hadoop.hdfs.server.balancer.Balancer.chooseNodes()J 1 1071 
+org.apache.hadoop.ipc.Server$Handler.run()V 1 1324 
+org.apache.hadoop.hdfs.server.balancer.Balancer.dispatchBlockMoves()J 2 1258 1263 
+org.apache.hadoop.hdfs.server.namenode.UnderReplicatedBlocks.clear()V 1 44 
+org.apache.hadoop.hdfs.server.namenode.BlockManager.addToInvalidates(Lorg/apache/hadoop/hdfs/protocol/Block;)V 1 527 
+org.apache.hadoop.mapreduce.util.MRAsyncDiskService.moveAndDeleteFromEachVolume(Ljava/lang/String;)Z 1 281 
+org.apache.hadoop.fs.s3.S3InputStream.blockSeekTo(J)V 1 151 
+org.apache.hadoop.io.compress.bzip2.CBZip2OutputStream.bsW(II)V 1 915 
+org.apache.hadoop.hdfs.server.namenode.FSEditLog.readBlocks(Ljava/io/DataInputStream;IZS)[Lorg/apache/hadoop/hdfs/server/namenode/BlockInfo; 1 1512 
+org.apache.hadoop.hdfs.server.namenode.FSEditLog.readDatanodeDescriptorArray(Ljava/io/DataInput;)[Lorg/apache/hadoop/hdfs/server/namenode/DatanodeDescriptor; 1 1488 
+org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode.run()V 1 213 
+org.apache.hadoop.hdfs.server.namenode.FSEditLog.readRenameOptions(Ljava/io/DataInputStream;)[Lorg/apache/hadoop/fs/Options$Rename; 1 1717 
+org.apache.hadoop.io.SequenceFile$Reader.seekToCurrentValue()V 1 1790 
+org.apache.hadoop.hdfs.tools.JMXGet.init()V 2 183 202 
+org.apache.hadoop.hdfs.tools.JMXGet.printAllValues()V 2 104 99 
+org.apache.hadoop.hdfs.tools.JMXGet.getValue(Ljava/lang/String;)Ljava/lang/String; 1 118 
+org.apache.hadoop.hdfs.server.datanode.DataNode.run()V 1 1331 
+org.apache.hadoop.hdfs.server.namenode.FSImage.getFsImageNameCheckpoint()[Ljava/io/File; 1 1948 
+org.apache.hadoop.mapreduce.lib.join.Parser$CNode.setKeyComparator(Ljava/lang/Class;)V 1 389 
+org.apache.hadoop.hdfs.server.namenode.FSEditLog$EditStreamIterator.hasNext()Z 1 1608 
+org.apache.hadoop.mapred.TaskTracker$TaskInProgress.runDebugScript()V 1 2808 
+org.apache.hadoop.fs.s3native.NativeS3FileSystem.mkdirs(Lorg/apache/hadoop/fs/Path;Lorg/apache/hadoop/fs/permission/FsPermission;)Z 2 493 498 
+org.apache.hadoop.security.authorize.AccessControlList.addToSet(Ljava/util/Set;[Ljava/lang/String;)V 1 113 
+org.apache.hadoop.conf.Configuration.getFile(Ljava/lang/String;Ljava/lang/String;)Ljava/io/File; 1 1252 
+org.apache.hadoop.mapreduce.jobhistory.JobSubmittedEvent.getJobAcls()Ljava/util/Map; 1 100 
+org.apache.hadoop.mapred.TaskRunner.appendSystemClasspaths(Ljava/util/List;)V 1 677 
+org.apache.hadoop.mapred.TaskRunner.appendJobJarClasspaths(Ljava/lang/String;Ljava/util/List;)V 1 701 
+org.apache.hadoop.hdfs.DFSInputStream.chooseDataNode(Lorg/apache/hadoop/hdfs/protocol/LocatedBlock;)Lorg/apache/hadoop/hdfs/DFSInputStream$DNAddrPair; 1 550 
+org.apache.hadoop.mapred.FileInputFormat.listStatus(Lorg/apache/hadoop/mapred/JobConf;)[Lorg/apache/hadoop/fs/FileStatus; 3 216 214 206 
+org.apache.hadoop.mapred.TaskTracker$MapEventsFetcherThread.reducesInShuffle()Ljava/util/List; 2 801 795 
+org.apache.hadoop.fs.s3.Jets3tFileSystemStore.listSubPaths(Lorg/apache/hadoop/fs/Path;)Ljava/util/Set; 1 260 
+org.apache.hadoop.mapred.JobInProgress.findSpeculativeTask(Ljava/util/Collection;Ljava/lang/String;Ljava/lang/String;Lorg/apache/hadoop/mapreduce/TaskType;)Lorg/apache/hadoop/mapred/TaskInProgress; 1 2057 
+org.apache.hadoop.hdfs.server.namenode.FSNamesystem.getDatanodeListForReport(Lorg/apache/hadoop/hdfs/protocol/FSConstants$DatanodeReportType;)Ljava/util/ArrayList; 4 3060 3064 3076 3090 
+org.apache.hadoop.mapred.JobInProgress.getMatchingLevelForNodes(Lorg/apache/hadoop/net/Node;Lorg/apache/hadoop/net/Node;)I 1 1544 
+org.apache.hadoop.ipc.RemoteException.unwrapRemoteException([Ljava/lang/Class;)Ljava/io/IOException; 1 54 
+org.apache.hadoop.hdfs.server.namenode.FSDirectory.verifyQuotaForRename([Lorg/apache/hadoop/hdfs/server/namenode/INode;[Lorg/apache/hadoop/hdfs/server/namenode/INode;)V 1 1474 
+org.apache.hadoop.mapreduce.jobhistory.HistoryViewer$SummarizedJob.<init>(Lorg/apache/hadoop/mapreduce/jobhistory/JobHistoryParser$JobInfo;)V 2 601 597 
+org.apache.hadoop.mapreduce.tools.CLI.listBlacklistedTrackers(Lorg/apache/hadoop/mapreduce/Cluster;)V 1 485 
+org.apache.hadoop.hdfs.server.namenode.BlockManager.processReport(Lorg/apache/hadoop/hdfs/server/namenode/DatanodeDescriptor;Lorg/apache/hadoop/hdfs/protocol/BlockListAsLongs;)V 4 1027 1030 1033 1039 
+org.apache.hadoop.mapred.JobInProgress.<init>(Lorg/apache/hadoop/mapred/JobTracker;Lorg/apache/hadoop/mapred/JobConf;ILorg/apache/hadoop/mapred/JobInfo;Lorg/apache/hadoop/security/TokenStorage;)V 1 391 
+org.apache.hadoop.mapreduce.lib.chain.Chain.setup(Lorg/apache/hadoop/conf/Configuration;)V 1 823 
+org.apache.hadoop.mapred.JobInProgress.retireMap(Lorg/apache/hadoop/mapred/TaskInProgress;)V 2 1849 1846 
+org.apache.hadoop.mapred.JobInProgress.failMap(Lorg/apache/hadoop/mapred/TaskInProgress;)V 2 1952 1949 
+org.apache.hadoop.mapred.TaskTracker.queryJobTracker(Lorg/apache/hadoop/io/IntWritable;Lorg/apache/hadoop/mapred/JobID;Lorg/apache/hadoop/mapred/InterTrackerProtocol;)Ljava/util/List; 1 1374 
+org.apache.hadoop.hdfs.server.namenode.BlockPlacementPolicyDefault.chooseRandom(ILjava/lang/String;Ljava/util/HashMap;JILjava/util/List;)V 1 349 
+org.apache.hadoop.util.StringUtils.arrayToString([Ljava/lang/String;)Ljava/lang/String; 1 137 
+org.apache.hadoop.mapreduce.security.token.DelegationTokenRenewal.removeFailedDelegationToken(Lorg/apache/hadoop/mapreduce/security/token/DelegationTokenRenewal$DelegationTokenToRenew;)V 1 276 
+org.apache.hadoop.hdfs.server.protocol.BlockCommand.write(Ljava/io/DataOutput;)V 3 97 103 101 
+org.apache.hadoop.record.meta.StructTypeID.findStruct(Ljava/lang/String;)Lorg/apache/hadoop/record/meta/StructTypeID; 1 67 
+org.apache.hadoop.http.HtmlQuoting.unquoteHtmlChars(Ljava/lang/String;)Ljava/lang/String; 1 165 
+org.apache.hadoop.io.SequenceFile$Sorter.writeFile(Lorg/apache/hadoop/io/SequenceFile$Sorter$RawKeyValueIterator;Lorg/apache/hadoop/io/SequenceFile$Writer;)V 1 2775 
+org.apache.hadoop.hdfs.server.namenode.FSDirectory.mkdirs(Ljava/lang/String;Lorg/apache/hadoop/fs/permission/PermissionStatus;ZJ)Z 2 1340 1349 
+org.apache.hadoop.util.bloom.CountingBloomFilter.membershipTest(Lorg/apache/hadoop/util/bloom/Key;)Z 1 187 
+org.apache.hadoop.io.compress.CompressionCodecFactory.<init>(Lorg/apache/hadoop/conf/Configuration;)V 1 144 
+org.apache.hadoop.util.LineReader.readLine(Lorg/apache/hadoop/io/Text;II)I 2 142 133 
+org.apache.hadoop.io.SequenceFile$Sorter.merge([Lorg/apache/hadoop/fs/Path;Lorg/apache/hadoop/fs/Path;Z)Lorg/apache/hadoop/io/SequenceFile$Sorter$RawKeyValueIterator; 1 2726 
+org.apache.hadoop.hdfs.server.namenode.FSNamesystem.datanodeReport(Lorg/apache/hadoop/hdfs/protocol/FSConstants$DatanodeReportType;)[Lorg/apache/hadoop/hdfs/protocol/DatanodeInfo; 1 3107 
+org.apache.hadoop.hdfs.server.namenode.BlockManager.isReplicationInProgress(Lorg/apache/hadoop/hdfs/server/namenode/DatanodeDescriptor;)Z 1 1422 
+org.apache.hadoop.mapred.pipes.BinaryProtocol.setJobConf(Lorg/apache/hadoop/mapred/JobConf;)V 2 257 262 
+org.apache.hadoop.mapred.Task.updateCounters()V 1 784 
+org.apache.hadoop.mapred.TaskLog.syncLogs(Ljava/lang/String;Lorg/apache/hadoop/mapred/TaskAttemptID;Z)V 2 219 216 
+org.apache.hadoop.hdfs.protocol.DataTransferProtocol$Receiver.opWriteBlock(Ljava/io/DataInputStream;)V 1 385 
+org.apache.hadoop.mapred.Task.commit(Lorg/apache/hadoop/mapred/TaskUmbilicalProtocol;Lorg/apache/hadoop/mapred/Task$TaskReporter;Lorg/apache/hadoop/mapreduce/OutputCommitter;)V 1 939 
+org.apache.hadoop.security.ShellBasedUnixGroupsMapping.getUnixGroups(Ljava/lang/String;)Ljava/util/List; 1 75 
+org.apache.hadoop.mapred.Task.sendDone(Lorg/apache/hadoop/mapred/TaskUmbilicalProtocol;)V 1 919 
+org.apache.hadoop.hdfs.server.namenode.FSImage.getFsImageName()Ljava/io/File; 1 1886 
+org.apache.hadoop.mapred.lib.MultipleOutputFormat$1.close(Lorg/apache/hadoop/mapred/Reporter;)V 1 112 
+org.apache.hadoop.io.ObjectWritable.readObject(Ljava/io/DataInput;Lorg/apache/hadoop/io/ObjectWritable;Lorg/apache/hadoop/conf/Configuration;)Ljava/lang/Object; 1 218 
+org.apache.hadoop.fs.s3native.NativeS3FileSystem.delete(Lorg/apache/hadoop/fs/Path;Z)Z 2 363 362 
+org.apache.hadoop.mapreduce.lib.input.CombineFileSplit.toString()Ljava/lang/String; 2 179 192 
+org.apache.hadoop.util.bloom.Filter.add(Ljava/util/Collection;)V 1 176 
+org.apache.hadoop.conf.Configuration.dumpConfiguration(Lorg/apache/hadoop/conf/Configuration;Ljava/io/Writer;)V 1 1626 
+org.apache.hadoop.io.ArrayWritable.write(Ljava/io/DataOutput;)V 1 102 
+org.apache.hadoop.mapred.lib.aggregate.ValueAggregatorReducer.reduce(Lorg/apache/hadoop/io/Text;Ljava/util/Iterator;Lorg/apache/hadoop/mapred/OutputCollector;Lorg/apache/hadoop/mapred/Reporter;)V 1 60 
+org.apache.hadoop.mapred.Merger$MergeQueue.<init>(Lorg/apache/hadoop/conf/Configuration;Lorg/apache/hadoop/fs/FileSystem;[Lorg/apache/hadoop/fs/Path;ZLorg/apache/hadoop/io/compress/CompressionCodec;Lorg/apache/hadoop/io/RawComparator;Lorg/apache/hadoop/util/Progressable;Lorg/apache/hadoop/mapred/Counters$Counter;)V 1 418 
+org.apache.hadoop.hdfs.server.namenode.NamenodeFsck.<init>(Lorg/apache/hadoop/conf/Configuration;Lorg/apache/hadoop/hdfs/server/namenode/NameNode;Lorg/apache/hadoop/net/NetworkTopology;Ljava/util/Map;Ljava/io/PrintWriter;IS)V 1 130 
+org.apache.hadoop.hdfs.server.datanode.FSDataset.getFinalizedBlocks()Ljava/util/List; 1 1523 
+org.apache.hadoop.mapreduce.lib.input.NLineInputFormat.getSplits(Lorg/apache/hadoop/mapreduce/JobContext;)Ljava/util/List; 1 82 
+org.apache.hadoop.io.WritableUtils.readCompressedByteArray(Ljava/io/DataInput;)[B 1 44 
+org.apache.hadoop.util.bloom.BloomFilter.membershipTest(Lorg/apache/hadoop/util/bloom/Key;)Z 1 150 
+org.apache.hadoop.mapred.lib.MultithreadedMapRunner.run(Lorg/apache/hadoop/mapred/RecordReader;Lorg/apache/hadoop/mapred/OutputCollector;Lorg/apache/hadoop/mapred/Reporter;)V 2 144 168 
+org.apache.hadoop.util.bloom.RetouchedBloomFilter.minimumFnRemove([I)I 1 254 
+org.apache.hadoop.util.bloom.RetouchedBloomFilter.maximumFpRemove([I)I 1 276 
+org.apache.hadoop.util.bloom.RetouchedBloomFilter.ratioRemove([I)I 1 299 
+org.apache.hadoop.util.bloom.RetouchedBloomFilter.clearBit(I)V 2 323 332 
+org.apache.hadoop.hdfs.server.namenode.FSDirectory.updateCountForINodeWithQuota(Lorg/apache/hadoop/hdfs/server/namenode/INodeDirectory;Lorg/apache/hadoop/hdfs/server/namenode/INode$DirCounts;Ljava/util/ArrayList;)V 2 1614 1636 
+org.apache.hadoop.io.compress.CompressionCodecFactory.toString()Ljava/lang/String; 1 65 
+org.apache.hadoop.mapred.LineRecordReader.next(Lorg/apache/hadoop/io/LongWritable;Lorg/apache/hadoop/io/Text;)Z 1 176 
+org.apache.hadoop.fs.FileUtil.copy(Lorg/apache/hadoop/fs/FileSystem;Lorg/apache/hadoop/fs/FileStatus;Ljava/io/File;ZLorg/apache/hadoop/conf/Configuration;)Z 1 355 
+org.apache.hadoop.hdfs.server.datanode.DataNode$1.run()V 1 1565 
+org.apache.hadoop.util.StringUtils.stringToURI([Ljava/lang/String;)[Ljava/net/URI; 1 206 
+org.apache.hadoop.util.StringUtils.uriToString([Ljava/net/URI;)Ljava/lang/String; 1 191 
+org.apache.hadoop.hdfs.tools.offlineImageViewer.ImageLoaderCurrent.processINodes(Ljava/io/DataInputStream;Lorg/apache/hadoop/hdfs/tools/offlineImageViewer/ImageVisitor;JZ)V 1 317 
+org.apache.hadoop.hdfs.server.datanode.BlockReceiver.receiveBlock(Ljava/io/DataOutputStream;Ljava/io/DataInputStream;Ljava/io/DataOutputStream;Ljava/lang/String;Lorg/apache/hadoop/hdfs/server/datanode/BlockTransferThrottler;I)V 1 617 
+org.apache.hadoop.mapreduce.Job.getTaskLogs(Lorg/apache/hadoop/mapreduce/TaskAttemptID;Ljava/net/URL;Ljava/io/OutputStream;)V 1 1163 
+org.apache.hadoop.mapred.JobTracker$FaultyTrackersInfo.updateNodeHealthFailureStatistics(Ljava/lang/String;Lorg/apache/hadoop/mapred/JobTracker$FaultInfo;)V 1 972 
+org.apache.hadoop.mapred.JobTracker$FaultyTrackersInfo.blackListTracker(Ljava/lang/String;Ljava/lang/String;Lorg/apache/hadoop/mapred/JobTracker$ReasonForBlackListing;)V 1 714 
+org.apache.hadoop.hdfs.server.namenode.FSDirectory.unprotectedAddFile(Ljava/lang/String;Lorg/apache/hadoop/fs/permission/PermissionStatus;[Lorg/apache/hadoop/hdfs/server/namenode/BlockInfo;SJJJ)Lorg/apache/hadoop/hdfs/server/namenode/INode; 1 221 
+org.apache.hadoop.record.CsvRecordInput.readField(Ljava/lang/String;)Ljava/lang/String; 1 61 
+org.apache.hadoop.mapreduce.lib.aggregate.ValueHistogram.getReport()Ljava/lang/String; 4 89 101 98 118 
+org.apache.hadoop.fs.FSInputChecker.verifySums([BII)V 1 312 
+org.apache.hadoop.mapreduce.lib.partition.InputSampler.writePartitionFile(Lorg/apache/hadoop/mapreduce/Job;Lorg/apache/hadoop/mapreduce/lib/partition/InputSampler$Sampler;)V 2 332 330 
+org.apache.hadoop.mapreduce.jobhistory.JobSubmittedEvent.<init>(Lorg/apache/hadoop/mapreduce/JobID;Ljava/lang/String;Ljava/lang/String;JLjava/lang/String;Ljava/util/Map;)V 1 72 
+org.apache.hadoop.fs.FileContext$Util.listStatus(Ljava/util/ArrayList;Lorg/apache/hadoop/fs/Path;Lorg/apache/hadoop/fs/PathFilter;)V 1 1516 
+org.apache.hadoop.hdfs.server.balancer.Balancer$Source.chooseNextBlockToMove()Lorg/apache/hadoop/hdfs/server/balancer/Balancer$PendingBlockMove; 1 680 
+org.apache.hadoop.hdfs.server.balancer.Balancer$Source.filterMovedBlocks()V 1 708 
+org.apache.hadoop.hdfs.server.balancer.Balancer$Source.getBlockList()J 2 646 632 
+org.apache.hadoop.hdfs.server.namenode.BackupStorage.startJournalSpool(Lorg/apache/hadoop/hdfs/server/protocol/NamenodeRegistration;)V 1 261 
+org.apache.hadoop.net.SocketOutputStream.write([BII)V 1 110 
+org.apache.hadoop.mapreduce.lib.map.MultithreadedMapper.run(Lorg/apache/hadoop/mapreduce/Mapper$Context;)V 2 139 144 
+org.apache.hadoop.mapreduce.lib.join.TupleWritable.equals(Ljava/lang/Object;)Z 1 100 
+org.apache.hadoop.hdfs.server.namenode.FSNamesystem.removeDatanode(Lorg/apache/hadoop/hdfs/server/namenode/DatanodeDescriptor;)V 1 2700 
+org.apache.hadoop.util.bloom.RetouchedBloomFilter.add(Lorg/apache/hadoop/util/bloom/Key;)V 1 127 
+org.apache.hadoop.metrics.spi.CompositeContext$MetricsRecordDelegator.<init>(Ljava/lang/String;Ljava/util/ArrayList;)V 1 184 
+org.apache.hadoop.record.meta.StructTypeID.writeRest(Lorg/apache/hadoop/record/RecordOutput;Ljava/lang/String;)V 1 89 
+org.apache.hadoop.fs.kfs.KosmosFileSystem.delete(Lorg/apache/hadoop/fs/Path;Z)Z 1 252 
+org.apache.hadoop.hdfs.server.datanode.FSDataset$FSVolumeSet.toString()Ljava/lang/String; 1 649 
+org.apache.hadoop.util.bloom.RetouchedBloomFilter.createVector()V 1 398 
+org.apache.hadoop.ipc.Server$Responder.doPurge(Lorg/apache/hadoop/ipc/Server$Call;J)V 1 687 
+org.apache.hadoop.mapreduce.lib.join.CompositeRecordReader$JoinCollector.next(Lorg/apache/hadoop/mapreduce/lib/join/TupleWritable;)Z 4 263 277 286 291 
+org.apache.hadoop.hdfs.server.datanode.DataBlockScanner$LogFileHandler$Reader.openFile()Z 1 877 
+org.apache.hadoop.hdfs.server.protocol.BlockRecoveryCommand.readFields(Ljava/io/DataInput;)V 1 161 
+org.apache.hadoop.fs.FsShell.setReplication(SLjava/lang/String;ZLjava/util/List;)V 1 529 
+org.apache.hadoop.mapred.JobInProgress.reportSetupTIPs(Z)Ljava/util/Vector; 1 1016 
+org.apache.hadoop.util.bloom.DynamicBloomFilter.readFields(Ljava/io/DataInput;)V 1 265 
+org.apache.hadoop.hdfs.server.namenode.FSEditLog.getFsEditName()Ljava/io/File; 1 1426 
+org.apache.hadoop.metrics.spi.CompositeContext$MetricsRecordDelegator.invoke(Ljava/lang/Object;Ljava/lang/reflect/Method;[Ljava/lang/Object;)Ljava/lang/Object; 1 194 
+org.apache.hadoop.hdfs.server.namenode.BlockManager.completeBlock(Lorg/apache/hadoop/hdfs/server/namenode/INodeFile;Lorg/apache/hadoop/hdfs/server/namenode/BlockInfo;)Lorg/apache/hadoop/hdfs/server/namenode/BlockInfo; 1 344 
+org.apache.hadoop.hdfs.server.namenode.BlockManager.invalidateCorruptReplicas(Lorg/apache/hadoop/hdfs/protocol/Block;)V 1 1162 
+org.apache.hadoop.mapreduce.lib.jobcontrol.ControlledJob.submit()V 1 312 
+org.apache.hadoop.mapreduce.lib.jobcontrol.JobControl.checkRunningJobs()V 1 221 
+org.apache.hadoop.mapreduce.lib.jobcontrol.JobControl.checkWaitingJobs()V 1 233 
+org.apache.hadoop.mapreduce.lib.jobcontrol.JobControl.startReadyJobs()V 1 244 
+org.apache.hadoop.mapreduce.util.ProcfsBasedProcessTree.getCumulativeCpuTime()J 1 452 
+org.apache.hadoop.hdfs.server.namenode.BlocksMap.removeBlock(Lorg/apache/hadoop/hdfs/protocol/Block;)V 1 99 
+org.apache.hadoop.io.IOUtils.skipFully(Ljava/io/InputStream;J)V 1 132 
+org.apache.hadoop.fs.s3.S3FileSystem.renameRecursive(Lorg/apache/hadoop/fs/Path;Lorg/apache/hadoop/fs/Path;)Z 1 274 
+org.apache.hadoop.mapreduce.lib.join.TupleWritable.write(Ljava/io/DataOutput;)V 2 173 176 
+org.apache.hadoop.hdfs.server.protocol.BlocksWithLocations$BlockWithLocations.readFields(Ljava/io/DataInput;)V 1 75 
+org.apache.hadoop.io.IOUtils.readFully(Ljava/io/InputStream;[BII)V 1 115 
+org.apache.hadoop.mapred.JobClient.jobsToComplete()[Lorg/apache/hadoop/mapred/JobStatus; 1 743 
+org.apache.hadoop.record.compiler.generated.RccTokenManager.ReInitRounds()V 1 673 
+org.apache.hadoop.record.compiler.generated.RccTokenManager.jjAddStates(II)V 1 57 
+org.apache.hadoop.mapreduce.TaskReport.readFields(Ljava/io/DataInput;)V 1 221 
+org.apache.hadoop.mapred.JobTracker.blacklistedTaskTrackers()Ljava/util/Collection; 1 2165 
+org.apache.hadoop.metrics.spi.CompositeContext.unregisterUpdater(Lorg/apache/hadoop/metrics/Updater;)V 1 163 
+org.apache.hadoop.hdfs.server.datanode.DataNode.transferBlocks([Lorg/apache/hadoop/hdfs/protocol/Block;[[Lorg/apache/hadoop/hdfs/protocol/DatanodeInfo;)V 1 1105 
+org.apache.hadoop.hdfs.server.datanode.DataNode.register()V 1 577 
+org.apache.hadoop.mapreduce.util.MRAsyncDiskService.moveAndDeleteAbsolutePath(Ljava/lang/String;)Z 1 358 
+org.apache.hadoop.hdfs.server.datanode.FSDataset.getGenerationStampFromFile([Ljava/io/File;Ljava/io/File;)J 1 709 
+org.apache.hadoop.hdfs.server.namenode.BlockPlacementPolicyDefault.chooseReplicaToDelete(Lorg/apache/hadoop/hdfs/server/namenode/FSInodeInfo;Lorg/apache/hadoop/hdfs/protocol/Block;SLjava/util/Collection;Ljava/util/Collection;)Lorg/apache/hadoop/hdfs/server/namenode/DatanodeDescriptor; 1 506 
+org.apache.hadoop.mapred.JobInProgress.findFinishedMap(I)Lorg/apache/hadoop/mapred/TaskStatus; 1 3320 
+org.apache.hadoop.mapred.QueueConfigurationParser.createHierarchy(Ljava/lang/String;Lorg/w3c/dom/Element;)Lorg/apache/hadoop/mapred/Queue; 2 250 314 
+org.apache.hadoop.fs.FsShell.rename(Ljava/lang/String;Ljava/lang/String;)V 1 931 
+org.apache.hadoop.mapred.LocalJobRunner$Job.statusUpdate(Lorg/apache/hadoop/mapred/TaskAttemptID;Lorg/apache/hadoop/mapred/TaskStatus;)Z 1 482 
+org.apache.hadoop.hdfs.server.protocol.BlockCommand.readFields(Ljava/io/DataInput;)V 3 112 120 118 
+org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode$CheckpointStorage.recoverCreate(Ljava/util/Collection;Ljava/util/Collection;)V 1 514 
+org.apache.hadoop.mapred.MapTask$MapOutputBuffer.sortAndSpill()V 3 1434 1446 1425 
+org.apache.hadoop.util.GenericOptionsParser.processGeneralOptions(Lorg/apache/hadoop/conf/Configuration;Lorg/apache/commons/cli/CommandLine;)V 2 275 301 
+org.apache.hadoop.util.Progress.getInternal()F 1 202 
+org.apache.hadoop.mapred.MapTask$MapOutputBuffer.mergeParts()V 6 1637 1655 1677 1703 1699 1755 
+org.apache.hadoop.hdfs.server.namenode.FSImage.writeINodeUnderConstruction(Ljava/io/DataOutputStream;Lorg/apache/hadoop/hdfs/server/namenode/INodeFileUnderConstruction;Ljava/lang/String;)V 1 1636 
+org.apache.hadoop.hdfs.server.namenode.BlockManager.getValidLocations(Lorg/apache/hadoop/hdfs/protocol/Block;)Ljava/util/ArrayList; 1 374 
+org.apache.hadoop.mapred.join.JoinRecordReader.next(Lorg/apache/hadoop/io/WritableComparable;Lorg/apache/hadoop/mapred/join/TupleWritable;)Z 1 59 
+org.apache.hadoop.mapred.join.CompositeRecordReader$JoinCollector.next(Lorg/apache/hadoop/mapred/join/TupleWritable;)Z 4 230 244 253 258 
+org.apache.hadoop.hdfs.server.namenode.FSNamesystem.setReplicationInternal(Ljava/lang/String;S)Z 2 1070 1077 
+org.apache.hadoop.mapred.JobTracker$FaultyTrackersInfo.exceedsFaults(Lorg/apache/hadoop/mapred/JobTracker$FaultInfo;)Z 1 783 
+org.apache.hadoop.fs.s3.S3OutputStream.nextBlockOutputStream()V 1 199 
+org.apache.hadoop.io.MapFile.fix(Lorg/apache/hadoop/fs/FileSystem;Lorg/apache/hadoop/fs/Path;Ljava/lang/Class;Ljava/lang/Class;ZLorg/apache/hadoop/conf/Configuration;)J 1 670 
+org.apache.hadoop.io.SequenceFile$Reader.sync(J)V 2 2257 2255 
+org.apache.hadoop.hdfs.server.datanode.FSDataset$FSVolumeSet.getDfsUsed()J 1 576 
+org.apache.hadoop.mapred.TaskInProgress.isOnlyCommitPending()Z 1 224 
+org.apache.hadoop.fs.FileContext$Util.globStatus(Lorg/apache/hadoop/fs/Path;Lorg/apache/hadoop/fs/PathFilter;)[Lorg/apache/hadoop/fs/FileStatus; 2 1670 1667 
+org.apache.hadoop.hdfs.server.namenode.LeaseManager.changeLease(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V 1 308 
+org.apache.hadoop.mapreduce.lib.input.SequenceFileInputFormat.listStatus(Lorg/apache/hadoop/mapreduce/JobContext;)Ljava/util/List; 1 61 
+org.apache.hadoop.hdfs.server.namenode.NameNode.blockReceived(Lorg/apache/hadoop/hdfs/server/protocol/DatanodeRegistration;[Lorg/apache/hadoop/hdfs/protocol/Block;[Ljava/lang/String;)V 1 1111 
+org.apache.hadoop.mapred.lib.MultipleOutputs.close()V 1 538 
+org.apache.hadoop.mapred.JobTracker.removeJobTasks(Lorg/apache/hadoop/mapred/JobInProgress;)V 3 1949 1947 1945 
+org.apache.hadoop.util.Progress.addPhase(F)Lorg/apache/hadoop/util/Progress; 1 97 
+org.apache.hadoop.hdfs.server.namenode.metrics.NameNodeMetrics.doUpdates(Lorg/apache/hadoop/metrics/MetricsContext;)V 1 130 
+org.apache.hadoop.hdfs.server.namenode.FSDirectory.waitForReady()V 1 144 
+org.apache.hadoop.hdfs.server.namenode.FSPermissionChecker.checkPermission(Ljava/lang/String;Lorg/apache/hadoop/hdfs/server/namenode/INodeDirectory;ZLorg/apache/hadoop/fs/permission/FsAction;Lorg/apache/hadoop/fs/permission/FsAction;Lorg/apache/hadoop/fs/permission/FsAction;Lorg/apache/hadoop/fs/permission/FsAction;)V 1 127 
+org.apache.hadoop.net.DNS.getHosts(Ljava/lang/String;Ljava/lang/String;)[Ljava/lang/String; 1 158 
+org.apache.hadoop.io.file.tfile.TFile$TFileIndex.write(Ljava/io/DataOutput;)V 1 2276 
+org.apache.hadoop.hdfs.server.namenode.CorruptReplicasMap.getCorruptReplicaBlockIds(ILjava/lang/Long;)[J 3 159 175 180 
+org.apache.hadoop.ipc.Client.call(Lorg/apache/hadoop/io/Writable;Ljava/net/InetSocketAddress;Ljava/lang/Class;Lorg/apache/hadoop/security/UserGroupInformation;)Lorg/apache/hadoop/io/Writable; 1 889 
+org.apache.hadoop.mapreduce.lib.partition.KeyFieldBasedPartitioner.hashCode([BIII)I 1 122 
+org.apache.hadoop.hdfs.server.namenode.BlockManager.addBlock(Lorg/apache/hadoop/hdfs/server/namenode/DatanodeDescriptor;Lorg/apache/hadoop/hdfs/protocol/Block;Ljava/lang/String;)V 3 1346 1349 1355 
+org.apache.hadoop.mapred.Queue.getLeafQueues()Ljava/util/Map; 1 286 
+org.apache.hadoop.io.compress.bzip2.CBZip2InputStream.setupBlock()V 2 1025 1030 
+org.apache.hadoop.hdfs.server.namenode.UnderReplicatedBlocks$BlockIterator.update()V 1 213 
+org.apache.hadoop.hdfs.server.namenode.FSNamesystem.getBlockLocations(Ljava/lang/String;Ljava/lang/String;JJ)Lorg/apache/hadoop/hdfs/protocol/LocatedBlocks; 1 717 
+org.apache.hadoop.ipc.Server$Listener.<init>(Lorg/apache/hadoop/ipc/Server;)V 1 295 
+org.apache.hadoop.hdfs.server.datanode.FSDataset$FSVolumeSet.getVolumeMap(Lorg/apache/hadoop/hdfs/server/datanode/ReplicasMap;)V 1 599 
+org.apache.hadoop.hdfs.server.datanode.FSDatasetAsyncDiskService.<init>([Ljava/io/File;)V 1 84 
+org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.createBlockOutputStream([Lorg/apache/hadoop/hdfs/protocol/DatanodeInfo;JZ)Z 2 845 903 
+org.apache.hadoop.util.StringUtils.camelize(Ljava/lang/String;)Ljava/lang/String; 1 738 
+org.apache.hadoop.fs.s3.MigrationTool$UnversionedStore.listAllPaths()Ljava/util/Set; 1 203 
+org.apache.hadoop.http.HttpServer.<init>(Ljava/lang/String;Ljava/lang/String;IZLorg/apache/hadoop/conf/Configuration;Lorg/apache/hadoop/security/authorize/AccessControlList;)V 1 169 
+org.apache.hadoop.http.HttpServer.addFilterPathMapping(Ljava/lang/String;Lorg/mortbay/jetty/servlet/Context;)V 1 373 
+org.apache.hadoop.hdfs.server.namenode.PendingReplicationBlocks$PendingReplicationMonitor.pendingReplicationCheck()V 1 198 
+org.apache.hadoop.conf.Configuration.getClasses(Ljava/lang/String;[Ljava/lang/Class;)[Ljava/lang/Class; 1 1102 
+org.apache.hadoop.io.WritableComparator.readVLong([BI)J 1 228 
+org.apache.hadoop.hdfs.server.namenode.NamenodeFsck.bestNode(Lorg/apache/hadoop/hdfs/DFSClient;[Lorg/apache/hadoop/hdfs/protocol/DatanodeInfo;Ljava/util/TreeSet;)Lorg/apache/hadoop/hdfs/protocol/DatanodeInfo; 1 565 
+org.apache.hadoop.fs.s3native.Jets3tNativeFileSystemStore.purge(Ljava/lang/String;)V 1 198 
+org.apache.hadoop.mapred.Queue.getInnerQueues()Ljava/util/Map; 1 258 
+org.apache.hadoop.mapred.JobInProgress.getTaskInProgress(Lorg/apache/hadoop/mapred/TaskID;)Lorg/apache/hadoop/mapred/TaskInProgress; 2 3288 3302 
+org.apache.hadoop.io.ArrayWritable.<init>([Ljava/lang/String;)V 1 62 
+org.apache.hadoop.mapreduce.lib.input.CombineFileInputFormat$OneFileInfo.<init>(Lorg/apache/hadoop/fs/Path;Lorg/apache/hadoop/conf/Configuration;Ljava/util/HashMap;Ljava/util/HashMap;Ljava/util/HashMap;Ljava/util/HashMap;)V 3 497 510 483 
+org.apache.hadoop.security.authorize.AccessControlList.isUserAllowed(Lorg/apache/hadoop/security/UserGroupInformation;)Z 1 103 
+org.apache.hadoop.fs.FsShell.ls(Lorg/apache/hadoop/fs/FileStatus;Lorg/apache/hadoop/fs/FileSystem;ZZ)I 2 624 637 
+org.apache.hadoop.mapred.JobTracker.taskTrackers()Ljava/util/Collection; 1 2094 
+org.apache.hadoop.mapred.StatisticsCollector$TimeWindowStatUpdater.update()V 2 279 285 
+org.apache.hadoop.record.XmlRecordOutput.putIndent()V 1 50 
+org.apache.hadoop.mapreduce.lib.partition.KeyFieldBasedComparator.decimalCompare([BII[BII)I 1 244 
+org.apache.hadoop.mapreduce.lib.input.InvalidInputException.getMessage()Ljava/lang/String; 1 61 
+org.apache.hadoop.fs.FileContext$Util.copy(Lorg/apache/hadoop/fs/Path;Lorg/apache/hadoop/fs/Path;ZZ)Z 1 1852 
+org.apache.hadoop.mapreduce.lib.partition.KeyFieldHelper.parseOption(Ljava/lang/String;)V 2 165 185 
+org.apache.hadoop.io.compress.CompressionCodecFactory.main([Ljava/lang/String;)V 3 216 231 195 
+org.apache.hadoop.io.file.tfile.TFile$TFileIndex.<init>(ILjava/io/DataInput;Lorg/apache/hadoop/io/file/tfile/CompareUtils$BytesComparator;)V 1 2152 
+org.apache.hadoop.hdfs.server.datanode.DirectoryScanner.reconcile()V 1 175 
+org.apache.hadoop.hdfs.security.token.delegation.DelegationTokenSecretManager.loadAllKeys(Ljava/io/DataInputStream;)V 1 266 
+org.apache.hadoop.mapred.TaskMemoryManagerThread.killTasksWithLeastProgress(J)V 2 413 436 
+org.apache.hadoop.mapred.QueueManager.dumpConfiguration(Lorg/codehaus/jackson/JsonGenerator;Ljava/util/Set;)V 2 697 667 
+org.apache.hadoop.mapred.FileInputFormat.fakeRacks([Lorg/apache/hadoop/fs/BlockLocation;I)[Ljava/lang/String; 1 625 
+org.apache.hadoop.util.StringUtils.hasChar([CC)Z 1 443 
+org.apache.hadoop.mapred.lib.aggregate.ValueAggregatorJob.setAggregatorDescriptors(Lorg/apache/hadoop/mapred/JobConf;[Ljava/lang/Class;)V 1 198 
+org.apache.hadoop.mapred.join.CompositeRecordReader.skip(Lorg/apache/hadoop/io/WritableComparable;)V 2 345 348 
+org.apache.hadoop.metrics.jvm.JvmMetrics.doThreadUpdates()V 1 152 
+org.apache.hadoop.hdfs.server.namenode.FSNamesystem.getNumLiveDataNodes()I 1 4126 
+org.apache.hadoop.net.SocketOutputStream.transferToFully(Ljava/nio/channels/FileChannel;JI)V 1 192 
+org.apache.hadoop.record.compiler.generated.Rcc.Input()Lorg/apache/hadoop/record/compiler/JFile; 1 122 
+org.apache.hadoop.mapred.JSPUtil.generateRetiredJobTable(Lorg/apache/hadoop/mapred/JobTracker;I)Ljava/lang/String; 1 391 
+org.apache.hadoop.mapred.join.CompositeInputFormat.compose(Ljava/lang/String;Ljava/lang/Class;[Lorg/apache/hadoop/fs/Path;)Ljava/lang/String; 1 171 
+org.apache.hadoop.fs.AbstractFileSystem.printStatistics()V 1 173 
+org.apache.hadoop.mapred.LocalJobRunner$Job.run()V 5 348 369 387 421 421 
+org.apache.hadoop.mapreduce.jobhistory.JobHistory.moveOldFiles()V 1 382 
+org.apache.hadoop.mapreduce.util.ProcfsBasedProcessTree.getProcessTree()Lorg/apache/hadoop/mapreduce/util/ProcfsBasedProcessTree; 4 181 198 212 221 
+org.apache.hadoop.hdfs.server.namenode.TransferFsImage.getFileServer(Ljava/io/OutputStream;Ljava/io/File;)V 1 135 
+org.apache.hadoop.mapreduce.Counters.incrAllCounters(Lorg/apache/hadoop/mapreduce/Counters;)V 1 187 
+org.apache.hadoop.mapreduce.lib.join.Parser$CNode.getSplits(Lorg/apache/hadoop/mapreduce/JobContext;)Ljava/util/List; 3 403 418 416 
+org.apache.hadoop.fs.BlockLocation.readFields(Ljava/io/DataInput;)V 3 220 228 236 
+org.apache.hadoop.hdfs.server.namenode.FSImage.attemptRestoreRemovedStorage()V 1 1905 
+org.apache.hadoop.hdfs.server.datanode.FSDataset.invalidate([Lorg/apache/hadoop/hdfs/protocol/Block;)V 1 1595 
+org.apache.hadoop.hdfs.server.namenode.FSEditLog.getEditLogSize()J 1 1253 
+org.apache.hadoop.util.AsyncDiskService.awaitTermination(J)Z 1 131 
+org.apache.hadoop.mapreduce.task.reduce.Fetcher.shuffleToDisk(Lorg/apache/hadoop/mapreduce/task/reduce/MapHost;Lorg/apache/hadoop/mapreduce/task/reduce/MapOutput;Ljava/io/InputStream;J)V 1 501 
+org.apache.hadoop.fs.FileUtil.replaceFile(Ljava/io/File;Ljava/io/File;)V 1 812 
+org.apache.hadoop.hdfs.tools.DFSAdmin.printTopology()I 3 686 705 701 
+org.apache.hadoop.util.AsyncDiskService.shutdownNow()Ljava/util/List; 1 153 
+org.apache.hadoop.io.ArrayWritable.toStrings()[Ljava/lang/String; 1 73 
+org.apache.hadoop.hdfs.server.namenode.BlockInfo.ensureCapacity(I)I 1 130 
+org.apache.hadoop.mapred.MapRunner.run(Lorg/apache/hadoop/mapred/RecordReader;Lorg/apache/hadoop/mapred/OutputCollector;Lorg/apache/hadoop/mapred/Reporter;)V 1 52 
+org.apache.hadoop.hdfs.server.protocol.BlocksWithLocations$BlockWithLocations.write(Ljava/io/DataOutput;)V 1 84 
+org.apache.hadoop.hdfs.DFSClient$LeaseChecker.abort()V 1 1346 
+org.apache.hadoop.fs.FsShell.du([Ljava/lang/String;I)V 2 736 710 
+org.apache.hadoop.mapred.IndexCache.freeIndexInformation()V 1 149 
+org.apache.hadoop.io.WritableUtils.readCompressedStringArray(Ljava/io/DataInput;)[Ljava/lang/String; 1 178 
+org.apache.hadoop.hdfs.server.namenode.FSNamesystem.checkReplicationFactor(Lorg/apache/hadoop/hdfs/server/namenode/INodeFile;)V 1 1599 
+org.apache.hadoop.mapred.LinuxTaskController.getDirectoryChosenForTask(Ljava/io/File;Lorg/apache/hadoop/mapred/TaskController$TaskExecContext;)Ljava/lang/String; 1 422 
+org.apache.hadoop.fs.AbstractFileSystem.isValidName(Ljava/lang/String;)Z 1 90 
+org.apache.hadoop.hdfs.server.datanode.metrics.DataNodeMetrics.doUpdates(Lorg/apache/hadoop/metrics/MetricsContext;)V 1 123 
+org.apache.hadoop.mapreduce.lib.fieldsel.FieldSelectionHelper.extractFields([Ljava/lang/String;Ljava/util/List;)I 2 107 86 
+org.apache.hadoop.mapred.join.Parser$CNode.getSplits(Lorg/apache/hadoop/mapred/JobConf;I)[Lorg/apache/hadoop/mapred/InputSplit; 3 379 394 392 
+org.apache.hadoop.record.compiler.generated.Rcc.Record()Lorg/apache/hadoop/record/compiler/JRecord; 1 255 
+org.apache.hadoop.mapred.JobTracker.updateTaskTrackerStatus(Ljava/lang/String;Lorg/apache/hadoop/mapred/TaskTrackerStatus;)Z 1 2607 
+org.apache.hadoop.record.compiler.generated.Rcc.generateParseException()Lorg/apache/hadoop/record/compiler/generated/ParseException; 5 504 513 511 523 531 
+org.apache.hadoop.mapreduce.lib.chain.ChainReducer.run(Lorg/apache/hadoop/mapreduce/Reducer$Context;)V 1 206 
+org.apache.hadoop.hdfs.DFSClient.getBlockLocations(Ljava/lang/String;JJ)[Lorg/apache/hadoop/fs/BlockLocation; 2 425 419 
+org.apache.hadoop.net.NetworkTopology.contains(Lorg/apache/hadoop/net/Node;)Z 1 379 
+org.apache.hadoop.mapred.TaskTracker.buildTaskControllerTaskPathDeletionContexts(Lorg/apache/hadoop/fs/FileSystem;[Lorg/apache/hadoop/fs/Path;Lorg/apache/hadoop/mapred/Task;ZLorg/apache/hadoop/mapred/TaskController;)[Lorg/apache/hadoop/mapred/CleanupQueue$PathDeletionContext; 1 1859 
+org.apache.hadoop.fs.FsShell.copyMergeToLocal(Ljava/lang/String;Lorg/apache/hadoop/fs/Path;Z)V 1 318 
+org.apache.hadoop.hdfs.BlockReader.skip(J)J 1 132 
+org.apache.hadoop.mapred.join.CompositeInputFormat.addUserIdentifiers(Lorg/apache/hadoop/mapred/JobConf;)V 1 100 
+org.apache.hadoop.fs.FsShell.runCmdHandler(Lorg/apache/hadoop/fs/FsShell$CmdHandler;[Ljava/lang/String;IZ)I 2 1313 1303 
+org.apache.hadoop.mapred.join.Parser.parse(Ljava/lang/String;Lorg/apache/hadoop/mapred/JobConf;)Lorg/apache/hadoop/mapred/join/Parser$Node; 1 486 
+org.apache.hadoop.mapred.lib.MultipleOutputs.checkTokenName(Ljava/lang/String;)V 1 172 
+org.apache.hadoop.record.Utils.fromXMLString(Ljava/lang/String;)Ljava/lang/String; 1 95 
+org.apache.hadoop.security.UserGroupInformation.setAuthenticationMethod(Lorg/apache/hadoop/security/UserGroupInformation$AuthenticationMethod;)V 1 671 
+org.apache.hadoop.hdfs.tools.DFSAdmin.report()V 2 327 335 
+org.apache.hadoop.metrics.util.MetricsDynamicMBeanBase.getAttributes([Ljava/lang/String;)Ljavax/management/AttributeList; 1 180 
+org.apache.hadoop.mapred.BackupStore.clearSegmentList()V 1 361 
+org.apache.hadoop.fs.LocalDirAllocator$AllocatorPerContext.getLocalPathForWrite(Ljava/lang/String;JLorg/apache/hadoop/conf/Configuration;)Lorg/apache/hadoop/fs/Path; 4 313 323 320 336 
+org.apache.hadoop.hdfs.server.namenode.BlockPlacementPolicyDefault.getPipeline(Lorg/apache/hadoop/hdfs/server/namenode/DatanodeDescriptor;[Lorg/apache/hadoop/hdfs/server/namenode/DatanodeDescriptor;)[Lorg/apache/hadoop/hdfs/server/namenode/DatanodeDescriptor; 2 452 448 
+org.apache.hadoop.hdfs.server.namenode.BlockInfoUnderConstruction.getExpectedLocations()[Lorg/apache/hadoop/hdfs/server/namenode/DatanodeDescriptor; 1 178 
+org.apache.hadoop.mapreduce.task.reduce.MergeManager.createInMemorySegments(Ljava/util/List;Ljava/util/List;J)J 2 570 573 
+org.apache.hadoop.fs.FileUtil.stat2Paths([Lorg/apache/hadoop/fs/FileStatus;)[Lorg/apache/hadoop/fs/Path; 1 57 
+org.apache.hadoop.mapreduce.Job.printTaskEvents([Lorg/apache/hadoop/mapreduce/TaskCompletionEvent;Lorg/apache/hadoop/mapreduce/Job$TaskStatusFilter;ZLorg/apache/hadoop/conf/Configuration$IntegerRanges;Lorg/apache/hadoop/conf/Configuration$IntegerRanges;)V 2 1108 1081 
+org.apache.hadoop.util.bloom.RetouchedBloomFilter.readFields(Ljava/io/DataInput;)V 5 436 433 445 442 451 
+org.apache.hadoop.mapred.JobClient.getJobsFromQueue(Ljava/lang/String;)[Lorg/apache/hadoop/mapred/JobStatus; 1 997 
+org.apache.hadoop.mapred.JobClient.arrayToBlackListInfo([Lorg/apache/hadoop/mapreduce/TaskTrackerInfo;)Ljava/util/Collection; 1 701 
+org.apache.hadoop.mapred.Queue.copySchedulingInfo(Lorg/apache/hadoop/mapred/Queue;)V 1 193 
+org.apache.hadoop.mapred.JobTracker.decommissionNodes(Ljava/util/Set;)V 2 4129 4125 
+org.apache.hadoop.mapred.JobTracker$FaultyTrackersInfo.removeHostCapacity(Ljava/lang/String;)V 1 851 
+org.apache.hadoop.hdfs.server.namenode.Host2NodesMap.getDatanodeByName(Ljava/lang/String;)Lorg/apache/hadoop/hdfs/server/namenode/DatanodeDescriptor; 1 178 
+org.apache.hadoop.mapred.JobTracker$FaultyTrackersInfo.addHostCapacity(Ljava/lang/String;)V 1 873 
+org.apache.hadoop.mapred.JobInProgress.createCache([Lorg/apache/hadoop/mapreduce/split/JobSplit$TaskSplitMetaInfo;I)Ljava/util/Map; 3 490 487 480 
+org.apache.hadoop.mapred.JobInProgress.createReduceTasks(Ljava/lang/String;)V 1 739 
+org.apache.hadoop.metrics.spi.AbstractMetricsContext.emitRecords()V 2 317 313 
+org.apache.hadoop.mapreduce.lib.partition.InputSampler$SplitSampler.getSample(Lorg/apache/hadoop/mapreduce/InputFormat;Lorg/apache/hadoop/mapreduce/Job;)[Ljava/lang/Object; 2 141 136 
+org.apache.hadoop.hdfs.DFSInputStream.bestNode([Lorg/apache/hadoop/hdfs/protocol/DatanodeInfo;Ljava/util/AbstractMap;)Lorg/apache/hadoop/hdfs/protocol/DatanodeInfo; 1 834 
+org.apache.hadoop.util.hash.JenkinsHash.main([Ljava/lang/String;)V 1 258 
+org.apache.hadoop.hdfs.DFSInputStream.openInfo()V 1 118 
+org.apache.hadoop.io.compress.DecompressorStream.decompress([BII)I 1 85 
+org.apache.hadoop.fs.shell.CommandUtils.formatDescription(Ljava/lang/String;[Ljava/lang/String;)Ljava/lang/String; 1 23 
+org.apache.hadoop.mapreduce.jobhistory.HistoryViewer.printCounters(Ljava/lang/StringBuffer;Lorg/apache/hadoop/mapreduce/Counters;Lorg/apache/hadoop/mapreduce/Counters;Lorg/apache/hadoop/mapreduce/Counters;)V 2 181 173 
+org.apache.hadoop.mapreduce.lib.partition.KeyFieldBasedPartitioner.getPartition(Ljava/lang/Object;Ljava/lang/Object;I)I 1 106 
+org.apache.hadoop.hdfs.server.balancer.Balancer$Source.isGoodBlockCandidate(Lorg/apache/hadoop/hdfs/server/balancer/Balancer$BalancerBlock;)Z 1 664 
+org.apache.hadoop.mapreduce.jobhistory.HistoryViewer.printAnalysis([Lorg/apache/hadoop/mapreduce/jobhistory/JobHistoryParser$TaskAttemptInfo;Ljava/util/Comparator;Ljava/lang/String;JI)V 1 345 
+org.apache.hadoop.mapred.JobTracker.updateJobInProgressListeners(Lorg/apache/hadoop/mapred/JobChangeEvent;)V 1 2331 
+org.apache.hadoop.mapreduce.task.reduce.MergeManager$OnDiskMerger.merge(Ljava/util/List;)V 1 492 
+org.apache.hadoop.mapred.FileOutputCommitter.moveTaskOutputs(Lorg/apache/hadoop/mapred/TaskAttemptContext;Lorg/apache/hadoop/fs/FileSystem;Lorg/apache/hadoop/fs/Path;Lorg/apache/hadoop/fs/Path;)V 1 172 
+org.apache.hadoop.mapred.TaskTracker.cloneAndResetRunningTaskStatuses(Z)Ljava/util/List; 1 3349 
+org.apache.hadoop.mapreduce.lib.join.CompositeRecordReader$JoinCollector.clear()V 1 240 
+org.apache.hadoop.io.SequenceFile$Sorter.merge([Lorg/apache/hadoop/fs/Path;ZILorg/apache/hadoop/fs/Path;)Lorg/apache/hadoop/io/SequenceFile$Sorter$RawKeyValueIterator; 1 2697 
+org.apache.hadoop.mapred.TaskTracker.checkLocalDirs([Ljava/lang/String;)V 1 3424 
+org.apache.hadoop.io.compress.CompressionCodecFactory.getCodecClasses(Lorg/apache/hadoop/conf/Configuration;)Ljava/util/List; 1 89 
+org.apache.hadoop.mapred.Counters.readFields(Ljava/io/DataInput;)V 1 542 
+org.apache.hadoop.util.StringUtils.stringToPath([Ljava/lang/String;)[Lorg/apache/hadoop/fs/Path; 1 227 
+org.apache.hadoop.io.SequenceFile$Sorter$SegmentContainer.<init>(Lorg/apache/hadoop/io/SequenceFile$Sorter;Lorg/apache/hadoop/fs/Path;Lorg/apache/hadoop/fs/Path;)V 1 3270 
+org.apache.hadoop.mapred.lib.IdentityReducer.reduce(Ljava/lang/Object;Ljava/util/Iterator;Lorg/apache/hadoop/mapred/OutputCollector;Lorg/apache/hadoop/mapred/Reporter;)V 1 43 
+org.apache.hadoop.hdfs.server.namenode.FSImage.format()V 1 1442 
+org.apache.hadoop.hdfs.server.namenode.FSImage.getNumStorageDirs(Lorg/apache/hadoop/hdfs/server/namenode/FSImage$NameNodeDirType;)I 1 352 
+org.apache.hadoop.hdfs.server.namenode.FSImage.recoverTransitionRead(Ljava/util/Collection;Ljava/util/Collection;Lorg/apache/hadoop/hdfs/server/common/HdfsConstants$StartupOption;)Z 2 398 451 
+org.apache.hadoop.hdfs.server.namenode.FSImage.saveNamespace(Z)V 4 1283 1295 1317 1327 
+org.apache.hadoop.hdfs.server.namenode.FSImage.renameCheckpoint()V 1 1685 
+org.apache.hadoop.util.Progress.get()F 1 171 
+org.apache.hadoop.hdfs.server.namenode.FSImage.resetVersion(Z)V 1 1715 
+org.apache.hadoop.mapred.JobInProgress.incrementTaskCounters(Lorg/apache/hadoop/mapred/Counters;[Lorg/apache/hadoop/mapred/TaskInProgress;)Lorg/apache/hadoop/mapred/Counters; 1 1243 
+org.apache.hadoop.net.NetworkTopology$InnerNode.add(Lorg/apache/hadoop/net/Node;)Z 2 144 157 
+org.apache.hadoop.mapreduce.lib.aggregate.ValueHistogram.getReportDetails()Ljava/lang/String; 1 138 
+org.apache.hadoop.mapreduce.lib.join.CompositeInputSplit.readFields(Ljava/io/DataInput;)V 2 151 155 
+org.apache.hadoop.hdfs.server.namenode.NameNode.activate(Lorg/apache/hadoop/conf/Configuration;)V 1 331 
+org.apache.hadoop.hdfs.server.protocol.BlockCommand.<init>(ILjava/util/List;)V 1 56 
+org.apache.hadoop.io.compress.bzip2.CBZip2OutputStream.initBlock()V 1 767 
+org.apache.hadoop.io.compress.bzip2.CBZip2OutputStream.blockSort()V 1 1606 
+org.apache.hadoop.security.token.delegation.AbstractDelegationTokenSelector.selectToken(Lorg/apache/hadoop/io/Text;Ljava/util/Collection;)Lorg/apache/hadoop/security/token/Token; 1 53 
+org.apache.hadoop.hdfs.server.balancer.Balancer.waitForMoveCompletion()V 2 1292 1292 
+org.apache.hadoop.io.compress.bzip2.CBZip2OutputStream.bsFinishedWithStream()V 1 902 
+org.apache.hadoop.fs.FsShell.doall(Ljava/lang/String;[Ljava/lang/String;I)I 1 1652 
+org.apache.hadoop.hdfs.server.balancer.Balancer.cleanGlobalBlockList()V 1 1430 
+org.apache.hadoop.hdfs.server.datanode.DataNode.transferBlock(Lorg/apache/hadoop/hdfs/protocol/Block;[Lorg/apache/hadoop/hdfs/protocol/DatanodeInfo;)V 1 1090 
+org.apache.hadoop.mapred.JobTracker.completedJobs()Ljava/util/Vector; 1 2067 
+org.apache.hadoop.fs.s3.S3FileSystem$S3FileStatus.findLength(Lorg/apache/hadoop/fs/s3/INode;)J 1 360 
+org.apache.hadoop.mapreduce.util.ProcfsBasedProcessTree.getProcessTreeDump()Ljava/lang/String; 1 364 
+org.apache.hadoop.mapred.TaskTracker.buildTaskControllerJobPathDeletionContexts(Lorg/apache/hadoop/fs/FileSystem;[Lorg/apache/hadoop/fs/Path;Lorg/apache/hadoop/mapred/JobID;Ljava/lang/String;Lorg/apache/hadoop/mapred/TaskController;)[Lorg/apache/hadoop/mapred/CleanupQueue$PathDeletionContext; 1 1835 
+org.apache.hadoop.hdfs.security.AccessTokenHandler.setKeys(Lorg/apache/hadoop/hdfs/security/ExportedAccessKeys;)V 1 174 
+org.apache.hadoop.fs.FSInputChecker.readFully(Ljava/io/InputStream;[BII)I 1 431 
+org.apache.hadoop.mapred.CompletedJobStatusStore.deleteJobStatusDirs()V 1 126 
+org.apache.hadoop.conf.Configuration.readFields(Ljava/io/DataInput;)V 1 1710 
+org.apache.hadoop.hdfs.server.namenode.NameNode.reportBadBlocks([Lorg/apache/hadoop/hdfs/protocol/LocatedBlock;)V 2 736 733 
+org.apache.hadoop.security.token.Token.addBinaryBuffer(Ljava/lang/StringBuilder;[B)V 1 222 
+org.apache.hadoop.hdfs.server.datanode.DataNode.parseArguments([Ljava/lang/String;Lorg/apache/hadoop/conf/Configuration;)Z 1 1496 
+org.apache.hadoop.util.bloom.DynamicBloomFilter.membershipTest(Lorg/apache/hadoop/util/bloom/Key;)Z 1 180 
+org.apache.hadoop.mapred.FileInputFormat.getInputPaths(Lorg/apache/hadoop/mapred/JobConf;)[Lorg/apache/hadoop/fs/Path; 1 440 
+org.apache.hadoop.mapred.FileInputFormat.addInputPathRecursively(Ljava/util/List;Lorg/apache/hadoop/fs/FileSystem;Lorg/apache/hadoop/fs/Path;Lorg/apache/hadoop/fs/PathFilter;)V 1 164 
+org.apache.hadoop.hdfs.server.namenode.FSImage.getFiles(Lorg/apache/hadoop/hdfs/server/namenode/FSImage$NameNodeFile;Lorg/apache/hadoop/hdfs/server/namenode/FSImage$NameNodeDirType;)Ljava/util/Collection; 1 301 
+org.apache.hadoop.hdfs.server.namenode.UnderReplicatedBlocks$BlockIterator.<init>(Lorg/apache/hadoop/hdfs/server/namenode/UnderReplicatedBlocks;)V 1 207 
+org.apache.hadoop.mapred.TaskInProgress.recomputeProgress()V 1 936 
+org.apache.hadoop.util.GenericsUtil.toArray(Ljava/lang/Class;Ljava/util/List;)[Ljava/lang/Object; 1 58 
+org.apache.hadoop.mapred.Merger.writeFile(Lorg/apache/hadoop/mapred/RawKeyValueIterator;Lorg/apache/hadoop/mapred/IFile$Writer;Lorg/apache/hadoop/util/Progressable;Lorg/apache/hadoop/conf/Configuration;)V 1 199 
+org.apache.hadoop.mapred.JobInProgress.terminate(I)V 3 2878 2881 2884 
+org.apache.hadoop.hdfs.security.token.delegation.DelegationTokenSecretManager.loadCurrentTokens(Ljava/io/DataInputStream;)V 1 251 
+org.apache.hadoop.mapreduce.JobSubmitter.populateTokenCache(Lorg/apache/hadoop/conf/Configuration;)V 2 492 509 
+org.apache.hadoop.mapreduce.lib.join.Parser.parse(Ljava/lang/String;Lorg/apache/hadoop/conf/Configuration;)Lorg/apache/hadoop/mapreduce/lib/join/Parser$Node; 1 514 
+org.apache.hadoop.util.bloom.DynamicBloomFilter.addRow()V 1 277 
+org.apache.hadoop.util.bloom.BloomFilter.add(Lorg/apache/hadoop/util/bloom/Key;)V 1 125 
+org.apache.hadoop.util.StringUtils.split(Ljava/lang/String;CC)[Ljava/lang/String; 2 377 385 
+org.apache.hadoop.mapreduce.lib.db.DateSplitter.split(Lorg/apache/hadoop/conf/Configuration;Ljava/sql/ResultSet;Ljava/lang/String;)Ljava/util/List; 1 92 
+org.apache.hadoop.hdfs.server.namenode.BlockManager.logBlockReplicationInfo(Lorg/apache/hadoop/hdfs/protocol/Block;Lorg/apache/hadoop/hdfs/server/namenode/DatanodeDescriptor;Lorg/apache/hadoop/hdfs/server/namenode/FSNamesystem$NumberReplicas;)V 1 1396 
+org.apache.hadoop.hdfs.server.namenode.UnderReplicatedBlocks.contains(Lorg/apache/hadoop/hdfs/protocol/Block;)Z 1 60 
+org.apache.hadoop.metrics.spi.AbstractMetricsContext.getAllRecords()Ljava/util/Map; 2 338 333 
+org.apache.hadoop.record.compiler.JRecord$CppRecord.genCode(Ljava/io/FileWriter;Ljava/io/FileWriter;Ljava/util/ArrayList;)V 11 545 552 581 588 608 631 654 675 707 742 752 
+org.apache.hadoop.mapred.Counters.downgrade(Lorg/apache/hadoop/mapreduce/Counters;)Lorg/apache/hadoop/mapred/Counters; 2 80 77 
+org.apache.hadoop.mapreduce.tools.CLI.printTaskAttempts(Lorg/apache/hadoop/mapreduce/TaskReport;)V 1 496 
+org.apache.hadoop.mapreduce.lib.input.FileInputFormat.getInputPaths(Lorg/apache/hadoop/mapreduce/JobContext;)[Lorg/apache/hadoop/fs/Path; 1 446 
+org.apache.hadoop.record.Buffer.toString()Ljava/lang/String; 1 230 
+org.apache.hadoop.io.SequenceFile$Metadata.readFields(Ljava/io/DataInput;)V 1 727 
+org.apache.hadoop.mapreduce.lib.map.RegexMapper.map(Ljava/lang/Object;Lorg/apache/hadoop/io/Text;Lorg/apache/hadoop/mapreduce/Mapper$Context;)V 1 54 
+org.apache.hadoop.mapreduce.lib.join.TupleWritable.writeBitSet(Ljava/io/DataOutput;ILjava/util/BitSet;)V 3 249 264 257 
+org.apache.hadoop.mapreduce.lib.jobcontrol.ControlledJob.checkState()Lorg/apache/hadoop/mapreduce/lib/jobcontrol/ControlledJob$State; 1 280 
+org.apache.hadoop.hdfs.server.namenode.FSPermissionChecker.checkTraverse([Lorg/apache/hadoop/hdfs/server/namenode/INode;I)V 1 162 
+org.apache.hadoop.util.QuickSort.sortInternal(Lorg/apache/hadoop/util/IndexedSortable;IILorg/apache/hadoop/util/Progressable;I)V 7 75 74 99 105 116 119 73 
+org.apache.hadoop.util.bloom.RetouchedBloomFilter.getWeight(Ljava/util/List;)D 1 383 
+org.apache.hadoop.hdfs.server.namenode.FSPermissionChecker.checkSubAccess(Lorg/apache/hadoop/hdfs/server/namenode/INode;Lorg/apache/hadoop/fs/permission/FsAction;)V 2 178 174 
+org.apache.hadoop.util.bloom.RetouchedBloomFilter.computeRatio()V 1 371 
+org.apache.hadoop.util.bloom.RetouchedBloomFilter.removeKey(Lorg/apache/hadoop/util/bloom/Key;[Ljava/util/List;)V 1 362 
+org.apache.hadoop.io.WritableUtils.readStringArray(Ljava/io/DataInput;)[Ljava/lang/String; 1 162 
+org.apache.hadoop.mapreduce.Counters.readFields(Ljava/io/DataInput;)V 1 158 
+org.apache.hadoop.mapred.SequenceFileOutputFormat.getReaders(Lorg/apache/hadoop/conf/Configuration;Lorg/apache/hadoop/fs/Path;)[Lorg/apache/hadoop/io/SequenceFile$Reader; 1 92 
+org.apache.hadoop.ipc.Client.getConnection(Ljava/net/InetSocketAddress;Ljava/lang/Class;Lorg/apache/hadoop/security/UserGroupInformation;Lorg/apache/hadoop/ipc/Client$Call;)Lorg/apache/hadoop/ipc/Client$Connection; 1 1012 
+org.apache.hadoop.mapred.SortedRanges.add(Lorg/apache/hadoop/mapred/SortedRanges$Range;)V 1 106 
+org.apache.hadoop.hdfs.server.datanode.BlockReceiver$PacketResponder.close()V 1 791 

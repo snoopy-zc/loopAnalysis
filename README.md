@@ -5,6 +5,15 @@ We target the time comsuming loop, and make a static analysis.
 
 
 
+usage:
+
+```
+Compile - 
+ant compile-sa(-xxx)
+ant jar-sa(-xxx)
+```
+
+
 | bug ID | location                                                     | comment  |
 | ------ | ------------------------------------------------------------ | -------- |
 | ca6744 | org.apache.cassandra.db.index.SecondaryIndexManager #328?    | no lock  |

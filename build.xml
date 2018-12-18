@@ -1,0 +1,174 @@
+<?xml version="1.0"?>
+
+<project name="loopAnalysis" default="help" basedir=".">
+	
+	<!--build dir-->
+    <property name="build.dir" value="build/"/>
+    <property name="build.classes" value="${build.dir}/classes/"/>
+    <property name="build.lib" value="${build.dir}/lib/"/>
+
+	<!--src dir-->
+    <property name="src.dir" value="src/"/>
+	<property name="src.com.dir" value="${src.dir}/com/"/>
+	<property name="src.sa.dir" value = "${src.dir}/sa/"/>	
+    
+    <!--classpath-->
+    <property name="lib.dir" value="lib/"/>
+    <property name="lib.wala" value="${lib.dir}/sa/wala-1.3.8-jars/"/>
+    <property name="lib.slf4j" value="${lib.dir}/slf4j/slf4j-1.7.21/"/>
+    <property name="lib.logback" value="${lib.dir}/slf4j/logback/logback-1.1.7/"/>
+	<property name="lib.trigger" value="lib/trigger/"/>
+	
+	
+	<path id="sa.classpath">			
+		<pathelement location="${lib.wala}/android.jar"/>
+		<pathelement location="${lib.wala}/com.ibm.wala-feature-1.3.8-sources-feature.jar"/>
+		<pathelement location="${lib.wala}/com.ibm.wala-feature-1.3.8.jar"/>
+		<pathelement location="${lib.wala}/com.ibm.wala.cast-1.3.8.jar"/>
+		<pathelement location="${lib.wala}/com.ibm.wala.cast.java-1.3.8.jar"/>
+		<pathelement location="${lib.wala}/com.ibm.wala.cast.java.test-1.3.8.jar"/>
+		<pathelement location="${lib.wala}/com.ibm.wala.cast.java.test.data-1.3.8.jar"/>
+		<pathelement location="${lib.wala}/com.ibm.wala.cast.js-1.3.8.jar"/>
+		<pathelement location="${lib.wala}/com.ibm.wala.cast.js.html.nu_validator-1.3.8.jar"/>
+		<pathelement location="${lib.wala}/com.ibm.wala.cast.js.rhino-1.3.8.jar"/>
+		<pathelement location="${lib.wala}/com.ibm.wala.cast.js.rhino.test-1.3.8.jar"/>
+		<pathelement location="${lib.wala}/com.ibm.wala.cast.js.test-1.3.8.jar"/>
+		<pathelement location="${lib.wala}/com.ibm.wala.cast.js.test.data-1.3.8.jar"/>
+		<pathelement location="${lib.wala}/com.ibm.wala.cast.test-1.3.8.jar"/>
+		<pathelement location="${lib.wala}/com.ibm.wala.core-1.3.8.jar"/>
+		<pathelement location="${lib.wala}/com.ibm.wala.core.testdata-1.3.8.jar"/>
+		<pathelement location="${lib.wala}/com.ibm.wala.core.tests-1.3.8.jar"/>
+		<pathelement location="${lib.wala}/com.ibm.wala.dalvik-1.3.8.jar"/>
+		<pathelement location="${lib.wala}/com.ibm.wala.dalvik.test-1.3.8.jar"/>
+		<pathelement location="${lib.wala}/com.ibm.wala.ide-1.3.8.jar"/>
+		<pathelement location="${lib.wala}/com.ibm.wala.ide-feature-1.3.8-sources-feature.jar"/>
+		<pathelement location="${lib.wala}/com.ibm.wala.ide-feature-1.3.8.jar"/>
+		<pathelement location="${lib.wala}/com.ibm.wala.ide.jdt-1.3.8.jar"/>
+		<pathelement location="${lib.wala}/com.ibm.wala.ide.jdt.test-1.3.8.jar"/>
+		<pathelement location="${lib.wala}/com.ibm.wala.ide.jsdt-1.3.8.jar"/>
+		<pathelement location="${lib.wala}/com.ibm.wala.ide.jsdt.tests-1.3.8.jar"/>
+		<pathelement location="${lib.wala}/com.ibm.wala.ide.tests-1.3.8.jar"/>
+		<pathelement location="${lib.wala}/com.ibm.wala.scandroid-1.3.8.jar"/>
+		<pathelement location="${lib.wala}/com.ibm.wala.shrike-1.3.8.jar"/>
+		<pathelement location="${lib.wala}/com.ibm.wala.util-1.3.8.jar"/>
+	</path>
+
+	<path id="dt.classpath">			
+		<pathelement location="${lib.dir}/dt/spoon-core-5.5.0-jar-with-dependencies.jar"/>
+        <pathelement location="${lib.dir}/javassist-3.20.jar"/> 
+        <pathelement location="${lib.dir}/commons-cli-1.3.1.jar"/>
+	</path>
+		
+	<path id="trigger.classpath">			
+		<pathelement location="lib/trigger/protobuf-java-2.4.1.jar"/>
+		<pathelement location="lib/trigger/javassist-3.20/javassist.jar"/>
+		<pathelement location="lib/trigger/slf4j/logback/logback-1.1.7/logback-access-1.1.7.jar"/>
+		<pathelement location="lib/trigger/slf4j/logback/logback-1.1.7/logback-classic-1.1.7.jar"/>
+		<pathelement location="lib/trigger/slf4j/logback/logback-1.1.7/logback-core-1.1.7.jar"/>
+		<pathelement location="lib/trigger/slf4j/slf4j-1.7.21/slf4j-api-1.7.21.jar"/>
+	</path>
+		
+
+	
+	<path id="classpath">
+		<pathelement location="${lib.dir}/javassist-3.20.jar"/>
+		<pathelement location="${lib.dir}/commons-cli-1.3.1.jar"/>
+		<pathelement location="${lib.slf4j}/slf4j-api-1.7.21.jar"/>
+		<pathelement location="${lib.logback}/logback-access-1.1.7.jar"/>
+		<pathelement location="${lib.logback}/logback-classic-1.1.7.jar"/>
+		<pathelement location="${lib.logback}/logback-core-1.1.7.jar"/>
+		<pathelement location="${lib.dir}/soot-2.5.0.jar"/>
+		<pathelement location="${lib.dir}/walaUtil/walautil-master/target/scala-2.10/classes"/>
+		<pathelement location="${lib.dir}/scala-library.jar"/>
+    </path>
+
+	
+	
+	<!--JX - highest-level targets-->
+    <!--target compile all-->
+    <target name="compile" depends="prepare" description="compile all">
+            <javac srcdir="${src.dir}" destdir="${build.classes}" includeantruntime="false" excludes="${src.dir}/com/da/*.java">
+                    <classpath refid="classpath"/>
+            </javac>
+    </target>
+
+    <!--target help; default-->
+    <target name="help" description="Display detailed usage information">
+            <echo message="Type 'ant -projecthelp' for more info"/>
+    </target>
+
+
+	
+	
+	
+
+
+    <!--target prepare directory-->
+    <target name="prepare">
+        <mkdir dir="${build.dir}"/>
+        <mkdir dir="${build.classes}"/>
+    </target>
+
+    <!--target clean dir-->
+    <target name="clean">
+        <delete dir="${build.dir}"/>
+    </target>
+
+
+	<target name="compile-com" depends="prepare" description="compile comm">
+        <javac srcdir="${src.dir}/com" destdir="${build.classes}" includeantruntime="false">
+               <exclude name="prepare/" />
+        </javac>
+	</target>
+
+	<target name="compile-prepare" depends="compile-com" description="compile predm">
+        <javac srcdir="${src.dir}/com/prepare" destdir="${build.classes}" includeantruntime="false">
+        	<classpath refid="sa.classpath" />
+            <classpath>
+            	<pathelement location="${lib.dir}/dt/spoon-core-5.5.0-jar-with-dependencies.jar"/>
+            </classpath>
+        </javac>
+	</target>	
+	
+    <!--target compile sa, ie, Static Analysis of Loops-->
+    <target name="compile-sa" depends="prepare, compile-com" description="compile static analysiser">
+        <javac srcdir="${src.sa.dir}" destdir="${build.classes}" includeantruntime="false">
+            <classpath refid="sa.classpath" />
+            <exclude name="loopsize/" />
+        </javac>
+    </target>	
+
+
+    <!--target compile API&RPC class
+    <target name="compile-api-rpc" depends="prepare" description="compile API and RPCInfo class">
+            <javac srcdir="${src.com.dir}" destdir="${build.classes}" includeantruntime="false">
+                    <include name="APIInfo.java" />
+                    <include name="API.java" />
+                    <include name="RPCInfo.java" />
+                    <include name="CalleeInfo.java" />
+                    <classpath refid="classpath" />
+            </javac>
+    </target>
+    -->
+
+    <!--target compile Log class-->
+    <target name="compile-log" depends="prepare" description="compile logClass">
+            <javac srcdir="${src.dir}/LogClass" destdir="${build.classes}" includeantruntime="false">
+                    <classpath refid="classpath" />
+            </javac>
+    </target>
+    <target name="jar-log" depends="compile-log" description="generate jar for all log methods">
+            <jar jarfile="${build.lib}/_DM_Log.jar">
+            		<fileset dir="${build.classes}" includes="LogClass/**/*.class" />
+            		<!--
+            		<fileset dir="${build.classes}" includes="_DM_Log*.class" />
+            		-->
+            </jar>
+    </target>
+
+		
+	
+	
+</project>
+
+
