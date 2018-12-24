@@ -174,16 +174,16 @@ public class LLAnalysis {
 			//analyzeAllLocks();
 			//analyzeLoopingLocks();
 			
-			//zc- just for test not really
+			//zc- just for test 
 			int cnt = 0;
 			for(CGNodeInfo cgNodeInfo: this.cgNodeList.values())
 				if(cgNodeInfo.hasLoopingLocks && cgNodeInfo.hasLoops())
 				{				
 					for (LoopInfo loop: cgNodeInfo.getLoops()) {				
 						if (loop.numOfTcOperations_recusively > 0) {							
-							cnt++;
+							System.out.println((cnt++)+" "+loop.numOfTcOperations_recusively);
 							//System.out.println(loop.getCGNode().getMethod().toString()+loop.getLineNumber());
-							System.out.println(loop);
+							System.out.println(loop.tcOperations_recusively);
 						}
 					}					
 				}    	
