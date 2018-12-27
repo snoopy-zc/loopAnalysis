@@ -39,6 +39,8 @@ public class StaticAnalysis {
 		timer.toc("WalaAnalyzer end");
 		timer.close();
 		
+		//System.out.println(walaAnalyzer.getCallGraph().getNode(0).getClassHierarchy());
+		
 		LLAnalysis jxLocks = new LLAnalysis(walaAnalyzer, projectDir);
 	}
 	
