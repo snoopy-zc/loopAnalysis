@@ -175,20 +175,30 @@ public class LLAnalysis {
 			//analyzeLoopingLocks();
 			
 			//zc- just for test 
+
 			int cnt = 0;
+			
 			for(CGNodeInfo cgNodeInfo: this.cgNodeList.values())
 				if(cgNodeInfo.hasLoopingLocks && cgNodeInfo.hasLoops())
 				{				
 					for (LoopInfo loop: cgNodeInfo.getLoops()) {				
-						if (loop.numOfTcOperations_recusively > 0) {							
-							System.out.println((cnt++)+" "+loop.numOfTcOperations_recusively);
+						if (loop.numOfTcOperations_recusively > 0) {	
+							cnt++;
+							//System.out.println((cnt++)+" "+loop.numOfTcOperations_recusively);
 							//System.out.println(loop.getCGNode().getMethod().toString()+loop.getLineNumber());
-							System.out.println(loop.tcOperations_recusively);
+							//System.out.println(loop.tcOperations_recusively);
 						}
 					}					
 				}    	
-			System.out.println("#cgNodes = " + cnt + " containing loopingLocks and TCLoop");
-				
+			System.out.println("#cgNodes = " + cnt + " containing loopingLocks and TCLoop");				
+			/*
+			for(CGNodeInfo cgNodeInfo: this.cgNodeList.values())
+			{
+				if(cgNodeInfo.numOfTcOperations>0) {
+					//System.out.println(cnt++ + cgNodeInfo.getCGNode().getMethod().toString() +" count:"+ cgNodeInfo.numOfTcOperations);				
+					//System.out.println(cgNodeInfo.tcOperations);
+				}
+			}*/
 	      
 	    } catch (Exception e) {
 	      System.err.println("JX-StackTrace-run-begin");

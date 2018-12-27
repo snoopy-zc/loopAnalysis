@@ -52,8 +52,8 @@ public class TCLoopAnalyzer {
 		
 		findTCOperationsForAllLoops();
 		printResultStatus();
-		
 		iolooputil.printTcOperationTypes();                //for test
+		
 	      
 	}
 	
@@ -96,7 +96,7 @@ public class TCLoopAnalyzer {
 	}
 	  
 	  
-	public int dfsToGetTCOperations(CGNode cgNode, int depth, BitSet traversednodes) {
+	public int dfsToGetTCOperations(CGNode cgNode, int depth, BitSet traversednodes) {//zc: travel all code and mark the loop info
     
 		// for test - the depth can reach 58
 		/*

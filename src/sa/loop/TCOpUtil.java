@@ -163,7 +163,7 @@ public class TCOpUtil {
 		System.out.println("#types = " + tmpTcOps.size());
 		// test
 		for (String str: tmpTcOps) {
-			System.out.println(str);
+			//System.out.println(str);
 		}
 	}
 	  
