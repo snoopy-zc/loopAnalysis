@@ -1,0 +1,94 @@
+JX - INFO - compile sa ..
+Buildfile: /home/snoopy/workspace/loopAnalysis/build.xml
+
+prepare:
+
+compile-com:
+    [javac] Compiling 15 source files to /home/snoopy/workspace/loopAnalysis/build/classes
+
+compile-sa:
+    [javac] Compiling 30 source files to /home/snoopy/workspace/loopAnalysis/build/classes
+
+BUILD SUCCESSFUL
+Total time: 1 second
+JX - INFO - Static Analysis NOW ..
+JX - INFO - StaticAnalysis.doWork
+JX - INFO - Timer(tic), MSG: WalaAnalyzer begin
+JX - INFO - WalaAnalyzer: doWork...
+JX - INFO - Test Goal - multi *.jar: /home/snoopy/workspace/loopAnalysis/src/sa/res/./mr-4813/hadoop-yarn-server-common-0.23.3.jar:/home/snoopy/workspace/loopAnalysis/src/sa/res/./mr-4813/hadoop-yarn-site-0.23.3.jar:/home/snoopy/workspace/loopAnalysis/src/sa/res/./mr-4813/hadoop-common-0.23.3.jar:/home/snoopy/workspace/loopAnalysis/src/sa/res/./mr-4813/hadoop-hdfs-0.23.3.jar:/home/snoopy/workspace/loopAnalysis/src/sa/res/./mr-4813/hadoop-mapreduce-client-app-0.23.3.jar:/home/snoopy/workspace/loopAnalysis/src/sa/res/./mr-4813/hadoop-mapreduce-client-jobclient-0.23.3.jar:/home/snoopy/workspace/loopAnalysis/src/sa/res/./mr-4813/hadoop-mapreduce-client-common-0.23.3.jar:/home/snoopy/workspace/loopAnalysis/src/sa/res/./mr-4813/hadoop-mapreduce-client-hs-0.23.3.jar:/home/snoopy/workspace/loopAnalysis/src/sa/res/./mr-4813/hadoop-yarn-common-0.23.3.jar:/home/snoopy/workspace/loopAnalysis/src/sa/res/./mr-4813/hadoop-yarn-api-0.23.3.jar:/home/snoopy/workspace/loopAnalysis/src/sa/res/./mr-4813/hadoop-yarn-server-nodemanager-0.23.3.jar:/home/snoopy/workspace/loopAnalysis/src/sa/res/./mr-4813/hadoop-yarn-applications-distributedshell-0.23.3.jar:/home/snoopy/workspace/loopAnalysis/src/sa/res/./mr-4813/hadoop-mapreduce-client-shuffle-0.23.3.jar:/home/snoopy/workspace/loopAnalysis/src/sa/res/./mr-4813/hadoop-yarn-server-resourcemanager-0.23.3.jar:/home/snoopy/workspace/loopAnalysis/src/sa/res/./mr-4813/hadoop-yarn-server-web-proxy-0.23.3.jar:/home/snoopy/workspace/loopAnalysis/src/sa/res/./mr-4813/hadoop-mapreduce-client-core-0.23.3.jar
+JX - INFO - WalaAnalyzer: walaAnalysis...
+Call graph stats:
+  Nodes: 52396
+  Edges: 306133
+  Methods: 48197
+  Bytecode Bytes: 1947932
+
+JX - INFO - WalaAnalyzer: infoWalaAnalysisEnv
+nTotalFuncs(52396) = nApplicationFuncs(37737) + nPremordialFuncs(14659) + nOtherFuncs(0)
+	nApplicationFuncs(37737) includes 34 native methods
+	nPremordialFuncs(14659) includes 131 native methods
+	nOtherFuncs(0) includes 0 native methods
+nPackageFuncs(37703) - Note: this should be isApplicationAndNonNativeMethod first
+JX - INFO - WalaAnalyzer: readPackageScope
+NOTICE - not find the 'package-scope.txt' file, so SCOPE is ALL methods!!
+JX - INFO - Timer(toc->toc): 138.559s, (tic->toc): 138.559s, MSG: WalaAnalyzer end
+
+JX - INFO - LLAnalysis.doWork
+JX - INFO - Timer(tic), MSG: LLAnalysis begin
+JX - DEBUG - system name = MapReduce
+
+JX - INFO - LockAnalyzer: doWork...
+JX - INFO - LockAnalyzer: findLocksForAllCGNodes
+JX - INFO - LockAnalyzer: The status of results
+The Status of Locks in All Functions:
+#scanned functions: 37703 out of #Total:52396(#AppFuncs:37737+#PremFuncs:14659)
+#functions with locks: 2113(2174locks) (excluding 4 filtered functions that have locks)
+//distribution of #locks
+#0:35590, #1:2072, #2:30, #3:5, #4:4, #5:1, #6:1, #7:0, #8:0, #9:0, #10:0, #11:0, #12:0, #13:0, #14:0, #15:0, #16:0, #17:0, #18:0, #19:0, 
+//distribution of lock types
+#synchronized_lock:300, #writeLock:81, #synchronized_method:1636, #readLock:35, #lock:122, 
+
+JX - INFO - LockAnalyzer: analyzeAllLocks
+#Total Locks = 2174
+#Groups of total Locks (ie, real number): 445
+
+JX - INFO - Timer(toc->toc): 2.178s, (tic->toc): 2.178s, MSG: lockAnalyzer end
+
+JX - INFO - LoopAnalyzer: doWork...
+JX - INFO - LoopAnalyzer: findLoopsForAllCGNodes
+JX - INFO - LoopAnalyzer: The status of results
+The Status of Loops in All Functions:
+#scanned functions: 37703 out of #Total:52396(#AppFuncs:37737+#PremFuncs:14659)
+#functions with loops: 2147 (#loops:2922)
+//distribution of #loops
+#0:35556, #1:1695, #2:306, #3:82, #4:30, #5:14, #6:7, #7:3, #8:1, #9:1, #10:0, #11:5, #12:1, #13:0, #14:0, #15:1, #16:0, #17:1, #18:0, #19:0, JX - INFO - Timer(toc->toc): 0.29s, (tic->toc): 2.468s, MSG: loopAnalyzer end
+
+JX - INFO - LoopingLockAnalyzer: doWork...
+JX - INFO - LoopingLockAnalyzer: findLoopsForAllLocks
+The Status of Critical Sections:
+#functions that their critical sections involve loops: 837(859critical sections) out of 2113(2174critical sections) functions with locks
+//distribution of loop depth in 2174(#>=1:859) critical sections
+#0:1315, #1:337, #2:114, #3:38, #4:7, #5:4, #6:0, #7:0, #8:0, #9:0, #10:0, #11:0, #12:0, #13:0, #14:0, #15:0, #16:0, #17:0, #18:0, #19:0, #>=20:359
+//PS: distribution of loop depth in 2113(#>=1:837) locking functions
+#0:1276, #1:321, #2:110, #3:38, #4:7, #5:4, #6:0, #7:0, #8:0, #9:0, #10:0, #11:0, #12:0, #13:0, #14:0, #15:0, #16:0, #17:0, #18:0, #19:0, #>=20:357
+jx - functions.size() = 10210
+
+
+JX - INFO - analyzeLoopingLocks
+#HeavyLocks (ie, time-consuming looping locks): 114 out of 859 looping locks out of total 2174 locks
+#Groups of HeavyLocks (ie, real number): 62 out of total 445 lock groups
+
+JX - INFO - Timer(toc->toc): 0.142s, (tic->toc): 2.61s, MSG: loopingLockAnalyzer end
+JX - INFO - TextFileReader: successfully read 60 lines in /home/snoopy/workspace/loopAnalysis/src/sa/res/./mr-4813/mr_rpc.txt
+JX - INFO - TextFileReader: successfully read 107 lines in /home/snoopy/workspace/loopAnalysis/src/sa/res/./io/io.txt
+JX - INFO - TextFileReader: successfully read 2 lines in /home/snoopy/workspace/loopAnalysis/src/sa/res/./io/customized_io_mr.txt
+
+JX - INFO - TCLoopAnalyzer: doWork...
+JX - INFO - findTCOperationsForAllLoops
+JX - INFO - TCLoopAnalyzer: printResultStatus
+#TCLoops = 1605 out of total 2922 loops
+
+ JX - INFO - printTcOperationTypes
+#types = 2215
+JX - INFO - Timer(toc->toc): 3.392s, (tic->toc): 6.002s, MSG: tcLoopAnalyzer end
+#cgNodes = 225 containing loopingLocks and TCLoop
