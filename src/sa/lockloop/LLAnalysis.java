@@ -204,6 +204,7 @@ public class LLAnalysis {
 				if(flag) {
 					cgNodeCnt++;
 					System.err.println(cgNodeInfo.getCGNode().getMethod());
+					System.err.println(cgNodeInfo.hasLoops_in_current_function_for_max_depthOfLoops+" "+cgNodeInfo.numOfTcOperations_recusively);
 				}
 			}
 			System.out.println("#cgNodes = " + cgNodeCnt + " containing loopingLocks(" +lockCnt+ ") with TCLoop(" +loopCnt+ ")");				
