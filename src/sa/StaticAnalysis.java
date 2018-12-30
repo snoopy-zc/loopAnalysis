@@ -33,7 +33,8 @@ public class StaticAnalysis {
 	public void doWork() {
 		System.out.println("JX - INFO - StaticAnalysis.doWork");
 		
-    	Timer timer = new Timer( Paths.get(projectDir, "src/sa/output/wala-timer.txt") );
+    	//Timer timer = new Timer( Paths.get(jarsDir, "wala-timer.txt") );
+    	Timer timer = new Timer(jarsDir+"_wala-timer.txt");
     	timer.tic("WalaAnalyzer begin");
 		WalaAnalyzer walaAnalyzer = new WalaAnalyzer(jarsDir);
 		timer.toc("WalaAnalyzer end");

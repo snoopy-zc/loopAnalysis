@@ -64,6 +64,7 @@ import com.system.Timer;
 import sa.lock.LockAnalyzer;
 import sa.lock.LockInfo;
 import sa.lock.LoopingLockAnalyzer;
+import sa.lock.LoopingLockInfo;
 import sa.loop.TCOpUtil;
 import sa.loop.LoopAnalyzer;
 import sa.loop.LoopInfo;
@@ -176,21 +177,36 @@ public class LLAnalysis {
 			
 			//zc- just for test 
 
-			int cnt = 0;
+			int cgNodeCnt = 0;
+			int lockCnt = 0;
+			int loopCnt = 0;
 			
-			for(CGNodeInfo cgNodeInfo: this.cgNodeList.values())
-				if(cgNodeInfo.hasLoopingLocks && cgNodeInfo.hasLoops())
-				{				
-					for (LoopInfo loop: cgNodeInfo.getLoops()) {				
-						if (loop.numOfTcOperations_recusively > 0) {	
-							cnt++;
-							//System.out.println((cnt++)+" "+loop.numOfTcOperations_recusively);
-							//System.out.println(loop.getCGNode().getMethod().toString()+loop.getLineNumber());
-							//System.out.println(loop.tcOperations_recusively);
+			
+			for(CGNodeInfo cgNodeInfo: this.cgNodeList.values()) {
+				boolean flag = false;
+				if(cgNodeInfo.hasLoopingLocks){
+					for(LoopingLockInfo lpLockInfo: cgNodeInfo.looping_locks.values()) {
+						boolean flag_lock = false;
+						if(lpLockInfo.getLoops() != null) {
+							for(LoopInfo loop : lpLockInfo.getLoops()) {
+								if (loop.numOfTcOperations_recusively > 0) {
+									loopCnt++;
+									flag = true;
+									flag_lock = true;
+								}
+							}
 						}
-					}					
-				}    	
-			System.out.println("#cgNodes = " + cnt + " containing loopingLocks and TCLoop");				
+						if(flag_lock) {
+							lockCnt++;
+						}
+					}
+				}
+				if(flag) {
+					cgNodeCnt++;
+					System.err.println(cgNodeInfo.getCGNode().getMethod());
+				}
+			}
+			System.out.println("#cgNodes = " + cgNodeCnt + " containing loopingLocks(" +lockCnt+ ") with TCLoop(" +loopCnt+ ")");				
 			/*
 			for(CGNodeInfo cgNodeInfo: this.cgNodeList.values())
 			{

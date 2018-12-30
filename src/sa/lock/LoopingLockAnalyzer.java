@@ -70,7 +70,7 @@ public class LoopingLockAnalyzer {
 		System.out.println("\nJX - INFO - LoopingLockAnalyzer: doWork...");
 		findLoopsForAllLocks();
 		printResultStatus();
-		analyzeLoopingLocks();
+		//analyzeLoopingLocks();
 	}
 	
 	
@@ -309,6 +309,14 @@ public class LoopingLockAnalyzer {
 				loopinglock.hasLoops_in_current_function_for_max_depthOfLoops.add(max_depthOfLoops_in_current_function);
 				loopinglock.function = cgNode;  //for the future
 				loopinglock.lock = lock;   //for the future
+				//added by zc, add loop of current function into loopingLockInfo
+				if(cgNodeInfo.getLoops() != null) {
+					for(LoopInfo loop: cgNodeInfo.getLoops()) {
+						if(lock.bbs.containsAll(loop.getBasicBlockNumbers()))
+							loopinglock.inner_loops.add(loop);
+					}
+				}
+				// TODO add the loop in invoke function.....
 				cgNodeInfo.looping_locks.put(i, loopinglock);
 			}
      
@@ -394,7 +402,7 @@ public class LoopingLockAnalyzer {
     List<LoopingLockInfo> heavylocks = new ArrayList<LoopingLockInfo>();  // ie, Time-consuming Looping Locks
     Set<String> set_of_heavylocks = new TreeSet<String>();   
   
-    public void analyzeLoopingLocks() {
+    public void analyzeLoopingLocks() {//just for test, the logic is wrong
     	System.out.println("\nJX - INFO - analyzeLoopingLocks");
  
     	int requiredDepth = 2;
