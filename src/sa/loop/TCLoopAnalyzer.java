@@ -280,6 +280,7 @@ public class TCLoopAnalyzer {
 				}
 			}
 		}//for
+		// TODO zc - this can be change !!! 
 	}
 	  
 	
