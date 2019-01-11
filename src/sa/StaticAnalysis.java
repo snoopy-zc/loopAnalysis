@@ -34,14 +34,12 @@ public class StaticAnalysis {
 		System.out.println("JX - INFO - StaticAnalysis.doWork");
 		
     	//Timer timer = new Timer( Paths.get(jarsDir, "wala-timer.txt") );
-    	Timer timer = new Timer(jarsDir+"_wala-timer.txt");
-    	timer.tic("WalaAnalyzer begin");
+    	//Timer timer = new Timer(jarsDir+"_wala-timer.txt");
+    	//timer.tic("WalaAnalyzer begin");
 		WalaAnalyzer walaAnalyzer = new WalaAnalyzer(jarsDir);
-		timer.toc("WalaAnalyzer end");
-		timer.close();
-		
-		//System.out.println(walaAnalyzer.getCallGraph().getNode(0).getClassHierarchy());
-		
+		//timer.toc("WalaAnalyzer end");
+		//timer.close();
+				
 		LLAnalysis jxLocks = new LLAnalysis(walaAnalyzer, projectDir);
 	}
 	

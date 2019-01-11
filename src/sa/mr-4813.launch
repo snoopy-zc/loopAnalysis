@@ -11,5 +11,5 @@
 <stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="${workspace_loc}/loopAnalysis/ ${workspace_loc}/loopAnalysis/src/sa/res/mr-4813"/>   
 
 <stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="loopAnalysis"/>
-<stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="-Xmx8G"/>                  #-Xmx800M
+<stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="-Xmx16G"/>                  #-Xmx800M
 </launchConfiguration>
