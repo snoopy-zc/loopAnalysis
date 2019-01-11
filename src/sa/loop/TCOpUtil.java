@@ -130,7 +130,6 @@ public class TCOpUtil {
     				return true;
     			}	 
     	}
-
 	    return false;
 	}
 	
@@ -162,9 +161,7 @@ public class TCOpUtil {
 		System.out.println("\n JX - INFO - printTcOperationTypes");
 		System.out.println("#types = " + tmpTcOps.size());
 		// test
-		for (String str: tmpTcOps) {
-			//System.out.println(str);
-		}
+		//for (String str: tmpTcOps) {System.out.println(str);}
 	}
 	  
 	  

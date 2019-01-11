@@ -52,7 +52,7 @@ public class TCLoopAnalyzer {
 		
 		findTCOperationsForAllLoops();
 		printResultStatus();
-		iolooputil.printTcOperationTypes();                //for test
+		//iolooputil.printTcOperationTypes();                //for test
 		
 	      
 	}

@@ -12,6 +12,7 @@ import com.ibm.wala.ssa.SSAInvokeInstruction;
 import sa.lock.LockInfo;
 import sa.lock.LoopingLockInfo;
 import sa.loop.LoopInfo;
+import sa.tcop.TcOpPathInfo;
 
 
 
@@ -33,15 +34,19 @@ public class CGNodeInfo {
 	public List<Integer> hasLoops_in_current_function_for_max_depthOfLoops; //loop hierarchy num in each method!!! 
 	  
 	public Map<Integer, InstructionInfo> instructions;
-	
-	
-	
+		
 	// newly added
 	public int numOfTcOperations;
 	public int numOfTcOperations_recusively;
 	public List<SSAInstruction> tcOperations;            // time-consuming operation locations
 	public List<SSAInstruction> tcOperations_recusively; // won't be used&inited. if want to
-		
+
+	//zc: new to trace tcOp/loop/path
+	public List<TcOpPathInfo> tcOps;
+	public boolean self_call;
+	public List<LoopInfo> self_call_inner_loops = null;                 //Type - ArrayList<LoopInfo>
+	public List<SSAInstruction> self_call_ssa = null;
+	
 	  
 	  
 	
@@ -65,6 +70,10 @@ public class CGNodeInfo {
 	    this.hasLoops_in_current_function_for_max_depthOfLoops = new ArrayList<Integer>();
 	    
 	    this.instructions = new TreeMap<Integer, InstructionInfo>();
+
+		this.tcOps = new ArrayList<TcOpPathInfo>();//added by zc
+		this.self_call = false;
+		this.self_call_inner_loops = null;
 	}
 	
 	
@@ -109,8 +118,36 @@ public class CGNodeInfo {
 		this.doneNestedLoopComputation = bool;
 	}
 	
+	public List<TcOpPathInfo> getTcOps(){
+		return this.tcOps;
+	}
 	
-	
+	public void setTcOps(List<TcOpPathInfo> tcOps) {
+		this.tcOps = tcOps;
+	}
+		
+	//added by zc to mark serlf call 
+	public void addSelfLoop(LoopInfo loop) {
+		if(this.self_call_inner_loops == null)
+			this.self_call_inner_loops = new ArrayList<LoopInfo>();
+		this.self_call_inner_loops.add(loop);
+	}
+	//-- only mark the first-level self call, multi-location-record but no branch info
+	public void markSelfCall(SSAInstruction ssa) {
+		this.self_call = true;
+		
+		if(this.self_call_ssa == null) 
+			this.self_call_ssa = new ArrayList<SSAInstruction>();		
+		this.self_call_ssa.add(ssa);
+		
+		if(hasLoops()) {
+			for(LoopInfo loop: this.loops) {
+				if(loop.containsSSA(ssa)) {
+					this.addSelfLoop(loop);
+				}
+			}
+		}
+	}
 	
 	@Override
 	public String toString() {

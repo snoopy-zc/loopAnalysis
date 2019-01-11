@@ -70,7 +70,7 @@ public class LoopingLockAnalyzer {
 		System.out.println("\nJX - INFO - LoopingLockAnalyzer: doWork...");
 		findLoopsForAllLocks();
 		printResultStatus();
-		//analyzeLoopingLocks();
+		analyzeLoopingLocks();
 	}
 	
 	
@@ -325,6 +325,7 @@ public class LoopingLockAnalyzer {
 			//  System.out.println("I do");
 			if (loopinglock != null) {
 				if (cgNode.getMethod().getSignature().indexOf("BlockManager.processReport(") >=0 || loopinglock.max_depthOfLoops == 15 && loopinglock.max_depthOfLoops < 15) {
+					System.err.println("just for test");
 					System.err.println(loopinglock.max_depthOfLoops + " : " + cgNode.getMethod().getSignature() + " : " + locks.get(i).lock_type);
 					// print the function chain
 					for (int k = loopinglock.function_chain_for_max_depthOfLoops.size()-1; k >= 0; k--)
@@ -405,12 +406,12 @@ public class LoopingLockAnalyzer {
     public void analyzeLoopingLocks() {//just for test, the logic is wrong
     	System.out.println("\nJX - INFO - analyzeLoopingLocks");
  
-    	int requiredDepth = 2;
+    	int requiredDepth = 4;
 		for (CGNodeInfo cgNodeInfo: lockAnalyzer.getLockCGNodes()) {
 			if ( !cgNodeInfo.hasLoopingLocks ) continue;
     		for (Map.Entry<Integer, LoopingLockInfo> entry: cgNodeInfo.looping_locks.entrySet()) {
     			LoopingLockInfo loopinglock = entry.getValue();
-    			if (loopinglock.max_depthOfLoops >= requiredDepth && loopinglock.max_depthOfLoops < 3) {
+    			if (loopinglock.max_depthOfLoops >= requiredDepth && loopinglock.max_depthOfLoops < 100) {
     				heavylocks.add( loopinglock );
     				set_of_heavylocks.add( loopinglock.lock.lock_identity );
     			}
@@ -423,7 +424,7 @@ public class LoopingLockAnalyzer {
     	System.out.println("#HeavyLocks (ie, time-consuming looping locks): " + nHeavyLocks + " out of " + nLoopingLocks + " looping locks" + " out of total " + lockAnalyzer.getNLocks()  + " locks");
     	System.out.println("#Groups of HeavyLocks (ie, real number): " + nHeavyLockGroups + " out of total " + lockAnalyzer.getNLockGroups() + " lock groups");
     	for (String str: set_of_heavylocks)
-    		System.err.println( str );
+    		System.err.println("zc!!! heavy loop " +  str );
     	System.out.println();
     }
 }

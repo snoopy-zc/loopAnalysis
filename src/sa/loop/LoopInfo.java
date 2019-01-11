@@ -94,10 +94,26 @@ public class LoopInfo {
 		this.end_bb = end_bb;
 		computeBasicBlocks();
 	}
-	
-	
-	
-	
+	// newly added by zc
+	public boolean isContain(SSAInstruction o_ssa) {
+		
+		CGNode cgNode = this.getCGNode();
+		IR ir = cgNode.getIR();
+		SSACFG cfg = ir.getControlFlowGraph();
+		SSAInstruction[] instructions = ir.getInstructions();
+		
+		for (int bbnum: this.getBasicBlockNumbers()) {
+			int first_index = cfg.getBasicBlock(bbnum).getFirstInstructionIndex();
+			int last_index = cfg.getBasicBlock(bbnum).getLastInstructionIndex();
+			for (int i = first_index; i <= last_index; i++) {
+				SSAInstruction ssa = instructions[i];
+				if (ssa == null) continue;
+				if (ssa.equals(o_ssa))
+					return true;
+			}
+		}
+		return false;
+	}
 	
 	// newly added, haven't been tested
 	public boolean containsSSA(SSAInstruction targetSSA) {
