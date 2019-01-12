@@ -283,7 +283,7 @@ public class LoopingLockAnalyzer {
 								numOfSurroundingLoops_in_current_function ++;
 						}
 					}
-					// Then zc - the loop depth in lock field
+					// Then zc - the max loop depth in lock field
 					int depthOfLoops = numOfSurroundingLoops_in_current_function + instruction.maxdepthOfLoops_in_call;
 					//if (instruction.numOfLoops_in_call >= 7 && instruction.numOfLoops_in_call <= 15) System.err.println("!!:" + instruction.numOfLoops_in_call);
 					if (depthOfLoops <= 0)
