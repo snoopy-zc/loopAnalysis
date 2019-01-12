@@ -30,8 +30,7 @@ public class LoopInfo {
 	Set<Integer> bbs;
 	int begin_bb;         // bb - basic block in WALA
 	int end_bb;
-  
-	
+ 	
 	// included time-consuming operation info
 	public int numOfTcOperations_recusively;
 	public List<SSAInstruction> tcOperations_recusively;
@@ -43,10 +42,7 @@ public class LoopInfo {
 	public List<Integer> hasLoops_in_current_function_for_max_depthOfLoops;
   
 	String var_name;
-  
-	
-	
-	
+ 	
 	public LoopInfo(CGNode cgNode, int begin_bb, int end_bb) {
 		this.cgNode = cgNode;
 		this.begin_bb = begin_bb;
@@ -94,7 +90,7 @@ public class LoopInfo {
 		this.end_bb = end_bb;
 		computeBasicBlocks();
 	}
-	// newly added by zc
+	
 	public boolean isContain(SSAInstruction o_ssa) {
 		
 		CGNode cgNode = this.getCGNode();
@@ -110,7 +106,7 @@ public class LoopInfo {
 				if (ssa == null) continue;
 				if (ssa.equals(o_ssa))
 					return true;
-			}
+			}			
 		}
 		return false;
 	}

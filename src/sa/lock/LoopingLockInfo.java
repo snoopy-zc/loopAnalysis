@@ -22,6 +22,14 @@ public class LoopingLockInfo {
 	public List<LoopInfo> getLoops(){
 		return inner_loops;
 	}
+	
+	public int get_max_depthOfLoops(){
+		return max_depthOfLoops;
+	}
+	
+	public LockInfo getLock() {
+		return lock;
+	}
   
 	public LoopingLockInfo() {
 		this.function = null;

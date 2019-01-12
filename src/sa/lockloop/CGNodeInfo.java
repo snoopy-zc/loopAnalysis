@@ -24,8 +24,8 @@ public class CGNodeInfo {
 	List<LoopInfo> loops = null;                 //Type - ArrayList<LoopInfo>
 	
 	// loop-containing locks
-	public boolean hasLoopingLocks;                      //only for first-level functions that have locks
-	public Map<Integer, LoopingLockInfo> looping_locks;  //only for first-level functions that have locks, map: lock-id -> max_depthOfLoops
+	public boolean hasLoopingLocks;                      //only for first-level functions that have locks //ZC add: not fist level but recursively  
+	public Map<Integer, LoopingLockInfo> looping_locks;  //only for first-level functions that have locks, map: lock-id -> max_depthOfLoops //ZC add: max_depth by recursive search  
 	  
 	
 	boolean doneNestedLoopComputation = false;
@@ -41,7 +41,7 @@ public class CGNodeInfo {
 	public List<SSAInstruction> tcOperations;            // time-consuming operation locations
 	public List<SSAInstruction> tcOperations_recusively; // won't be used&inited. if want to
 
-	//zc: new to trace tcOp/loop/path
+	//zc: new to trace tcOp/loop/path /!!!Out of Memory --total space cost O(#cgNode)*O(#path to I/O)*O(length<#cgNode)*O(#loop in a cgNode)
 	public List<TcOpPathInfo> tcOps;
 	public boolean self_call;
 	public List<LoopInfo> self_call_inner_loops = null;                 //Type - ArrayList<LoopInfo>

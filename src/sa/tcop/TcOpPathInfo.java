@@ -16,14 +16,11 @@ public class TcOpPathInfo {
 	public CGNode function = null;	//the lowest level 
 	public int line_number = -1;
 	public List<PathEntry> callpath = null; //must not null if used
+
 	
-	public TcOpPathInfo(CGNodeInfo cgN, SSAInstruction ssa) {
-		this.function = cgN.getCGNode();
-		this.tcOp_ssa = ssa;
-		this.line_number = IRUtil.getSourceLineNumberFromSSA(cgN.getCGNode(), ssa);
+	public TcOpPathInfo() {
 		this.callpath = new ArrayList<PathEntry>();	
-		//nothing
-		
+		//nothing		
 	}
 	
 	public TcOpPathInfo(TcOpPathInfo e) {
@@ -36,6 +33,20 @@ public class TcOpPathInfo {
 		}
 	}
 	
+	public TcOpPathInfo(CGNodeInfo cgN, SSAInstruction ssa) {
+		this.function = cgN.getCGNode();
+		this.tcOp_ssa = ssa;
+		this.line_number = IRUtil.getSourceLineNumberFromSSA(cgN.getCGNode(), ssa);
+		this.callpath = new ArrayList<PathEntry>();	
+		//nothing		
+	}
+	
+	public void setTcOp(CGNode cgN, SSAInstruction ssa) {
+		this.function = cgN;
+		this.tcOp_ssa = ssa;
+		this.line_number = IRUtil.getSourceLineNumberFromSSA(cgN, ssa);
+	}
+	
 	public int getNestedLoopNum() {
 		if (callpath==null)
 			return 0;
@@ -45,7 +56,15 @@ public class TcOpPathInfo {
 		}
 		return sum;
 	}
-
+	
+	public PathEntry getPathNode(CGNode cgn) {//-1 stand for no! 0 strand for self call! n>0 stand for the n.th node after this call this 
+		for(int i=0; i<this.callpath.size();i++)
+			if(this.callpath.get(i).function.equals(cgn))
+				return this.callpath.get(i);
+		return null;
+	}
+	
+	
 	@Override
 	public String toString() {
 		String result = "TcOpPathInfo:" + line_number;
@@ -55,7 +74,7 @@ public class TcOpPathInfo {
 		}
 		result = result + "@" + ((SSAInvokeInstruction)tcOp_ssa).getDeclaredTarget(); 
 		return result;
-	}
+	}	
 }
 
 
@@ -63,6 +82,8 @@ class PathEntry{
 	public CGNode function = null;
 	public List<LoopInfo> loops = null;
 	//TODO outer loop in the front?? it make sense
+	public List<PathEntry> circleCalls = null; //who call me
+	//-1 stand for no circle! 0 strand for self call! n>0 stand for the n.th node after this call this 
 	
 	public PathEntry(CGNode n) {
 		function = n;
@@ -96,6 +117,13 @@ class PathEntry{
 		loops.add(loop);
 	}
 	
+	//-1 stand for no circle! 0 strand for self call! n>0 stand for the n.th node after this call this 
+	public void addCircle(PathEntry e) {
+		if(circleCalls == null)
+			circleCalls = new ArrayList<PathEntry>();
+		circleCalls.add(e);
+	}
+		
 	public int getLoopNum() {
 		return loops==null? 0:loops.size();
 	}
