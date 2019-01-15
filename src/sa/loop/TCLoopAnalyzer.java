@@ -293,7 +293,7 @@ public class TCLoopAnalyzer {
 		for (CGNodeInfo cgNodeInfo: loopAnalyzer.getLoopCGNodes())
 			for (LoopInfo loop: cgNodeInfo.getLoops()) {
 				if (loop.numOfTcOperations_recusively > 0) {
-					//System.out.println( loop );
+					System.out.println( loop.getCGNode().getMethod() );
 				}
 			}
     }

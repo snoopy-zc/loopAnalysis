@@ -179,6 +179,13 @@ public class LoopInfo {
 	    		+ "Time-consumingOps(" + numOfTcOperations_recusively + "):" + tcOperations_recusively + ", " 
 	    		+ "{begin:" + begin_bb + " end:" + end_bb + " var_name:" + var_name + " bbs:" + bbs + "}";
 	}
+	
+
+	public String toString_get() {
+	    return "LOOP - " + cgNode.getMethod().getSignature() + ":" + line_number + ", \n"
+	    		+ "Time-consumingOps(" + numOfTcOperations_recusively + "):" 
+	    		+ tcOperations_recusively;	    		
+	}
   
 	
 	//tmp for loop's Time-consuming operations

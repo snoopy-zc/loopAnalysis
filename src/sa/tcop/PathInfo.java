@@ -11,20 +11,20 @@ import sa.lockloop.CGNodeInfo;
 import sa.loop.LoopInfo;
 import sa.wala.IRUtil;
 
-public class TcOpPathInfo {
-	public SSAInstruction tcOp_ssa = null;   //this is the core, the tc operation
+public class PathInfo {
+	public SSAInstruction ssa = null;   //this is the core, the tc operation
 	public CGNode function = null;	//the lowest level 
 	public int line_number = -1;
 	public List<PathEntry> callpath = null; //must not null if used
 
 	
-	public TcOpPathInfo() {
+	public PathInfo() {
 		this.callpath = new ArrayList<PathEntry>();	
 		//nothing		
 	}
 	
-	public TcOpPathInfo(TcOpPathInfo e) {
-		this.tcOp_ssa = e.tcOp_ssa;
+	public PathInfo(PathInfo e) {
+		this.ssa = e.ssa;
 		this.function = e.function;
 		this.line_number = e.line_number;
 		this.callpath = new ArrayList<PathEntry>();
@@ -33,28 +33,61 @@ public class TcOpPathInfo {
 		}
 	}
 	
-	public TcOpPathInfo(CGNodeInfo cgN, SSAInstruction ssa) {
-		this.function = cgN.getCGNode();
-		this.tcOp_ssa = ssa;
-		this.line_number = IRUtil.getSourceLineNumberFromSSA(cgN.getCGNode(), ssa);
+	public PathInfo(CGNode cgN, SSAInstruction ssa) {
+		this.setSSA(cgN,ssa);
 		this.callpath = new ArrayList<PathEntry>();	
 		//nothing		
 	}
 	
-	public void setTcOp(CGNode cgN, SSAInstruction ssa) {
+	public PathInfo(CGNodeInfo cgN, SSAInstruction ssa) {
+		this.setSSA(cgN.getCGNode(),ssa);
+		this.callpath = new ArrayList<PathEntry>();	
+		//nothing
+	}
+	
+	public void setSSA(CGNode cgN, SSAInstruction ssa) {
 		this.function = cgN;
-		this.tcOp_ssa = ssa;
+		this.ssa = ssa;
 		this.line_number = IRUtil.getSourceLineNumberFromSSA(cgN, ssa);
 	}
 	
-	public int getNestedLoopNum() {
-		if (callpath==null)
-			return 0;
+	public void setFunction(CGNode cgN) {
+		this.function = cgN;
+	}
+	
+	public int getNestedLoopDepth() {
 		int sum = 0;
 		for (PathEntry entry : callpath) {
 			sum += entry.getLoopNum();
 		}
 		return sum;
+	}
+	
+	public int getCircleNum() {
+		int sum = 0;
+		for (PathEntry entry : callpath) {
+			if(entry.circleCalls != null)
+				sum += entry.circleCalls.size();
+		}
+		return sum;
+	}
+
+	public int getCircleNumInloop() {//TODO incomplete
+		int sum = 0;
+		for (PathEntry entry : callpath) {
+			if(entry.circleCalls != null)
+				sum += entry.circleCalls.size();
+		}
+		return sum;
+	}
+	
+	public boolean containNode(String str) {
+		//e.g. org/apache/hadoop/hdfs/server/namenode/INodeDirectory, spaceConsumedInTree(...
+		for (PathEntry entry : callpath) {
+			if(entry.getFunctionName().indexOf(str)>=0)
+				return true;
+		}		
+		return false;
 	}
 	
 	public PathEntry getPathNode(CGNode cgn) {//-1 stand for no! 0 strand for self call! n>0 stand for the n.th node after this call this 
@@ -64,15 +97,32 @@ public class TcOpPathInfo {
 		return null;
 	}
 	
+	public void addPathEntry(PathEntry e) {
+		this.callpath.add(e);
+	}
+	
 	
 	@Override
 	public String toString() {
-		String result = "TcOpPathInfo:" + line_number;
-		for(int i = callpath.size()-1; i>=0; i++) {
-			CGNode cgNode = callpath.get(i).function;
-			result = result + "-" + cgNode.getMethod().getSignature().substring(0, cgNode.getMethod().getSignature().indexOf('('));
+		if(callpath.size()<1)
+			return null;
+		String result = "TcOpPathInfo:" + this.getCircleNum();
+		boolean reverse = false;
+		if(reverse) {
+			for(int i = callpath.size()-1; i>=0; i++) {
+				PathEntry pe = callpath.get(i);
+				CGNode cgNode = pe.function;
+				result = result + "-" + cgNode.getMethod().getSignature().substring(0, cgNode.getMethod().getSignature().indexOf('(')) +"#"+ pe.getLoopNum() + "#" + pe.getCircleNum();
+			}
+		} else {
+			for(int i = 0; i < callpath.size(); i++) {
+				PathEntry pe = callpath.get(i);
+				CGNode cgNode = pe.function;
+				result = result + "-" + cgNode.getMethod().getSignature().substring(0, cgNode.getMethod().getSignature().indexOf('(')) +"#"+ pe.getLoopNum() + "#" + pe.getCircleNum();
+			}
 		}
-		result = result + "@" + ((SSAInvokeInstruction)tcOp_ssa).getDeclaredTarget(); 
+		if(ssa!=null)
+			result = result + "@" + ((SSAInvokeInstruction)ssa).getDeclaredTarget(); 
 		return result;
 	}	
 }
@@ -80,6 +130,7 @@ public class TcOpPathInfo {
 
 class PathEntry{
 	public CGNode function = null;
+	public SSAInstruction ssa = null;
 	public List<LoopInfo> loops = null;
 	//TODO outer loop in the front?? it make sense
 	public List<PathEntry> circleCalls = null; //who call me
@@ -100,6 +151,7 @@ class PathEntry{
 	
 	public PathEntry(CGNodeInfo cgN, SSAInstruction ssa) {
 		this.function = cgN.getCGNode();
+		this.ssa = ssa;
 		if(cgN.hasLoops()) {
 			for(LoopInfo loop: cgN.getLoops()) {
 				//just for test
@@ -117,18 +169,30 @@ class PathEntry{
 		loops.add(loop);
 	}
 	
+	public void delLoop(LoopInfo loop) {
+		if(loops != null)
+			loops.remove(loop);
+	}
+	
+	public int getLoopNum() {
+		return loops==null? 0:loops.size();
+	}
+	
+	public int getCircleNum() {
+		if(circleCalls==null)
+			return 0;
+		else
+			return circleCalls.size();
+	}
+	
 	//-1 stand for no circle! 0 strand for self call! n>0 stand for the n.th node after this call this 
 	public void addCircle(PathEntry e) {
 		if(circleCalls == null)
 			circleCalls = new ArrayList<PathEntry>();
 		circleCalls.add(e);
 	}
-		
-	public int getLoopNum() {
-		return loops==null? 0:loops.size();
-	}
 	
 	public String getFunctionName() {
-		return function.getIR().getMethod().toString();
+		return function.getMethod().toString();
 	}
 }

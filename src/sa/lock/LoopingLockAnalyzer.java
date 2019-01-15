@@ -398,12 +398,12 @@ public class LoopingLockAnalyzer {
     }
 	  
 	  
-	  // the following code seems unused
+	  //zc - the following code seems unused
 	    
     List<LoopingLockInfo> heavylocks = new ArrayList<LoopingLockInfo>();  // ie, Time-consuming Looping Locks
     Set<String> set_of_heavylocks = new TreeSet<String>();   
   
-    public void analyzeLoopingLocks() {//just for test, the logic is wrong
+    public void analyzeLoopingLocks() {// zc - just for test, the logic is wrong
     	System.out.println("\nJX - INFO - analyzeLoopingLocks");
  
     	int requiredDepth = 4;
