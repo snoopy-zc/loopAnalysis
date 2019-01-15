@@ -38,7 +38,7 @@ public class LockLoopTcOpAnalyzer {
 	int nTCNodes = 0;
 	int nTCLocks = 0;
 	
-	List<TcOpPathInfo> results;
+	List<PathInfo> results;
 	
 	
 	
@@ -49,7 +49,7 @@ public class LockLoopTcOpAnalyzer {
 		this.outputDir = this.walaAnalyzer.getTargetDirPath();
 		this.lockAnalyzer = lockAnalyzer;
 		this.cgNodeList = cgNodeList;
-		this.results = new ArrayList<TcOpPathInfo>();
+		this.results = new ArrayList<PathInfo>();
 		//others
 		this.iolooputil = new TCOpUtil( this.walaAnalyzer.getTargetDirPath() );
 	}
@@ -96,14 +96,14 @@ public class LockLoopTcOpAnalyzer {
 							if (ssa == null)
 								continue;
 							if ( iolooputil.isTimeConsumingSSA(ssa) ) {
-								TcOpPathInfo curPathInfo = new TcOpPathInfo();	
+								PathInfo curPathInfo = new PathInfo();	
 								curPathInfo.callpath.add(new PathEntry(cgNodeInfo,ssa));
-								curPathInfo.setTcOp(cgNode, ssa);
+								curPathInfo.setSSA(cgNode, ssa);
 								if(cgNodeInfo.hasLoops())//remove outer loop of lock
 									for(LoopInfo loop:cgNodeInfo.getLoops())
 										if(!lock.bbs.containsAll(loop.getBasicBlockNumbers()))
 											curPathInfo.getPathNode(cgNode).loops.remove(loop);
-								if(curPathInfo.getNestedLoopNum()>0)//add path with loop to result sets
+								if(curPathInfo.getNestedLoopDepth()>0)//add path with loop to result sets
 									results.add(curPathInfo);
 								continue; //for test // TODO
 							}							
@@ -126,7 +126,7 @@ public class LockLoopTcOpAnalyzer {
 										continue;
 									}
 									//else do next level
-									TcOpPathInfo curPathInfo = new TcOpPathInfo();	
+									PathInfo curPathInfo = new PathInfo();	
 									curPathInfo.callpath.add(new PathEntry(cgNodeInfo,ssa));					
 									doRecursiveCollection(sub_cgnode, curPathInfo, results);
 								}
@@ -146,9 +146,9 @@ public class LockLoopTcOpAnalyzer {
 						if(cgNodeInfo.hasLoops())
 							for(LoopInfo loop:cgNodeInfo.getLoops())
 								if(!lock.bbs.containsAll(loop.getBasicBlockNumbers()))
-										results.get(i).getPathNode(cgNode).loops.remove(loop);
+										results.get(i).getPathNode(cgNode).delLoop(loop);
 					}
-					
+					System.err.println(cgNode.getMethod().toString());
 					if(begin_size < results.size())
 						nTCLocks++;
 				}//end loopingLock for
@@ -158,7 +158,7 @@ public class LockLoopTcOpAnalyzer {
 		}//for cgNodeInfo
 	}
 	
-	public int doRecursiveCollection(CGNode cgNode, TcOpPathInfo pPathInfo, List<TcOpPathInfo> resCellection){
+	public int doRecursiveCollection(CGNode cgNode, PathInfo pPathInfo, List<PathInfo> resCellection){
 
 		// for test - the depth can reach 58
 		/*
@@ -195,11 +195,11 @@ public class LockLoopTcOpAnalyzer {
 			if (ssa == null) continue;
 			
 			if ( iolooputil.isTimeConsumingSSA(ssa) ) {
-				TcOpPathInfo curPathInfo = new TcOpPathInfo(pPathInfo);	
+				PathInfo curPathInfo = new PathInfo(pPathInfo);	
 				curPathInfo.callpath.add(new PathEntry(cgNodeInfo,ssa));
-				curPathInfo.setTcOp(cgNode, ssa);
+				curPathInfo.setSSA(cgNode, ssa);
 				resCellection.add(curPathInfo);
-				//continue; //for test // TODO
+				continue; //for test // TODO
 			}
 			
 			// filter the rest I/Os
@@ -216,17 +216,19 @@ public class LockLoopTcOpAnalyzer {
 				for (CGNode sub_cgnode: set) {
 					//TcOpPathInfo curPathInfo = new TcOpPathInfo(pPathInfo);	
 					if (sub_cgnode.equals(cgNode)) {//self call mark
-						System.err.println("Self-call!! "+cgNode.getMethod().toString());
+						//System.err.println("Self-call!! "+cgNode.getMethod().toString()+"@"+ssa);
+						//System.err.println(pPathInfo.toString());
 						circle_target_Src.add(new Pair<>(sub_cgnode,new PathEntry(cgNodeInfo,ssa)));
 						continue;
 					}
 					if (pPathInfo.getPathNode(sub_cgnode) != null) {
 						circle_target_Src.add(new Pair<>(sub_cgnode,new PathEntry(cgNodeInfo,ssa)));
-						System.err.println("Circle-call!! "+cgNode.getMethod().toString());
+						System.err.println("Circle-call!! "+cgNode.getMethod().toString()+"@"+ssa);
+						//System.err.println(pPathInfo.toString());
 						continue;
 					}
 					//else do next level
-					TcOpPathInfo curPathInfo = new TcOpPathInfo(pPathInfo);	
+					PathInfo curPathInfo = new PathInfo(pPathInfo);	
 					curPathInfo.callpath.add(new PathEntry(cgNodeInfo,ssa));					
 					doRecursiveCollection(sub_cgnode, curPathInfo, resCellection);
 				}

@@ -110,7 +110,7 @@ public class TcOpAnalyzer {
 			if (ssa == null) continue;
 
 			if ( iolooputil.isTimeConsumingSSA(ssa) ) {
-				TcOpPathInfo tmp = new TcOpPathInfo(cgNodeInfo,ssa);			
+				PathInfo tmp = new PathInfo(cgNodeInfo,ssa);			
 				tmp.callpath.add(new PathEntry(cgNodeInfo,ssa));
 				cgNodeInfo.tcOps.add(tmp);
 				continue; //for test // TODO
@@ -135,8 +135,8 @@ public class TcOpAnalyzer {
 					//if (result > 0 && WalaAnalyzer.isApplicationMethod(sub_cgnode)) {
 					if (result > 0) {
 						CGNodeInfo sub_cgnodeInfo = cgNodeList.forceGet(sub_cgnode.getGraphNodeId());						
-						for(TcOpPathInfo tcPath: sub_cgnodeInfo.getTcOps()) {
-							TcOpPathInfo curTcPath = new TcOpPathInfo(tcPath);
+						for(PathInfo tcPath: sub_cgnodeInfo.getTcOps()) {
+							PathInfo curTcPath = new PathInfo(tcPath);
 							curTcPath.callpath.add(new PathEntry(cgNodeInfo,ssa));						
 							cgNodeInfo.tcOps.add(curTcPath);
 						}

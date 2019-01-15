@@ -72,8 +72,9 @@ import sa.loop.NestedLoopAnalyzer;
 import sa.loop.TCLoopAnalyzer;
 import sa.loop.TcOperationInfo;
 import sa.tcop.LockLoopTcOpAnalyzer;
+import sa.tcop.LockingLoopAnalyzer;
 import sa.tcop.TcOpAnalyzer;
-import sa.tcop.TcOpPathInfo;
+import sa.tcop.PathInfo;
 import sa.wala.IRUtil;
 import sa.wala.WalaAnalyzer;
 import sa.wala.util.PDFCallGraph;
@@ -152,25 +153,29 @@ public class LLAnalysis {
 			loopingLockAnalyzer.doWork();
 			timer.toc("loopingLockAnalyzer end");
 			
-			/* zc - this part is unnecessary, because it has been done in loopingLockAnalyzer()
+			// zc - this part is unnecessary, because it has been done in loopingLockAnalyzer()
 			// loops-containing loop
 			NestedLoopAnalyzer nestedLoopAnalyzer = new NestedLoopAnalyzer(this.wala, this.loopAnalyzer, this.cgNodeList);
 			nestedLoopAnalyzer.doWork();
 			timer.toc("nestedLoopAnalyzer end");
-			*/
+			
 			
 			TCLoopAnalyzer tcLoopAnalyzer = new TCLoopAnalyzer(this.wala, this.loopAnalyzer, this.cgNodeList);
 			tcLoopAnalyzer.doWork();
 			timer.toc("tcLoopAnalyzer end");
 			
-			// Out of Memory
+			// Out of Memory??
 			//TcOpAnalyzer tcOpAnalyzer = new TcOpAnalyzer(this.wala, this.lockAnalyzer, this.cgNodeList);
 			//tcOpAnalyzer.doWork();
 			//timer.toc("tcOpAnalyzer end");
 			
-			LockLoopTcOpAnalyzer lockLoopTcOpAnalyzer = new LockLoopTcOpAnalyzer(this.wala, this.lockAnalyzer, this.cgNodeList);
-			lockLoopTcOpAnalyzer.doWork();
-			timer.toc("LockLoopTcOpAnalyzer end");
+			//LockLoopTcOpAnalyzer lockLoopTcOpAnalyzer = new LockLoopTcOpAnalyzer(this.wala, this.lockAnalyzer, this.cgNodeList);
+			//lockLoopTcOpAnalyzer.doWork();
+			//timer.toc("LockLoopTcOpAnalyzer end");
+			
+			LockingLoopAnalyzer lockingLoopAnalyzer = new LockingLoopAnalyzer(this.wala, this.lockAnalyzer, this.loopAnalyzer, this.cgNodeList);
+			lockingLoopAnalyzer.doWork();
+			timer.toc("LockingLoopAnalyzer end");
 			
 			
 			//print custom result
@@ -227,11 +232,11 @@ public class LLAnalysis {
 			
 			
 			//test for TcOpAnalyzer.java
-			if(cgNodeInfo.getCGNode().getMethod().toString().indexOf("hbase")>=0 && cgNodeInfo.getTcOps().size() > 0 && cgNodeInfo.hasLocks()) {
+			if(cgNodeInfo.getTcOps().size() > 0 && cgNodeInfo.hasLocks()) {
 				//System.err.println(cgNodeInfo.getCGNode().getMethod());
 				//System.err.println("TCOP:" + cgNodeInfo.tcOperations);
-				for(TcOpPathInfo tcPath:cgNodeInfo.getTcOps()) {
-					if(tcPath.getNestedLoopNum()>0) {
+				for(PathInfo tcPath:cgNodeInfo.getTcOps()) {
+					if(tcPath.getNestedLoopDepth()>0) {
 						flag = true;
 						loopCnt++;
 						//System.err.println(tcPath);
@@ -244,7 +249,7 @@ public class LLAnalysis {
 			}
 			
 			//test print some function content
-			if( cgNodeInfo.getCGNode().getMethod().toString().indexOf("getLocalCache(")>=0) {
+			if(false&&cgNodeInfo.getCGNode().getMethod().toString().indexOf("getLocalCache(")>=0) {
 				System.err.println(cgNodeInfo.getCGNode().getMethod());
 				System.err.println(cgNodeInfo.tcOperations);
 				System.err.println(cgNodeInfo.instructions);
@@ -253,7 +258,7 @@ public class LLAnalysis {
 			}
 			
 			//tset loopingLock but not usefull
-			if(cgNodeInfo.hasLoopingLocks){
+			if(false&&cgNodeInfo.hasLoopingLocks){
 				System.err.println(cgNodeInfo.getCGNode().getMethod().toString());
 				System.err.println("LOCK num:" + cgNodeInfo.locks.size());
 				System.err.println("Looping Lock num:" + cgNodeInfo.looping_locks.size());

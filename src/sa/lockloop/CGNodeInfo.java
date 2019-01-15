@@ -12,7 +12,7 @@ import com.ibm.wala.ssa.SSAInvokeInstruction;
 import sa.lock.LockInfo;
 import sa.lock.LoopingLockInfo;
 import sa.loop.LoopInfo;
-import sa.tcop.TcOpPathInfo;
+import sa.tcop.PathInfo;
 
 
 
@@ -42,7 +42,7 @@ public class CGNodeInfo {
 	public List<SSAInstruction> tcOperations_recusively; // won't be used&inited. if want to
 
 	//zc: new to trace tcOp/loop/path /!!!Out of Memory --total space cost O(#cgNode)*O(#path to I/O)*O(length<#cgNode)*O(#loop in a cgNode)
-	public List<TcOpPathInfo> tcOps;
+	public List<PathInfo> tcOps;
 	public boolean self_call;
 	public List<LoopInfo> self_call_inner_loops = null;                 //Type - ArrayList<LoopInfo>
 	public List<SSAInstruction> self_call_ssa = null;
@@ -71,7 +71,7 @@ public class CGNodeInfo {
 	    
 	    this.instructions = new TreeMap<Integer, InstructionInfo>();
 
-		this.tcOps = new ArrayList<TcOpPathInfo>();//added by zc
+		this.tcOps = new ArrayList<PathInfo>();//added by zc
 		this.self_call = false;
 		this.self_call_inner_loops = null;
 	}
@@ -118,11 +118,11 @@ public class CGNodeInfo {
 		this.doneNestedLoopComputation = bool;
 	}
 	
-	public List<TcOpPathInfo> getTcOps(){
+	public List<PathInfo> getTcOps(){
 		return this.tcOps;
 	}
 	
-	public void setTcOps(List<TcOpPathInfo> tcOps) {
+	public void setTcOps(List<PathInfo> tcOps) {
 		this.tcOps = tcOps;
 	}
 		
