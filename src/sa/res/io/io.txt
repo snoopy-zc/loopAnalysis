@@ -26,7 +26,7 @@ java.io.File.createTempFile(Ljava/lang/String;Ljava/lang/String;Ljava/io/File;)L
 java.io.File.delete()Z
 java.io.File.deleteOnExit()V
 java.io.File.exists()Z
-//add by hd2379/ha4584
+//added for hd2379/ha4584
 java.io.File.listFiles
 java.io.File.mkdir()Z
 java.io.File.mkdirs()Z

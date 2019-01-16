@@ -112,13 +112,15 @@ public class PathInfo {
 			for(int i = callpath.size()-1; i>=0; i++) {
 				PathEntry pe = callpath.get(i);
 				CGNode cgNode = pe.function;
-				result = result + "-" + cgNode.getMethod().getSignature().substring(0, cgNode.getMethod().getSignature().indexOf('(')) +"#"+ pe.getLoopNum() + "#" + pe.getCircleNum();
+				result = result + "-" + cgNode.getMethod().getSignature().substring(0, cgNode.getMethod().getSignature().indexOf('(')) 
+						+"#L("+ pe.getLoopNum() + ")#C(" + pe.getCircleNum() + ")";
 			}
 		} else {
 			for(int i = 0; i < callpath.size(); i++) {
 				PathEntry pe = callpath.get(i);
 				CGNode cgNode = pe.function;
-				result = result + "-" + cgNode.getMethod().getSignature().substring(0, cgNode.getMethod().getSignature().indexOf('(')) +"#"+ pe.getLoopNum() + "#" + pe.getCircleNum();
+				result = result + "-" + cgNode.getMethod().getSignature().substring(0, cgNode.getMethod().getSignature().indexOf('(')) 
+						+"#L("+ pe.getLoopNum() + ")#C(" + pe.getCircleNum() + ")";
 			}
 		}
 		if(ssa!=null)

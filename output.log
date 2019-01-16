@@ -1,0 +1,128 @@
+JX - INFO - StaticAnalysis.doWork
+JX - INFO - WalaAnalyzer: doWork...
+JX - INFO - Test Goal - multi *.jar: /home/snoopy/workspace/loopAnalysis/src/sa/res/ha-4584/hadoop-core-0.20.205.1.jar
+JX - INFO - WalaAnalyzer: walaAnalysis...
+Call graph stats:
+  Nodes: 23424
+  Edges: 145747
+  Methods: 21038
+  Bytecode Bytes: 1118582
+
+JX - INFO - WalaAnalyzer: infoWalaAnalysisEnv
+nTotalFuncs(23424) = nApplicationFuncs(13842) + nPremordialFuncs(9582) + nOtherFuncs(0)
+	nApplicationFuncs(13842) includes 25 native methods
+	nPremordialFuncs(9582) includes 115 native methods
+	nOtherFuncs(0) includes 0 native methods
+nPackageFuncs(13817) - Note: this should be isApplicationAndNonNativeMethod first
+JX - INFO - WalaAnalyzer: readPackageScope
+NOTICE - not find the 'package-scope.txt' file, so SCOPE is ALL methods!!
+
+JX - INFO - LLAnalysis.doWork
+JX - INFO - Timer(tic), MSG: LLAnalysis begin
+JX - DEBUG - system name = HDFS
+
+JX - INFO - LockAnalyzer: doWork...
+JX - INFO - LockAnalyzer: findLocksForAllCGNodes
+ERROR - the succ SSA of monitor is non-existing!!! - SSA:monitorenter 48
+Filtered function: org.apache.hadoop.hdfs.server.datanode.DataStorage.isConversionNeeded(Lorg/apache/hadoop/hdfs/server/common/Storage$StorageDirectory;)Z
+ERROR - the succ SSA of monitor is non-existing!!! - SSA:monitorenter 75
+ERROR - the succ SSA of monitor is non-existing!!! - SSA:monitorenter 22
+ERROR - !(invokessas[i] instanceof SSAFieldAccessInstruction)
+Filtered function: org.apache.hadoop.hdfs.server.common.Storage.isLockSupported(I)Z
+Filtered function: org.apache.hadoop.hdfs.server.common.Storage$StorageDirectory.analyzeStorage(Lorg/apache/hadoop/hdfs/server/common/HdfsConstants$StartupOption;)Lorg/apache/hadoop/hdfs/server/common/Storage$StorageState;
+Filtered function: org.apache.hadoop.mapred.MapTask$MapOutputBuffer$SpillThread.run()V
+WARN - SSAInvokeInstruction isSpecial - 9 = invokespecial < Application, Lorg/apache/hadoop/mapred/TaskTracker, addTaskToJob(Lorg/apache/hadoop/mapred/JobID;Lorg/apache/hadoop/mapred/TaskTracker$TaskInProgress;)Lorg/apache/hadoop/mapred/TaskTracker$RunningJob; > 1,7,2 @13 exception:8
+WARN - SSAInvokeInstruction isSpecial - 9 = invokespecial < Application, Lorg/apache/hadoop/mapred/TaskTracker, addTaskToJob(Lorg/apache/hadoop/mapred/JobID;Lorg/apache/hadoop/mapred/TaskTracker$TaskInProgress;)Lorg/apache/hadoop/mapred/TaskTracker$RunningJob; > 1,7,2 @13 exception:8
+WARN - SSAInvokeInstruction isSpecial - 9 = invokespecial < Application, Lorg/apache/hadoop/mapred/TaskTracker, addTaskToJob(Lorg/apache/hadoop/mapred/JobID;Lorg/apache/hadoop/mapred/TaskTracker$TaskInProgress;)Lorg/apache/hadoop/mapred/TaskTracker$RunningJob; > 1,7,2 @13 exception:8
+WARN - SSAInvokeInstruction isSpecial - 9 = invokespecial < Application, Lorg/apache/hadoop/mapred/TaskTracker, addTaskToJob(Lorg/apache/hadoop/mapred/JobID;Lorg/apache/hadoop/mapred/TaskTracker$TaskInProgress;)Lorg/apache/hadoop/mapred/TaskTracker$RunningJob; > 1,7,2 @13 exception:8
+WARN - SSAInvokeInstruction isSpecial - 9 = invokespecial < Application, Lorg/apache/hadoop/metrics/spi/AbstractMetricsContext, getRecordMap(Ljava/lang/String;)Lorg/apache/hadoop/metrics/spi/AbstractMetricsContext$RecordMap; > 1,5 @12 exception:8
+WARN - SSAInvokeInstruction isSpecial - 11 = invokespecial < Application, Lorg/apache/hadoop/metrics/spi/AbstractMetricsContext, getRecordMap(Ljava/lang/String;)Lorg/apache/hadoop/metrics/spi/AbstractMetricsContext$RecordMap; > 1,5 @18 exception:10
+JX - INFO - LockAnalyzer: The status of results
+The Status of Locks in All Functions:
+#scanned functions: 13817 out of #Total:23424(#AppFuncs:13842+#PremFuncs:9582)
+#functions with locks: 1354(1458locks) (excluding 4 filtered functions that have locks)
+//distribution of #locks
+#0:12463, #1:1294, #2:39, #3:9, #4:6, #5:4, #6:1, #7:0, #8:0, #9:1, #10:0, #11:0, #12:0, #13:0, #14:0, #15:0, #16:0, #17:0, #18:0, #19:0, 
+//distribution of lock types
+#synchronized_lock:408, #synchronized_method:1033, #lock:17, 
+
+JX - INFO - LockAnalyzer: analyzeAllLocks
+#Total Locks = 1458
+#Groups of total Locks (ie, real number): 348
+
+JX - INFO - Timer(toc->toc): 3.156s, (tic->toc): 3.156s, MSG: lockAnalyzer end
+
+JX - INFO - LoopAnalyzer: doWork...
+JX - INFO - LoopAnalyzer: findLoopsForAllCGNodes
+JX - INFO - LoopAnalyzer: The status of results
+The Status of Loops in All Functions:
+#scanned functions: 13817 out of #Total:23424(#AppFuncs:13842+#PremFuncs:9582)
+#functions with loops: 1508 (#loops:2160)
+//distribution of #loops
+#0:12309, #1:1146, #2:234, #3:78, #4:22, #5:6, #6:8, #7:3, #8:1, #9:2, #10:0, #11:5, #12:1, #13:0, #14:0, #15:1, #16:0, #17:1, #18:0, #19:0, JX - INFO - Timer(toc->toc): 0.172s, (tic->toc): 3.328s, MSG: loopAnalyzer end
+
+JX - INFO - LoopingLockAnalyzer: doWork...
+JX - INFO - LoopingLockAnalyzer: findLoopsForAllLocks
+The Status of Critical Sections:
+#functions that their critical sections involve loops: 678(717critical sections) out of 1354(1458critical sections) functions with locks
+//distribution of loop depth in 1458(#>=1:717) critical sections
+#0:741, #1:264, #2:81, #3:55, #4:12, #5:6, #6:0, #7:0, #8:0, #9:0, #10:0, #11:0, #12:0, #13:0, #14:0, #15:0, #16:0, #17:0, #18:0, #19:0, #>=20:299
+//PS: distribution of loop depth in 1354(#>=1:678) locking functions
+#0:676, #1:238, #2:79, #3:55, #4:12, #5:4, #6:0, #7:0, #8:0, #9:0, #10:0, #11:0, #12:0, #13:0, #14:0, #15:0, #16:0, #17:0, #18:0, #19:0, #>=20:290
+jx - functions.size() = 7212
+
+
+JX - INFO - analyzeLoopingLocks
+zc!!! heavy loop ClassName- <Application,Lorg/apache/hadoop/hdfs/DFSClient$BlockReader> LockName- THIS
+zc!!! heavy loop ClassName- <Application,Lorg/apache/hadoop/hdfs/DFSClient$DFSInputStream> LockName- THIS
+zc!!! heavy loop ClassName- <Application,Lorg/apache/hadoop/hdfs/DFSClient$DFSOutputStream> LockName- THIS
+zc!!! heavy loop ClassName- <Application,Lorg/apache/hadoop/hdfs/server/namenode/FSNamesystem> LockName- THIS
+zc!!! heavy loop ClassName- <Application,Lorg/apache/hadoop/hdfs/server/namenode/LeaseManager> LockName- -InvokeStatic--GetField-< Application, Lorg/apache/hadoop/hdfs/server/namenode/LeaseManager, fsnamesystem, <Application,Lorg/apache/hadoop/hdfs/server/namenode/FSNamesystem> >
+zc!!! heavy loop ClassName- <Application,Lorg/apache/hadoop/hdfs/server/namenode/LeaseManager> LockName- THIS
+zc!!! heavy loop ClassName- <Application,Lorg/apache/hadoop/io/file/tfile/SimpleBufferedOutputStream> LockName- THIS
+zc!!! heavy loop ClassName- <Application,Lorg/apache/hadoop/mapred/Counters> LockName- THIS
+zc!!! heavy loop ClassName- <Application,Lorg/apache/hadoop/mapred/JobInProgress> LockName- THIS
+zc!!! heavy loop ClassName- <Application,Lorg/apache/hadoop/mapred/JobTracker$RetireJobs> LockName- THIS
+zc!!! heavy loop ClassName- <Application,Lorg/apache/hadoop/mapred/JobTracker> LockName- -GetField-< Application, Lorg/apache/hadoop/mapred/JobTracker, jobs, <Application,Ljava/util/Map> >
+zc!!! heavy loop ClassName- <Application,Lorg/apache/hadoop/mapred/JobTracker> LockName- -InvokeStatic--GetField-< Application, Lorg/apache/hadoop/mapred/JobTracker, taskScheduler, <Application,Lorg/apache/hadoop/mapred/TaskScheduler> >
+zc!!! heavy loop ClassName- <Application,Lorg/apache/hadoop/mapred/JobTracker> LockName- THIS
+#HeavyLocks (ie, time-consuming looping locks): 18 out of 717 looping locks out of total 1458 locks
+#Groups of HeavyLocks (ie, real number): 13 out of total 348 lock groups
+
+JX - INFO - Timer(toc->toc): 0.105s, (tic->toc): 3.433s, MSG: loopingLockAnalyzer end
+JX - INFO - TextFileReader: successfully read 59 lines in /home/snoopy/workspace/loopAnalysis/src/sa/res/ha-4584/hd_rpc.txt
+JX - INFO - TextFileReader: successfully read 108 lines in /home/snoopy/workspace/loopAnalysis/src/sa/res/io/io.txt
+JX - INFO - TextFileReader: successfully read 0 lines in /home/snoopy/workspace/loopAnalysis/src/sa/res/io/customized_io_hd.txt
+
+JX - INFO - TCLoopAnalyzer: doWork...
+JX - INFO - findTCOperationsForAllLoops
+JX - INFO - TCLoopAnalyzer: printResultStatus
+#TCLoops = 900 out of total 2160 loops
+
+ JX - INFO - printTcOperationTypes
+#types = 191
+JX - INFO - Timer(toc->toc): 3.745s, (tic->toc): 7.178s, MSG: tcLoopAnalyzer end
+JX - INFO - TextFileReader: successfully read 59 lines in /home/snoopy/workspace/loopAnalysis/src/sa/res/ha-4584/hd_rpc.txt
+JX - INFO - TextFileReader: successfully read 108 lines in /home/snoopy/workspace/loopAnalysis/src/sa/res/io/io.txt
+JX - INFO - TextFileReader: successfully read 0 lines in /home/snoopy/workspace/loopAnalysis/src/sa/res/io/customized_io_hd.txt
+
+JX - INFO - LockingLoopAnalyzer: doWork...
+JX - INFO - LockingLoopAnalyzer: findLoopsForAllLocks
+L1 Self-call!! < Application, Lorg/apache/hadoop/io/SequenceFile$Reader, next(Lorg/apache/hadoop/io/DataOutputBuffer;)I >
+L1 Self-call!! < Application, Lorg/apache/hadoop/mapred/jobcontrol/Job, checkState()I >
+L1 Self-call!! < Application, Lorg/apache/hadoop/util/Progress, toString(Ljava/lang/StringBuffer;)V >
+L1 Self-call!! < Application, Lorg/apache/hadoop/util/Progress, getInternal()F >
+ZC - INFO - LockingLoopAnalyzer: printResultStatus
+#Lock Nodes = 1354 ( 1458 locks)
+#Looping Lock Nodes = 678 ( 717 looping locks)
+	#Locking loop paths = 38575
+#TC Lock Nodes = 678 ( 717 TC Locks)
+#TCLockingLoops = 19615(loop group 360)
+
+ZC - INFO .........analysisPath........
+#loop in loopAnalyzer.getLoopCGNodes() = 2160
+#loop in loopAnalyzer.getLoopCGNodes() with numOfTcOperations_recusively > 0 = 900
+#loop in setTCLockingLoops = 360
+TcOpPathInfo:0-org.apache.hadoop.hdfs.server.datanode.FSDataset$FSVolumeSet.getBlockInfo#L(0)#C(0)
+TcOpPathInfo:1-org.apache.hadoop.hdfs.server.datanode.FSDataset$FSVolumeSet.getBlockInfo#L(1)#C(0)-org.apache.hadoop.hdfs.server.datanode.FSDataset$FSVolume.getBlockInfo#L(0)#C(0)-org.apache.hadoop.hdfs.server.datanode.FSDataset$FSDir.getBlockInfo#L(0)#C(1)
+JX - INFO - Timer(toc->toc): 6.323s, (tic->toc): 13.501s, MSG: LockingLoopAnalyzer end
