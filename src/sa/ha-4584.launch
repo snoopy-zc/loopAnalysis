@@ -6,12 +6,10 @@
 <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
 <listEntry value="1"/>
 </listAttribute>
+<stringAttribute key="org.eclipse.debug.ui.ATTR_CAPTURE_IN_FILE" value="${workspace_loc:/loopAnalysis/output.log}"/>
 <booleanAttribute key="org.eclipse.jdt.launching.ATTR_USE_START_ON_FIRST_THREAD" value="true"/>
-<stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="sa.StaticAnalysis"/>          
-<stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" 
-
-value="${workspace_loc}/loopAnalysis/ ${workspace_loc}/loopAnalysis/src/sa/res/ha-4584"/>
-                                    
+<stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="sa.StaticAnalysis"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="${workspace_loc}/loopAnalysis/ ${workspace_loc}/loopAnalysis/src/sa/res/ha-4584"/>
 <stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="loopAnalysis"/>
-<stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="-Xmx16G"/>                  #-Xmx800M
+<stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="-Xmx16G"/>
 </launchConfiguration>

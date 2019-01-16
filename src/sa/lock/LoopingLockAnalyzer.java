@@ -258,6 +258,10 @@ public class LoopingLockAnalyzer {
 		List<LoopInfo> loops = cgNodeList.get(id).getLoops();
     
 		CGNodeInfo cgNodeInfo = cgNodeList.get(id); 
+		if (cgNodeInfo == null) {
+			System.err.println("ZC - error - function == null in LoopingLockAnalyzer.findForLockingFunction..." + cgNode.getMethod().toString());
+			return;
+		}
 		cgNodeInfo.hasLoopingLocks = false;
     
 		//System.out.print("function " + id + ": ");

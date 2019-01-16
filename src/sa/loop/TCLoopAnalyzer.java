@@ -132,7 +132,7 @@ public class TCLoopAnalyzer {
 				cgNodeInfo.tcOperations.add( ssa );
 				numOfTcOperations ++;
 				numOfTcOperations_recusively ++;
-				continue;
+				//continue; //remove continue to mark the inner tc op mr4576
 			}
 			// filter the rest I/Os
 			if ( iolooputil.isJavaIOSSA(ssa) )
@@ -211,6 +211,19 @@ public class TCLoopAnalyzer {
 					SSAInvokeInstruction invokessa = (SSAInvokeInstruction) ssa;
 					java.util.Set<CGNode> set = cg.getPossibleTargets(cgNode, invokessa.getCallSite());
 					for (CGNode cgnode: set) {
+						//TODO
+						//added by zc, to consider cgnode (with tc-op out of loop) self-call in loop
+						if(cgnode.equals(cgNode)&&cgNodeInfo.tcOperations.size()>=0) 
+							for(SSAInstruction sub_ssa:cgNodeInfo.tcOperations) {
+								loop.numOfTcOperations_recusively ++;
+								loop.tcOperations_recusively.add( sub_ssa );
+								TcOperationInfo tcOperation = new TcOperationInfo();
+								tcOperation.ssa = sub_ssa;
+								tcOperation.function = cgNode;
+								tcOperation.callpath = callpath;
+								tcOperation.line_number = IRUtil.getSourceLineNumberFromSSA(cgNode, sub_ssa);
+								loop.tcOperations_recusively_info.add( tcOperation );
+							}						
 						dfsToGetTCOperationsForSSA(cgnode, 0, traversednodes, loop,  callpath);
 					}
 				}
@@ -237,10 +250,12 @@ public class TCLoopAnalyzer {
     
 		if ( traversednodes.get(id) )
 			return ;
-    
-		//test
-		if (cgNodeInfo == null) 
-			System.out.println("jx - error - function == null");
+		
+
+		if (cgNodeInfo == null) {
+			System.err.println("ZC - error - function == null in TCLoopAnalyzer.dfsToGetTCOperationsForSSA..." + cgNode.getMethod().toString());
+			return;
+		}    
    
 		traversednodes.set(id);
 		loop.numOfTcOperations_recusively += cgNodeInfo.tcOperations.size();
@@ -293,7 +308,7 @@ public class TCLoopAnalyzer {
 		for (CGNodeInfo cgNodeInfo: loopAnalyzer.getLoopCGNodes())
 			for (LoopInfo loop: cgNodeInfo.getLoops()) {
 				if (loop.numOfTcOperations_recusively > 0) {
-					System.out.println( loop.getCGNode().getMethod() );
+					//System.out.println( loop.getCGNode().getMethod() );
 				}
 			}
     }
