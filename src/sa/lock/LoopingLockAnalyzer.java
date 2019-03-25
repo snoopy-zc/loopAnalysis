@@ -70,7 +70,7 @@ public class LoopingLockAnalyzer {
 		System.out.println("\nJX - INFO - LoopingLockAnalyzer: doWork...");
 		findLoopsForAllLocks();
 		printResultStatus();
-		analyzeLoopingLocks();
+		//analyzeLoopingLocks();
 	}
 	
 	

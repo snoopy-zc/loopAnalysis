@@ -51,6 +51,8 @@ public class LoopAnalyzer {
 	int nLoops = 0;                 //the total number of loops
 	int nLoopingCGNodes = 0;          //how many functions that contain loops
 	
+	int nloopTc = 0;
+	
 	
 
 
@@ -88,6 +90,9 @@ public class LoopAnalyzer {
 		return this.loopCGNodes;
 	}
 	
+	public int getNTcLoops() {
+		return this.nloopTc;
+	}
 	
 	public int getNLoops() {
 		return this.nLoops;

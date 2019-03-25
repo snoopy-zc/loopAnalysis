@@ -66,17 +66,18 @@ public class PathInfo {
 	public int getCircleNum() {
 		int sum = 0;
 		for (PathEntry entry : callpath) {
-			if(entry.circleCalls != null)
-				sum += entry.circleCalls.size();
+			sum += entry.getCircleNum();
 		}
 		return sum;
 	}
 
-	public int getCircleNumInloop() {//TODO incomplete
+	public int getCircleNumInloop() {//TODO incomplete, only count circle call in current-level loop
 		int sum = 0;
 		for (PathEntry entry : callpath) {
 			if(entry.circleCalls != null)
-				sum += entry.circleCalls.size();
+				for(PathEntry e:entry.circleCalls)
+					if(e.getLoopNum()>0)
+						sum ++;
 		}
 		return sum;
 	}
@@ -90,7 +91,7 @@ public class PathInfo {
 		return false;
 	}
 	
-	public PathEntry getPathNode(CGNode cgn) {//-1 stand for no! 0 strand for self call! n>0 stand for the n.th node after this call this 
+	public PathEntry getPathNode(CGNode cgn) {//-1 means no! 0 means self call! n>0 stand for the n.th node after this call this 
 		for(int i=0; i<this.callpath.size();i++)
 			if(this.callpath.get(i).function.equals(cgn))
 				return this.callpath.get(i);
@@ -106,13 +107,15 @@ public class PathInfo {
 	public String toString() {
 		if(callpath.size()<1)
 			return null;
-		String result = "TcOpPathInfo:" + this.getCircleNum();
+		String result = "CallPathInfo:" 
+			+ "C" + this.getCircleNum() 
+			+ "L" + this.getNestedLoopDepth();
 		boolean reverse = false;
 		if(reverse) {
 			for(int i = callpath.size()-1; i>=0; i++) {
 				PathEntry pe = callpath.get(i);
 				CGNode cgNode = pe.function;
-				result = result + "-" + cgNode.getMethod().getSignature().substring(0, cgNode.getMethod().getSignature().indexOf('(')) 
+				result = result + " - " + cgNode.getMethod().getSignature().substring(0, cgNode.getMethod().getSignature().indexOf('(')) 
 						+"#L("+ pe.getLoopNum() + ")#C(" + pe.getCircleNum() + ")";
 			}
 		} else {
@@ -181,10 +184,7 @@ class PathEntry{
 	}
 	
 	public int getCircleNum() {
-		if(circleCalls==null)
-			return 0;
-		else
-			return circleCalls.size();
+		return circleCalls==null? 0:circleCalls.size();
 	}
 	
 	//-1 stand for no circle! 0 strand for self call! n>0 stand for the n.th node after this call this 

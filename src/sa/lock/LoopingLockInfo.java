@@ -15,7 +15,7 @@ public class LoopingLockInfo {
 
 	CGNode function;
 	LockInfo lock;
-	List<LoopInfo> inner_loops = null;                 //Type - ArrayList<LoopInfo>
+	List<LoopInfo> inner_loops = null;           //inner loop in current level  //Type - ArrayList<LoopInfo>
   
 	int max_depthOfLoops;
 	List<Integer> function_chain_for_max_depthOfLoops;
