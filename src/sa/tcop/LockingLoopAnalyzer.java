@@ -480,13 +480,13 @@ public class LockingLoopAnalyzer {
 							//check(cgNodeInfo,loopingLock,lp.getKey(),lp.getValue());
 						}
 						if(lp.getKey().numOfTcOperations_recusively>0
-								&& lp.getValue().getCircleNum()>0)
+								&& lp.getValue().getCircleNumInloop()>0)
 						{
 							//System.out.println("*time-consuming operation & circle");
 							setTcCFuncs.add(cgNodeInfo);
 							//System.err.println(lp.getValue());
-							check(cgNodeInfo,loopingLock,lp.getKey(),lp.getValue());
-						}						
+							//check(cgNodeInfo,loopingLock,lp.getKey(),lp.getValue());
+						}
 					}
 					if(flag_tc_lock)
 						nlockTcLoop++;
@@ -533,10 +533,12 @@ public class LockingLoopAnalyzer {
 	public boolean check(CGNodeInfo a,LoopingLockInfo b,LoopInfo c,PathInfo d) {
 		for(String bugid: bugList.keySet()) {
 			if(check_each(a,bugid)) {
+				if(c.toString().indexOf("InetAddress, getByName") >= 0) {
 				//System.out.println(bugid);
 				//System.out.println(a.getCGNode().getMethod().toString()); 
-				//System.out.println(d);
-				//System.out.println(c);
+				System.out.println(d);
+				System.out.println(c);
+				}
 				resultList.get(bugid).add(a);
 			}
 		}

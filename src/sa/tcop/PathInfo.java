@@ -108,8 +108,9 @@ public class PathInfo {
 		if(callpath.size()<1)
 			return null;
 		String result = "CallPathInfo:" 
-			+ "C" + this.getCircleNum() 
-			+ "L" + this.getNestedLoopDepth();
+			+ "(CinL-" + this.getCircleNumInloop() + ")"
+			+ "L" + this.getNestedLoopDepth()
+			+ "C" + this.getCircleNum();
 		boolean reverse = false;
 		if(reverse) {
 			for(int i = callpath.size()-1; i>=0; i++) {

@@ -8,7 +8,7 @@
 </listAttribute>
 <booleanAttribute key="org.eclipse.jdt.launching.ATTR_USE_START_ON_FIRST_THREAD" value="true"/>
 <stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="sa.StaticAnalysis"/>          
-<stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="${workspace_loc}/loopAnalysis/ ${workspace_loc}/loopAnalysis/src/batch_test/mr-v2.0.1-alpha"/>   
+<stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="${workspace_loc}/loopAnalysis/ ${workspace_loc}/loopAnalysis/src/sa/batch_test/mr-v2.0.1-alpha"/>   
 
 <stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="loopAnalysis"/>
 <stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="-Xmx16G"/>                  #-Xmx800M
