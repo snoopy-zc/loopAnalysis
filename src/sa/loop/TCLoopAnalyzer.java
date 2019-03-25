@@ -51,8 +51,9 @@ public class TCLoopAnalyzer {
 		System.out.println("\nJX - INFO - TCLoopAnalyzer: doWork...");
 		
 		findTCOperationsForAllLoops();
+		this.loopAnalyzer.nloopTc = this.nTCLoops;
 		printResultStatus();
-		iolooputil.printTcOperationTypes();                //for test
+		//iolooputil.printTcOperationTypes();                //for test
 		
 	      
 	}
@@ -146,6 +147,8 @@ public class TCLoopAnalyzer {
 				// traverse all possible targets
 				for (CGNode cgnode: set) {
 					numOfTcOperations_recusively += dfsToGetTCOperations(cgnode, depth+1, traversednodes);
+					//
+					cgNodeInfo.tcOperations_recusively.addAll((cgNodeList.forceGet(cgnode.getGraphNodeId())).tcOperations_recusively);
 				}
 			}
 			else {

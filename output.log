@@ -1,4 +1,5 @@
 JX - INFO - StaticAnalysis.doWork
+JX - INFO - Timer(tic), MSG: WalaAnalyzer begin
 JX - INFO - WalaAnalyzer: doWork...
 JX - INFO - Test Goal - multi *.jar: /home/snoopy/workspace/loopAnalysis/src/sa/res/ha-4584/hadoop-core-0.20.205.1.jar
 JX - INFO - WalaAnalyzer: walaAnalysis...
@@ -16,9 +17,9 @@ nTotalFuncs(23424) = nApplicationFuncs(13842) + nPremordialFuncs(9582) + nOtherF
 nPackageFuncs(13817) - Note: this should be isApplicationAndNonNativeMethod first
 JX - INFO - WalaAnalyzer: readPackageScope
 NOTICE - not find the 'package-scope.txt' file, so SCOPE is ALL methods!!
+JX - INFO - Timer(toc->toc): 55.289s, (tic->toc): 55.289s, MSG: WalaAnalyzer end
 
 JX - INFO - LLAnalysis.doWork
-JX - INFO - Timer(tic), MSG: LLAnalysis begin
 JX - DEBUG - system name = HDFS
 
 JX - INFO - LockAnalyzer: doWork...
@@ -50,7 +51,7 @@ JX - INFO - LockAnalyzer: analyzeAllLocks
 #Total Locks = 1458
 #Groups of total Locks (ie, real number): 348
 
-JX - INFO - Timer(toc->toc): 3.156s, (tic->toc): 3.156s, MSG: lockAnalyzer end
+JX - INFO - Timer(toc->toc): 1.886s, (tic->toc): 57.175s, MSG: lockAnalyzer end
 
 JX - INFO - LoopAnalyzer: doWork...
 JX - INFO - LoopAnalyzer: findLoopsForAllCGNodes
@@ -59,7 +60,7 @@ The Status of Loops in All Functions:
 #scanned functions: 13817 out of #Total:23424(#AppFuncs:13842+#PremFuncs:9582)
 #functions with loops: 1508 (#loops:2160)
 //distribution of #loops
-#0:12309, #1:1146, #2:234, #3:78, #4:22, #5:6, #6:8, #7:3, #8:1, #9:2, #10:0, #11:5, #12:1, #13:0, #14:0, #15:1, #16:0, #17:1, #18:0, #19:0, JX - INFO - Timer(toc->toc): 0.172s, (tic->toc): 3.328s, MSG: loopAnalyzer end
+#0:12309, #1:1146, #2:234, #3:78, #4:22, #5:6, #6:8, #7:3, #8:1, #9:2, #10:0, #11:5, #12:1, #13:0, #14:0, #15:1, #16:0, #17:1, #18:0, #19:0, JX - INFO - Timer(toc->toc): 0.183s, (tic->toc): 57.358s, MSG: loopAnalyzer end
 
 JX - INFO - LoopingLockAnalyzer: doWork...
 JX - INFO - LoopingLockAnalyzer: findLoopsForAllLocks
@@ -71,25 +72,19 @@ The Status of Critical Sections:
 #0:676, #1:238, #2:79, #3:55, #4:12, #5:4, #6:0, #7:0, #8:0, #9:0, #10:0, #11:0, #12:0, #13:0, #14:0, #15:0, #16:0, #17:0, #18:0, #19:0, #>=20:290
 jx - functions.size() = 7212
 
+JX - INFO - Timer(toc->toc): 0.104s, (tic->toc): 57.462s, MSG: loopingLockAnalyzer end
 
-JX - INFO - analyzeLoopingLocks
-zc!!! heavy loop ClassName- <Application,Lorg/apache/hadoop/hdfs/DFSClient$BlockReader> LockName- THIS
-zc!!! heavy loop ClassName- <Application,Lorg/apache/hadoop/hdfs/DFSClient$DFSInputStream> LockName- THIS
-zc!!! heavy loop ClassName- <Application,Lorg/apache/hadoop/hdfs/DFSClient$DFSOutputStream> LockName- THIS
-zc!!! heavy loop ClassName- <Application,Lorg/apache/hadoop/hdfs/server/namenode/FSNamesystem> LockName- THIS
-zc!!! heavy loop ClassName- <Application,Lorg/apache/hadoop/hdfs/server/namenode/LeaseManager> LockName- -InvokeStatic--GetField-< Application, Lorg/apache/hadoop/hdfs/server/namenode/LeaseManager, fsnamesystem, <Application,Lorg/apache/hadoop/hdfs/server/namenode/FSNamesystem> >
-zc!!! heavy loop ClassName- <Application,Lorg/apache/hadoop/hdfs/server/namenode/LeaseManager> LockName- THIS
-zc!!! heavy loop ClassName- <Application,Lorg/apache/hadoop/io/file/tfile/SimpleBufferedOutputStream> LockName- THIS
-zc!!! heavy loop ClassName- <Application,Lorg/apache/hadoop/mapred/Counters> LockName- THIS
-zc!!! heavy loop ClassName- <Application,Lorg/apache/hadoop/mapred/JobInProgress> LockName- THIS
-zc!!! heavy loop ClassName- <Application,Lorg/apache/hadoop/mapred/JobTracker$RetireJobs> LockName- THIS
-zc!!! heavy loop ClassName- <Application,Lorg/apache/hadoop/mapred/JobTracker> LockName- -GetField-< Application, Lorg/apache/hadoop/mapred/JobTracker, jobs, <Application,Ljava/util/Map> >
-zc!!! heavy loop ClassName- <Application,Lorg/apache/hadoop/mapred/JobTracker> LockName- -InvokeStatic--GetField-< Application, Lorg/apache/hadoop/mapred/JobTracker, taskScheduler, <Application,Lorg/apache/hadoop/mapred/TaskScheduler> >
-zc!!! heavy loop ClassName- <Application,Lorg/apache/hadoop/mapred/JobTracker> LockName- THIS
-#HeavyLocks (ie, time-consuming looping locks): 18 out of 717 looping locks out of total 1458 locks
-#Groups of HeavyLocks (ie, real number): 13 out of total 348 lock groups
+JX - INFO - NestedLoopAnalyzer: doWork...
 
-JX - INFO - Timer(toc->toc): 0.105s, (tic->toc): 3.433s, MSG: loopingLockAnalyzer end
+JX-findNestedLoops
+The Status of Loops in All Functions:
+#scanned functions: 13817 out of #Total:23424(#AppFuncs:13842+#PremFuncs:9582)
+#loops: see LoopAnalyzer (#functions with loops: see LoopAnalyzer)
+//distribution of #nestedloops
+#0:0, #1:1180, #2:407, #3:95, #4:54, #5:10, #6:5, #7:2, #8:2, #9:1, #10:1, #11:0, #12:0, #13:0, #14:0, #15:0, #16:0, #17:0, #18:0, #19:0, #>=20:403
+jx - cgNodeList.size() = 9307
+
+JX - INFO - Timer(toc->toc): 0.188s, (tic->toc): 57.65s, MSG: nestedLoopAnalyzer end
 JX - INFO - TextFileReader: successfully read 59 lines in /home/snoopy/workspace/loopAnalysis/src/sa/res/ha-4584/hd_rpc.txt
 JX - INFO - TextFileReader: successfully read 108 lines in /home/snoopy/workspace/loopAnalysis/src/sa/res/io/io.txt
 JX - INFO - TextFileReader: successfully read 0 lines in /home/snoopy/workspace/loopAnalysis/src/sa/res/io/customized_io_hd.txt
@@ -98,10 +93,7 @@ JX - INFO - TCLoopAnalyzer: doWork...
 JX - INFO - findTCOperationsForAllLoops
 JX - INFO - TCLoopAnalyzer: printResultStatus
 #TCLoops = 900 out of total 2160 loops
-
- JX - INFO - printTcOperationTypes
-#types = 191
-JX - INFO - Timer(toc->toc): 3.745s, (tic->toc): 7.178s, MSG: tcLoopAnalyzer end
+JX - INFO - Timer(toc->toc): 3.402s, (tic->toc): 61.052s, MSG: tcLoopAnalyzer end
 JX - INFO - TextFileReader: successfully read 59 lines in /home/snoopy/workspace/loopAnalysis/src/sa/res/ha-4584/hd_rpc.txt
 JX - INFO - TextFileReader: successfully read 108 lines in /home/snoopy/workspace/loopAnalysis/src/sa/res/io/io.txt
 JX - INFO - TextFileReader: successfully read 0 lines in /home/snoopy/workspace/loopAnalysis/src/sa/res/io/customized_io_hd.txt
@@ -112,17 +104,581 @@ L1 Self-call!! < Application, Lorg/apache/hadoop/io/SequenceFile$Reader, next(Lo
 L1 Self-call!! < Application, Lorg/apache/hadoop/mapred/jobcontrol/Job, checkState()I >
 L1 Self-call!! < Application, Lorg/apache/hadoop/util/Progress, toString(Ljava/lang/StringBuffer;)V >
 L1 Self-call!! < Application, Lorg/apache/hadoop/util/Progress, getInternal()F >
-ZC - INFO - LockingLoopAnalyzer: printResultStatus
-#Lock Nodes = 1354 ( 1458 locks)
-#Looping Lock Nodes = 678 ( 717 looping locks)
-	#Locking loop paths = 38575
-#TC Lock Nodes = 678 ( 717 TC Locks)
-#TCLockingLoops = 19615(loop group 360)
+ZC - INFO .........final analysis........
+hd2379
+hd2379
+hd2379
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+mr4576
+hd4186-1
+hd4186-1
+hd4186-1
+hd4186-1
+hd4186-1
+hd4186-1
+hd4186-1
+hd4186-1
+hd4186-1
+hd4186-1
+hd4186-1
+hd4186-1
+hd4186-1
+hd4186-1
+hd4186-1
+hd4186-1
+hd4186-1
+hd4186-1
+hd4186-1
+hd4186-1
+hd4186-1
+hd4186-1
+hd4186-1
+hd4186-1
+hd4186-1
+hd4186-1
+hd4186-1
+hd4186-1
+hd4186-1
+hd4186-1
+hd4186-1
+hd4186-1
+hd4186-1
+hd4186-1
+hd4186-1
+hd4186-1
+hd4186-1
+hd4186-1
+hd4186-1
+hd4186-1
+hd4186-1
+hd4186-1
+hd4186-1
+hd4186-1
+hd4186-1
+hd4186-1
+hd4186-1
+hd4186-1
+hd4186-1
+hd4186-1
+hd4186-1
+hd4186-1
+hd4186-1
+hd4186-1
+hd4186-1
+hd4186-1
+hd4186-1
+hd4186-1
+hd4186-1
+hd4186-1
+hd4186-1
+hd4186-1
+hd4186-1
+hd4186-1
+hd4186-1
+hd4186-1
+hd4186-1
+hd4186-1
+hd4186-1
+hd4186-1
+hd4186-1
+hd4186-1
+hd4186-1
+hd4186-1
+hd4186-1
+hd4186-1
+hd4186-1
+hd4186-1
+hd4186-1
+hd4186-1
+hd4186-1
+hd4186-1
+hd4186-1
+hd4186-1
+hd4186-1
+hd4186-1
+hd4186-1
+hd4186-1
+hd4186-1
+hd4186-1
+hd4186-1
+hd4186-1
+hd4186-1
+hd4186-1
+hd4186-1
+hd4186-1
+hd4186-1
+hd4186-1
+hd4186-1
+hd4186-1
+hd4186-1
+hd4186-1
+hd4186-1
+hd4186-1
+hd4186-1
+hd4186-1
+hd4186-1
+hd4186-1
+hd4186-1
+hd4186-1
+hd4186-1
+hd4186-1
+hd4186-1
+hd4186-1
+hd4186-1
+hd4186-1
+hd4186-1
+hd4186-1
+hd4186-1
+hd4186-1
+hd4186-1
+hd4186-1
+hd4186-1
+hd4186-1
+hd4186-1
+hd4186-1
+hd4186-1
+hd4186-1
+#hb3483-2 = 0
+#hb3483-1 = 0
+#mr4183 = 0
+#hd5153 = 0
+#hb3483-5 = 0
+#hb3483-4 = 0
+#hb3483-3 = 0
+#hd3990 = 0
+#hd4186-1 = 1
+#mr4576 = 1
+#hd4186-2 = 0
+#hd2379 = 1
 
-ZC - INFO .........analysisPath........
-#loop in loopAnalyzer.getLoopCGNodes() = 2160
-#loop in loopAnalyzer.getLoopCGNodes() with numOfTcOperations_recusively > 0 = 900
-#loop in setTCLockingLoops = 360
-TcOpPathInfo:0-org.apache.hadoop.hdfs.server.datanode.FSDataset$FSVolumeSet.getBlockInfo#L(0)#C(0)
-TcOpPathInfo:1-org.apache.hadoop.hdfs.server.datanode.FSDataset$FSVolumeSet.getBlockInfo#L(1)#C(0)-org.apache.hadoop.hdfs.server.datanode.FSDataset$FSVolume.getBlockInfo#L(0)#C(0)-org.apache.hadoop.hdfs.server.datanode.FSDataset$FSDir.getBlockInfo#L(0)#C(1)
-JX - INFO - Timer(toc->toc): 6.323s, (tic->toc): 13.501s, MSG: LockingLoopAnalyzer end
+ZC - INFO .........final result........
+
+# func = 13817
+# critical func = 1354
+# loop func = 1508
+# loop in lock func = 678
+# loop in lock func (tcOp) = 384
+# loop in lock func (tcOp>5) = 236
+# loop in lock func (tcOp circle) = 293
+
+# critical section = 1458
+# lock group = 348
+# lock (inner loop) = 717
+# lock (tcOp in loop) = 396
+
+# loop = 2160
+# loop in lock = 1036
+# loop (tcOp) = 900
+# loop in lock (tcOp) = 360
+JX - INFO - Timer(toc->toc): 8.87s, (tic->toc): 69.922s, MSG: LockingLoopAnalyzer end

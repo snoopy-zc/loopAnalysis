@@ -31,17 +31,17 @@ public class StaticAnalysis {
 	
 	
 	public void doWork() {
-		System.out.println("JX - INFO - StaticAnalysis.doWork");
-		
+		System.out.println("JX - INFO - StaticAnalysis.doWork");		
+
     	//Timer timer = new Timer( Paths.get(jarsDir, "wala-timer.txt") );
-    	//Timer timer = new Timer(jarsDir+"_wala-timer.txt");
-    	//timer.tic("WalaAnalyzer begin");
+    	Timer timer = new Timer(jarsDir+".timer");
+    	timer.tic("WalaAnalyzer begin");
 		WalaAnalyzer walaAnalyzer = new WalaAnalyzer(jarsDir);
-		//timer.toc("WalaAnalyzer end");
-		//timer.close();
+		timer.toc("WalaAnalyzer end");
 				
-		LLAnalysis jxLocks = new LLAnalysis(walaAnalyzer, projectDir);
-	}
-	
+		LLAnalysis jxLocks = new LLAnalysis(walaAnalyzer, projectDir, timer);
+
+		timer.close();
+	}	
 	
 }

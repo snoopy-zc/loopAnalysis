@@ -7,13 +7,12 @@ compile-com:
     [javac] Compiling 15 source files to /home/snoopy/workspace/loopAnalysis/build/classes
 
 compile-sa:
-    [javac] Compiling 30 source files to /home/snoopy/workspace/loopAnalysis/build/classes
+    [javac] Compiling 34 source files to /home/snoopy/workspace/loopAnalysis/build/classes
 
 BUILD SUCCESSFUL
 Total time: 1 second
 JX - INFO - Static Analysis NOW ..
 JX - INFO - StaticAnalysis.doWork
-JX - INFO - Timer(tic), MSG: WalaAnalyzer begin
 JX - INFO - WalaAnalyzer: doWork...
 JX - INFO - Test Goal - multi *.jar: /home/snoopy/workspace/loopAnalysis/src/sa/res/./ha-4584/hadoop-core-0.20.205.1.jar
 JX - INFO - WalaAnalyzer: walaAnalysis...
@@ -31,7 +30,6 @@ nTotalFuncs(26388) = nApplicationFuncs(13842) + nPremordialFuncs(12546) + nOther
 nPackageFuncs(13817) - Note: this should be isApplicationAndNonNativeMethod first
 JX - INFO - WalaAnalyzer: readPackageScope
 NOTICE - not find the 'package-scope.txt' file, so SCOPE is ALL methods!!
-JX - INFO - Timer(toc->toc): 97.658s, (tic->toc): 97.658s, MSG: WalaAnalyzer end
 
 JX - INFO - LLAnalysis.doWork
 JX - INFO - Timer(tic), MSG: LLAnalysis begin
@@ -52,7 +50,7 @@ JX - INFO - LockAnalyzer: analyzeAllLocks
 #Total Locks = 1458
 #Groups of total Locks (ie, real number): 348
 
-JX - INFO - Timer(toc->toc): 1.179s, (tic->toc): 1.179s, MSG: lockAnalyzer end
+JX - INFO - Timer(toc->toc): 1.084s, (tic->toc): 1.084s, MSG: lockAnalyzer end
 
 JX - INFO - LoopAnalyzer: doWork...
 JX - INFO - LoopAnalyzer: findLoopsForAllCGNodes
@@ -61,7 +59,7 @@ The Status of Loops in All Functions:
 #scanned functions: 13817 out of #Total:26388(#AppFuncs:13842+#PremFuncs:12546)
 #functions with loops: 1508 (#loops:2160)
 //distribution of #loops
-#0:12309, #1:1146, #2:234, #3:78, #4:22, #5:6, #6:8, #7:3, #8:1, #9:2, #10:0, #11:5, #12:1, #13:0, #14:0, #15:1, #16:0, #17:1, #18:0, #19:0, JX - INFO - Timer(toc->toc): 0.183s, (tic->toc): 1.362s, MSG: loopAnalyzer end
+#0:12309, #1:1146, #2:234, #3:78, #4:22, #5:6, #6:8, #7:3, #8:1, #9:2, #10:0, #11:5, #12:1, #13:0, #14:0, #15:1, #16:0, #17:1, #18:0, #19:0, JX - INFO - Timer(toc->toc): 0.188s, (tic->toc): 1.272s, MSG: loopAnalyzer end
 
 JX - INFO - LoopingLockAnalyzer: doWork...
 JX - INFO - LoopingLockAnalyzer: findLoopsForAllLocks
@@ -75,20 +73,49 @@ jx - functions.size() = 7212
 
 
 JX - INFO - analyzeLoopingLocks
-#HeavyLocks (ie, time-consuming looping locks): 81 out of 718 looping locks out of total 1458 locks
-#Groups of HeavyLocks (ie, real number): 43 out of total 348 lock groups
+#HeavyLocks (ie, time-consuming looping locks): 19 out of 718 looping locks out of total 1458 locks
+#Groups of HeavyLocks (ie, real number): 14 out of total 348 lock groups
 
-JX - INFO - Timer(toc->toc): 0.12s, (tic->toc): 1.482s, MSG: loopingLockAnalyzer end
+JX - INFO - Timer(toc->toc): 0.112s, (tic->toc): 1.384s, MSG: loopingLockAnalyzer end
+
+JX - INFO - NestedLoopAnalyzer: doWork...
+
+JX-findNestedLoops
+The Status of Loops in All Functions:
+#scanned functions: 13817 out of #Total:26388(#AppFuncs:13842+#PremFuncs:12546)
+#loops: see LoopAnalyzer (#functions with loops: see LoopAnalyzer)
+//distribution of #nestedloops
+#0:0, #1:1180, #2:407, #3:95, #4:54, #5:10, #6:5, #7:2, #8:2, #9:1, #10:1, #11:0, #12:0, #13:0, #14:0, #15:0, #16:0, #17:0, #18:0, #19:0, #>=20:403
+jx - cgNodeList.size() = 9307
+
+JX - INFO - Timer(toc->toc): 0.116s, (tic->toc): 1.5s, MSG: nestedLoopAnalyzer end
 JX - INFO - TextFileReader: successfully read 59 lines in /home/snoopy/workspace/loopAnalysis/src/sa/res/./ha-4584/hd_rpc.txt
-JX - INFO - TextFileReader: successfully read 107 lines in /home/snoopy/workspace/loopAnalysis/src/sa/res/./io/io.txt
+JX - INFO - TextFileReader: successfully read 108 lines in /home/snoopy/workspace/loopAnalysis/src/sa/res/./io/io.txt
 JX - INFO - TextFileReader: successfully read 0 lines in /home/snoopy/workspace/loopAnalysis/src/sa/res/./io/customized_io_hd.txt
 
 JX - INFO - TCLoopAnalyzer: doWork...
 JX - INFO - findTCOperationsForAllLoops
 JX - INFO - TCLoopAnalyzer: printResultStatus
-#TCLoops = 883 out of total 2160 loops
+#TCLoops = 900 out of total 2160 loops
 
  JX - INFO - printTcOperationTypes
-#types = 189
-JX - INFO - Timer(toc->toc): 5.059s, (tic->toc): 6.541s, MSG: tcLoopAnalyzer end
-#cgNodes = 144 containing loopingLocks and TCLoop
+#types = 191
+JX - INFO - Timer(toc->toc): 3.339s, (tic->toc): 4.839s, MSG: tcLoopAnalyzer end
+JX - INFO - TextFileReader: successfully read 59 lines in /home/snoopy/workspace/loopAnalysis/src/sa/res/./ha-4584/hd_rpc.txt
+JX - INFO - TextFileReader: successfully read 108 lines in /home/snoopy/workspace/loopAnalysis/src/sa/res/./io/io.txt
+JX - INFO - TextFileReader: successfully read 0 lines in /home/snoopy/workspace/loopAnalysis/src/sa/res/./io/customized_io_hd.txt
+
+JX - INFO - LockingLoopAnalyzer: doWork...
+JX - INFO - LockingLoopAnalyzer: findLoopsForAllLocks
+ZC - INFO - LockingLoopAnalyzer: printResultStatus
+#Lock Nodes = 1354 ( 1458 locks)
+#Looping Lock Nodes = 679 ( 718 looping locks)
+	#Locking loop paths = 38575
+#TC Lock Nodes = 679 ( 718 TC Locks)
+#TCLockingLoops = 19615(loop group 360)
+
+ZC - INFO .........analysisPath........
+#loop in loopAnalyzer.getLoopCGNodes() = 2160
+#loop in loopAnalyzer.getLoopCGNodes() with numOfTcOperations_recusively > 0 = 900
+#loop in setTCLockingLoops = 360
+JX - INFO - Timer(toc->toc): 7.294s, (tic->toc): 12.133s, MSG: LockingLoopAnalyzer end
