@@ -1,8 +1,8 @@
 JX - INFO - Timer(tic), MSG: WalaAnalyzer begin
-JX - INFO - Timer(toc->toc): 55.289s, (tic->toc): 55.289s, MSG: WalaAnalyzer end
-JX - INFO - Timer(toc->toc): 1.886s, (tic->toc): 57.175s, MSG: lockAnalyzer end
-JX - INFO - Timer(toc->toc): 0.183s, (tic->toc): 57.358s, MSG: loopAnalyzer end
-JX - INFO - Timer(toc->toc): 0.104s, (tic->toc): 57.462s, MSG: loopingLockAnalyzer end
-JX - INFO - Timer(toc->toc): 0.188s, (tic->toc): 57.65s, MSG: nestedLoopAnalyzer end
-JX - INFO - Timer(toc->toc): 3.402s, (tic->toc): 61.052s, MSG: tcLoopAnalyzer end
-JX - INFO - Timer(toc->toc): 8.87s, (tic->toc): 69.922s, MSG: LockingLoopAnalyzer end
+JX - INFO - Timer(toc->toc): 56.207s, (tic->toc): 56.207s, MSG: WalaAnalyzer end
+JX - INFO - Timer(toc->toc): 1.242s, (tic->toc): 57.449s, MSG: lockAnalyzer end
+JX - INFO - Timer(toc->toc): 0.189s, (tic->toc): 57.638s, MSG: loopAnalyzer end
+JX - INFO - Timer(toc->toc): 0.115s, (tic->toc): 57.753s, MSG: loopingLockAnalyzer end
+JX - INFO - Timer(toc->toc): 0.196s, (tic->toc): 57.949s, MSG: nestedLoopAnalyzer end
+JX - INFO - Timer(toc->toc): 5.335s, (tic->toc): 63.284s, MSG: tcLoopAnalyzer end
+JX - INFO - Timer(toc->toc): 8.967s, (tic->toc): 72.251s, MSG: LockingLoopAnalyzer end
