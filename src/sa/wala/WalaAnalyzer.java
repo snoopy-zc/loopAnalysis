@@ -244,6 +244,7 @@ public class WalaAnalyzer {
 	    // Create Analysis Options
 	    AnalysisOptions options = new AnalysisOptions(scope, entrypoints); 
 	    options.setReflectionOptions(ReflectionOptions.ONE_FLOW_TO_CASTS_NO_METHOD_INVOKE);   //ReflectionOptions.FULL will just cause a few more nodes and methods 
+	    //options.setReflectionOptions(ReflectionOptions.FULL);   //ReflectionOptions.FULL will just cause a few more nodes and methods 
 
 	    // Create a builder - default: Context-insensitive   
 	    //#makeZeroCFABuilder(options, new AnalysisCache(), cha, scope, null, null); 

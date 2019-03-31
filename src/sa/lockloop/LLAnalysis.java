@@ -158,9 +158,9 @@ public class LLAnalysis {
 			
 			// zc - this part is unnecessary, because it has been done in loopingLockAnalyzer()
 			// loops-containing loop
-			NestedLoopAnalyzer nestedLoopAnalyzer = new NestedLoopAnalyzer(this.wala, this.loopAnalyzer, this.cgNodeList);
-			nestedLoopAnalyzer.doWork();
-			timer.toc("nestedLoopAnalyzer end");
+			//NestedLoopAnalyzer nestedLoopAnalyzer = new NestedLoopAnalyzer(this.wala, this.loopAnalyzer, this.cgNodeList);
+			//nestedLoopAnalyzer.doWork();
+			//timer.toc("nestedLoopAnalyzer end");
 			
 			
 			TCLoopAnalyzer tcLoopAnalyzer = new TCLoopAnalyzer(this.wala, this.loopAnalyzer, this.cgNodeList);

@@ -91,6 +91,24 @@ public class PathInfo {
 		return false;
 	}
 	
+	public boolean containNode(CGNode cgn) {
+		//e.g. org/apache/hadoop/hdfs/server/namenode/INodeDirectory, spaceConsumedInTree(...
+		for (PathEntry entry : callpath) {
+			if(entry.getCGNode() == cgn)
+				return true;
+		}
+		return false;
+	}
+	public boolean containNodeButFirst(CGNode cgn) {
+		//e.g. org/apache/hadoop/hdfs/server/namenode/INodeDirectory, spaceConsumedInTree(...
+		for(int i=1; i<this.callpath.size();i++) {
+		//for(int i=this.callpath.size()-2; i>=0;i--) {		//wrong traverse direction		
+			if(this.callpath.get(i).function.equals(cgn))
+				return true;
+		}
+		return false;
+	}
+	
 	public PathEntry getPathNode(CGNode cgn) {//-1 means no! 0 means self call! n>0 stand for the n.th node after this call this 
 		for(int i=0; i<this.callpath.size();i++)
 			if(this.callpath.get(i).function.equals(cgn))
@@ -113,7 +131,7 @@ public class PathInfo {
 			+ "C" + this.getCircleNum();
 		boolean reverse = false;
 		if(reverse) {
-			for(int i = callpath.size()-1; i>=0; i++) {
+			for(int i = callpath.size()-1; i>=0; i--) {
 				PathEntry pe = callpath.get(i);
 				CGNode cgNode = pe.function;
 				result = result + " - " + cgNode.getMethod().getSignature().substring(0, cgNode.getMethod().getSignature().indexOf('(')) 
@@ -198,4 +216,7 @@ class PathEntry{
 	public String getFunctionName() {
 		return function.getMethod().toString();
 	}
+	public CGNode getCGNode() {
+		return function;
+	}	
 }

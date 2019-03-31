@@ -1,0 +1,7 @@
+JX - INFO - Timer(tic), MSG: WalaAnalyzer begin
+JX - INFO - Timer(toc->toc): 95.277s, (tic->toc): 95.277s, MSG: WalaAnalyzer end
+JX - INFO - Timer(toc->toc): 0.805s, (tic->toc): 96.082s, MSG: lockAnalyzer end
+JX - INFO - Timer(toc->toc): 0.19s, (tic->toc): 96.272s, MSG: loopAnalyzer end
+JX - INFO - Timer(toc->toc): 0.124s, (tic->toc): 96.396s, MSG: loopingLockAnalyzer end
+JX - INFO - Timer(toc->toc): 1.337s, (tic->toc): 97.733s, MSG: tcLoopAnalyzer end
+JX - INFO - Timer(toc->toc): 7.42s, (tic->toc): 105.153s, MSG: LockingLoopAnalyzer end
