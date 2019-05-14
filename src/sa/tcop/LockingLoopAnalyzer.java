@@ -146,9 +146,10 @@ public class LockingLoopAnalyzer {
 	
 		//add loops in the first level
 		for(LoopInfo loop:loopingLock.getLoops()) {
-			SSAInstruction last_ssa = instructions[cfg.getBasicBlock(loop.getEndBasicBlockNumber()).getFirstInstructionIndex()];
+			//SSAInstruction last_ssa = instructions[cfg.getBasicBlock(loop.getEndBasicBlockNumber()).getFirstInstructionIndex()];
+			SSAInstruction first_ssa = cfg.getBasicBlock(loop.getBeginBasicBlockNumber()).getLastInstruction();
 			PathInfo path = new PathInfo();
-			PathEntry pe = new PathEntry(cgNodeInfo,last_ssa);
+			PathEntry pe = new PathEntry(cgNodeInfo,first_ssa);
 			//pe.delLoop(loop); //remove current loop in path entry
 			path.addPathEntry(pe);
 			path.setFunction(cgNode);
@@ -234,9 +235,9 @@ public class LockingLoopAnalyzer {
 		//add Loop
 		if(cgNodeInfo.hasLoops())
 			for (LoopInfo loop: cgNodeInfo.getLoops()) {
-				SSAInstruction last_ssa = instructions[cfg.getBasicBlock(loop.getEndBasicBlockNumber()).getFirstInstructionIndex()];
+				SSAInstruction first_ssa = cfg.getBasicBlock(loop.getBeginBasicBlockNumber()).getLastInstruction();
 				PathInfo path = new PathInfo(callpath);
-				PathEntry pe = new PathEntry(cgNodeInfo,last_ssa);
+				PathEntry pe = new PathEntry(cgNodeInfo,first_ssa);
 				//pe.delLoop(loop); //remove current loop in path entry
 				path.addPathEntry(pe);
 				path.setFunction(cgNode);
@@ -288,9 +289,7 @@ public class LockingLoopAnalyzer {
 			for(Pair<CGNode,PathEntry> p : circle_target_Src) {
 				loopingLock.getLoopPaths().get(i).getValue().getPathNode(p.getKey()).addCircle(p.getValue());
 			}
-		}
-		
-		// TODO zc - this can be change !!! 
+		}		
 	}
 	
 	// results
@@ -442,24 +441,26 @@ public class LockingLoopAnalyzer {
 		Set<LoopInfo> setLockingLoops = new HashSet<LoopInfo>();
 		
 
+		Set<LoopingLockInfo> setTcLoopingLock = new HashSet<LoopingLockInfo>();
+		Set<CGNodeInfo> setTcLoopingLockFuncs = new HashSet<CGNodeInfo>();
+
+		Set<LoopingLockInfo> setLoopingLockMerge = new HashSet<LoopingLockInfo>();
+		Set<CGNodeInfo> setTcLoopingLockFuncsMerge = new HashSet<CGNodeInfo>();
+		
+		
+
 		Set<CGNodeInfo> setTc5Funcs = new HashSet<CGNodeInfo>();
 		Set<CGNodeInfo> setTcCFuncs = new HashSet<CGNodeInfo>();
-		
-		// summary
-		boolean flag_tc_node = false;
-		boolean flag_tc_lock = false;
-		
+				
 		//travel lock cgNodes
 		for (CGNodeInfo cgNodeInfo: lockAnalyzer.getLockCGNodes()) {						
-			if(cgNodeInfo.hasLoopingLocks)
+			if(cgNodeInfo.hasLoopingLocks && pruning(cgNodeInfo,this.walaAnalyzer.getTargetDirPath().toString()))
 			{
-				flag_tc_node = false;
 				nfuncLoopingLock++;
 				//travel looping lock info
-				for(LoopingLockInfo loopingLock: cgNodeInfo.looping_locks.values()) {
-										
+				for(LoopingLockInfo loopingLock: cgNodeInfo.looping_locks.values()) 
+				{										
 					//this.nLockingLoops += loopingLock.getLoopPaths().size();
-					flag_tc_lock = false;
 					nlockLoop ++;
 					//traval all path
 					for(Pair<LoopInfo,PathInfo> lp:loopingLock.getLoopPaths())	{
@@ -468,8 +469,8 @@ public class LockingLoopAnalyzer {
 						{							
 							setTCLockingLoops.add(lp.getKey());
 							this.nTCLockingLoops ++;
-							flag_tc_node = true;
-							flag_tc_lock = true;
+							setTcLoopingLockFuncs.add(cgNodeInfo);
+							setTcLoopingLock.add(loopingLock);
 							check(cgNodeInfo,loopingLock,lp.getKey(),lp.getValue());
 						}
 
@@ -483,22 +484,48 @@ public class LockingLoopAnalyzer {
 								&& lp.getValue().getCircleNumInloop()>0)
 						{
 							//System.out.println("*time-consuming operation & circle");
-							setTcCFuncs.add(cgNodeInfo);
-							//System.err.println(lp.getValue());
+							setTcCFuncs.add(cgNodeInfo);							
 							//check(cgNodeInfo,loopingLock,lp.getKey(),lp.getValue());
 						}
 					}
-					if(flag_tc_lock)
-						nlockTcLoop++;
 				}//end looping lock for
-				if(flag_tc_node)
-					nfuncTcLoopingLock++;
 			}//end if
 		}//end cgNodes for
 		nloopLock = setLockingLoops.size();
 		nloopTcLock = setTCLockingLoops.size();	
+		nlockTcLoop = setTcLoopingLock.size();
+		nfuncTcLoopingLock = setTcLoopingLockFuncs.size();
 		
+		//TODO
+		/* not sutable for hd3990 -> need update, useful!!!
+		boolean tflag;		
+		//remove the redundant entries which exist in other call path -> merge call path and keep top lock
+		for(LoopingLockInfo lli: setTcLoopingLock) {
+			tflag= false;
+			for(LoopingLockInfo inner_lli: setTcLoopingLock) {
+				for(Pair<LoopInfo,PathInfo> lp: inner_lli.getLoopPaths())	{
+					if(lp.getValue().containNodeButFirst(lli.getCGNode())) {
+						tflag= true;
+					}
+				}					
+			}
+			if(!tflag)
+				setLoopingLockMerge.add(lli);
+		}
+				
+		for(LoopingLockInfo lli: setLoopingLockMerge) {
+			//System.out.println(lli.getLoopPaths());
+			setTcLoopingLockFuncsMerge.add(cgNodeList.forceGet(lli.getCGNode()));
+		}
 		
+		for(CGNodeInfo a : setTcLoopingLockFuncsMerge) {
+			for(String bugid: bugList.keySet()) {
+				if(check_each(a,bugid)) {
+					resultList.get(bugid).add(a);
+				}
+			}
+		}
+		*/
 
 		for(String bugid: resultList.keySet()) {
 			System.out.println("#" + bugid+" = " + resultList.get(bugid).size());
@@ -509,33 +536,36 @@ public class LockingLoopAnalyzer {
 		System.out.println("ZC - INFO .........final result........");
 		System.out.println("");
 		
-		System.out.println("# func = " +  nfunc); 
-		System.out.println("# critical func = " +   nfuncLock); 
-		System.out.println("# loop func = " +   nfuncLoop); 
-		System.out.println("# loop in lock func = " +   nfuncLoopingLock); 
-		System.out.println("# loop in lock func (tcOp) = " +   nfuncTcLoopingLock); 
-		System.out.println("# loop in lock func (tcOp>5) = " +   setTc5Funcs.size()); 
-		System.out.println("# loop in lock func (tcOp circle) = " +   setTcCFuncs.size()); 
+		System.out.println("# func = ," +  nfunc); 
+		System.out.println("# critical func = ," +   nfuncLock); 
+		System.out.println("# loop func = ," +   nfuncLoop); 
+		System.out.println("# loop in lock func = ," +   nfuncLoopingLock); 
+		System.out.println("# loop in lock func (tcOp) = ," +   nfuncTcLoopingLock); 
+		System.out.println("# loop in lock func top (tcOp) = ," +   setTcLoopingLockFuncsMerge.size()); 
+		System.out.println("# loop in lock func (tcOp>5) = ," +   setTc5Funcs.size()); 
+		System.out.println("# loop in lock func (tcOp circle) = ," +   setTcCFuncs.size()); 
 		System.out.println("");
 		
-		System.out.println("# critical section = " +   nlock); 
-		System.out.println("# lock group = " +   nlockgroup); 
-		System.out.println("# lock (inner loop) = " +   nlockLoop); 
-		System.out.println("# lock (tcOp in loop) = " +   nlockTcLoop); 
+		System.out.println("# critical section = ," +   nlock); 
+		System.out.println("# lock group = ," +   nlockgroup); 
+		System.out.println("# lock (inner loop) = ," +   nlockLoop); 
+		System.out.println("# lock (tcOp in loop) = ," +   nlockTcLoop); 
+		System.out.println("# lock top (tcOp in loop) = ," +   setLoopingLockMerge.size()); 
 		System.out.println("");
 		
-		System.out.println("# loop = " +   nloop); 
-		System.out.println("# loop in lock = " +   nloopLock); 
-		System.out.println("# loop (tcOp) = " +   nloopTc); 
-		System.out.println("# loop in lock (tcOp) = " +   nloopTcLock); 		
+		System.out.println("# loop = ," +   nloop); 
+		System.out.println("# loop in lock = ," +   nloopLock); 
+		System.out.println("# loop (tcOp) = ," +   nloopTc); 
+		System.out.println("# loop in lock (tcOp) = ," +   nloopTcLock); 		
 	}
 	
 	public boolean check(CGNodeInfo a,LoopingLockInfo b,LoopInfo c,PathInfo d) {
 		for(String bugid: bugList.keySet()) {
 			if(check_each(a,bugid)) {
-				if(c.toString().indexOf("InetAddress, getByName") >= 0) {
+				//if(c.toString().indexOf("InetAddress, getByName") >= 0) {
+				if(check_each(a,"mr4576")) {
 				//System.out.println(bugid);
-				//System.out.println(a.getCGNode().getMethod().toString()); 
+				System.out.println(a.getCGNode().getMethod().toString()); 
 				System.out.println(d);
 				System.out.println(c);
 				}
@@ -551,7 +581,7 @@ public class LockingLoopAnalyzer {
 		
 	}
     
-	int tCount = 0;
+	//int tCount = 0;
 	HashMap<String, String> bugList = new HashMap<String, String>(){
 		{
 			put("mr4576", "TrackerDistributedCacheManager, getLocalCache");
@@ -564,8 +594,9 @@ public class LockingLoopAnalyzer {
 			put("hd2379", "FSVolumeSet, getBlockInfo");
 			put("hd5153", "BlockManager, processReport");
 			put("hd3990", "DatanodeManager, fetchDatanodes");
-			put("hd4186-1", "Monitor, run");
-			put("hd4186-2", "FSEditlog, logSync");
+			put("hd4186-1", "Monitor, run");			
+			put("hd4186-2", "FSNamesystem, logReassignLease");
+			put("hd4186-3", "FSEditlog, logSync");
 		}
 	};
 	HashMap<String, Set<CGNodeInfo>> resultList = new HashMap<String, Set<CGNodeInfo>>(){
@@ -582,7 +613,18 @@ public class LockingLoopAnalyzer {
 			put("hd3990", new HashSet<CGNodeInfo>());
 			put("hd4186-1", new HashSet<CGNodeInfo>());
 			put("hd4186-2", new HashSet<CGNodeInfo>());
+			put("hd4186-3", new HashSet<CGNodeInfo>());
 		}
 	};
-	
+	public boolean pruning(CGNodeInfo cgNodeInfo, String jarPath) {
+		if(jarPath.indexOf("mr")>=0) {
+			return  cgNodeInfo.getCGNode().getMethod().toString().indexOf("mapred") >= 0
+					|| cgNodeInfo.getCGNode().getMethod().toString().indexOf("filecache") >= 0;
+		}else if(jarPath.indexOf("hd")>=0) {
+			return  cgNodeInfo.getCGNode().getMethod().toString().indexOf("hdfs") >= 0;
+		}else if(jarPath.indexOf("hb")>=0) {
+			return  cgNodeInfo.getCGNode().getMethod().toString().indexOf("hbase") >= 0;
+		}else
+			return true;
+	}
 }

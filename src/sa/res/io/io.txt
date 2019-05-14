@@ -8,6 +8,8 @@
 
 //added for mr-4088 "queue"
 //java.lang.Object.wait(
+//added for hd2379/ha4584
+java.io.File.listFiles
 
 
 //prefixes   #types < 953
@@ -26,8 +28,6 @@ java.io.File.createTempFile(Ljava/lang/String;Ljava/lang/String;Ljava/io/File;)L
 java.io.File.delete()Z
 java.io.File.deleteOnExit()V
 java.io.File.exists()Z
-//added for hd2379/ha4584
-java.io.File.listFiles
 java.io.File.mkdir()Z
 java.io.File.mkdirs()Z
 java.io.File.renameTo(Ljava/io/File;)Z
