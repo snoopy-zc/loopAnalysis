@@ -1,0 +1,6 @@
+Ljava/net/URI *
+Ljava/lang/String toString
+Ljava/lang/String split
+Ljava/io/File *
+Ljava/nio/Path *
+Ljava/lang/StringBuffer toString

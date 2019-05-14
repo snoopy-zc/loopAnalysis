@@ -42,6 +42,6 @@ public class StaticAnalysis {
 		LLAnalysis jxLocks = new LLAnalysis(walaAnalyzer, projectDir, timer);
 
 		timer.close();
-	}	
+	}
 	
 }

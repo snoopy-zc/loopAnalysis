@@ -22,6 +22,7 @@ public final class LoopVarUtil {
 	public static boolean isApplicationMethod(CGNode f) {
   	  	IMethod m = f.getMethod();
   	  	ClassLoaderReference classloader_ref = m.getDeclaringClass().getClassLoader().getReference();
+  	  	//System.out.println(classloader_ref.toString());
   	  	if ( classloader_ref.equals(ClassLoaderReference.Application) )
   	  		return true;
   	  	return false;

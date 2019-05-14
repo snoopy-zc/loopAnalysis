@@ -1,0 +1,13 @@
+org.apache.hadoop.io.IOUtils.copyBytes-71 #need disable io in modelLib.java
+#org.apache.hadoop.io.IOUtils.readFully-115 #need disable io in modelLib.java
+org.apache.hadoop.mapred.TaskTracker$TaskLauncher.run-2168
+#org.apache.hadoop.mapred.TaskTracker$TaskLauncher.run-2151
+#org.apache.hadoop.mapred.TaskTracker$TaskLauncher.run-2156
+org.apache.hadoop.mapreduce.server.tasktracker.Localizer.initializeAttemptDirs-345
+org.apache.hadoop.mapreduce.server.tasktracker.Localizer.initializeJobDirs-297
+org.apache.hadoop.mapreduce.server.tasktracker.Localizer.initializeUserDirs-209
+#org.apache.hadoop.mapred.Counters$Group.readFields-341
+#org.apache.hadoop.mapred.Counters.readFields-542
+org.apache.hadoop.mapred.TaskTracker.purgeJob-1900
+org.apache.hadoop.mapred.JobConf.deleteLocalFiles-467
+org.apache.hadoop.mapred.TaskTracker.getLocalFiles-3728

@@ -1,0 +1,15 @@
+#library, method, parameter types(0 means no parameter), which uses we need concern
+Ljava/lang/String toString 0 0
+Ljava/lang/String split Ljava/lang/String 0
+Ljava/lang/StringBuffer toString 0 0
+Lorg/apache/hadoop/util/StringUtils split Ljava/lang/String 0
+Ljava/util/Iterator next 0 0
+Ljava/lang/Math min II 0 1
+Ljava/io/InputStream read [B 1
+Ljava/io/InputStream read [BII 3
+Ljava/lang/Integer intValue 0 0
+Ljava/lang/Short valueOf S 0
+Ljava/util/Arrays asList [Ljava/lang/Object 0
+Ljava/util/Collections singletonList Ljava/lang/Object 0
+Lorg/apache/cassandra/cql3/UntypedResultSet$Row getSet Ljava/lang/StringLorg/apache/cassandra/db/marshal/AbstractType 0
+Lorg/apache/cassandra/cql3/UntypedResultSet one 0 0

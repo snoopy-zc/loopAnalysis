@@ -1,0 +1,12 @@
+#org.apache.hadoop.hdfs.server.datanode.FSDataset$FSVolumeSet.getBlockInfo-679  //ret 11/12
+#org.apache.hadoop.hdfs.server.datanode.FSDataset$FSVolumeSet.getCapacity-664 //ret 11/12
+#org.apache.hadoop.hdfs.server.datanode.FSDataset$FSVolumeSet.getNextVolume-645  //handle while(true)
+#org.apache.hadoop.hdfs.server.datanode.FSDataset$FSVolumeSet.getRemaining-672 // ret 11/12
+#org.apache.hadoop.hdfs.server.datanode.FSDataset$FSDir.getBlockInfo-227 //bug
+#org.apache.hadoop.hdfs.server.datanode.FSDataset.getGenerationStampFromFile-70 //bug
+#org.apache.hadoop.hdfs.server.datanode.FSDataset$FSDir.getBlockInfo-220
+#org.apache.hadoop.hdfs.server.namenode.FSDirectory.mkdirs-947  //ret 10/10
+#org.apache.hadoop.hdfs.server.namenode.FSEditLog$EditLogFileOutputStream.write-154 //ret 15/15
+#org.apache.hadoop.hdfs.server.namenode.FSEditLog.logEdit-908   // ret 10/11
+org.apache.hadoop.hdfs.server.namenode.FSNamesystem.processReport-3440 //bug
+#org.apache.hadoop.hdfs.server.namenode.FSNamesystem.processReport-3443 //bug

@@ -1,0 +1,10 @@
+org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter.commitJob-302
+org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter.mergePaths-353
+org.apache.hadoop.yarn.server.resourcemanager.scheduler.SchedulerApp.pullNewlyAllocatedContainers-269
+org.apache.hadoop.mapreduce.v2.app.job.impl.TaskImpl$AttemptSucceededTransition.transition-770
+org.apache.hadoop.mapreduce.v2.app.job.impl.TaskAttemptImpl.resolveHosts-1145
+org.apache.hadoop.yarn.server.resourcemanager.scheduler.fifo.FifoScheduler.assignContainer-530
+org.apache.hadoop.yarn.server.resourcemanager.scheduler.fifo.FifoScheduler.assignContainers-353
+org.apache.hadoop.yarn.service.AbstractService.changeState-113
+org.apache.hadoop.yarn.util.AbstractLivelinessMonitor$PingChecker.run-106
+org.apache.hadoop.mapreduce.v2.app.job.impl.JobImpl.scheduleTasks-650

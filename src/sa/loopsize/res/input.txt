@@ -1,0 +1,9 @@
+#input location, log location, jar location, model lib file loaction
+#/home/nemo/workspace/JXCascading-detector/src/sa/loopsize/res/input-hdfs-4584.txt  /home/nemo/workspace/JXCascading-detector/src/sa/loopsize/hdfs-4584-log  src/sa/res/ha-4584  src/sa/loopsize/res/modelLib-hdfs-4584.txt 
+#/home/nemo/workspace/JXCascading-detector/src/sa/loopsize/res/input-mr-4813.txt    /home/nemo/workspace/JXCascading-detector/src/sa/loopsize/mr-4813-log    src/sa/res/mr-4813  src/sa/loopsize/res/modelLib-mr-4813.txt
+#/home/nemo/workspace/JXCascading-detector/src/sa/loopsize/res/input-hdfs-5153.txt  /home/nemo/workspace/JXCascading-detector/src/sa/loopsize/hdfs-5153-log  src/sa/res/hd-5153  src/sa/loopsize/res/modelLib-hdfs-5153.txt
+#/home/nemo/workspace/JXCascading-detector/src/sa/loopsize/res/input-mr-2705.txt    /home/nemo/workspace/JXCascading-detector/src/sa/loopsize/mr-2705-log    src/sa/res/mr-2705  src/sa/loopsize/res/modelLib-mr-2705.txt
+#/home/nemo/workspace/JXCascading-detector/src/sa/loopsize/res/input-mr-4088.txt    /home/nemo/workspace/JXCascading-detector/src/sa/loopsize/mr-4088-log    src/sa/res/mr-4088  src/sa/loopsize/res/modelLib-mr-4088.txt
+#/home/nemo/workspace/JXCascading-detector/src/sa/loopsize/res/input-mr-4576.txt    /home/nemo/workspace/JXCascading-detector/src/sa/loopsize/mr-4576-log    src/sa/res/mr-4576  src/sa/loopsize/res/modelLib-mr-4576.txt	
+#/home/nemo/workspace/JXCascading-detector/src/sa/loopsize/res/input-ca-6744.txt     /home/nemo/workspace/JXCascading-detector/src/sa/loopsize/ca-6744-log    src/sa/res/ca-6744  src/sa/loopsize/res/modelLib-ca-6744.txt
+/home/nemo/workspace/JXCascading-detector/src/sa/loopsize/res/input-hb-3483.txt     /home/nemo/workspace/JXCascading-detector/src/sa/loopsize/hb-3483-log     src/sa/res/hb-3483  src/sa/loopsize/res/modelLib-hb-3483.txt		
