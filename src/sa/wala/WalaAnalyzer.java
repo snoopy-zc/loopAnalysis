@@ -98,10 +98,17 @@ public class WalaAnalyzer {
     String functionname_for_test = "doWork0("; //"org.apache.hadoop.hdfs.server.datanode.FSDataset$FSDir.getBlockInfo("; //"RetryCache.waitForCompletion(Lorg/apache/hadoop/ipc/RetryCache$CacheEntry;)"; //"org.apache.hadoop.hdfs.server.balancer.Balancer"; //"Balancer$Source.getBlockList";//"DirectoryScanner.scan"; //"ReadaheadPool.getInstance("; //"BPServiceActor.run("; //"DataNode.runDatanodeDaemon"; //"BPServiceActor.run("; //"BlockPoolManager.startAll"; //"NameNodeRpcServer"; //"BackupNode$BackupNodeRpcServer"; // //".DatanodeProtocolServerSideTranslatorPB"; //"DatanodeProtocolService$BlockingInterface"; //"sendHeartbeat("; //"org.apache.hadoop.hdfs.protocolPB.DatanodeProtocolServerSideTranslatorPB";  //java.util.regex.Matcher.match(";
     int which_functionname_for_test = 1;   //1st? 2nd? 3rd?    //TODO - 0 means ALL, 1 to n means which one respectively
     // for testIR()
+    /*
     String dotExe = "C:\\Program Files (x86)\\Graphviz2.38\\bin\\dot.exe";  //like "C:\\Program Files (x86)\\Graphviz2.38\\bin\\dot.exe"
     String pdfExe = "C:\\Program Files (x86)\\Foxit Software\\Foxit Reader\\FoxitReader.exe";  //like "C:\\Program Files (x86)\\Foxit Software\\Foxit Reader\\FoxitReader.exe"
     String dotFile = "E:\\walaspace\\temp.dt";  //like "Z:\\walaspace\\temp.dt". ps: all parent dirs should exist. 
     String pdfFile = "E:\\walaspace\\ir.pdf";  //like "Z:\\walaspace\\ir.pdf". ps: all parent dirs should exist.
+    */
+    String xdotExe = "xdot";  //view .dot file directly
+    String dotExe = "C:\\Program Files (x86)\\Graphviz2.38\\bin\\dot.exe";  //like "C:\\Program Files (x86)\\Graphviz2.38\\bin\\dot.exe"
+    String pdfExe = "C:\\Program Files (x86)\\Foxit Software\\Foxit Reader\\FoxitReader.exe";  //like "C:\\Program Files (x86)\\Foxit Software\\Foxit Reader\\FoxitReader.exe"
+    String dotFile = "~/temp.dt";  //like "Z:\\walaspace\\temp.dt". ps: all parent dirs should exist. 
+    String pdfFile = "~/ir.pdf";  //like "Z:\\walaspace\\ir.pdf". ps: all parent dirs should exist.
     
     
     /**

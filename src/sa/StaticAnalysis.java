@@ -26,7 +26,8 @@ public class StaticAnalysis {
 	public StaticAnalysis(String[] args) {
 		projectDir = args[0];
 		jarsDir = args[1];
-		doWork();
+		//doWork();
+		test();
 	}
 	
 	
@@ -43,5 +44,16 @@ public class StaticAnalysis {
 
 		timer.close();
 	}
+	public void test() {
+		System.out.println("JX - INFO - StaticAnalysis.test");		
+
+		jarsDir = Paths.get(projectDir, "test").toString();
+    	Timer timer = new Timer(jarsDir+".timer");
+    	timer.tic("WalaAnalyzer begin");
+		WalaAnalyzer walaAnalyzer = new WalaAnalyzer(jarsDir);
+		timer.toc("WalaAnalyzer end");				
+		timer.close();
+	}
+	
 	
 }

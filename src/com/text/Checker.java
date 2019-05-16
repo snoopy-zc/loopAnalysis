@@ -249,6 +249,12 @@ public class Checker {
 		}
 		return false;
 	}
+
+
+	public boolean isSplitTargetSpecial(String libName, String funcName, String string) {
+		// TODO Auto-generated method stub
+		return false;
+	}
 	
 	
 
