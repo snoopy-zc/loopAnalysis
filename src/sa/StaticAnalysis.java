@@ -44,6 +44,7 @@ public class StaticAnalysis {
 
 		timer.close();
 	}
+	
 	public void test() {
 		System.out.println("JX - INFO - StaticAnalysis.test");		
 

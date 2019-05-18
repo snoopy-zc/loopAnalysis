@@ -29,6 +29,11 @@ public class Test implements Runnable{
 		for(int i = 0; c - b < 0; i++){
 			System.out.println("hi3");
 		}
+		if(a[2]>3) {
+			System.out.println("a[2]>3");			
+		}else {
+			System.out.println("a[2]<=3");
+		}
 	}
 	
 	/*public void testFor2(){

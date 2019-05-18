@@ -63,7 +63,7 @@ public class StaticAnalysis {
 		//this.walaAnalyzer = new WalaAnalyzer("src/sa/res/mr-4576");
 		//this.walaAnalyzer = new WalaAnalyzer("src/sa/res/mr-4088");
 
-		this.walaAnalyzer = new WalaAnalyzer("/home/nemo/workspace/JXCascading-detector/src/sa/loopsize");
+		this.walaAnalyzer = new WalaAnalyzer("/home/c-lab/eclipse-workspace/loopAnalysis/src/sa/loopsize");
 		this.cha = this.walaAnalyzer.getClassHierarchy();
 		this.cg = this.walaAnalyzer.getCallGraph();
 		this.looper = new LoopAnalyzer(this.walaAnalyzer);
@@ -131,7 +131,7 @@ public class StaticAnalysis {
 	
 	public void printAllIR(){
 		CallGraph cg = this.walaAnalyzer.getCallGraph();
-		TextFileWriter x = new TextFileWriter("/home/nemo/outFig/ir.txt");
+		TextFileWriter x = new TextFileWriter("/home/c-lab/outFig/ir.txt");
 		IR ir = null;
 		IMethod im = null;
 		List<SSAInstruction> loopSSA = new ArrayList<SSAInstruction>();
@@ -184,7 +184,7 @@ public class StaticAnalysis {
 		//File input = new File("/home/nemo/workspace/JXCascading-detector/src/sa/loopsize/res/input-mr-4088.txt");
 		//File input = new File("/home/nemo/workspace/JXCascading-detector/src/sa/loopsize/res/input-mr-4576.txt");
 
-		File generalInput = new File("/home/nemo/workspace/JXCascading-detector/src/sa/loopsize/res/input.txt");
+		File generalInput = new File("/home/c-lab/eclipse-workspace/loopAnalysis/src/sa/loopsize/res/input.txt");
 		long total_time = 0;
 		try(BufferedReader perBug = new BufferedReader(new FileReader(generalInput))){
 			String perLine;

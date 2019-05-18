@@ -1,0 +1,2 @@
+print the point we need check
+size of manually checking0

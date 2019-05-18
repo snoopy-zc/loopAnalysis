@@ -80,8 +80,8 @@ public final class LoopVarUtil {
 		
 	    final String dotExe = "/usr/bin/dot";
 	    final String pdfExe = "/usr/bin/evince";
-	    final String dotFile = "/home/nemo/outFig/temp.dt";
-	    final String pdfFile = "/home/nemo/outFig/ir.pdf";
+	    final String dotFile = "/home/c-lab/temp.dt";
+	    final String pdfFile = "/home/c-lab/ir.pdf";
 	    
 	    /**
 	     * JX: it seems "viewIR" is not suitable for some functions like "LeaseManager.checkLeases", 

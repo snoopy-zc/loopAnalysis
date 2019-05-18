@@ -1,0 +1,22 @@
+size of result buff4
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+class name:LTest
+method name:main
+SSAInstruction:invokespecial < Application, LTest, <init>(Ljava/util/Set;Z)V > 5,3,6 @14 exception:7
+paraLoc:1
+line number:188
+bounded or not:true
+it's strongly bounded, no need check
+no need to check
+print related constant
+********************************
+new collection instruction
+********************************
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+size of outer buff 1
+size of not need manually checking 1
+size of conf bounded 0
+size of constant bounded 1
+size of manually checking 0
+size of maybe RPC 0
+size of bounded array/collection0
