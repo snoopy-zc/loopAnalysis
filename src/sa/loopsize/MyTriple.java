@@ -15,12 +15,12 @@ public class MyTriple {
 	private boolean hasChild = true;
 	private boolean bounded = false;
 	private boolean notFoundCaller = false;
-	HashSet<String> confVar = new HashSet<String>();
-	HashSet<String> constantVar = new HashSet<String>();
+	public HashSet<String> confVar = new HashSet<String>();
+	public HashSet<String> constantVar = new HashSet<String>();
 	LabelledSSA retSource; // for a return case, record its source, if when analyzing the return, find it's related with parameter
 						    // we can only analyze this point 
 	boolean retSourceFlag = false;
-	LinkedList<String> info = new LinkedList<String>();
+	public LinkedList<String> info = new LinkedList<String>();
 	MyTriple parent;
 	private boolean hasParent = false;
 	private boolean isLibraryInvovled = false;

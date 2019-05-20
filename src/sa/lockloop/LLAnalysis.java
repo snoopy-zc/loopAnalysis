@@ -66,6 +66,7 @@ import sa.lock.LockInfo;
 import sa.lock.LoopingLockAnalyzer;
 import sa.lock.LoopingLockInfo;
 import sa.loop.TCOpUtil;
+import sa.loop.BoundedLoopAnalyzer;
 import sa.loop.LoopAnalyzer;
 import sa.loop.LoopInfo;
 import sa.loop.NestedLoopAnalyzer;
@@ -180,12 +181,9 @@ public class LLAnalysis {
 			lockingLoopAnalyzer.doWork();
 			timer.toc("LockingLoopAnalyzer end");
 			
-			LockingLoopAnalyzer lockingLoopAnalyzer = new LockingLoopAnalyzer(this.wala, this.lockAnalyzer, this.loopAnalyzer, this.cgNodeList);
-			lockingLoopAnalyzer.doWork();
-			timer.toc("LockingLoopAnalyzer end");
-	
-			
-			
+			BoundedLoopAnalyzer boundedLoopAnalyzer = new BoundedLoopAnalyzer(this.wala, this.loopAnalyzer, this.cgNodeList, this.projectDir);
+			boundedLoopAnalyzer.doWork();
+			timer.toc("BoundedLoopAnalyzer end");			
 			
 			
 			

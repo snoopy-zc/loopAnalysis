@@ -14,6 +14,8 @@ import com.ibm.wala.ipa.callgraph.CGNode;
 import com.ibm.wala.ssa.IR;
 import com.ibm.wala.ssa.ISSABasicBlock;
 import com.ibm.wala.ssa.SSACFG;
+import com.ibm.wala.ssa.SSAConditionalBranchInstruction;
+import com.ibm.wala.ssa.SSACFG.BasicBlock;
 import com.ibm.wala.ssa.SSAInstruction;
 import com.ibm.wala.ssa.SSAInvokeInstruction;
 import com.ibm.wala.ssa.SSAMonitorInstruction;
@@ -42,6 +44,11 @@ public class LoopInfo {
 	public List<Integer> hasLoops_in_current_function_for_max_depthOfLoops;
   
 	String var_name;
+	
+	// bound info
+	public boolean bounded = false;
+	public boolean whileTrue = false;
+	
  	
 	public LoopInfo(CGNode cgNode, int begin_bb, int end_bb) {
 		this.cgNode = cgNode;
@@ -84,6 +91,31 @@ public class LoopInfo {
 	
 	public int getEndBasicBlockNumber() {
 		return this.end_bb;
+	}
+	
+	public SSAInstruction getConditionSSA() {
+		for(SSAInstruction ssa : getBeginBasicBlockSSAs()) {
+			if (ssa instanceof  SSAConditionalBranchInstruction) {
+				return ssa;
+			}
+		}
+		return null;
+	}
+	
+	public BasicBlock getBeginBasicBlock(){
+		return this.cgNode.getIR().getControlFlowGraph().getBasicBlock(this.begin_bb);
+	}
+	
+	public BasicBlock getEndBasicBlock(){
+		return this.cgNode.getIR().getControlFlowGraph().getBasicBlock(this.end_bb);
+	}
+	
+	public List<SSAInstruction> getBeginBasicBlockSSAs(){
+		return this.cgNode.getIR().getControlFlowGraph().getBasicBlock(this.begin_bb).getAllInstructions();
+	}
+	
+	public List<SSAInstruction> getEndBasicBlockSSAs(){
+		return this.cgNode.getIR().getControlFlowGraph().getBasicBlock(this.end_bb).getAllInstructions();
 	}
 	
 	public void setEndBasicBlock(int end_bb) {

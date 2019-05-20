@@ -254,7 +254,7 @@ public class StaticAnalysis {
 						assert ssa != null;
 						int level = 0;
 						LinkedList<ProcessUnit> processList = new LinkedList<ProcessUnit>();
-						ProcessUnit unit = new ProcessUnit(sHelper.cg,sHelper.cNode,ssa,true,level,-1,sHelper.looper,modelLibLoc,null,sHelper.whoHashRun);
+						ProcessUnit unit = new ProcessUnit(sHelper.cg,sHelper.cNode,ssa,true,0,-1,sHelper.looper,modelLibLoc,null,sHelper.whoHashRun);
 						//System.out.println("this loop is bounded or not" + ":" + SSAUtil.isBounded(unit,sHelper.looper,resultBuff,bList));
 						//System.out.println("size of modification location" + ":" + bList.size());
 						
@@ -366,8 +366,6 @@ public class StaticAnalysis {
 								System.out.println("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
 							}
 						}
-						System.out.println("size of outer buff " + outPoint);
-						System.out.println("size of not need manually checking " + notNeedCheck);
 						System.out.println("size of conf bounded " + confRelated);
 						System.out.println("size of constant bounded " + constantRelated);
 						System.out.println("size of manually checking " + (outPoint - notNeedCheck));
@@ -401,7 +399,9 @@ public class StaticAnalysis {
 							recorder.close();*/
 						long estimatedTime = System.currentTimeMillis() - startTime;
 						total_time += estimatedTime;
-				    }
+				    }				System.out.println("size of outer buff " + outPoint);
+						System.out.println("size of not need manually checking " + notNeedCheck);
+		
 				}
 			}
 

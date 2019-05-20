@@ -1,6 +1,7 @@
 # TODO
-1. use .yaml as the configuration file type.
-2. recontructor: all type structure -> one common package
+1. use .yaml as config.
+2. reconstruct: all type structure -> one common package
+3. sa.loopsize.ParameterInst.getCaller4ThreadRun(CallGraph) 
 
 # loopAnalysis
 Implemented by wala
