@@ -1,5 +1,6 @@
 # TODO
-use .yaml as the configuration file type.
+1. use .yaml as the configuration file type.
+2. recontructor: all type structure -> one common package
 
 # loopAnalysis
 Implemented by wala

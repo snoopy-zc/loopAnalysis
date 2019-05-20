@@ -180,6 +180,12 @@ public class LLAnalysis {
 			lockingLoopAnalyzer.doWork();
 			timer.toc("LockingLoopAnalyzer end");
 			
+			LockingLoopAnalyzer lockingLoopAnalyzer = new LockingLoopAnalyzer(this.wala, this.lockAnalyzer, this.loopAnalyzer, this.cgNodeList);
+			lockingLoopAnalyzer.doWork();
+			timer.toc("LockingLoopAnalyzer end");
+	
+			
+			
 			
 			
 			
