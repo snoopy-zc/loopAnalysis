@@ -399,9 +399,9 @@ public class StaticAnalysis {
 							recorder.close();*/
 						long estimatedTime = System.currentTimeMillis() - startTime;
 						total_time += estimatedTime;
-				    }				System.out.println("size of outer buff " + outPoint);
+						System.out.println("size of outer buff " + outPoint);
 						System.out.println("size of not need manually checking " + notNeedCheck);
-		
+				    }
 				}
 			}
 
