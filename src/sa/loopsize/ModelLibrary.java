@@ -34,7 +34,7 @@ public class ModelLibrary {
 	public static int[] whichVneedAnalyze(SSAInvokeInstruction ssa, CGNode cgn){
 		int[] ret = new int[10];
 		Arrays.fill(ret, -1);
-		File input = new File("/home/nemo/workspace/JXCascading-detector/src/sa/loopsize/res/commonLib.txt");
+		File input = new File("/home/c-lab/eclipse-workspace/loopAnalysis/src/sa/loopsize/res/commonLib.txt");
 		String funcName = ssa.getDeclaredTarget().getName().toString();
 		String libName = ssa.getDeclaredTarget().getDeclaringClass().getName().toString();
 		String paraTypes = SSAUtil.getParaTypeList(ssa);

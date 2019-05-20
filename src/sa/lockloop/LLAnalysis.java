@@ -181,7 +181,9 @@ public class LLAnalysis {
 			timer.toc("LockingLoopAnalyzer end");
 			
 			
-			//print custom result
+			
+			
+			//print customized result
 			//printResult();						
 	      
 	    } catch (Exception e) {
@@ -232,23 +234,18 @@ public class LLAnalysis {
 					cgNodeCnt++;
 				}
 			}
-			
 			//test print some function content
 			if(false&&cgNodeInfo.getCGNode().getMethod().toString().indexOf("HRegion, internalFlushcache(")>=0) {
 				System.err.println("-------------"+cgNodeInfo.getCGNode().getMethod());
 				System.err.println(cgNodeInfo.tcOperations);
-
-				System.err.println(cgNodeInfo.tcOperations_recusively);
-				
+				System.err.println(cgNodeInfo.tcOperations_recusively);				
 				//System.err.println(cgNodeInfo.instructions);
 				for(SSAInstruction ssa : cgNodeInfo.getCGNode().getIR().getInstructions())
 					System.err.println(ssa);
 			}
-			
 		}
-		System.out.println("#cgNodes = " + cgNodeCnt + " containing loopingLocks(" +lockCnt+ ") with TCLoop(" +loopCnt+ ")");		
-
-		System.out.println("******************** test end **************************");		
+		System.out.println("#cgNodes = " + cgNodeCnt + " containing loopingLocks(" +lockCnt+ ") with TCLoop(" +loopCnt+ ")");
+		System.out.println("******************** test end **************************");
 	}  
 }
 

@@ -1,3 +1,6 @@
+# TODO
+use .yaml as the configuration file type.
+
 # loopAnalysis
 Implemented by wala
 
