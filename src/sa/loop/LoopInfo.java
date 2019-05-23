@@ -3,6 +3,7 @@ package sa.loop;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -20,6 +21,8 @@ import com.ibm.wala.ssa.SSAInstruction;
 import com.ibm.wala.ssa.SSAInvokeInstruction;
 import com.ibm.wala.ssa.SSAMonitorInstruction;
 
+import sa.loopsize.LabelledSSA;
+import sa.loopsize.MyTriple;
 import sa.wala.IRUtil;
 
 
@@ -46,10 +49,25 @@ public class LoopInfo {
 	String var_name;
 	
 	// bound info
-	public boolean bounded = false;
-	public boolean whileTrue = false;
 	
- 	
+	public boolean bounded = true;
+	public boolean whileTrue = false;
+	/*
+	public LinkedList<String> info = new LinkedList<String>();
+	public HashSet<String> relatedConf = new HashSet<String>();
+	public HashSet<String> constVar = new HashSet<String>();
+	public boolean isLibraryInvovled = false;
+	public HashSet<MyTriple> newlyCGN = new HashSet<MyTriple>();
+	boolean notFindCaller = false;
+	public HashSet<CGNode> opt = new HashSet<CGNode>();
+	public LabelledSSA retSource = null;
+	public boolean hasRetSource = false;
+	public boolean collectionBounded;
+	public boolean collectionIsBounded;
+	public boolean specailBounded;
+	public boolean strongBounded;
+	public String level = "-1";
+ 	*/
 	public LoopInfo(CGNode cgNode, int begin_bb, int end_bb) {
 		this.cgNode = cgNode;
 		this.begin_bb = begin_bb;

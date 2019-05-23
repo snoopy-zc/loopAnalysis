@@ -1000,8 +1000,7 @@ public final class SSAUtil {
 					System.out.println("form a circle...");
 				}
 			}
-		} 
-		
+		} 		
 	}
 	 
 	 

@@ -2,6 +2,7 @@ package sa;
 
 import java.nio.file.Paths;
 
+import com.ibm.wala.util.WalaException;
 import com.system.Timer;
 
 import sa.lockloop.LLAnalysis;
@@ -26,8 +27,8 @@ public class StaticAnalysis {
 	public StaticAnalysis(String[] args) {
 		projectDir = args[0];
 		jarsDir = args[1];
-		doWork();
-		//test();
+		//doWork();
+		test();
 	}
 	
 	
@@ -55,6 +56,15 @@ public class StaticAnalysis {
 		WalaAnalyzer walaAnalyzer = new WalaAnalyzer(jarsDir);
 		timer.toc("WalaAnalyzer end");				
 		timer.close();
+		
+
+		try {
+			walaAnalyzer.testIR();
+		} catch (WalaException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 	}
 	
 	

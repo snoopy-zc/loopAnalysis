@@ -34,12 +34,15 @@ import com.ibm.wala.ipa.callgraph.AnalysisOptions.ReflectionOptions;
 import com.ibm.wala.ipa.callgraph.impl.AllApplicationEntrypoints;
 import com.ibm.wala.ipa.callgraph.impl.Util;
 import com.ibm.wala.ipa.callgraph.propagation.LocalPointerKey;
+import com.ibm.wala.ipa.callgraph.propagation.PointerAnalysis;
 import com.ibm.wala.ipa.cha.ClassHierarchy;
 import com.ibm.wala.ipa.cha.IClassHierarchy;
 import com.ibm.wala.properties.WalaProperties;
+import com.ibm.wala.shrikeBT.ConditionalBranchInstruction;
 import com.ibm.wala.ssa.IR;
 import com.ibm.wala.ssa.ISSABasicBlock;
 import com.ibm.wala.ssa.SSACFG;
+import com.ibm.wala.ssa.SSAConditionalBranchInstruction;
 import com.ibm.wala.ssa.SSAInstruction;
 import com.ibm.wala.ssa.SSAInvokeInstruction;
 import com.ibm.wala.ssa.SymbolTable;
@@ -79,6 +82,7 @@ public class WalaAnalyzer {
     ClassHierarchy cha;
     HashSet<Entrypoint> entrypoints;
     CallGraph cg;
+    PointerAnalysis pa;
     public List<String> packageScopePrefixes = new ArrayList<String>();  //read from 'package-scope.txt' if exists
     
     // Statistics
@@ -137,6 +141,10 @@ public class WalaAnalyzer {
     	return this.cg;
     }
     
+    public PointerAnalysis getPointerA(){
+    	return this.pa;
+    }
+    
     public ClassHierarchy getClassHierarchy() {
     	return this.cha;
     }
@@ -174,7 +182,7 @@ public class WalaAnalyzer {
     		//testTypeHierarchy();
     		//testCGNode();
     		//testPartialCallGraph();
-    		testIR();         		 //JX - need to configurate Dot and PDFViewer
+    		//testIR();         		 //JX - need to configurate Dot and PDFViewer
     		//testWalaAPI();
     	} catch (IllegalArgumentException | CallGraphBuilderCancelException | IOException | UnsoundGraphException
 			| WalaException e) {
@@ -274,6 +282,8 @@ public class WalaAnalyzer {
 	    cg = builder.makeCallGraph(options, null);
 	    System.out.println(CallGraphStats.getStats(cg));
 	    
+        pa = builder.getPointerAnalysis();
+        
 	    // Get pointer analysis results
 	    /*
 	    PointerAnalysis pa = builder.getPointerAnalysis();
@@ -647,6 +657,15 @@ public class WalaAnalyzer {
 	    			ir = n.getIR();
 	    			viewIR(ir);  
 	    			System.out.println(m.getSignature());
+	    			
+	    			for(SSAInstruction i:ir.getInstructions()) {
+	    				if(i instanceof SSAConditionalBranchInstruction) {
+	    				System.out.println(i.getNumberOfDefs());
+	    				System.out.println(i.getNumberOfUses());
+	    				System.out.println((SSAConditionalBranchInstruction)i);
+	    				}
+	    				
+	    			}
 	    			//findLocks(n);
 	    			//findLoops(n);  //add find var_name??????????????????????????????????????????????
 	    		} 

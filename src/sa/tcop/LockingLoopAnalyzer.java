@@ -565,9 +565,9 @@ public class LockingLoopAnalyzer {
 				//if(c.toString().indexOf("InetAddress, getByName") >= 0) {
 				if(check_each(a,"mr4576")) {
 				//System.out.println(bugid);
-				System.out.println(a.getCGNode().getMethod().toString()); 
-				System.out.println(d);
-				System.out.println(c);
+				//System.out.println(a.getCGNode().getMethod().toString()); 
+				//System.out.println(d);
+				//System.out.println(c);
 				}
 				resultList.get(bugid).add(a);
 			}

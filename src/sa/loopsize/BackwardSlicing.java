@@ -29,40 +29,40 @@ import sa.loop.LoopInfo;
 import sa.wala.IRUtil;
 
 public class BackwardSlicing {
-	SSAInstruction ssaInst;
-	CGNode cgNode;
-	SSAInstruction[] allInsts;
-	IR ir;
+	public SSAInstruction ssaInst;
+	public CGNode cgNode;
+	public SSAInstruction[] allInsts;
+	public IR ir;
 	// they are all in same CGNode, so they can't be same 
-	HashSet<SSAInstruction> outerInst; // outer instruction, which doesn't have backward slicing 
-	HashSet<SSAInstruction> specialOuter; // for modeled function call 
-	HashSet<SSAInstruction> slicer;//slicing result
-	HashSet<SSAInstruction> callRet; //function call instruction 
-	HashSet<Integer> paraList; //we need analyze parameter 
-	HashSet<SSAInstruction> thisList; // we need analyze class field 
-	HashSet<SSAInstruction> localCollection; //we need analyze local collection 
-	HashSet<SSAInstruction> fieldCollection; // we need analyze field collection 
-	boolean inStatic = false;
-	int paraIndex = -1; // for all uses, which one is paraIndex
-	HashSet<SSAInstruction> recordCaller; //actually para_index, we can only use once 
+	public HashSet<SSAInstruction> outerInst; // outer instruction, which doesn't have backward slicing 
+	public HashSet<SSAInstruction> specialOuter; // for modeled function call 
+	public HashSet<SSAInstruction> slicer;//slicing result
+	public HashSet<SSAInstruction> callRet; //function call instruction 
+	public HashSet<Integer> paraList; //we need analyze parameter 
+	public HashSet<SSAInstruction> thisList; // we need analyze class field 
+	public HashSet<SSAInstruction> localCollection; //we need analyze local collection 
+	public HashSet<SSAInstruction> fieldCollection; // we need analyze field collection 
+	public boolean inStatic = false;
+	public int paraIndex = -1; // for all uses, which one is paraIndex
+	public HashSet<SSAInstruction> recordCaller; //actually para_index, we can only use once 
 							 //because foo1(foo2), for foo2 we can't use the same para_index like foo1
-	boolean isUserBounded = false;
-	boolean isLibBounded = false;
-	boolean hasArray = false;
-	boolean isEmptyColl = false;
-	LinkedList<String> info;  //additional information
-	HashSet<String> relatedConf = new HashSet<String>();
-	HashSet<String> constVar = new HashSet<String>();
-	LoopAnalyzer looper;
-	HashSet<MyTriple> loop4ArrayLength;
-	HashSet<MyTriple> collectionInCallee;
-	HashSet<MyTriple> binaryOpLoop; // like v24 = binaryop(add) v20 , v9:#1, we need analyze the loop
+	public boolean isUserBounded = false;
+	public boolean isLibBounded = false;
+	public boolean hasArray = false;
+	public boolean isEmptyColl = false;
+	public LinkedList<String> info;  //additional information
+	public HashSet<String> relatedConf = new HashSet<String>();
+	public HashSet<String> constVar = new HashSet<String>();
+	public LoopAnalyzer looper;
+	public HashSet<MyTriple> loop4ArrayLength;
+	public HashSet<MyTriple> collectionInCallee;
+	public HashSet<MyTriple> binaryOpLoop; // like v24 = binaryop(add) v20 , v9:#1, we need analyze the loop
 
-	CallGraph cg;
-	SSAInstruction starter;
-	int exactPara;
-	String txtPath;
-	HashSet<MyPair>whoHasRun;
+	public CallGraph cg;
+	public SSAInstruction starter;
+	public int exactPara;
+	public String txtPath;
+	public HashSet<MyPair>whoHasRun;
 	//OptCallChain opt = null;
 	
 	public BackwardSlicing(SSAInstruction inst, CGNode cgN, int para_index, LoopAnalyzer looper, CallGraph cg, String txtPath,HashSet<MyPair>whoHasRun){

@@ -16,6 +16,7 @@ public class Test implements Runnable{
 	}
 	
 	public void testFor1(int c, int b){
+		
 		this.mySet.add(5);
 		for(Integer x : mySet){
 			System.out.println("hi1");
@@ -33,12 +34,50 @@ public class Test implements Runnable{
 		
 		if(a[2]>3) {
 			System.out.println("a[2]>3");			
-		}else {
-			System.out.println("a[2]<=3");
 		}
 		
+
+		int d = a[2]>a[1]? 1:2; 
+
+		System.out.println(d);
+		
+		
 		while(true) {
-			a[0] = 0;
+			
+			a[0] = 0;			
+
+			System.out.println("test banch in loop");
+			
+			if(a[2]>0)
+				break;
+
+			System.out.println("test banch in loop");
+			
+			if(a[1]>0)
+				break;
+			else
+				a[1]=0;
+			
+			try {
+			System.out.println("test banch in loop");
+			}catch(Exception e) {
+				System.out.println("catch");
+			}
+			
+			
+			switch(a[1]){
+		    case 1 :
+				System.out.println("route 1...");//语句
+		       break; //可选
+		    case 2 :
+				System.out.println("route 2...");//语句
+		       break; //可选
+		    //你可以有任意数量的case语句
+		    default : //可选
+				System.out.println("route default...");//语句
+		}
+			
+			
 		}
 	}
 	

@@ -1,2 +1,3 @@
 print the point we need check
-size of manually checking0
+Lorg/apache/hadoop/hbase/regionserver/MemStoreFlusher flushSomeRegions 304 304 -5
+size of manually checking1

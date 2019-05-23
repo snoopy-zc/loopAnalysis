@@ -22,7 +22,7 @@ public class RetInst {
 	SSAInstruction retCall; // this method return instruction we need analyze 
 	HashSet<LabelledSSA> calleeRet; //= new HashSet<LabelledSSA>();//get return instructions for called method which retCall calls
 	//Map<SSAInstruction,CGNode> retDetail;
-	HashSet<LabelledSSA> retDetail;
+	public HashSet<LabelledSSA> retDetail;
 	CallGraph cg;
 	String calledMeth; //name of method which retCall is in
 	String calledClass;//name of class which retCall is in 

@@ -63,7 +63,8 @@ public class StaticAnalysis {
 		//this.walaAnalyzer = new WalaAnalyzer("src/sa/res/mr-4576");
 		//this.walaAnalyzer = new WalaAnalyzer("src/sa/res/mr-4088");
 
-		this.walaAnalyzer = new WalaAnalyzer("/home/c-lab/eclipse-workspace/loopAnalysis/src/sa/loopsize");
+		this.walaAnalyzer = new WalaAnalyzer(jarLoc);		
+		
 		this.cha = this.walaAnalyzer.getClassHierarchy();
 		this.cg = this.walaAnalyzer.getCallGraph();
 		this.looper = new LoopAnalyzer(this.walaAnalyzer);
@@ -217,7 +218,7 @@ public class StaticAnalysis {
 						HashSet<MyTriple> bList = new HashSet<MyTriple>();
 						StaticAnalysis sHelper = new StaticAnalysis(jarLoc);
 						sHelper.printAllIR();
-					    loopSSAInst = sHelper.getLoopVariable("testFor1-20");
+					    loopSSAInst = sHelper.getLoopVariable(line);
 						SSAInstruction ssa_test = sHelper.getCondVar(loopSSAInst);
 						/*MultiConds x = new MultiConds(sHelper.cg,sHelper.cNode,ssa_test,sHelper.looper);
 						x.doWorks();*/

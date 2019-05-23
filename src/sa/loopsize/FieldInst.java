@@ -25,7 +25,7 @@ public class FieldInst {
 	SSAInstruction fieldAcc; // field access instruction 
 	//HashSet<Entry<CGNode,SSAFieldAccessInstruction>> modifyLoc = new HashSet<Entry<CGNode,SSAFieldAccessInstruction>>();// record all location which modify this field access 
 	//Map<SSAInstruction,CGNode> modifyLoc; //record all location which modify this field access
-	HashSet<LabelledSSA> modifyLoc;
+	public HashSet<LabelledSSA> modifyLoc;
 	CallGraph cg;
 	String className;
 	String varName;

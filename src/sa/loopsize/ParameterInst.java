@@ -29,7 +29,7 @@ public class ParameterInst {
 	int paraLoc; //parameter location 
 	//Map<SSAInstruction,CGNode> calleeLoc;// record all location which this function is called 
 	//it's possible two SSA Instruction has same 
-	HashSet<LabelledSSA> calleeLoc;
+	public HashSet<LabelledSSA> calleeLoc;
 	CallGraph cg;
 	CGNode cgNode; // CGNode of whichFun
 	recorderHelper rHelper;

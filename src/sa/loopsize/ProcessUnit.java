@@ -80,15 +80,15 @@ public class ProcessUnit {
 			this.optObj = optObj;
 			SimpleSlicing sb = new SimpleSlicing(optObj.inst,optObj.cgN,optObj.cg,this.whoHasRun);
 			sb.getAllNaiveSlicing(optObj.inst,optObj.cgN,optObj.cg);
-			System.out.println(optObj.cgN.getMethod().getName().toString());
-			System.out.println(optObj.inst.toString());
-			System.out.println(sb.slicerNode.size());
-			for(CGNode x : sb.slicerNode){
-				System.out.println(x.getMethod().toString());
-			}
+			//System.out.println(optObj.cgN.getMethod().getName().toString());
+			//System.out.println(optObj.inst.toString());
+			//System.out.println(sb.slicerNode.size());
+			//for(CGNode x : sb.slicerNode){
+			//	System.out.println(x.getMethod().toString());
+			//}
 			//assert 0 == 1;
 			this.opt.addAll(sb.slicerNode);
-			System.out.println("sbbbbbbbbbbbbbbbbbbbxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
+			//System.out.println("sbbbbbbbbbbbbbbbbbbbxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
 		}
 	}
 	
