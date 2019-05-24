@@ -656,6 +656,8 @@ public class WalaAnalyzer {
 	    			m = tmp_m;
 	    			ir = n.getIR();
 	    			viewIR(ir);  
+	    			
+	    			/*
 	    			System.out.println(m.getSignature());
 	    			
 	    			for(SSAInstruction i:ir.getInstructions()) {
@@ -663,9 +665,9 @@ public class WalaAnalyzer {
 	    				System.out.println(i.getNumberOfDefs());
 	    				System.out.println(i.getNumberOfUses());
 	    				System.out.println((SSAConditionalBranchInstruction)i);
-	    				}
-	    				
+	    				}	    				
 	    			}
+	    			*/
 	    			//findLocks(n);
 	    			//findLoops(n);  //add find var_name??????????????????????????????????????????????
 	    		} 

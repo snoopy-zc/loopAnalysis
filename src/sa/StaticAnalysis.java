@@ -2,10 +2,15 @@ package sa;
 
 import java.nio.file.Paths;
 
+import com.ibm.wala.util.CancelException;
 import com.ibm.wala.util.WalaException;
 import com.system.Timer;
 
+import sa.lock.LockAnalyzer;
+import sa.lockloop.CGNodeList;
 import sa.lockloop.LLAnalysis;
+import sa.loop.BoundedLoopAnalyzer;
+import sa.loop.LoopAnalyzer;
 import sa.wala.WalaAnalyzer;
 
 public class StaticAnalysis {
@@ -54,16 +59,29 @@ public class StaticAnalysis {
     	Timer timer = new Timer(jarsDir+".timer");
     	timer.tic("WalaAnalyzer begin");
 		WalaAnalyzer walaAnalyzer = new WalaAnalyzer(jarsDir);
-		timer.toc("WalaAnalyzer end");				
-		timer.close();
-		
+    	timer.tic("WalaAnalyzer end");
 
 		try {
-			walaAnalyzer.testIR();
+			walaAnalyzer.testIR();			
+			CGNodeList cgnl = new CGNodeList(walaAnalyzer.getCallGraph());
+			LoopAnalyzer loopAnalyzer = new LoopAnalyzer(walaAnalyzer, cgnl);
+			loopAnalyzer.doWork();
+	    	timer.tic("loopAnalysis end");		
+			BoundedLoopAnalyzer boundedLoopAnalyzer = new BoundedLoopAnalyzer(walaAnalyzer, loopAnalyzer, cgnl, this.projectDir);
+			boundedLoopAnalyzer.doWork();
+	    	timer.tic("boundedLoopAnalyzer end");	
+			
 		} catch (WalaException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}
+		} catch (IllegalArgumentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (CancelException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}			
+		timer.close();
 		
 	}
 	

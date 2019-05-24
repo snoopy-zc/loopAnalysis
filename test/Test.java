@@ -59,7 +59,7 @@ public class Test implements Runnable{
 				a[1]=0;
 			
 			try {
-			System.out.println("test banch in loop");
+			System.out.println("test branch in loop");
 			}catch(Exception e) {
 				System.out.println("catch");
 			}

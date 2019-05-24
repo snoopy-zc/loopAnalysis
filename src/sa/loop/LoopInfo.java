@@ -48,10 +48,13 @@ public class LoopInfo {
   
 	String var_name;
 	
-	// bound info
+	// bound info	
+	public boolean whileTrue = true; //only meet the first condition: back edge 
 	
+	//ranch block
+	public Set<Integer> conditional_branch_block; 
+
 	public boolean bounded = true;
-	public boolean whileTrue = false;
 	/*
 	public LinkedList<String> info = new LinkedList<String>();
 	public HashSet<String> relatedConf = new HashSet<String>();
@@ -68,6 +71,8 @@ public class LoopInfo {
 	public boolean strongBounded;
 	public String level = "-1";
  	*/
+	
+	
 	public LoopInfo(CGNode cgNode, int begin_bb, int end_bb) {
 		this.cgNode = cgNode;
 		this.begin_bb = begin_bb;
