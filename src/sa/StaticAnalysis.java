@@ -62,7 +62,7 @@ public class StaticAnalysis {
     	timer.tic("WalaAnalyzer end");
 
 		try {
-			walaAnalyzer.testIR();			
+			//walaAnalyzer.testIR();			
 			CGNodeList cgnl = new CGNodeList(walaAnalyzer.getCallGraph());
 			LoopAnalyzer loopAnalyzer = new LoopAnalyzer(walaAnalyzer, cgnl);
 			loopAnalyzer.doWork();
@@ -71,13 +71,7 @@ public class StaticAnalysis {
 			boundedLoopAnalyzer.doWork();
 	    	timer.tic("boundedLoopAnalyzer end");	
 			
-		} catch (WalaException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IllegalArgumentException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (CancelException e) {
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}			

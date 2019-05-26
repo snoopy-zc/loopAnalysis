@@ -92,6 +92,9 @@ public class LoopInfo {
 	   
 	    // more init
 	    computeBasicBlocks();
+	    
+	    //add to analysis bound
+	    this.conditional_branch_block = new TreeSet<Integer>();
 	}
 	
 	
@@ -116,12 +119,15 @@ public class LoopInfo {
 		return this.end_bb;
 	}
 	
-	public SSAInstruction getConditionSSA() {
-		for(SSAInstruction ssa : getBeginBasicBlockSSAs()) {
-			if (ssa instanceof  SSAConditionalBranchInstruction) {
-				return ssa;
+	public SSAInstruction getConditionSSA() { //TODO only return one instruction, but maybe multiple ???
+		for(Integer bindex : this.conditional_branch_block) {
+			BasicBlock bb = this.cgNode.getIR().getControlFlowGraph().getBasicBlock(bindex);
+			for(SSAInstruction ssa : bb.getAllInstructions()) {
+				if (ssa instanceof  SSAConditionalBranchInstruction) {
+					return ssa;
+				}
 			}
-		}
+		}		
 		return null;
 	}
 	
@@ -132,15 +138,7 @@ public class LoopInfo {
 	public BasicBlock getEndBasicBlock(){
 		return this.cgNode.getIR().getControlFlowGraph().getBasicBlock(this.end_bb);
 	}
-	
-	public List<SSAInstruction> getBeginBasicBlockSSAs(){
-		return this.cgNode.getIR().getControlFlowGraph().getBasicBlock(this.begin_bb).getAllInstructions();
-	}
-	
-	public List<SSAInstruction> getEndBasicBlockSSAs(){
-		return this.cgNode.getIR().getControlFlowGraph().getBasicBlock(this.end_bb).getAllInstructions();
-	}
-	
+		
 	public void setEndBasicBlock(int end_bb) {
 		this.end_bb = end_bb;
 		computeBasicBlocks();

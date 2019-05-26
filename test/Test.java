@@ -227,6 +227,13 @@ public class Test implements Runnable{
 		for(int i = 0; i < 10; i++)
 			//System.out.println("hello....sb");
 			this.mySet.add(5);
+		
+		
+		int a = 3;
+		int b = 9;
+		int x = a + b;
+		int y = b - a;
+		testFor1(x,y);
 
 	}
 
