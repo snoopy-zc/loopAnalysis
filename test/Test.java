@@ -2,287 +2,134 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
 
-public class Test implements Runnable{
+public class Test implements Runnable {
 //public class Test extends Thread{
 	private static final String ArrayList = null;
 	Set<Integer> mySet;
-	boolean myF;;
-	int[] a = new int[10];
-	
-	public Test(Set<Integer> mySet,boolean x) {
-		// TODO Auto-generated constructor stub
+	boolean myF;
+	int[] a;
+	int[] aa;
+
+	public Test(Set<Integer> mySet, boolean x) {
 		this.mySet = mySet;
 		this.myF = x;
+		this.a = new int[10];// constant length
+		this.aa = new int[mySet.size() + 5];// variable length
 	}
-	
-	public void testFor1(int c, int b){
-		
+
+	public void testFor1(int b, int c) {
+
+		// for loop
+		for (int i = 0; i < 5; i++) {
+			System.out.println("for - normal for loop...");
+		}
+
+		for (int i = 0; i < b; i++) {
+			System.out.println("for - inputed variable...");
+		}
+
+		for (int i = 0; i < a.length; i++) {
+			System.out.println("for - constant array length...");
+		}
+
+		for (int i = 0; i < aa.length; i++) {
+			System.out.println("for - variable array length...");
+		}
+
+		for (int i = 0; i < mySet.size(); i++) {
+			System.out.println("for - collection size...");
+		}
+
+		for (Iterator iter = mySet.iterator(); iter.hasNext();) {
+			Integer ele = (Integer)iter.next();
+			System.out.println("for - iterator loop...");
+		}
+
+		// for each loop
 		this.mySet.add(5);
-		for(Integer x : mySet){
-			System.out.println("hi1");
-			if(x == 3)
-			  break;
-		}
-		a[2] = 3;
-		for(int i =  0; c < b; i++){
-			System.out.println("hi2");
-		}
-		for(int i = 0; c - b < 0; i++){
-			System.out.println("hi3");
-		}
-		
-		
-		if(a[2]>3) {
-			System.out.println("a[2]>3");			
-		}
-		
-
-		int d = a[2]>a[1]? 1:2; 
-
-		System.out.println(d);
-		
-		
-		while(true) {
-			
-			a[0] = 0;			
-
-			System.out.println("test banch in loop");
-			
-			if(a[2]>0)
-				break;
-
-			System.out.println("test banch in loop");
-			
-			if(a[1]>0)
-				break;
-			else
-				a[1]=0;
-			
-			try {
-			System.out.println("test branch in loop");
-			}catch(Exception e) {
-				System.out.println("catch");
-			}
-			
-			
-			switch(a[1]){
-		    case 1 :
-				System.out.println("route 1...");//语句
-		       break; //可选
-		    case 2 :
-				System.out.println("route 2...");//语句
-		       break; //可选
-		    //你可以有任意数量的case语句
-		    default : //可选
-				System.out.println("route default...");//语句
-		}
-			
-			
-		}
-	}
-	
-	/*public void testFor2(){
-		int[] c = new int[10];
-		c[2] = 3;
-		for(int z = 0; z < 10; z++)
-			this.mySet.add(3);
-	
-		while(this.myF){
-			this.mySet.add(99);
+		for (Integer x : mySet) {
+			System.out.println("for each - regular collection loop...");
 		}
 
-		while(true){
-			this.mySet.add(4);
-		}
-	}
-	
-	public void testFor3(){
-		testFor1();
-	}
-	
-	public void testFor4(){
-		Set<Integer> localSet = new HashSet<Integer>();
-		localSet.add(3);
-		for(int z = 0; z < localSet.size(); z++){
-			System.out.println("hi2");
-		}
-		int m;
-		int y;
-		for(m = 10; m < 100; m++){
-			localSet.add(4);
-		}
-		
-	}
-
-	public void testFor5(){
-		for(int z = 0; z < this.mySet.size(); z++){
-			System.out.println("hi3");
-		}	
-	}
-
-	public void testFor6(){
-		Set<Integer> localSet = new HashSet<Integer>();
-		localSet.add(3);
-		for(Integer z : localSet){
-			System.out.println("hi4");
+		for (int x : a) {
+			System.out.println("for each - regular array loop...?");
 		}
 
-		for(int m = 10; m < 100; m++){
-			localSet.add(4);
-		}
-	}
-
-	public void testFor7(Set<Integer> z){
-		for(int m = 0; m < z.size(); m++){
-			System.out.println("hi5");
-		}
-		testFor3();
-		Integer q = 100;
-		z.add(q);
-		Set<Integer> x = z;
-		x.add(100);	
-	}
-
-	public void test8(){
-	   int[] a = new int[10];
-	   int[] b = a;
-	}
-	public void testFor8(){
-		int[] q = new int[10];
-		q[2] = 3;
-		for(int m = 0; m < q[2]; m++){
-			System.out.println("hi6");
-		}
-	
-	}
-
-	public void testFor9(){
-		for(int m = 0; m < this.a[2]; m++ ){
-			System.out.println("hi7");
-		}
-	}
-	
-	public void testIntergetLoop(){
-		for(int i = 0; i < 10; i++){
-			System.out.println("hi 81");
-		}
-		
-		int x = 0;
-		while(x<10){
-			x++;
-		}
-		
-		int y = 0;
-		while(true){
-			if(y>=10)
-				break;
-			y++;
-		}
-	}
-	
-	public void testCollection(){
-		Set<Integer> set1 = new HashSet<Integer>();
-		set1.add(10);
-		for(Integer x : set1){
-			System.out.println(x.intValue());
-		}
-		
-		Iterator<Integer> itr = set1.iterator();
-		while(itr.hasNext()){
-			System.out.println(itr.next());
-		}
-		
-		Iterator<Integer> it = set1.iterator();
-		while(true){
-			System.out.println(":");
-			if(it.hasNext()){
-				System.out.println("xxxx");
+		// while loop
+		while (true) { // constant true
+			//System.out.println("while - true...");
+			if (a[0] > 0) {
+				a[0] ++;
 				break;
 			}
-			System.out.println(it.next());
 		}
-		
-		//Iterator<Integer> iit = set1.iterator();
-		//while(iit != null){
-		//		iit = iit.hasNext() ? iit.next() : null;
-		//}
-	}
-	
-	public void testArray(){
-		int[] x = new int[10];
-		for(int i = 0; i < x.length; i++){
-			System.out.println(x[i]);
+		while (true) { // constant true
+			do {
+				a[0]++;
+				System.out.println("do while - a[0] > 0...");
+			}while(a[0]>0);//conditonal branch -> last instruction
+			break;
 		}
-		
-		for(int z : x){
-			System.out.println(z);
+		while (true) { // constant true
+			System.out.println("while - true...");
+			if (a[0] > 0)
+				break;
+			a[0]++;
 		}
-	}
-	
-	public static int testsss(){
-		return 1;
-	}*/
 
-	public void run(){
-		for(int i = 0; i < 10; i++)
-			//System.out.println("hello....sb");
+		while (myF) { // signal
+			System.out.println("while - signal...");
+		}
+
+		while (b > c) { // update variable
+			System.out.println("while - b > c...");
+			c++;
+		}
+
+		while (b > c + 1) { // update variable
+			System.out.println("while - b > c+1...");
+			b++;
+		}
+
+		while (b + c + 1 > 0) { // update variable
+			System.out.println("while - b+c+1 > 0...");
+			b++;
+		}
+		
+		do {
+			a[0]++;
+			System.out.println("do while - a[0] > 0...");
+		}while(a[0]>0);//conditonal branch -> last instruction
+
+		// others...
+
+	}
+
+	public void test2() {
+
+		this.myF = false;
+	}
+
+	public void run() {
+		for (int i = 0; i < 10; i++)
+			// System.out.println("hello....sb");
 			this.mySet.add(5);
-		
-		
+
 		int a = 3;
 		int b = 9;
 		int x = a + b;
 		int y = b - a;
-		testFor1(x,y);
+		int z = a - y;
+		testFor1(x, z);
 
 	}
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		
-		Set<Integer> z = new HashSet<Integer>();
-		//for(int m = 0 ; m < 2; m++){
-			Test a = new Test(z,true); // for extends
-			//a.start();
 
-			(new Thread(a)).start(); // for implements
-		//	a.testFor1();
-		//}
-		//for(int m = 0; m < 2; m++){
-		//	a.testFor2();
-		//}
-		//a.testFor3();
-		//a.testFor1();
-		//z.add(4);
-		//a.testFor7(z);
-		/*int x;
-		int y;
-		int z;
-		x = 1;
-		System.out.println(x);
-		x = 2;
-		z = testsss();
-		System.out.println(x);
-		x++;
-		x--;
-		y = x + z;
-		y = y+1;
-		System.out.println(y);
-		if(testsss() > 2 && y > 2 && x >3)
-			System.out.println("x");
-		if(testsss() > 2 || y > 2 || x >3)
-			System.out.println("y");
-		if(testsss() >2  && y > 2 || x >3)
-			System.out.println("z");
-		HashSet<String> mySet = new HashSet<String>(3);
-		//mySet.add("a");
-		//mySet.add("b");
-		//mySet.add("c");
-		//mySet.add("d");
-		//System.out.println(mySet.size());
-		//for(String x : mySet){
-		//	System.out.println(x);
-		//}*/
+		Set<Integer> z = new HashSet<Integer>();
+		Test a = new Test(z, true);
+		(new Thread(a)).start(); // for implements
+
 	}
 
 }

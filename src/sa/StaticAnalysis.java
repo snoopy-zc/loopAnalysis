@@ -32,8 +32,8 @@ public class StaticAnalysis {
 	public StaticAnalysis(String[] args) {
 		projectDir = args[0];
 		jarsDir = args[1];
-		//doWork();
-		test();
+		doWork();
+		//test();
 	}
 	
 	
@@ -62,7 +62,7 @@ public class StaticAnalysis {
     	timer.tic("WalaAnalyzer end");
 
 		try {
-			//walaAnalyzer.testIR();			
+			walaAnalyzer.testIR();			
 			CGNodeList cgnl = new CGNodeList(walaAnalyzer.getCallGraph());
 			LoopAnalyzer loopAnalyzer = new LoopAnalyzer(walaAnalyzer, cgnl);
 			loopAnalyzer.doWork();
