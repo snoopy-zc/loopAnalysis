@@ -22,6 +22,7 @@ import java.nio.file.StandardCopyOption;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.BitSet;
+import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
@@ -29,6 +30,7 @@ import java.util.Properties;
 import java.util.Set;
 import java.util.TreeSet;
 import java.util.HashMap;
+import java.util.HashSet;
 
 import com.benchmark.Benchmarks;
 
@@ -80,42 +82,52 @@ import sa.wala.IRUtil;
 import sa.wala.WalaAnalyzer;
 import sa.wala.util.PDFCallGraph;
 
-
 public class LLAnalysis {
 	// dir paths
-	String projectDir;  // read from arguments, like "/root/loopAnalysis(/)"   #jx: couldn't obtain automatically, because of many scenarios
-	String jarsDir;   // read from arguments, like "/root/loopAnalysis/src/sa/res/MapReduce/hadoop-0.23.3(/)"   
+	String projectDir; // read from arguments, like "/root/loopAnalysis(/)" #jx: couldn't obtain
+						// automatically, because of many scenarios
+	String jarsDir; // read from arguments, like
+					// "/root/loopAnalysis/src/sa/res/MapReduce/hadoop-0.23.3(/)"
 	Timer timer;
-  
+
 	// WALA basis
 	WalaAnalyzer wala;
 	CallGraph cg;
 	ClassHierarchy cha;
 
-  
 	LockAnalyzer lockAnalyzer;
 	LoopAnalyzer loopAnalyzer;
 	TCOpUtil iolooputil;
-	
+
 	// results
 	CGNodeList cgNodeList;
-	
+
 	// Target System
-	String systemname = null;   // current system's name  
- 
-  
+	String systemname = null; // current system's name
+
 	// For test
-	String functionname_for_test = "org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer$ResponseProcessor.run("; //"RetryCache.waitForCompletion(Lorg/apache/hadoop/ipc/RetryCache$CacheEntry;)"; //"org.apache.hadoop.hdfs.server.balancer.Balancer"; //"Balancer$Source.getBlockList";//"DirectoryScanner.scan"; //"ReadaheadPool.getInstance("; //"BPServiceActor.run("; //"DataNode.runDatanodeDaemon"; //"BPServiceActor.run("; //"BlockPoolManager.startAll"; //"NameNodeRpcServer"; //"BackupNode$BackupNodeRpcServer"; // //".DatanodeProtocolServerSideTranslatorPB"; //"DatanodeProtocolService$BlockingInterface"; //"sendHeartbeat("; //"org.apache.hadoop.hdfs.protocolPB.DatanodeProtocolServerSideTranslatorPB";  //java.util.regex.Matcher.match(";
-	int which_functionname_for_test = 1;   //1st? 2nd? 3rd?    //TODO - 0 means ALL, 1 to n means which one respectively
-  
-  
-  
+	String functionname_for_test = "org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer$ResponseProcessor.run("; // "RetryCache.waitForCompletion(Lorg/apache/hadoop/ipc/RetryCache$CacheEntry;)";
+																													// //"org.apache.hadoop.hdfs.server.balancer.Balancer";
+																													// //"Balancer$Source.getBlockList";//"DirectoryScanner.scan";
+																													// //"ReadaheadPool.getInstance(";
+																													// //"BPServiceActor.run(";
+																													// //"DataNode.runDatanodeDaemon";
+																													// //"BPServiceActor.run(";
+																													// //"BlockPoolManager.startAll";
+																													// //"NameNodeRpcServer";
+																													// //"BackupNode$BackupNodeRpcServer";
+																													// //
+																													// //".DatanodeProtocolServerSideTranslatorPB";
+																													// //"DatanodeProtocolService$BlockingInterface";
+																													// //"sendHeartbeat(";
+																													// //"org.apache.hadoop.hdfs.protocolPB.DatanodeProtocolServerSideTranslatorPB";
+																													// //java.util.regex.Matcher.match(";
+	int which_functionname_for_test = 1; // 1st? 2nd? 3rd? //TODO - 0 means ALL, 1 to n means which one respectively
+
 	/*
-	public LLAnalysis(WalaAnalyzer walaAnalyzer) {
-		this(walaAnalyzer, ".");
-	}
-	*/
-	
+	 * public LLAnalysis(WalaAnalyzer walaAnalyzer) { this(walaAnalyzer, "."); }
+	 */
+
 	public LLAnalysis(WalaAnalyzer walaAnalyzer, String projectDir, Timer timer) {
 		this.wala = walaAnalyzer;
 		this.projectDir = projectDir;
@@ -125,140 +137,146 @@ public class LLAnalysis {
 		this.cgNodeList = new CGNodeList(this.wala.getCallGraph());
 		doWork();
 	}
-	
-  
+
 	public void doWork() {
 		System.out.println("\nJX - INFO - LLAnalysis.doWork");
-	    try {	     
-	    	//timer
-	    	//Timer timer = new Timer( Paths.get(projectDir, "src/sa/output/sa-timer.txt") );
-	    	//timer.tic("LLAnalysis begin");
-	      
+		try {
+			// timer
+			// Timer timer = new Timer( Paths.get(projectDir, "src/sa/output/sa-timer.txt")
+			// );
+			// timer.tic("LLAnalysis begin");
+
 			systemname = Benchmarks.resolveSystem(jarsDir);
 			System.out.println("JX - DEBUG - system name = " + systemname);
 			this.cg = wala.getCallGraph();
 			this.cha = wala.getClassHierarchy();
 
-	
 			// Lock analysis
 			this.lockAnalyzer = new LockAnalyzer(this.wala, this.cgNodeList);
 			lockAnalyzer.doWork();
 			timer.toc("lockAnalyzer end");
 
-			
 			// Loop analysis
 			this.loopAnalyzer = new LoopAnalyzer(this.wala, this.cgNodeList);
 			loopAnalyzer.doWork();
 			timer.toc("loopAnalyzer end");
 
-			
 			// loops-containing lock
-			LoopingLockAnalyzer loopingLockAnalyzer = new LoopingLockAnalyzer(this.wala, this.lockAnalyzer, this.loopAnalyzer, this.cgNodeList);
+			LoopingLockAnalyzer loopingLockAnalyzer = new LoopingLockAnalyzer(this.wala, this.lockAnalyzer,
+					this.loopAnalyzer, this.cgNodeList);
 			loopingLockAnalyzer.doWork();
 			timer.toc("loopingLockAnalyzer end");
-			
-			// zc - this part is unnecessary, because it has been done in loopingLockAnalyzer()
+
+			// zc - this part is unnecessary, because it has been done in
+			// loopingLockAnalyzer()
 			// loops-containing loop
-			//NestedLoopAnalyzer nestedLoopAnalyzer = new NestedLoopAnalyzer(this.wala, this.loopAnalyzer, this.cgNodeList);
-			//nestedLoopAnalyzer.doWork();
-			//timer.toc("nestedLoopAnalyzer end");
-			
-			
+			// NestedLoopAnalyzer nestedLoopAnalyzer = new NestedLoopAnalyzer(this.wala,
+			// this.loopAnalyzer, this.cgNodeList);
+			// nestedLoopAnalyzer.doWork();
+			// timer.toc("nestedLoopAnalyzer end");
+
 			TCLoopAnalyzer tcLoopAnalyzer = new TCLoopAnalyzer(this.wala, this.loopAnalyzer, this.cgNodeList);
 			tcLoopAnalyzer.doWork();
 			timer.toc("tcLoopAnalyzer end");
-			
+
 			// Out of Memory??
-			//TcOpAnalyzer tcOpAnalyzer = new TcOpAnalyzer(this.wala, this.lockAnalyzer, this.cgNodeList);
-			//tcOpAnalyzer.doWork();
-			//timer.toc("tcOpAnalyzer end");
-			
-			//LockLoopTcOpAnalyzer lockLoopTcOpAnalyzer = new LockLoopTcOpAnalyzer(this.wala, this.lockAnalyzer, this.cgNodeList);
-			//lockLoopTcOpAnalyzer.doWork();
-			//timer.toc("LockLoopTcOpAnalyzer end");
-			
-			LockingLoopAnalyzer lockingLoopAnalyzer = new LockingLoopAnalyzer(this.wala, this.lockAnalyzer, this.loopAnalyzer, this.cgNodeList);
+			// TcOpAnalyzer tcOpAnalyzer = new TcOpAnalyzer(this.wala, this.lockAnalyzer,
+			// this.cgNodeList);
+			// tcOpAnalyzer.doWork();
+			// timer.toc("tcOpAnalyzer end");
+
+			// LockLoopTcOpAnalyzer lockLoopTcOpAnalyzer = new
+			// LockLoopTcOpAnalyzer(this.wala, this.lockAnalyzer, this.cgNodeList);
+			// lockLoopTcOpAnalyzer.doWork();
+			// timer.toc("LockLoopTcOpAnalyzer end");
+
+			LockingLoopAnalyzer lockingLoopAnalyzer = new LockingLoopAnalyzer(this.wala, this.lockAnalyzer,
+					this.loopAnalyzer, this.cgNodeList);
 			lockingLoopAnalyzer.doWork();
 			timer.toc("LockingLoopAnalyzer end");
-			
-			BoundedLoopAnalyzer boundedLoopAnalyzer = new BoundedLoopAnalyzer(this.wala, this.loopAnalyzer, this.cgNodeList, this.projectDir);
-			boundedLoopAnalyzer.doWork();
-			timer.toc("BoundedLoopAnalyzer end");			
-			
-			
-			
-			//print customized result
-			//printResult();						
-	      
-	    } catch (Exception e) {
-	      System.err.println("JX-StackTrace-run-begin");
-	      e.printStackTrace();
-	      System.err.println("JX-StackTrace-run-end");
-	      return ;
-	    }
-	}
-	
-	public void printResult() {
-		//zc- just for test 
 
-		System.out.println("******************** test result **************************");		
+			for (String bugid : lockingLoopAnalyzer.bug_loops.keySet()) {
+				Collection<LoopInfo> loops = lockingLoopAnalyzer.bug_loops.get(bugid);
+				System.out.println("\n\n\n-------------zc - bug ID: " + bugid + "-----------------" + loops.size());
+				BoundedLoopAnalyzer boundedLoopAnalyzer = new BoundedLoopAnalyzer(this.wala, (HashSet<LoopInfo>)loops, this.projectDir);
+				boundedLoopAnalyzer.doWork();
+				timer.toc("BoundedLoopAnalyzer end");
+			}
+			
+			
+
+			
+
+			timer.toc("\n\nAll done!");
+//
+//			BoundedLoopAnalyzer boundedLoopAnalyzer = new BoundedLoopAnalyzer(this.wala,
+//					lockingLoopAnalyzer.getTestLoops(), this.projectDir);
+//			boundedLoopAnalyzer.doWork();
+//			timer.toc("BoundedLoopAnalyzer end");
+
+			// print customized result
+			// printResult();
+
+		} catch (Exception e) {
+			System.err.println("JX-StackTrace-run-begin");
+			e.printStackTrace();
+			System.err.println("JX-StackTrace-run-end");
+			return;
+		}
+	}
+
+	public void printStaticResult() { // unused, more info in class LockingLoopAnalyzer
+		// zc- just for test
+
+		System.out.println("******************** test result **************************");
 
 		int cgNodeCnt = 0;
 		int lockCnt = 0;
 		int loopCnt = 0;
-		for(CGNodeInfo cgNodeInfo: this.cgNodeList.values()) {
+		for (CGNodeInfo cgNodeInfo : this.cgNodeList.values()) {
 			boolean flag = false;
-			if(cgNodeInfo.hasLocks()) {
-				//System.err.println(cgNodeInfo.getCGNode().getMethod());
-				//System.err.println(cgNodeInfo.locks);
+			if (cgNodeInfo.hasLocks()) {
+				// System.err.println(cgNodeInfo.getCGNode().getMethod());
+				// System.err.println(cgNodeInfo.locks);
 			}
-			if(cgNodeInfo.hasLoops()) {
-				//System.err.println(cgNodeInfo.getCGNode().getMethod());
-				//System.err.println(cgNodeInfo.loops.size()+"#"+cgNodeInfo.loops);
+			if (cgNodeInfo.hasLoops()) {
+				// System.err.println(cgNodeInfo.getCGNode().getMethod());
+				// System.err.println(cgNodeInfo.loops.size()+"#"+cgNodeInfo.loops);
 			}
-			if(cgNodeInfo.hasLoopingLocks) { // only can detect the first level
-				//System.err.println(cgNodeInfo.getCGNode().getMethod());
-				//cgNodeCnt++;
-				//System.err.println(cgNodeInfo.looping_locks);
+			if (cgNodeInfo.hasLoopingLocks) { // only can detect the first level
+				// System.err.println(cgNodeInfo.getCGNode().getMethod());
+				// cgNodeCnt++;
+				// System.err.println(cgNodeInfo.looping_locks);
 			}
 			// test TcLoop
-			if(false&&cgNodeInfo.hasLoops()) {
-				for(LoopInfo loop : cgNodeInfo.getLoops()) {
+			if (cgNodeInfo.hasLoops()) {
+				for (LoopInfo loop : cgNodeInfo.getLoops()) {
 					if (loop.numOfTcOperations_recusively > 0) {
 						loopCnt++;
 						flag = true;
-						for(TcOperationInfo tcop : loop.tcOperations_recusively_info) {
-							if(true||tcop.toString().indexOf("java/io/DataOutputStream")>=0) {
+						for (TcOperationInfo tcop : loop.tcOperations_recusively_info) {
+							if (tcop.toString().indexOf("java/io/DataOutputStream") >= 0) {
 								System.err.println(tcop);
 							}
 						}
 					}
 				}
-				if(flag) {
+				if (flag) {
 					cgNodeCnt++;
 				}
 			}
-			//test print some function content
-			if(false&&cgNodeInfo.getCGNode().getMethod().toString().indexOf("HRegion, internalFlushcache(")>=0) {
-				System.err.println("-------------"+cgNodeInfo.getCGNode().getMethod());
+			// test print some function content
+			if (cgNodeInfo.getCGNode().getMethod().toString().indexOf("HRegion, internalFlushcache(") >= 0) {
+				System.err.println("-------------" + cgNodeInfo.getCGNode().getMethod());
 				System.err.println(cgNodeInfo.tcOperations);
-				System.err.println(cgNodeInfo.tcOperations_recusively);				
-				//System.err.println(cgNodeInfo.instructions);
-				for(SSAInstruction ssa : cgNodeInfo.getCGNode().getIR().getInstructions())
+				System.err.println(cgNodeInfo.tcOperations_recusively);
+				// System.err.println(cgNodeInfo.instructions);
+				for (SSAInstruction ssa : cgNodeInfo.getCGNode().getIR().getInstructions())
 					System.err.println(ssa);
 			}
 		}
-		System.out.println("#cgNodes = " + cgNodeCnt + " containing loopingLocks(" +lockCnt+ ") with TCLoop(" +loopCnt+ ")");
+		System.out.println(
+				"#cgNodes = " + cgNodeCnt + " containing loopingLocks(" + lockCnt + ") with TCLoop(" + loopCnt + ")");
 		System.out.println("******************** test end **************************");
-	}  
+	}
 }
-
-
-
-
-
-
-
-
-
-

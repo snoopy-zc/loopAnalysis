@@ -1,6 +1,8 @@
 package sa.tcop;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashSet;
 import java.util.List;
 
 import com.ibm.wala.ipa.callgraph.CGNode;
@@ -61,6 +63,15 @@ public class PathInfo {
 			sum += entry.getLoopNum();
 		}
 		return sum;
+	}
+	
+	public Collection<LoopInfo> getAllLoops(){
+		HashSet<LoopInfo> rt = new HashSet<LoopInfo>();
+		for (PathEntry entry : callpath) {
+			if(entry.loops != null)
+				rt.addAll(entry.loops);
+		}
+		return rt;
 	}
 	
 	public int getCircleNum() {

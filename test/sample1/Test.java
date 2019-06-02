@@ -102,8 +102,7 @@ public class Test implements Runnable {
 		}while(a[0]>0);//conditonal branch -> last instruction
 
 		// others...
-
-	}
+}
 
 	public void test2() {
 

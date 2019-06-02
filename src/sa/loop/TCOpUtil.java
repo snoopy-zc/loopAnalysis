@@ -73,8 +73,9 @@ public class TCOpUtil {
 		
 		if ( rpcfile != null)
 			rpcChecker.addCheckFile( rpcfile );
-		ioChecker.addCheckFile( commonIOfile );
-		ioChecker.addCheckFile( iofile );
+		if ( iofile != null)
+			ioChecker.addCheckFile( iofile );
+		ioChecker.addCheckFile( commonIOfile );		
 	}
 	
 	

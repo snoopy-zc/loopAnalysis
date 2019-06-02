@@ -136,7 +136,7 @@ public class TextFileReader {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		System.out.println("JX - INFO - TextFileReader: successfully read " + strs.size() + " lines in " + filepath.toString());
+		//System.out.println("JX - INFO - TextFileReader: successfully read " + strs.size() + " lines in " + filepath.toString());
 	}
 
 	

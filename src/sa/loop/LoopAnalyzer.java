@@ -10,6 +10,7 @@ import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
@@ -112,6 +113,13 @@ public class LoopAnalyzer {
 	public void setOutputDir(Path outputDir) {
 		this.outputDir = outputDir;
 	}
+	public HashSet<LoopInfo> getTestLoops(){
+		HashSet<LoopInfo> loops = new HashSet<LoopInfo>();
+		for(CGNodeInfo cgn: loopCGNodes) {
+			loops.addAll(cgn.getLoops());
+		}
+		return loops;
+	} 
 	
 	
 	

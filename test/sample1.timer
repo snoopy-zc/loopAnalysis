@@ -1,3 +1,4 @@
 JX - INFO - Timer(tic), MSG: WalaAnalyzer begin
 JX - INFO - Timer(tic), MSG: WalaAnalyzer end
 JX - INFO - Timer(tic), MSG: loopAnalysis end
+JX - INFO - Timer(tic), MSG: boundedLoopAnalyzer end

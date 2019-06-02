@@ -3,6 +3,7 @@ package sa.tcop;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.BitSet;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -45,8 +46,8 @@ public class LockingLoopAnalyzer {
 	// lock & loop
 	LockAnalyzer lockAnalyzer;
 	LoopAnalyzer loopAnalyzer;
-	
-	
+
+	HashSet<LoopInfo> loops2test = new HashSet<LoopInfo>();   //entry in CGNodeList
 	
 	//tmp - for test
 	String functionname_for_test = "method signature";
@@ -87,7 +88,10 @@ public class LockingLoopAnalyzer {
 	public int getNLoopingLockingCGNodes() {
 		return this.nLoopingLockingCGNodes;
 	}
-	
+		
+	public HashSet<LoopInfo> getTestLoops(){
+		return this.loops2test;
+	}
 	
 	
 	
@@ -114,8 +118,6 @@ public class LockingLoopAnalyzer {
 		
 	}
 	  
-	  
-		
 	/**
 	* for single loop
 	*/
@@ -196,8 +198,7 @@ public class LockingLoopAnalyzer {
 		}
 		//there is no need to remove outer loop of lock, because it does not exist in LoopingLockInfo.inner_loops
 	}
-	
-	
+		
 	
 	public void dfsToGetLoopsForSSA(CGNode cgNode, int depth, BitSet traversednodes, LoopingLockInfo loopingLock, PathInfo callpath) {
 		//jx: if want to add this, then for MapReduce we need to more hadoop-common&hdfs like "org.apache.hadoop.conf" not juse 'fs/security' for it
@@ -557,19 +558,23 @@ public class LockingLoopAnalyzer {
 		System.out.println("# loop in lock = ," +   nloopLock); 
 		System.out.println("# loop (tcOp) = ," +   nloopTc); 
 		System.out.println("# loop in lock (tcOp) = ," +   nloopTcLock); 		
+		
+
+		System.out.println("\n\n\n# loop to test bound = " +   this.loops2test.size()); 		
 	}
 	
 	public boolean check(CGNodeInfo a,LoopingLockInfo b,LoopInfo c,PathInfo d) {
 		for(String bugid: bugList.keySet()) {
 			if(check_each(a,bugid)) {
 				//if(c.toString().indexOf("InetAddress, getByName") >= 0) {
-				if(check_each(a,"mr4576")) {
+				if(check_each(a,"hb3483-4")) {
 				//System.out.println(bugid);
 				//System.out.println(a.getCGNode().getMethod().toString()); 
 				//System.out.println(d);
 				//System.out.println(c);
 				}
 				resultList.get(bugid).add(a);
+				bug_loops.get(bugid).add(c); //for analysis loop bound - Class BoundedLoopAnalyzer.java
 			}
 		}
 		return true;
@@ -577,8 +582,7 @@ public class LockingLoopAnalyzer {
 
 	
 	public boolean check_each(CGNodeInfo a, String bugID) {
-		return a.getCGNode().getMethod().toString().indexOf(bugList.get(bugID).toString()) >= 0;
-		
+		return a.getCGNode().getMethod().toString().indexOf(bugList.get(bugID).toString()) >= 0;		
 	}
     
 	//int tCount = 0;
@@ -599,6 +603,26 @@ public class LockingLoopAnalyzer {
 			put("hd4186-3", "FSEditlog, logSync");
 		}
 	};
+	
+	public HashMap<String,Collection<LoopInfo>> bug_loops = new HashMap<String,Collection<LoopInfo>>(){
+		//for analysis loop bound - Class BoundedLoopAnalyzer.java
+		{
+			put("mr4576", new HashSet<LoopInfo>());
+			put("mr4813", new HashSet<LoopInfo>());
+			put("hb3483-1", new HashSet<LoopInfo>());
+			put("hb3483-2", new HashSet<LoopInfo>());
+			put("hb3483-3", new HashSet<LoopInfo>());
+			put("hb3483-4", new HashSet<LoopInfo>());	
+			put("hb3483-5", new HashSet<LoopInfo>());		
+			put("hd2379", new HashSet<LoopInfo>());
+			put("hd5153", new HashSet<LoopInfo>());
+			put("hd3990", new HashSet<LoopInfo>());
+			put("hd4186-1", new HashSet<LoopInfo>());
+			put("hd4186-2", new HashSet<LoopInfo>());
+			put("hd4186-3", new HashSet<LoopInfo>());
+		}
+	};
+	
 	HashMap<String, Set<CGNodeInfo>> resultList = new HashMap<String, Set<CGNodeInfo>>(){
 		{
 			put("mr4576", new HashSet<CGNodeInfo>());
