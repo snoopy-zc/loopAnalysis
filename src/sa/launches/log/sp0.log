@@ -1,0 +1,68 @@
+JX - INFO - StaticAnalysis.scaleAnalysis
+JX - INFO - Timer(tic), MSG: WalaAnalyzer begin
+JX - INFO - WalaAnalyzer: doWork...
+JX - INFO - Test Goal - multi *.jar: /home/c-lab/eclipse-workspace/loopAnalysis/src/sa/res/sp-0/spark-core_2.10-1.0.0.jar
+JX - INFO - WalaAnalyzer: walaAnalysis...
+16213
+Call graph stats:
+  Nodes: 18351
+  Edges: 48631
+  Methods: 17667
+  Bytecode Bytes: 590752
+
+JX - INFO - WalaAnalyzer: infoWalaAnalysisEnv
+nTotalFuncs(18351) = nApplicationFuncs(12588) + nPremordialFuncs(5763) + nOtherFuncs(0)
+	nApplicationFuncs(12588) includes 0 native methods
+	nPremordialFuncs(5763) includes 96 native methods
+	nOtherFuncs(0) includes 0 native methods
+nPackageFuncs(12588) - Note: this should be isApplicationAndNonNativeMethod first
+JX - INFO - WalaAnalyzer: readPackageScope
+NOTICE - not find the 'package-scope.txt' file, so SCOPE is ALL methods!!
+JX - INFO - Timer(toc->toc): 13.804s, (tic->toc): 13.804s, MSG: WalaAnalyzer end
+
+JX - INFO - LoopAnalyzer: doWork...
+JX - INFO - LoopAnalyzer: findLoopsForAllCGNodes
+total != n_backedges  #backedges:18 #real backedges:31 Method:org.apache.spark.network.ConnectionManager.run()V
+total != n_backedges  #backedges:1 #real backedges:9 Method:org.apache.spark.storage.BlockManagerMaster.askDriverWithReply(Ljava/lang/Object;)Ljava/lang/Object;
+total != n_backedges  #backedges:1 #real backedges:15 Method:org.apache.spark.network.ConnectionManager.acceptConnection(Ljava/nio/channels/SelectionKey;)V
+JX - INFO - LoopAnalyzer: The status of results
+The Status of Loops in All Functions:
+#scanned functions: 12588 out of #Total:18351(#AppFuncs:12588+#PremFuncs:5763)
+#functions with loops: 96 (#loops:115)
+//distribution of #loops
+#0:12492, #1:84, #2:8, #3:3, #4:0, #5:0, #6:1, #7:0, #8:0, #9:0, #10:0, #11:0, #12:0, #13:0, #14:0, #15:0, #16:0, #17:0, #18:0, #19:0, JX - INFO - Timer(toc->toc): 0.154s, (tic->toc): 13.958s, MSG: loopAnalysis end
+
+JX - INFO - NestedLoopAnalyzer: doWork...
+
+JX-findNestedLoops
+The Status of Loops in All Functions:
+#scanned functions: 12588 out of #Total:18351(#AppFuncs:12588+#PremFuncs:5763)
+#loops: see LoopAnalyzer (#functions with loops: see LoopAnalyzer)
+//distribution of #nestedloops
+#0:0, #1:96, #2:12, #3:3, #4:0, #5:2, #6:0, #7:0, #8:0, #9:0, #10:0, #11:0, #12:0, #13:0, #14:0, #15:0, #16:0, #17:0, #18:0, #19:0, #>=20:2
+jx - cgNodeList.size() = 1792
+
+JX - INFO - Timer(toc->toc): 0.089s, (tic->toc): 14.047s, MSG: nestedLoopAnalyzer end
+
+JX - INFO - TCLoopAnalyzer: doWork...
+JX - INFO - findTCOperationsForAllLoops
+JX - INFO - TCLoopAnalyzer: printResultStatus
+#TCLoops = 35 out of total 115 loops
+JX - INFO - Timer(toc->toc): 0.387s, (tic->toc): 14.434s, MSG: tcLoopAnalyzer end
+SSAInstanceofInstruction
+23 = instanceof 20 <Application,Lscala/util/Failure>
+Node: < Application, Lorg/apache/spark/ui/JettyUtils$, connect$1(ILjava/lang/String;Lorg/eclipse/jetty/server/handler/ContextHandlerCollection;)Lscala/Tuple2; > Context: Everywhere 196
+Unbounded! LOOP - org.apache.spark.network.BufferMessage.getChunkForSending(I)Lscala/Option;:56, Time-consumingOps(1):[invokevirtual < Application, Ljava/io/PrintStream, println(Ljava/lang/String;)V > 31,48 @234 exception:49], {begin:31 end:43 var_name:null bbs:[31, 32, 33, 35, 36, 37, 38, 39, 40, 41, 42, 43]}
+Unbounded! LOOP - org.apache.spark.storage.DiskBlockManager.createTempBlock()Lscala/Tuple2;:110, Time-consumingOps(2):[52 = invokevirtual < Application, Ljava/io/File, mkdir()Z > 30 @125 exception:51, 10 = invokevirtual < Application, Ljava/io/File, exists()Z > 8 @16 exception:9], {begin:5 end:11 var_name:null bbs:[5, 6, 7, 8, 9, 10, 11]}
+Unbounded! LOOP - org.apache.spark.network.SendingConnection.write()Z:345, Time-consumingOps(1):[invokevirtual < Application, Ljava/io/PrintStream, println(Ljava/lang/String;)V > 31,48 @234 exception:49], {begin:1 end:53 var_name:null bbs:[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53]}
+Unbounded! LOOP - org.apache.spark.storage.BlockMessageArray.set(Lorg/apache/spark/network/BufferMessage;)V:56, Time-consumingOps(3):[invokevirtual < Application, Ljava/io/PrintStream, println(Ljava/lang/String;)V > 31,48 @234 exception:49, 66 = invokestatic < Application, Ljava/nio/ByteBuffer, allocate(I)Ljava/nio/ByteBuffer; > 64 @111 exception:65, 40 = invokestatic < Application, Ljava/nio/ByteBuffer, allocate(I)Ljava/nio/ByteBuffer; > 38 @178 exception:39], {begin:9 end:28 var_name:null bbs:[9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28]}
+Unbounded! LOOP - org.apache.spark.util.Utils$.copyStream(Ljava/io/InputStream;Ljava/io/OutputStream;Z)V:288, Time-consumingOps(2):[11 = invokevirtual < Application, Ljava/io/InputStream, read([B)I > 2,7 @19 exception:10, invokevirtual < Application, Ljava/io/OutputStream, write([BII)V > 3,7,8,11 @36 exception:13], {begin:3 end:7 var_name:null bbs:[3, 4, 5, 6, 7]}
+Unbounded! LOOP - org.apache.spark.storage.BlockManagerMaster.askDriverWithReply(Ljava/lang/Object;)Ljava/lang/Object;:246, Time-consumingOps(1):[invokevirtual < Application, Ljava/io/PrintStream, println(Ljava/lang/String;)V > 31,48 @234 exception:49], {begin:15 end:35 var_name:null bbs:[15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35]}
+Unbounded! LOOP - org.apache.spark.storage.ThreadingTest$ConsumerThread.run()V:76, Time-consumingOps(13):[invokevirtual < Application, Ljava/io/PrintStream, println(Ljava/lang/String;)V > 31,48 @234 exception:49, 126 = invokestatic < Application, Ljava/nio/ByteBuffer, allocate(I)Ljava/nio/ByteBuffer; > 124 @501 exception:125, 11 = invokevirtual < Application, Ljava/io/DataInputStream, readInt()I > 9 @31 exception:10, invokevirtual < Application, Ljava/io/DataInputStream, readFully([B)V > 87,86 @54 exception:88, 60 = invokevirtual < Application, Ljava/io/DataInputStream, readLong()J > 58 @105 exception:59, 63 = invokevirtual < Application, Ljava/io/DataInputStream, readLong()J > 61 @114 exception:62, 66 = invokevirtual < Application, Ljava/io/DataInputStream, readLong()J > 64 @123 exception:65, 41 = invokevirtual < Application, Ljava/io/DataInputStream, readInt()I > 39 @207 exception:40, invokevirtual < Application, Ljava/io/DataInputStream, readFully([B)V > 43,42 @224 exception:44, 27 = invokevirtual < Application, Ljava/io/DataInputStream, readInt()I > 25 @283 exception:26, 33 = invokestatic < Application, Ljava/nio/ByteBuffer, allocate(I)Ljava/nio/ByteBuffer; > 31 @43 exception:32, 52 = invokevirtual < Application, Ljava/io/File, mkdir()Z > 30 @125 exception:51, 10 = invokevirtual < Application, Ljava/io/File, exists()Z > 8 @13 exception:9], {begin:2 end:61 var_name:null bbs:[2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 53, 54, 55, 56, 57, 58, 59, 60, 61]}
+Unbounded! LOOP - org.apache.spark.util.SerializableBuffer.readObject(Ljava/io/ObjectInputStream;)V:37, Time-consumingOps(1):[15 = invokeinterface < Application, Ljava/nio/channels/ReadableByteChannel, read(Ljava/nio/ByteBuffer;)I > 11,13 @32 exception:14], {begin:6 end:13 var_name:null bbs:[6, 7, 8, 9, 13]}
+Unbounded loops are 8 in total.
+JX - INFO - Timer(toc->toc): 143.753s, (tic->toc): 158.187s, MSG: boundedLoopAnalyzer end
+JX - INFO - Timer(toc->toc): 0.0s, (tic->toc): 158.187s, MSG: 
+
+ All done!
+

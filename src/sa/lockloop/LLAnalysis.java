@@ -198,7 +198,7 @@ public class LLAnalysis {
 			for (String bugid : lockingLoopAnalyzer.bug_loops.keySet()) {
 				Collection<LoopInfo> loops = lockingLoopAnalyzer.bug_loops.get(bugid);
 				System.out.println("\n\n\n-------------zc - bug ID: " + bugid + "-----------------" + loops.size());
-				BoundedLoopAnalyzer boundedLoopAnalyzer = new BoundedLoopAnalyzer(this.wala, (HashSet<LoopInfo>)loops, this.projectDir);
+				BoundedLoopAnalyzer boundedLoopAnalyzer = new BoundedLoopAnalyzer(this.wala, (HashSet<LoopInfo>)loops, this.projectDir, this.cgNodeList);
 				boundedLoopAnalyzer.doWork();
 				timer.toc("BoundedLoopAnalyzer end");
 			}

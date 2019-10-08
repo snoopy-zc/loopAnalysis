@@ -1,5 +1,6 @@
 package sa.wala;
 
+import java.util.Collection;
 import java.util.Iterator;
 
 import com.ibm.wala.classLoader.IBytecodeMethod;
@@ -54,7 +55,6 @@ public class IRUtil {
 		}
 		return -1;
 	}
-	
 	
 	public static int getSourceLineNumberFromBB(CGNode cgNode, ISSABasicBlock bb) {
 	    IR ir = cgNode.getIR();

@@ -1,7 +1,9 @@
 package sa.lockloop;
 
 import java.util.BitSet;
+import java.util.Collection;
 import java.util.HashMap;
+import java.util.HashSet;
 
 import com.ibm.wala.ipa.callgraph.CGNode;
 import com.ibm.wala.ipa.callgraph.CallGraph;
@@ -32,7 +34,13 @@ public class CGNodeList extends HashMap<Integer, CGNodeInfo> {
 		return this.traversedNodes;
 	}
 	
-
+	public Collection<CGNode> getAllCGNodes() {
+		Collection<CGNode> rnt = new HashSet();
+		for(CGNodeInfo cgnINFO : this.values()) {
+			rnt.add(cgnINFO.cgNode);
+		}
+		return rnt;		
+	}
 	
 	public CGNodeInfo forceGet(int cgNodeId) {
 		if ( !this.containsKey(cgNodeId) )

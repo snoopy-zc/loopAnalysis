@@ -255,6 +255,7 @@ public class WalaAnalyzer {
 	    // Get all entry points
 	    entrypoints = (HashSet<Entrypoint>) allappentrypoints;
 	    // TODO - can narrow entrypoints according to "scope.txt"
+	    System.err.println(entrypoints.size());
 	    
 	    // Create Analysis Options
 	    AnalysisOptions options = new AnalysisOptions(scope, entrypoints); 

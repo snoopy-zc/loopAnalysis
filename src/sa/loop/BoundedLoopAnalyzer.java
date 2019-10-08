@@ -20,6 +20,9 @@ import com.ibm.wala.ipa.slicer.NormalStatement;
 import com.ibm.wala.ipa.slicer.ParamCallee;
 import com.ibm.wala.ipa.slicer.ParamCaller;
 import com.ibm.wala.ipa.slicer.PhiStatement;
+import com.ibm.wala.ipa.slicer.Slicer;
+import com.ibm.wala.ipa.slicer.Slicer.ControlDependenceOptions;
+import com.ibm.wala.ipa.slicer.Slicer.DataDependenceOptions;
 import com.ibm.wala.ipa.slicer.Statement;
 import com.ibm.wala.ipa.slicer.thin.ThinSlicer;
 import com.ibm.wala.ssa.IR;
@@ -76,15 +79,16 @@ public class BoundedLoopAnalyzer {
 	CallGraph cg;
 	Path outputDir;
 	// database
-	// CGNodeList cgNodeList = null;
+	CGNodeList cgNodeList = null;
 	// loop
 	// LoopAnalyzer loopAnalyzer;
 	TCOpUtil iolooputil;
 	Collection<LoopInfo> loops = new HashSet<LoopInfo>(); // entry in CGNodeList
 
 	String projectDir;
+	public int loopCnt = 0;
 
-	public BoundedLoopAnalyzer(WalaAnalyzer walaAnalyzer, Collection<LoopInfo> collection, String proDir) {
+	public BoundedLoopAnalyzer(WalaAnalyzer walaAnalyzer, Collection<LoopInfo> collection, String proDir, CGNodeList cgNodeList) {
 		this.walaAnalyzer = walaAnalyzer;
 		this.cg = this.walaAnalyzer.getCallGraph();
 		this.outputDir = this.walaAnalyzer.getTargetDirPath();
@@ -92,13 +96,13 @@ public class BoundedLoopAnalyzer {
 //		this.cgNodeList = cgNodeList;
 		this.loops = collection;
 		this.projectDir = proDir;
+		this.cgNodeList = cgNodeList;
 		this.iolooputil = new TCOpUtil(this.walaAnalyzer.getTargetDirPath());
-
 	}
 
 	// Please call doWork() manually
 	public void doWork() throws IllegalArgumentException, CancelException, WalaException {
-		System.out.println("\nZC - INFO - BoundedLoopAnalyzer: doWork...");
+//		System.out.println("\nZC - INFO - BoundedLoopAnalyzer: doWork...");
 
 		findBoundedLoops();
 		// statistic();
@@ -117,17 +121,17 @@ public class BoundedLoopAnalyzer {
 
 	private void findBoundedLoops() throws IllegalArgumentException, CancelException, WalaException {
 		//System.out.println("JX - INFO - BoundedLoopAnalyzer: findBoundedLoops...");
-
+		
 		for (LoopInfo loop : this.loops) {
 			analysisLoop(loop);
 		} // loop - LoopInfo
 
-		System.out.println("ZC - INFO - Loop Info list...");
+		//System.out.println("ZC - INFO - Loop Info list...");
 		for (LoopInfo loop : this.loops) {
 			// while true loop
 			if (loop.whileTrue) {
-				System.out.println(loop);
-				System.out.println(loop.conditional_branch_block);
+				//System.out.println(loop);
+				//System.out.println(loop.conditional_branch_block);
 			}
 		} // loop - LoopInfo
 
@@ -137,11 +141,11 @@ public class BoundedLoopAnalyzer {
 
 	public int analysisLoop(LoopInfo loop) throws IllegalArgumentException, CancelException, WalaException {
 
-		System.out.println("\n\n ZC - INFO - walaSlice - " + loop);
+//		System.out.println("\n\n ZC - INFO - walaSlice - " + loop);
 
 		// check if while(true) loop
 		if (cheackWhileTrue(loop)) {
-			System.out.println("While(true) loop - " + loop);
+//			System.out.println("While(true) loop - " + loop);
 			whiletrueAnalisys(loop);
 		}
 
@@ -149,7 +153,7 @@ public class BoundedLoopAnalyzer {
 											// exception
 			return 0;
 
-		System.out.println(loop.getConditionSSA().toString());
+//		System.out.println(loop.getConditionSSA().toString());
 
 		Collection<Statement> slice = walaSlice(loop);
 
@@ -159,11 +163,12 @@ public class BoundedLoopAnalyzer {
 
 		// TODO
 		if (loop.IOs.size() > 0) {
-			System.out.println("Unbounded!");
+			System.out.println("Unbounded! " + loop);
+			loopCnt++;
 //			for (Statement s : loop.IOs)
 //				System.out.println(s);
 		} else {
-			System.out.println("Bounded..");
+//			System.out.println("Bounded..");
 		}
 		
 		if(true) return 0;
@@ -204,6 +209,7 @@ public class BoundedLoopAnalyzer {
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public Collection<Statement> walaSlice(LoopInfo loop)
 			throws IllegalArgumentException, CancelException, WalaException {
+		
 		if (loop.whileTrue) // don not slicing for while true loop
 			return new HashSet(); // TODO analysis the if-break condition
 		CallGraph cg = this.walaAnalyzer.getCallGraph();
@@ -213,17 +219,17 @@ public class BoundedLoopAnalyzer {
 		Statement statement = new NormalStatement(loop.getCGNode(),
 				IRUtil.getSSAIndex(loop.getCGNode(), loop.getConditionSSA()));
 
-		Collection<Statement> slice;
+		
 
 		// context-insensitive slice (not configurable!)
 		ThinSlicer ts = new ThinSlicer(cg, pa);
-		slice = ts.computeBackwardThinSlice(statement);
+		Collection<Statement> slice = ts.computeBackwardThinSlice(statement);
 		List<Statement> slices = new ArrayList<Statement>(slice);
 		Collections.reverse(slices);
 		return slices;
 
 		// context-sensitive thin slice
-//		slice = Slicer.computeBackwardSlice(statement, cg, pa, DataDependenceOptions.NO_HEAP_NO_EXCEPTIONS,
+//		Collection<Statement> slice = Slicer.computeBackwardSlice(statement, cg, pa, DataDependenceOptions.NO_BASE_NO_EXCEPTIONS,
 //				ControlDependenceOptions.NONE);
 //		return slice;
 
@@ -238,21 +244,13 @@ public class BoundedLoopAnalyzer {
 
 		// DataDependenceOptions dOptions =
 		// Slicer.DataDependenceOptions.NO_BASE_PTRS;
-		// DataDependenceOptions dOptions =
 		// Slicer.DataDependenceOptions.NO_BASE_NO_HEAP;
-		// DataDependenceOptions dOptions =
 		// Slicer.DataDependenceOptions.NO_BASE_NO_EXCEPTIONS;
-		// DataDependenceOptions dOptions =
 		// Slicer.DataDependenceOptions.NO_BASE_NO_HEAP_NO_EXCEPTIONS;
-		// DataDependenceOptions dOptions =
 		// Slicer.DataDependenceOptions.NO_HEAP;
-		// DataDependenceOptions dOptions =
 		// Slicer.DataDependenceOptions.NO_HEAP_NO_EXCEPTIONS;
-		// DataDependenceOptions dOptions =
 		// Slicer.DataDependenceOptions.NO_EXCEPTIONS;
-		// DataDependenceOptions dOptions =
 		// Slicer.DataDependenceOptions.REFLECTION;
-		// DataDependenceOptions dOptions =
 		// Slicer.DataDependenceOptions.NONE;
 		// ControlDependenceOptions cOptions =
 		// Slicer.ControlDependenceOptions.NONE;
@@ -270,30 +268,45 @@ public class BoundedLoopAnalyzer {
 			for (ISSABasicBlock b : suc) {
 				if (b.getNumber() > loop.getEndBasicBlockNumber()) { // find block that skip out
 					// trace back to the conditional branch until the begin_block
-					Set<Integer> CBB = traceBackCBB(cfg, bb.getNumber(), loop.getBeginBasicBlockNumber());
-					loop.conditional_branch_block.addAll(CBB);
+					
+					//why trace back like this? forgot it...
+					//Set<Integer> CBB = traceBackCBB(cfg, bb.getNumber(), loop.getBeginBasicBlockNumber());
+					//loop.conditional_branch_block.addAll(CBB);
+					if(suc.size()>1)
+						loop.conditional_branch_block.add(bb.getNumber()); //current block is the branch block, which has multiple succ block
+					else {
+						Integer rnt = traceBackCBB(cfg, bb.getNumber(), loop.getBeginBasicBlockNumber());
+						if(rnt != null)
+							loop.conditional_branch_block.add(rnt);//current block is not  branch, which has only one succ block
+					}
 				}
 			}
 		}
 	}
 
-	public Set<Integer> traceBackCBB(SSACFG cfg, int outBB, int beginBB) {
+	public Integer traceBackCBB(SSACFG cfg, int outBB, int beginBB) {
 		BasicBlock bb = cfg.getBasicBlock(outBB);
-		Set<Integer> result = new HashSet<Integer>();
+		//Set<Integer> result = new HashSet<Integer>();
 
 		if (cfg.getNormalSuccessors(bb).size() > 1)// the current node is branch to skip out
-			result.add(outBB);
+			return outBB;
 
-		if (outBB <= beginBB)
-			return result;
+		if (outBB < beginBB) {
+			System.err.println("Traceback out of bound -1");
+			return null;
+		}
 
 		Collection<ISSABasicBlock> bbs = cfg.getNormalPredecessors(bb);
 		for (ISSABasicBlock pb : bbs) {
+			if(pb.getNumber()>bb.getNumber())// trace back, the pre block num must be smaller
+				continue;
 			if (cfg.getNormalSuccessors(pb).size() > 1)// the current node is branch to skip out
-				result.add(pb.getNumber());
-			result.addAll(traceBackCBB(cfg, pb.getNumber(), beginBB));
+				return pb.getNumber();
+			Integer t = traceBackCBB(cfg, pb.getNumber(), beginBB);
+			if(t != null)
+				return t;
 		}
-		return result;
+		return null;
 	}
 
 	public boolean cheackWhileTrue(LoopInfo loop) {
@@ -585,6 +598,8 @@ public class BoundedLoopAnalyzer {
 			System.err.println("SSAInstruction unkown type");
 		}
 		System.err.println(inst);
+		int srcLine = IRUtil.getSourceLineNumberFromSSA(s.getNode(), inst);
+		System.err.println(s.getNode().toString() + " " + srcLine);
 	}
 
 	public void parsePHIStatement(PhiStatement s, LoopInfo loop) {

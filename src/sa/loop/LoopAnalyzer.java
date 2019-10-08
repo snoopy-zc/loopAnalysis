@@ -220,13 +220,17 @@ public class LoopAnalyzer {
 		int nOtherFuncs = walaAnalyzer.getNOtherFuncs();
 	    
 	    int N_LOOPS = 20;
-	    int[] count = new int[N_LOOPS];
+	    int[] count = new int[N_LOOPS+1];
 	    count[0] = nPackageFuncs - nLoopingCGNodes;
 	    for (CGNodeInfo cgNodeInfo: cgNodeList.values()) {
 	    	if ( !cgNodeInfo.hasLoops() ) continue;
 	    	List<LoopInfo> loops = cgNodeInfo.getLoops();
 	    	int size = loops.size();
 	    	if (size < N_LOOPS) count[size]++;
+	    	else {
+	    		count[N_LOOPS] ++;
+	  	      	System.err.print("#loop>=20: " + cgNodeInfo.getCGNode());	    			    	
+	    	}
 	    }
 	    System.out.println("The Status of Loops in All Functions:\n" 
 	        + "#scanned functions: " + nPackageFuncs 
@@ -235,6 +239,7 @@ public class LoopAnalyzer {
 	    System.out.println("//distribution of #loops");
 	    for (int i = 0; i < N_LOOPS; i++)
 	      System.out.print("#" + i + ":" + count[i] + ", ");
+	    System.out.println("#>=" + N_LOOPS + ":" + count[N_LOOPS]);
 	    
 	    // Print all result loops for test
 	    // Print all loops - for test

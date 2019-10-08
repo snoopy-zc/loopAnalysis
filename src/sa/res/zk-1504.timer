@@ -1,0 +1,9 @@
+JX - INFO - Timer(tic), MSG: WalaAnalyzer begin
+JX - INFO - Timer(toc->toc): 8.427s, (tic->toc): 8.427s, MSG: WalaAnalyzer end
+JX - INFO - Timer(toc->toc): 0.816s, (tic->toc): 9.243s, MSG: loopAnalysis end
+JX - INFO - Timer(toc->toc): 0.1s, (tic->toc): 9.343s, MSG: nestedLoopAnalyzer end
+JX - INFO - Timer(toc->toc): 0.337s, (tic->toc): 9.68s, MSG: tcLoopAnalyzer end
+JX - INFO - Timer(toc->toc): 479.413s, (tic->toc): 489.093s, MSG: boundedLoopAnalyzer end
+JX - INFO - Timer(toc->toc): 0.0s, (tic->toc): 489.093s, MSG: 
+
+ All done!

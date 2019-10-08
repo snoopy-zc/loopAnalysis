@@ -82,33 +82,60 @@ public class StaticAnalysis {
 			tcLoopAnalyzer.doWork();
 			timer.toc("tcLoopAnalyzer end");
 			
-			//hb3483
-			//mr4576
-			//ha4584
-			//hd3990
-			//hd4186
-			//hd5153
-			//mr4813
 			
-			for (CGNodeInfo cgn : loopAnalyzer.getLoopCGNodes()) {
-				for (String bugid : mr4813.keySet()) {
-					if (check_each(cgn, bugid)) {
-						for(LoopInfo lp : cgn.getLoops())
-							if(lp.numOfTcOperations_recusively>0) //pruning
-								scaleLoops.get(bugid).add(lp);
+			boolean SINGAL_BUG = false;
+			
+			
+			if(SINGAL_BUG) {
+			
+				//hb3483
+				//mr4576
+				//ha4584
+				//hd3990
+				//hd4186
+				//hd5153
+				//mr4813
+				
+				for (CGNodeInfo cgn : loopAnalyzer.getLoopCGNodes()) {
+					for (String bugid : mr4813.keySet()) {
+						if (check_each(cgn, bugid)) {
+							for(LoopInfo lp : cgn.getLoops())
+								if(lp.numOfTcOperations_recusively>0) //pruning
+									
+									scaleLoops.get(bugid).add(lp);
+						}
 					}
 				}
+	
+				timer.toc("Pruning end");			
+				
+				for (String bugid : scaleLoops.keySet()) {
+					System.out.println("\n\n\n-------------zc - bug ID: " + bugid + "-----------------"
+							+ scaleLoops.get(bugid).size());
+					BoundedLoopAnalyzer boundedLoopAnalyzer = new BoundedLoopAnalyzer(walaAnalyzer, scaleLoops.get(bugid), this.projectDir,cgnl);
+					boundedLoopAnalyzer.doWork();
+				}
+				
+			} else {
+				
+				int unbounedLoopCnt = 0;
+				
+				for(CGNodeInfo cgn : loopAnalyzer.getLoopCGNodes()) {
+					Collection<LoopInfo> hs = new HashSet<LoopInfo>();
+					for(LoopInfo lp : cgn.getLoops()){
+						if(lp.numOfTcOperations_recusively>0) //pruning
+							hs.add(lp);
+					}
+					if(hs.isEmpty())
+						continue;
+					BoundedLoopAnalyzer boundedLoopAnalyzer = new BoundedLoopAnalyzer(walaAnalyzer, hs, this.projectDir, cgnl);
+					boundedLoopAnalyzer.doWork();
+					unbounedLoopCnt += boundedLoopAnalyzer.loopCnt;
+				}
+				
+				System.out.println("Unbounded loops are " + unbounedLoopCnt + " in total.");
 			}
-
-			timer.toc("Pruning end");			
 			
-			for (String bugid : scaleLoops.keySet()) {
-				System.out.println("\n\n\n-------------zc - bug ID: " + bugid + "-----------------"
-						+ scaleLoops.get(bugid).size());
-				BoundedLoopAnalyzer boundedLoopAnalyzer = new BoundedLoopAnalyzer(walaAnalyzer, scaleLoops.get(bugid),
-						this.projectDir);
-				boundedLoopAnalyzer.doWork();
-			}
 			timer.toc("boundedLoopAnalyzer end");
 
 			timer.toc("\n\n All done!");

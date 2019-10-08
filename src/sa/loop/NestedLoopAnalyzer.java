@@ -258,8 +258,14 @@ public class NestedLoopAnalyzer {
 		for (CGNodeInfo cgNodeInfo: loopAnalyzer.getLoopCGNodes()) {
 			for (LoopInfo loop: cgNodeInfo.getLoops()) {
 				int depthOfLoops = loop.max_depthOfLoops;
+				if(depthOfLoops == 0)
+		  	      	System.err.println("#loop depth: "+ depthOfLoops + "--" + loop);
+					
 				if (depthOfLoops < N_NestedLOOPS) count[depthOfLoops]++;
-				else othercount++;//zc - othercount = 0 -> othercount++
+				else {
+					othercount++;//zc - othercount = 0 -> othercount++
+		  	      	//System.err.println("#loop depth: "+ depthOfLoops + "--" + loop);
+				}
 			}
 		}
 		System.out.println("The Status of Loops in All Functions:\n" 
