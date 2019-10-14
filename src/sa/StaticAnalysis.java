@@ -89,15 +89,15 @@ public class StaticAnalysis {
 			if(SINGAL_BUG) {
 			
 				//hb3483
-				//mr4576
 				//ha4584
 				//hd3990
 				//hd4186
 				//hd5153
+				//mr4576
 				//mr4813
 				
 				for (CGNodeInfo cgn : loopAnalyzer.getLoopCGNodes()) {
-					for (String bugid : mr4813.keySet()) {
+					for (String bugid : hd5153.keySet()) {
 						if (check_each(cgn, bugid)) {
 							for(LoopInfo lp : cgn.getLoops())
 								if(lp.numOfTcOperations_recusively>0) //pruning
